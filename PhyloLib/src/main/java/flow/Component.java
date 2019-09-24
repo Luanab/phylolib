@@ -1,32 +1,25 @@
 package flow;
 
-import exception.parameter.ParameterException;
-import exception.parameter.InvalidTypeParameterException;
-import exception.parameter.NumberOfArgumentsException;
+import exception.InvalidTypeParameterException;
+import exception.NumberOfArgumentsException;
+import exception.ParameterException;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.function.BiFunction;
 
-abstract class Component<T, R> {
+abstract class Component<T> {
 
-	String name;
-	int number;
-	HashMap<String, T> options;
-	BiFunction<List<String>, T, R> mapper;
+	final List<String> values;
+	final T option;
 
-	abstract List<String> defaultValues();
-
-	R get(HashMap<String, List<String>> parameters) throws ParameterException {
-		List<String> values = parameters.get(name);
-		if (values == null)
-			values = defaultValues();
+	Component(HashMap<String, List<String>> parameters, String name, int number,
+			  List<String> defaults, HashMap<String, T> options) throws ParameterException {
+		this.values = parameters.getOrDefault(name, defaults);
 		if (values.size() != number + 1)
 			throw new NumberOfArgumentsException(name, number + 1);
-		T option = options.get(values.remove(0));
-		if (option == null)
+		this.option = options.get(values.remove(0));
+		if (this.option == null)
 			throw new InvalidTypeParameterException(name);
-		return mapper.apply(values, option);
 	}
 
 }

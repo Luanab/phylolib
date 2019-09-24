@@ -2,7 +2,7 @@ package format;
 
 import data.PhylogeneticTree;
 
-public class NewickFormatter implements IFormatter {
+public final class NewickFormatter implements IFormatter {
 
 	@Override
 	public String format(PhylogeneticTree tree) {

@@ -1,5 +1,5 @@
 package process.distance;
 
-public class AsymmetricDistanceCalculator implements IDistanceCalculator {
+public final class AsymmetricDistanceCalculator implements IDistanceCalculator {
 
 }

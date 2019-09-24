@@ -1,4 +1,4 @@
-package exception.parameter;
+package exception;
 
 public abstract class ParameterException extends Exception {
 

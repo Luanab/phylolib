@@ -1,5 +1,5 @@
 package process.distance;
 
-public class SymmetricDistanceCalculator implements IDistanceCalculator {
+public final class SymmetricDistanceCalculator implements IDistanceCalculator {
 
 }

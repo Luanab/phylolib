@@ -1,4 +1,4 @@
-import exception.parameter.ParameterException;
+import exception.ParameterException;
 import flow.Flow;
 
 public class Main {
@@ -8,6 +8,7 @@ public class Main {
 			Flow.process(args);
 		} catch (ParameterException e) {
 			System.out.println(e.getMessage());
+			//System.out.println("How to use");
 		}
 	}
 

@@ -1,6 +1,6 @@
 package read;
 
-public class ConsoleReader implements IReader {
+public final class ConsoleReader implements IReader {
 
 	@Override
 	public String read(String store) {

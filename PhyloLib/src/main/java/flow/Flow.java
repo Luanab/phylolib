@@ -2,14 +2,11 @@ package flow;
 
 import data.DataSet;
 import data.PhylogeneticTree;
-import exception.parameter.ParameterException;
+import exception.ParameterException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
 
 public class Flow {
 
@@ -24,17 +21,17 @@ public class Flow {
 				current.add(arg);
 		}
 
-		Supplier<String> reader = (new Reader()).get(parameters);
-		Function<String, DataSet> parser = (new Parser()).get(parameters);
-		Function<DataSet, PhylogeneticTree> algorithm = (new Algorithm()).get(parameters);
-		Function<PhylogeneticTree, String> formatter = (new Formatter()).get(parameters);
-		Consumer<String> writer = (new Writer()).get(parameters);
+		Reader reader = new Reader(parameters);
+		Parser parser = new Parser(parameters);
+		Algorithm algorithm = new Algorithm(parameters);
+		Formatter formatter = new Formatter(parameters);
+		Writer writer = new Writer(parameters);
 
-		String data = reader.get();
-		DataSet dataset = parser.apply(data);
-		PhylogeneticTree tree = algorithm.apply(dataset);
-		String formatted = formatter.apply(tree);
-		writer.accept(formatted);
+		String data = reader.read();
+		DataSet dataset = parser.parse(data);
+		PhylogeneticTree tree = algorithm.process(dataset);
+		String formatted = formatter.format(tree);
+		writer.write(formatted);
 	}
 
 }

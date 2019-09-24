@@ -1,5 +1,6 @@
 package flow;
 
+import exception.ParameterException;
 import read.ConsoleReader;
 import read.FileReader;
 import read.IReader;
@@ -7,26 +8,18 @@ import read.IReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.function.Supplier;
 
-class Reader extends Component<IReader, Supplier<String>> {
+class Reader extends Component<IReader> {
 
-	Reader() {
-		this.name = "-reader";
-		this.number = 1;
-		this.options = new HashMap<>() {{
+	Reader(HashMap<String, List<String>> parameters) throws ParameterException {
+		super(parameters, "-reader", 1, new ArrayList<>(){{ add("console"); add(null); }}, new HashMap<>() {{
 			put("console", new ConsoleReader());
 			put("file", new FileReader());
-		}};
-		this.mapper = (values, reader) -> (() -> reader.read(values.get(0)));
+		}});
 	}
 
-	@Override
-	List<String> defaultValues() {
-		return new ArrayList<>(){{
-			add("console");
-			add(null);
-		}};
+	String read() {
+		return option.read(values.get(0));
 	}
 
 }

@@ -1,4 +1,4 @@
-package exception.parameter;
+package exception;
 
 public class NumberOfArgumentsException extends ParameterException {
 

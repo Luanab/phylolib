@@ -1,10 +1,11 @@
-package process.algorithm.nj;
+package process.algorithm.clusters.nj;
 
 import data.Cluster;
 import data.DistanceMatrix;
 import data.Pair;
+import process.algorithm.clusters.HierarchicalClustersAlgorithm;
 
-public class NeighbourJoiningAlgorithm extends Base {
+public final class NeighbourJoiningAlgorithm extends HierarchicalClustersAlgorithm {
 
 	@Override
 	protected Pair<Cluster, Cluster> select(DistanceMatrix matrix) {
@@ -17,7 +18,7 @@ public class NeighbourJoiningAlgorithm extends Base {
 	}
 
 	@Override
-	protected void reduct() {
+	protected void reduce() {
 
 	}
 
