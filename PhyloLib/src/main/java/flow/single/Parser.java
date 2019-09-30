@@ -1,4 +1,4 @@
-package flow;
+package flow.single;
 
 import data.DataSet;
 import exception.ParameterException;
@@ -9,15 +9,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-class Parser extends Component<IParser> {
+public class Parser extends SingleComponent<IParser> {
 
-	Parser(HashMap<String, List<String>> parameters) throws ParameterException {
+	public Parser(HashMap<String, List<List<String>>> parameters) throws ParameterException {
 		super(parameters, "-parser", 0, new ArrayList<>(){{ add("csv"); }}, new HashMap<>() {{
 			put("csv", new CSVParser());
 		}});
 	}
 
-	DataSet parse(String data) {
+	public DataSet parse(String data) {
 		return option.parse(data);
 	}
 

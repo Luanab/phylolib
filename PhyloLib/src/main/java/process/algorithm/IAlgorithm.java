@@ -1,10 +1,9 @@
 package process.algorithm;
 
-import data.DataSet;
-import data.PhylogeneticTree;
+import data.*;
 
 public interface IAlgorithm {
 
-	PhylogeneticTree process(DataSet dataset);
+	PhylogeneticTree process(DistanceMatrix matrix);
 
 }

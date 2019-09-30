@@ -1,4 +1,4 @@
-package flow;
+package flow.single;
 
 import data.PhylogeneticTree;
 import exception.ParameterException;
@@ -10,16 +10,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-class Formatter extends Component<IFormatter> {
+public class Formatter extends SingleComponent<IFormatter> {
 
-	Formatter(HashMap<String, List<String>> parameters) throws ParameterException {
+	public Formatter(HashMap<String, List<List<String>>> parameters) throws ParameterException {
 		super(parameters, "-format", 0, new ArrayList<>(){{ add("newick"); }}, new HashMap<>() {{
 			put("newick", new NewickFormatter());
 			put("nexus", new NexusFormatter());
 		}});
 	}
 
-	String format(PhylogeneticTree tree) {
+	public String format(PhylogeneticTree tree) {
 		return option.format(tree);
 	}
 

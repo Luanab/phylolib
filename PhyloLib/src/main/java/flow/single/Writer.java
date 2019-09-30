@@ -1,4 +1,4 @@
-package flow;
+package flow.single;
 
 import exception.ParameterException;
 import write.ConsoleWriter;
@@ -9,16 +9,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-class Writer extends Component<IWriter> {
+public class Writer extends SingleComponent<IWriter> {
 
-	Writer(HashMap<String, List<String>> parameters) throws ParameterException {
+	public Writer(HashMap<String, List<List<String>>> parameters) throws ParameterException {
 		super(parameters, "-writer", 1, new ArrayList<>(){{ add("console"); add(null); }}, new HashMap<>() {{
 			put("console", new ConsoleWriter());
 			put("file", new FileWriter());
 		}});
 	}
 
-	void write(String data) {
+	public void write(String data) {
 		option.write(data, values.get(0));
 	}
 
