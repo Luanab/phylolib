@@ -17,12 +17,10 @@ abstract class SingleComponent<T> implements Component {
 		List<List<String>> params = parameters.getOrDefault(name, new ArrayList<>());
 		if (params.size() > 1)
 			throw new RepeatedParameterException(name);
-		List<String> values = params.get(0);
-		if (values == null) {
-			if (defaults == null)
-				throw new MandatoryParameterException(name);
-			values = defaults;
-		} else if (values.size() < number + 1)
+		List<String> values = params.isEmpty() ? defaults : params.get(0);
+		if (values == null)
+			throw new MandatoryParameterException(name);
+		if (values.size() < number + 1)
 			throw new NumberOfArgumentsException(name, number + 1);
 		String value = values.remove(0);
 		T option = options.get(value);

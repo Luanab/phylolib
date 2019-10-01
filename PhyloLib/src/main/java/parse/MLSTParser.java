@@ -2,7 +2,7 @@ package parse;
 
 import data.DataSet;
 
-public final class CSVParser implements IParser {
+public final class MLSTParser implements IParser {
 
 	@Override
 	public DataSet parse(String data) {
