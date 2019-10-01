@@ -1,4 +1,4 @@
-package flow.optimization;
+package flow.optimize;
 
 import data.DataSet;
 import data.DistanceMatrix;

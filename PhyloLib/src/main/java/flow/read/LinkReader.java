@@ -10,7 +10,7 @@ public final class LinkReader extends Reader {
 
 	public LinkReader(List<String> values) throws NumberOfArgumentsException {
 		super(values, 1);
-		this.link = values.get(0);
+		this.link = values.get(1);
 	}
 
 	@Override

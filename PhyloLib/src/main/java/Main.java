@@ -3,9 +3,9 @@ import data.DistanceMatrix;
 import data.PhylogeneticTree;
 import exception.ParameterException;
 import flow.algorithm.Algorithm;
-import flow.distance.DistanceCalculator;
+import flow.calculate.Calculator;
 import flow.format.Formatter;
-import flow.optimization.Optimizer;
+import flow.optimize.Optimizer;
 import flow.parse.Parser;
 import flow.read.Reader;
 import flow.write.Writer;
@@ -30,7 +30,7 @@ public class Main {
 		try {
 			Reader reader = Reader.get(parameters);
 			Parser parser = Parser.get(parameters);
-			DistanceCalculator calculator = DistanceCalculator.get(parameters);
+			Calculator calculator = Calculator.get(parameters);
 			Algorithm algorithm = Algorithm.get(parameters);
 			List<Optimizer> optimizers = Optimizer.get(parameters);
 			Formatter formatter = Formatter.get(parameters);
@@ -40,8 +40,8 @@ public class Main {
 			DataSet dataset = parser.parse(data);
 			DistanceMatrix matrix = calculator.calculate(dataset);
 			PhylogeneticTree tree = algorithm.process(matrix);
-			for (Optimizer option : optimizers)
-				tree = option.optimize(dataset, matrix, tree);
+			for (Optimizer optimizer : optimizers)
+				tree = optimizer.optimize(dataset, matrix, tree);
 			String formatted = formatter.format(tree);
 			writer.write(formatted);
 		} catch (ParameterException e) {

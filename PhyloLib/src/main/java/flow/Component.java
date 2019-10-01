@@ -9,8 +9,8 @@ import java.util.List;
 public abstract class Component {
 
 	protected Component(List<String> values, String name, int number) throws NumberOfArgumentsException {
-		if (values.size() < number + 1)
-			throw new NumberOfArgumentsException(name, number + 1);
+		if (values.size() - 1 != number)
+			throw new NumberOfArgumentsException(name, values.get(0), number, values.size() - 1);
 	}
 
 	public interface Creator<T> {
@@ -37,7 +37,7 @@ public abstract class Component {
 	}
 
 	private static <T> T get(String name, HashMap<String, Creator<T>> options, List<String> values) throws ParameterException {
-		String value = values.remove(0);
+		String value = values.get(0);
 		Creator<T> option = options.get(value);
 		if (option == null)
 			throw new InvalidTypeParameterException(name, value);

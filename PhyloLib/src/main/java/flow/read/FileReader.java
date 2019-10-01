@@ -10,7 +10,7 @@ public final class FileReader extends Reader {
 
 	public FileReader(List<String> values) throws NumberOfArgumentsException {
 		super(values, 1);
-		this.store = values.get(0);
+		this.store = values.get(1);
 	}
 
 	@Override
