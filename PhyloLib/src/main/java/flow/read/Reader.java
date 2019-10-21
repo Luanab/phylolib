@@ -1,27 +1,37 @@
 package flow.read;
 
-import exception.NumberOfArgumentsException;
+import data.DataSet;
 import exception.ParameterException;
-import flow.Component;
+import flow.Option;
+import flow.Parameters;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.stream.Stream;
 
-public abstract class Reader extends Component {
+public abstract class Reader {
 
-	private static final String NAME = "-reader";
+	private final String from;
 
-	protected Reader(List<String> values, int number) throws NumberOfArgumentsException {
-		super(values, NAME, number);
+	protected Reader(String from) {
+		this.from = from;
 	}
 
-	public abstract String read();
+	protected abstract DataSet parse(Stream<String> data);
 
-	public static Reader get(HashMap<String, List<List<String>>> parameters) throws ParameterException {
-		return Component.getSingle(parameters, NAME, null, new HashMap<>() {{
-			put("console", ConsoleReader::new);
-			put("file", FileReader::new);
-			put("link", LinkReader::new);
+	public final DataSet read() throws IOException {
+		return parse(Files.lines(Paths.get(from)));
+	}
+
+	public static Reader get(Parameters parameters) throws ParameterException {
+		return parameters.map("-reader", "-r", new ArrayList<>(){{ add("mlst"); }}, new HashMap<>() {{
+			put("mlst", new Option<>(0, values -> new MLSTReader(parameters.from)));
+			put("snp", new Option<>(0, values -> new SNPReader(parameters.from)));
+			put("mlva", new Option<>(0, values -> new MLVAReader(parameters.from)));
+			put("fasta", new Option<>(0, values -> new FASTAReader(parameters.from)));
 		}});
 	}
 

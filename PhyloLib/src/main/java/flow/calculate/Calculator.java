@@ -2,32 +2,28 @@ package flow.calculate;
 
 import data.DataSet;
 import data.DistanceMatrix;
-import exception.NumberOfArgumentsException;
 import exception.ParameterException;
-import flow.Component;
-import flow.calculate.asymmetric.AsymmetricCalculator;
-import flow.calculate.symmetric.HammingCalculator;
-import flow.calculate.symmetric.JukesCantorCalculator;
+import flow.Option;
+import flow.Parameters;
+import flow.calculate.file.FileCalculator;
+import flow.calculate.profile.GrapeTreeCalculator;
+import flow.calculate.profile.HammingCalculator;
+import flow.calculate.profile.JukesCantorCalculator;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-public abstract class Calculator extends Component {
+public abstract class Calculator {
 
-	private static final String NAME = "-calculator";
+	public abstract DistanceMatrix calculate(DataSet dataset) throws IOException;
 
-	protected Calculator(List<String> values, int number) throws NumberOfArgumentsException {
-		super(values, NAME, number);
-	}
-
-	public abstract DistanceMatrix calculate(DataSet dataset);
-
-	public static Calculator get(HashMap<String, List<List<String>>> parameters) throws ParameterException {
-		return Component.getSingle(parameters, NAME, new ArrayList<>(){{ add("hamming"); }}, new HashMap<>() {{
-			put("hamming", HammingCalculator::new);
-			put("jukescantor", JukesCantorCalculator::new);
-			put("asymmetric", AsymmetricCalculator::new);
+	public static Calculator get(Parameters parameters) throws ParameterException {
+		return parameters.map("-calculator", "-c", new ArrayList<>(){{ add("hamming"); }}, new HashMap<>() {{
+			put("hamming", new Option<>(0, values -> new HammingCalculator()));
+			put("jukescantor", new Option<>(0, values -> new JukesCantorCalculator()));
+			put("grapetree", new Option<>(0, values -> new GrapeTreeCalculator()));
+			put("file", new Option<>(1, values -> new FileCalculator(values.get(0))));
 		}});
 	}
 

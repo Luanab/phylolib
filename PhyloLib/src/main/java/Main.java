@@ -2,49 +2,34 @@ import data.DataSet;
 import data.DistanceMatrix;
 import data.PhylogeneticTree;
 import exception.ParameterException;
-import flow.algorithm.Algorithm;
+import flow.Parameters;
+import flow.process.Algorithm;
 import flow.calculate.Calculator;
-import flow.format.Formatter;
-import flow.optimize.Optimizer;
-import flow.parse.Parser;
-import flow.read.Reader;
 import flow.write.Writer;
+import flow.optimize.Optimizer;
+import flow.read.Reader;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.io.IOException;
 import java.util.List;
 
 public class Main {
 
 	public static void main(String[] args) {
-		HashMap<String, List<List<String>>> parameters = new HashMap<>();
-		List<String> current = new ArrayList<>();
-		for (String arg : args) {
-			if (arg.startsWith("-")) {
-				current = new ArrayList<>();
-				parameters.putIfAbsent(arg, new ArrayList<>());
-				parameters.get(arg).add(current);
-			} else
-				current.add(arg);
-		}
 		try {
+			Parameters parameters = new Parameters(args);
 			Reader reader = Reader.get(parameters);
-			Parser parser = Parser.get(parameters);
 			Calculator calculator = Calculator.get(parameters);
 			Algorithm algorithm = Algorithm.get(parameters);
 			List<Optimizer> optimizers = Optimizer.get(parameters);
-			Formatter formatter = Formatter.get(parameters);
 			Writer writer = Writer.get(parameters);
 
-			String data = reader.read();
-			DataSet dataset = parser.parse(data);
+			DataSet dataset = reader.read();
 			DistanceMatrix matrix = calculator.calculate(dataset);
 			PhylogeneticTree tree = algorithm.process(matrix);
 			for (Optimizer optimizer : optimizers)
 				tree = optimizer.optimize(dataset, matrix, tree);
-			String formatted = formatter.format(tree);
-			writer.write(formatted);
-		} catch (ParameterException e) {
+			writer.write(tree);
+		} catch (ParameterException | IOException e) {
 			System.out.println(e.getMessage());
 			//System.out.println("How to use");
 		}

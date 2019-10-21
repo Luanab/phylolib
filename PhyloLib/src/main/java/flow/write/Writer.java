@@ -1,27 +1,34 @@
 package flow.write;
 
-import exception.NumberOfArgumentsException;
+import data.PhylogeneticTree;
 import exception.ParameterException;
-import flow.Component;
+import flow.Option;
+import flow.Parameters;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-public abstract class Writer extends Component {
+public abstract class Writer {
 
-	private static final String NAME = "-writer";
+	private final String to;
 
-	protected Writer(List<String> values, int number) throws NumberOfArgumentsException {
-		super(values, NAME, number);
+	protected Writer(String to) {
+		this.to = to;
 	}
 
-	public abstract void write(String data);
+	protected abstract String format(PhylogeneticTree tree);
 
-	public static Writer get(HashMap<String, List<List<String>>> parameters) throws ParameterException {
-		return Component.getSingle(parameters, NAME, new ArrayList<>(){{ add("console"); }}, new HashMap<>() {{
-			put("console", ConsoleWriter::new);
-			put("file", FileWriter::new);
+	public final void write(PhylogeneticTree tree) throws IOException {
+		Files.write(Paths.get(to), format(tree).getBytes());
+	}
+
+	public static Writer get(Parameters parameters) throws ParameterException {
+		return parameters.map("-writer", "-w", new ArrayList<>(){{ add("newick"); }}, new HashMap<>() {{
+			put("newick", new Option<>(0, values -> new NewickWriter(parameters.to)));
+			put("nexus", new Option<>(0, values -> new NexusWriter(parameters.to)));
 		}});
 	}
 
