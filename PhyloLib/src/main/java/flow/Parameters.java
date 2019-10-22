@@ -10,16 +10,7 @@ public class Parameters {
 
 	private final HashMap<String, List<List<String>>> parameters;
 
-	public final String from;
-	public final String to;
-
-	public Parameters(String[] args) throws MandatoryParameterException {
-		if (args.length < 1)
-			throw new MandatoryParameterException("from");
-		if (args.length < 2)
-			throw new MandatoryParameterException("to");
-		this.from = args[0];
-		this.to = args[1];
+	public Parameters(String[] args) {
 		this.parameters = new HashMap<>();
 		List<String> current = new ArrayList<>();
 		for (int i = 2; i < args.length; i++) {
@@ -33,35 +24,36 @@ public class Parameters {
 		}
 	}
 
-	public <T> T map(String name, String abbreviation, List<String> defaults, HashMap<String, Option<T>> options) throws ParameterException {
+	public interface Option<T> {
+		T init(String name, String value, List<String> parameters) throws NumberOfArgumentsException;
+	}
+
+	public <T extends Component> T map(String name, String abbreviation, List<String> defaults, HashMap<String, Option<T>> options) throws ParameterException {
 		List<List<String>> params = parameters.getOrDefault(name, new ArrayList<>());
 		params.addAll(parameters.get(abbreviation));
 		if (params.size() > 1)
 			throw new RepeatedParameterException(name);
-		List<String> values = params.isEmpty() ? defaults : params.get(0);
-		if (values == null)
+		List<String> parameters = params.isEmpty() ? defaults : params.get(0);
+		if (parameters == null)
 			throw new MandatoryParameterException(name);
-		return map(name, options, values);
+		return map(name, options, parameters);
 	}
 
-	public <T> List<T> map(String name, String abbreviation, HashMap<String, Option<T>> options) throws ParameterException {
+	public <T extends Component> List<T> map(String name, String abbreviation, HashMap<String, Option<T>> options) throws ParameterException {
 		List<List<String>> params = parameters.getOrDefault(name, new ArrayList<>());
 		params.addAll(parameters.get(abbreviation));
-		List<T> functions = new ArrayList<>();
-		for (List<String> values : params)
-			functions.add(map(name, options, values));
-		return functions;
+		List<T> components = new ArrayList<>();
+		for (List<String> parameters : params)
+			components.add(map(name, options, parameters));
+		return components;
 	}
 
-	private static <T> T map(String name, HashMap<String, Option<T>> options, List<String> values) throws ParameterException {
-		String value = values.remove(0);
+	private static <T extends Component> T map(String name, HashMap<String, Option<T>> options, List<String> parameters) throws ParameterException {
+		String value = parameters.remove(0);
 		Option<T> option = options.get(value);
 		if (option == null)
 			throw new InvalidTypeParameterException(name, value);
-		int number = option.parameters;
-		if (values.size() != number)
-			throw new NumberOfArgumentsException(name, value, number, values.size());
-		return option.creator.apply(values);
+		return option.init(name, value, parameters);
 	}
 
 }

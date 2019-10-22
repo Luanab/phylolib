@@ -3,9 +3,16 @@ package flow.calculate.profile;
 import data.DataSet;
 import data.DistanceMatrix;
 import data.Profile;
+import exception.NumberOfArgumentsException;
 import flow.calculate.Calculator;
 
+import java.util.List;
+
 public abstract class ProfileCalculator extends Calculator {
+
+	protected ProfileCalculator(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
+		super(name, value, parameters, mandatory);
+	}
 
 	protected abstract int distance(Profile a, Profile b);
 

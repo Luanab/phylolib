@@ -4,8 +4,9 @@ import data.Cluster;
 import data.DistanceMatrix;
 import data.Pair;
 import data.PhylogeneticTree;
+import exception.NumberOfArgumentsException;
 import exception.ParameterException;
-import flow.Option;
+import flow.Component;
 import flow.Parameters;
 import flow.process.gcp.UPGMAAlgorithm;
 import flow.process.mst.GoeBURSTAlgorithm;
@@ -15,10 +16,15 @@ import flow.process.nj.StudierKeplerNeighbourJoiningJAlgorithm;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
-public abstract class Algorithm {
+public abstract class Algorithm extends Component {
 
 	protected DistanceMatrix matrix;
+
+	protected Algorithm(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
+		super(name, value, parameters, mandatory);
+	}
 
 	protected abstract void init();
 	protected abstract Pair<Cluster, Cluster> select();
@@ -32,11 +38,11 @@ public abstract class Algorithm {
 
 	public static Algorithm get(Parameters parameters) throws ParameterException {
 		return parameters.map("-algorithm", "-a", new ArrayList<>(){{ add("goeburst"); add("3"); }}, new HashMap<>() {{
-			put("goeburst", new Option<>(1, values -> new GoeBURSTAlgorithm(Integer.parseInt(values.get(0)))));
-			put("snnj", new Option<>(0, values -> new SaitouNeiNeighbourJoiningJAlgorithm()));
-			put("sknj", new Option<>(0, values -> new StudierKeplerNeighbourJoiningJAlgorithm()));
-			put("grapetree", new Option<>(0, values -> new GrapeTreeAlgorithm()));
-			put("upgma", new Option<>(0, values -> new UPGMAAlgorithm()));
+			put("goeburst", GoeBURSTAlgorithm::new);
+			put("snnj", SaitouNeiNeighbourJoiningJAlgorithm::new);
+			put("sknj", StudierKeplerNeighbourJoiningJAlgorithm::new);
+			put("grapetree", GrapeTreeAlgorithm::new);
+			put("upgma", UPGMAAlgorithm::new);
 		}});
 	}
 

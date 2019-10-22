@@ -1,8 +1,15 @@
 package flow.process.gcp;
 
+import exception.NumberOfArgumentsException;
 import flow.process.Algorithm;
 
-abstract class GloballyClosestPairsAlgorithm extends Algorithm {
+import java.util.List;
+
+public abstract class GloballyClosestPairsAlgorithm extends Algorithm {
+
+	protected GloballyClosestPairsAlgorithm(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
+		super(name, value, parameters, mandatory);
+	}
 
 	@Override
 	public final void init() {

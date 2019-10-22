@@ -1,13 +1,15 @@
 package flow.read;
 
 import data.DataSet;
+import exception.NumberOfArgumentsException;
 
+import java.util.List;
 import java.util.stream.Stream;
 
 public final class MLSTReader extends Reader {
 
-	MLSTReader(String from) {
-		super(from);
+	MLSTReader(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+		super(name, value, parameters, 0);
 	}
 
 	@Override
