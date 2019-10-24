@@ -1,11 +1,11 @@
-package flow.calculate.profile;
+package flow.calculate.profile.explicit;
 
 import data.Profile;
 import exception.NumberOfArgumentsException;
 
 import java.util.List;
 
-public final class GrapeTreeCalculator extends ProfileCalculator {
+public final class GrapeTreeCalculator extends ExplicitCalculator {
 
 	public GrapeTreeCalculator(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
 		super(name, value, parameters, 0);

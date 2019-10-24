@@ -1,6 +1,7 @@
 package flow.process.mst;
 
 import data.Cluster;
+import data.DistanceMatrix;
 import data.Pair;
 import exception.NumberOfArgumentsException;
 
@@ -13,13 +14,13 @@ public final class GrapeTreeAlgorithm extends MinimumSpanningTreeAlgorithm {
 	}
 
 	@Override
-	public Pair<Cluster, Cluster> select() {
+	public Pair<Cluster, Cluster> select(DistanceMatrix matrix) {
 		return null;
 	}
 
 	@Override
-	protected void join() {
-
+	protected Pair<Double, Double> join(DistanceMatrix matrix, Pair<Cluster, Cluster> clusters) {
+		return null;
 	}
 
 }

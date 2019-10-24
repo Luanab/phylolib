@@ -9,7 +9,6 @@ import flow.Parameters;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Stream;
@@ -30,7 +29,7 @@ public abstract class Reader extends Component {
 	}
 
 	public static Reader get(Parameters parameters) throws ParameterException {
-		return parameters.map("-reader", "-r", new ArrayList<>(){{ add("mlst"); }}, new HashMap<>() {{
+		return parameters.map("-reader", "-r", null, new HashMap<>() {{
 			put("mlst", MLSTReader::new);
 			put("snp", SNPReader::new);
 			put("mlva", MLVAReader::new);

@@ -1,11 +1,12 @@
-package flow.calculate.profile;
+package flow.calculate.profile.implicit;
 
 import data.Profile;
 import exception.NumberOfArgumentsException;
+import flow.calculate.profile.explicit.ExplicitCalculator;
 
 import java.util.List;
 
-public final class JukesCantorCalculator extends ProfileCalculator {
+public final class JukesCantorCalculator extends ExplicitCalculator {
 
 	public JukesCantorCalculator(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
 		super(name, value, parameters, 0);

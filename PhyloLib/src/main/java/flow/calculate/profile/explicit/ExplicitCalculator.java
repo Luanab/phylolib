@@ -1,4 +1,4 @@
-package flow.calculate.profile;
+package flow.calculate.profile.explicit;
 
 import data.DataSet;
 import data.DistanceMatrix;
@@ -8,9 +8,9 @@ import flow.calculate.Calculator;
 
 import java.util.List;
 
-public abstract class ProfileCalculator extends Calculator {
+public abstract class ExplicitCalculator extends Calculator {
 
-	protected ProfileCalculator(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
+	protected ExplicitCalculator(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
 		super(name, value, parameters, mandatory);
 	}
 
@@ -27,7 +27,7 @@ public abstract class ProfileCalculator extends Calculator {
 				matrix[i][j] = distance(dataset.get(i), dataset.get(j));
 			}
 		}
-		return new DistanceMatrix(matrix);
+		return new DistanceMatrix(size, (i, j) -> matrix[i][j]);
 	}
 
 }

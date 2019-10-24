@@ -7,9 +7,9 @@ import exception.ParameterException;
 import flow.Component;
 import flow.Parameters;
 import flow.calculate.file.FileCalculator;
-import flow.calculate.profile.GrapeTreeCalculator;
-import flow.calculate.profile.HammingCalculator;
-import flow.calculate.profile.JukesCantorCalculator;
+import flow.calculate.profile.explicit.GrapeTreeCalculator;
+import flow.calculate.profile.implicit.HammingCalculator;
+import flow.calculate.profile.implicit.JukesCantorCalculator;
 
 import java.io.IOException;
 import java.util.ArrayList;

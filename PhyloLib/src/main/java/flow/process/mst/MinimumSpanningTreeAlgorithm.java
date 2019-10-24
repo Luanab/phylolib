@@ -1,5 +1,7 @@
 package flow.process.mst;
 
+import data.DistanceMatrix;
+import data.Pair;
 import exception.NumberOfArgumentsException;
 import flow.process.Algorithm;
 
@@ -12,12 +14,7 @@ public abstract class MinimumSpanningTreeAlgorithm extends Algorithm {
 	}
 
 	@Override
-	public final void init() {
-		// ignore this step
-	}
-
-	@Override
-	public final void reduce() {
+	public final void reduce(DistanceMatrix matrix, Pair<Double, Double> distances) {
 		// ignore this step
 	}
 

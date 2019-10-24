@@ -9,7 +9,6 @@ import flow.Parameters;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -29,7 +28,7 @@ public abstract class Writer extends Component {
 	}
 
 	public static Writer get(Parameters parameters) throws ParameterException {
-		return parameters.map("-writer", "-w", new ArrayList<>(){{ add("newick"); }}, new HashMap<>() {{
+		return parameters.map("-writer", "-w", null, new HashMap<>() {{
 			put("newick", NewickWriter::new);
 			put("nexus", NexusWriter::new);
 		}});

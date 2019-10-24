@@ -1,6 +1,6 @@
 package flow.process.gcp;
 
-import data.Cluster;
+import data.DistanceMatrix;
 import data.Pair;
 import exception.NumberOfArgumentsException;
 
@@ -13,8 +13,8 @@ public final class UPGMAAlgorithm extends GloballyClosestPairsAlgorithm {
 	}
 
 	@Override
-	public Pair<Cluster, Cluster> select() {
-		return null;
+	public void reduce(DistanceMatrix matrix, Pair<Double, Double> distances) {
+
 	}
 
 }

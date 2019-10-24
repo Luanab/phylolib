@@ -1,5 +1,8 @@
 package flow.process.gcp;
 
+import data.Cluster;
+import data.DistanceMatrix;
+import data.Pair;
 import exception.NumberOfArgumentsException;
 import flow.process.Algorithm;
 
@@ -12,18 +15,13 @@ public abstract class GloballyClosestPairsAlgorithm extends Algorithm {
 	}
 
 	@Override
-	public final void init() {
-		// ignore this step
+	public final Pair<Cluster, Cluster> select(DistanceMatrix matrix) {
+		return null;
 	}
 
 	@Override
-	public final void join() {
-
-	}
-
-	@Override
-	public final void reduce() {
-
+	public final Pair<Double, Double> join(DistanceMatrix matrix, Pair<Cluster, Cluster> clusters) {
+		return null;
 	}
 
 }

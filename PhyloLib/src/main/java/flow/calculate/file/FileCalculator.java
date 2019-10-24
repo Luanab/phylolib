@@ -22,11 +22,12 @@ public final class FileCalculator extends Calculator {
 
 	@Override
 	public DistanceMatrix calculate(DataSet dataset) throws IOException {
-		return new DistanceMatrix((double[][]) Files.lines(Paths.get(from))
+		double[][] matrix = (double[][]) Files.lines(Paths.get(from))
 				.map(line -> Arrays.stream(line.split(" "))
 						.map(Double::parseDouble)
 						.toArray())
-				.toArray());
+				.toArray();
+		return new DistanceMatrix(dataset.size(), (i, j) -> matrix[i][j]);
 	}
 
 }

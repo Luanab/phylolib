@@ -4,19 +4,13 @@ import data.Cluster;
 import data.DistanceMatrix;
 import data.Pair;
 import exception.NumberOfArgumentsException;
-import flow.process.Algorithm;
 
 import java.util.List;
 
-public abstract class NeighbourJoiningAlgorithm extends Algorithm {
+public final class UnweightedNeighbourJoining extends NeighbourJoiningAlgorithm {
 
-	protected NeighbourJoiningAlgorithm(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
-		super(name, value, parameters, mandatory);
-	}
-
-	@Override
-	public Pair<Cluster, Cluster> select(DistanceMatrix matrix) {
-		return null;
+	protected UnweightedNeighbourJoining(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+		super(name, value, parameters, 0);
 	}
 
 	@Override
