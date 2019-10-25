@@ -16,7 +16,7 @@ public abstract class Writer extends Component {
 
 	private final String to;
 
-	protected Writer(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
+	Writer(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
 		super(name, value, parameters, mandatory + 1);
 		this.to = parameters.remove(0);
 	}

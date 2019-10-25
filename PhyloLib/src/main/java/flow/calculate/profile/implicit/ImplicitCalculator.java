@@ -10,11 +10,11 @@ import java.util.List;
 
 public abstract class ImplicitCalculator extends Calculator {
 
-	protected ImplicitCalculator(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
+	ImplicitCalculator(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
 		super(name, value, parameters, mandatory);
 	}
 
-	protected abstract double distance(Profile a, Profile b);
+	abstract double distance(Profile a, Profile b);
 
 	@Override
 	public final DistanceMatrix calculate(DataSet dataset) {

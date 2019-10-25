@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="420.74999999999994" y="100.0">flow.read.Reader</node>
+    <node x="408.74999999999994" y="0.0">flow.Component</node>
+    <node x="280.99999999999994" y="290.0">flow.read.SNPReader</node>
+    <node x="552.0" y="290.0">flow.read.FASTAReader</node>
+    <node x="836.0" y="290.0">flow.read.MLSTReader</node>
+    <node x="0.0" y="290.0">flow.read.MLVAReader</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="flow.read.Reader" target="flow.Component">
+      <point x="0.0" y="-70.0" />
+      <point x="0.0" y="25.0" />
+    </edge>
+    <edge source="flow.read.SNPReader" target="flow.read.Reader">
+      <point x="0.0" y="-36.5" />
+      <point x="406.49999999999994" y="270.0" />
+      <point x="514.125" y="270.0" />
+      <point x="-31.125" y="70.0" />
+    </edge>
+    <edge source="flow.read.MLSTReader" target="flow.read.Reader">
+      <point x="0.0" y="-36.5" />
+      <point x="965.0" y="260.0" />
+      <point x="638.625" y="260.0" />
+      <point x="93.375" y="70.0" />
+    </edge>
+    <edge source="flow.read.FASTAReader" target="flow.read.Reader">
+      <point x="0.0" y="-36.5" />
+      <point x="684.0" y="270.0" />
+      <point x="576.375" y="270.0" />
+      <point x="31.125" y="70.0" />
+    </edge>
+    <edge source="flow.read.MLVAReader" target="flow.read.Reader">
+      <point x="0.0" y="-36.5" />
+      <point x="130.5" y="260.0" />
+      <point x="451.87499999999994" y="260.0" />
+      <point x="-93.375" y="70.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9813499111900533" x="553.0" y="213.0" />
+  <SelectedNodes>
+    <node>flow.read.Reader</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>Project Files</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

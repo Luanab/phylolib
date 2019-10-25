@@ -10,17 +10,17 @@ import java.util.List;
 
 public abstract class GloballyClosestPairsAlgorithm extends Algorithm {
 
-	protected GloballyClosestPairsAlgorithm(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
+	GloballyClosestPairsAlgorithm(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
 		super(name, value, parameters, mandatory);
 	}
 
 	@Override
-	public final Pair<Cluster, Cluster> select(DistanceMatrix matrix) {
+	protected final Pair<Cluster, Cluster> select(DistanceMatrix matrix) {
 		return null;
 	}
 
 	@Override
-	public final Pair<Double, Double> join(DistanceMatrix matrix, Pair<Cluster, Cluster> clusters) {
+	protected final Pair<Double, Double> join(DistanceMatrix matrix, Pair<Cluster, Cluster> clusters) {
 		return null;
 	}
 

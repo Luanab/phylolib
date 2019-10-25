@@ -6,14 +6,14 @@ import flow.calculate.profile.explicit.ExplicitCalculator;
 
 import java.util.List;
 
-public final class HammingCalculator extends ExplicitCalculator {
+public final class HammingCalculator extends ImplicitCalculator {
 
 	public HammingCalculator(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
 		super(name, value, parameters, 0);
 	}
 
 	@Override
-	protected int distance(Profile a, Profile b) {
+	protected double distance(Profile a, Profile b) {
 		return 0;
 	}
 

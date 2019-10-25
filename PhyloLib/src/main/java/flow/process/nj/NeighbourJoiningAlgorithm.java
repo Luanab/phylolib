@@ -10,17 +10,17 @@ import java.util.List;
 
 public abstract class NeighbourJoiningAlgorithm extends Algorithm {
 
-	protected NeighbourJoiningAlgorithm(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
+	NeighbourJoiningAlgorithm(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
 		super(name, value, parameters, mandatory);
 	}
 
 	@Override
-	public Pair<Cluster, Cluster> select(DistanceMatrix matrix) {
+	protected Pair<Cluster, Cluster> select(DistanceMatrix matrix) {
 		return null;
 	}
 
 	@Override
-	public Pair<Double, Double> join(DistanceMatrix matrix, Pair<Cluster, Cluster> clusters) {
+	protected Pair<Double, Double> join(DistanceMatrix matrix, Pair<Cluster, Cluster> clusters) {
 		return null;
 	}
 

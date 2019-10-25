@@ -17,7 +17,7 @@ public abstract class Reader extends Component {
 
 	private final String from;
 
-	protected Reader(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
+	Reader(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
 		super(name, value, parameters, mandatory + 1);
 		this.from = parameters.remove(0);
 	}

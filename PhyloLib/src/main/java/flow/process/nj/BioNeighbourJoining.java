@@ -14,7 +14,7 @@ public final class BioNeighbourJoining extends NeighbourJoiningAlgorithm {
 	}
 
 	@Override
-	public Pair<Cluster, Cluster> select(DistanceMatrix matrix) {
+	protected Pair<Cluster, Cluster> select(DistanceMatrix matrix) {
 		return null;
 	}
 

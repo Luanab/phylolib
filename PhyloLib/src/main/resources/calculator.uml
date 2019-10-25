@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="607.0" y="245.5">flow.calculate.profile.implicit.ImplicitCalculator</node>
+    <node x="318.5" y="0.0">flow.Component</node>
+    <node x="449.0" y="391.0">flow.calculate.profile.implicit.HammingCalculator</node>
+    <node x="0.0" y="245.5">flow.calculate.profile.explicit.ExplicitCalculator</node>
+    <node x="767.0" y="391.0">flow.calculate.profile.implicit.JukesCantorCalculator</node>
+    <node x="322.5" y="100.0">flow.calculate.Calculator</node>
+    <node x="1.0" y="391.0">flow.calculate.profile.explicit.GrapeTreeCalculator</node>
+    <node x="323.0" y="245.0">flow.calculate.file.FileCalculator</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="flow.calculate.profile.implicit.JukesCantorCalculator" target="flow.calculate.profile.implicit.ImplicitCalculator">
+      <point x="0.0" y="-36.5" />
+      <point x="921.0" y="366.0" />
+      <point x="835.75" y="366.0" />
+      <point x="76.25" y="47.5" />
+    </edge>
+    <edge source="flow.calculate.file.FileCalculator" target="flow.calculate.Calculator">
+      <point x="0.0" y="-48.0" />
+      <point x="0.0" y="47.5" />
+    </edge>
+    <edge source="flow.calculate.profile.explicit.GrapeTreeCalculator" target="flow.calculate.profile.explicit.ExplicitCalculator">
+      <point x="0.0" y="-36.5" />
+      <point x="0.0" y="47.5" />
+    </edge>
+    <edge source="flow.calculate.profile.explicit.ExplicitCalculator" target="flow.calculate.Calculator">
+      <point x="0.0" y="-47.5" />
+      <point x="151.5" y="220.0" />
+      <point x="366.66666666666663" y="220.0" />
+      <point x="-88.33333333333337" y="47.5" />
+    </edge>
+    <edge source="flow.calculate.profile.implicit.HammingCalculator" target="flow.calculate.profile.implicit.ImplicitCalculator">
+      <point x="0.0" y="-36.5" />
+      <point x="598.0" y="366.0" />
+      <point x="683.25" y="366.0" />
+      <point x="-76.25" y="47.5" />
+    </edge>
+    <edge source="flow.calculate.Calculator" target="flow.Component">
+      <point x="0.0" y="-47.5" />
+      <point x="0.0" y="25.0" />
+    </edge>
+    <edge source="flow.calculate.profile.implicit.ImplicitCalculator" target="flow.calculate.Calculator">
+      <point x="0.0" y="-47.5" />
+      <point x="759.5" y="220.0" />
+      <point x="543.3333333333333" y="220.0" />
+      <point x="88.33333333333326" y="47.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="532.5" y="163.0" />
+  <SelectedNodes>
+    <node>flow.Component</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>Project Files</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

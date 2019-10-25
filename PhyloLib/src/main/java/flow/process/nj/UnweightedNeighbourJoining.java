@@ -14,7 +14,7 @@ public final class UnweightedNeighbourJoining extends NeighbourJoiningAlgorithm 
 	}
 
 	@Override
-	public Pair<Double, Double> join(DistanceMatrix matrix, Pair<Cluster, Cluster> clusters) {
+	protected Pair<Double, Double> join(DistanceMatrix matrix, Pair<Cluster, Cluster> clusters) {
 		return null;
 	}
 

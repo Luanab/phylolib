@@ -12,7 +12,7 @@ public final class GrapeTreeCalculator extends ExplicitCalculator {
 	}
 
 	@Override
-	protected int distance(Profile a, Profile b) {
+	protected double distance(Profile a, Profile b) {
 		return 0;
 	}
 

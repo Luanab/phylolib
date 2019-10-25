@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="1242.0" y="500.5">flow.process.nj.OriginalNeighbourJoiningJAlgorithm</node>
+    <node x="1092.5" y="0.0">flow.Component</node>
+    <node x="1033.0" y="100.0">flow.process.Algorithm</node>
+    <node x="1985.0" y="511.5">flow.process.gcp.UPGMAAlgorithm</node>
+    <node x="411.9999999999999" y="500.5">flow.process.mst.GrapeTreeAlgorithm</node>
+    <node x="1042.6969696969695" y="311.0">flow.process.nj.NeighbourJoiningAlgorithm</node>
+    <node x="823.9999999999999" y="523.0">flow.process.nj.SimplifiedNeighbourJoiningJAlgorithm</node>
+    <node x="1648.0" y="511.5">flow.process.gcp.WPGMAAlgorithm</node>
+    <node x="218.69696969696952" y="333.0">flow.process.mst.MinimumSpanningTreeAlgorithm</node>
+    <node x="0.0" y="478.0">flow.process.mst.GoeBURSTAlgorithm</node>
+    <node x="1779.0" y="322.0">flow.process.gcp.GloballyClosestPairsAlgorithm</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="flow.process.mst.MinimumSpanningTreeAlgorithm" target="flow.process.Algorithm">
+      <point x="0.0" y="-36.5" />
+      <point x="412.6969696969695" y="286.0" />
+      <point x="1098.3333333333333" y="286.0" />
+      <point x="-130.66666666666663" y="80.5" />
+    </edge>
+    <edge source="flow.process.gcp.GloballyClosestPairsAlgorithm" target="flow.process.Algorithm">
+      <point x="0.0" y="-47.5" />
+      <point x="1975.0" y="286.0" />
+      <point x="1359.6666666666665" y="286.0" />
+      <point x="130.66666666666652" y="80.5" />
+    </edge>
+    <edge source="flow.process.gcp.UPGMAAlgorithm" target="flow.process.gcp.GloballyClosestPairsAlgorithm">
+      <point x="0.0" y="-36.5" />
+      <point x="2143.5" y="453.0" />
+      <point x="2073.0" y="453.0" />
+      <point x="98.0" y="47.5" />
+    </edge>
+    <edge source="flow.process.nj.OriginalNeighbourJoiningJAlgorithm" target="flow.process.nj.NeighbourJoiningAlgorithm">
+      <point x="0.0" y="-47.5" />
+      <point x="1435.0" y="453.0" />
+      <point x="1336.6969696969695" y="453.0" />
+      <point x="98.0" y="58.5" />
+    </edge>
+    <edge source="flow.process.mst.GoeBURSTAlgorithm" target="flow.process.mst.MinimumSpanningTreeAlgorithm">
+      <point x="0.0" y="-70.0" />
+      <point x="196.0" y="453.0" />
+      <point x="315.6969696969695" y="453.0" />
+      <point x="-97.0" y="36.5" />
+    </edge>
+    <edge source="flow.process.mst.GrapeTreeAlgorithm" target="flow.process.mst.MinimumSpanningTreeAlgorithm">
+      <point x="1.1368683772161603E-13" y="-47.5" />
+      <point x="608.0" y="453.0" />
+      <point x="509.6969696969695" y="453.0" />
+      <point x="97.0" y="36.5" />
+    </edge>
+    <edge source="flow.process.nj.SimplifiedNeighbourJoiningJAlgorithm" target="flow.process.nj.NeighbourJoiningAlgorithm">
+      <point x="0.0" y="-25.0" />
+      <point x="1022.9999999999999" y="453.0" />
+      <point x="1140.6969696969695" y="453.0" />
+      <point x="-98.0" y="58.5" />
+    </edge>
+    <edge source="flow.process.Algorithm" target="flow.Component">
+      <point x="0.0" y="-80.5" />
+      <point x="0.0" y="25.0" />
+    </edge>
+    <edge source="flow.process.gcp.WPGMAAlgorithm" target="flow.process.gcp.GloballyClosestPairsAlgorithm">
+      <point x="0.0" y="-36.5" />
+      <point x="1806.5" y="453.0" />
+      <point x="1877.0" y="453.0" />
+      <point x="-98.0" y="47.5" />
+    </edge>
+    <edge source="flow.process.nj.NeighbourJoiningAlgorithm" target="flow.process.Algorithm">
+      <point x="0.0" y="-58.5" />
+      <point x="1238.6969696969695" y="286.0" />
+      <point x="1229.0" y="286.0" />
+      <point x="0.0" y="80.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8" x="1977.625" y="368.75" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>Project Files</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
