@@ -13,8 +13,7 @@ public class Parameters {
 	public Parameters(String[] args) {
 		this.parameters = new HashMap<>();
 		List<String> current = new ArrayList<>();
-		for (int i = 2; i < args.length; i++) {
-			String arg = args[i];
+		for (String arg : args) {
 			if (arg.startsWith("-")) {
 				current = new ArrayList<>();
 				parameters.putIfAbsent(arg, new ArrayList<>());
@@ -29,8 +28,7 @@ public class Parameters {
 	}
 
 	public <T extends Component> T map(String name, String abbreviation, List<String> defaults, HashMap<String, Option<T>> options) throws ParameterException {
-		List<List<String>> params = parameters.getOrDefault(name, new ArrayList<>());
-		params.addAll(parameters.get(abbreviation));
+		List<List<String>> params = parameters.getOrDefault(name, parameters.getOrDefault(abbreviation, new ArrayList<>()));
 		if (params.size() > 1)
 			throw new RepeatedParameterException(name);
 		List<String> parameters = params.isEmpty() ? defaults : params.get(0);
@@ -40,10 +38,8 @@ public class Parameters {
 	}
 
 	public <T extends Component> List<T> map(String name, String abbreviation, HashMap<String, Option<T>> options) throws ParameterException {
-		List<List<String>> params = parameters.getOrDefault(name, new ArrayList<>());
-		params.addAll(parameters.get(abbreviation));
 		List<T> components = new ArrayList<>();
-		for (List<String> parameters : params)
+		for (List<String> parameters : parameters.getOrDefault(name, parameters.getOrDefault(abbreviation, new ArrayList<>())))
 			components.add(map(name, options, parameters));
 		return components;
 	}

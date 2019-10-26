@@ -9,10 +9,10 @@ import exception.ParameterException;
 import flow.Component;
 import flow.Parameters;
 import flow.process.gcp.UPGMAAlgorithm;
+import flow.process.gcp.WPGMAAlgorithm;
 import flow.process.mst.GoeBURSTAlgorithm;
 import flow.process.mst.GrapeTreeAlgorithm;
-import flow.process.nj.SaitouNeiAlgorithm;
-import flow.process.nj.StudierKeplerAlgorithm;
+import flow.process.nj.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,10 +35,14 @@ public abstract class Algorithm extends Component {
 	public static Algorithm get(Parameters parameters) throws ParameterException {
 		return parameters.map("-algorithm", "-a", new ArrayList<>(){{ add("goeburst"); }}, new HashMap<>() {{
 			put("goeburst", GoeBURSTAlgorithm::new);
-			put("originalnj", SaitouNeiAlgorithm::new);
-			put("simplifiednj", StudierKeplerAlgorithm::new);
 			put("grapetree", GrapeTreeAlgorithm::new);
 			put("upgma", UPGMAAlgorithm::new);
+			put("wpgma", WPGMAAlgorithm::new);
+			put("saitounei", SaitouNeiAlgorithm::new);
+			put("studierkepler", StudierKeplerAlgorithm::new);
+			put("unj", UNJAlgorithm::new);
+			put("fnj", FNJAlgorithm::new);
+			put("bionj", BIONJAlgorithm::new);
 		}});
 	}
 

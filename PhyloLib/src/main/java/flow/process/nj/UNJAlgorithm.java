@@ -9,7 +9,7 @@ import java.util.List;
 
 public final class UNJAlgorithm extends NeighbourJoiningAlgorithm {
 
-	protected UNJAlgorithm(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+	public UNJAlgorithm(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
 		super(name, value, parameters, 0);
 	}
 

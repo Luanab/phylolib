@@ -9,7 +9,7 @@ import java.util.List;
 
 public final class BIONJAlgorithm extends NeighbourJoiningAlgorithm {
 
-	protected BIONJAlgorithm(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+	public BIONJAlgorithm(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
 		super(name, value, parameters, 0);
 	}
 
