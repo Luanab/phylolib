@@ -7,9 +7,9 @@ import exception.NumberOfArgumentsException;
 
 import java.util.List;
 
-public final class OriginalNeighbourJoiningJAlgorithm extends NeighbourJoiningAlgorithm {
+public final class FNJAlgorithm extends NeighbourJoiningAlgorithm {
 
-	public OriginalNeighbourJoiningJAlgorithm(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+	protected FNJAlgorithm(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
 		super(name, value, parameters, 0);
 	}
 

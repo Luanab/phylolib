@@ -7,9 +7,9 @@ import exception.NumberOfArgumentsException;
 
 import java.util.List;
 
-public final class BioNeighbourJoining extends NeighbourJoiningAlgorithm {
+public final class SaitouNeiAlgorithm extends NeighbourJoiningAlgorithm {
 
-	protected BioNeighbourJoining(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+	public SaitouNeiAlgorithm(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
 		super(name, value, parameters, 0);
 	}
 

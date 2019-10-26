@@ -7,14 +7,14 @@ import exception.NumberOfArgumentsException;
 
 import java.util.List;
 
-public final class UnweightedNeighbourJoining extends NeighbourJoiningAlgorithm {
+public final class BIONJAlgorithm extends NeighbourJoiningAlgorithm {
 
-	protected UnweightedNeighbourJoining(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+	protected BIONJAlgorithm(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
 		super(name, value, parameters, 0);
 	}
 
 	@Override
-	protected Pair<Double, Double> join(DistanceMatrix matrix, Pair<Cluster, Cluster> clusters) {
+	protected Pair<Cluster, Cluster> select(DistanceMatrix matrix) {
 		return null;
 	}
 

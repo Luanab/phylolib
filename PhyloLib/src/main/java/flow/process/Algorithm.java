@@ -11,8 +11,8 @@ import flow.Parameters;
 import flow.process.gcp.UPGMAAlgorithm;
 import flow.process.mst.GoeBURSTAlgorithm;
 import flow.process.mst.GrapeTreeAlgorithm;
-import flow.process.nj.OriginalNeighbourJoiningJAlgorithm;
-import flow.process.nj.SimplifiedNeighbourJoiningJAlgorithm;
+import flow.process.nj.SaitouNeiAlgorithm;
+import flow.process.nj.StudierKeplerAlgorithm;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,8 +35,8 @@ public abstract class Algorithm extends Component {
 	public static Algorithm get(Parameters parameters) throws ParameterException {
 		return parameters.map("-algorithm", "-a", new ArrayList<>(){{ add("goeburst"); }}, new HashMap<>() {{
 			put("goeburst", GoeBURSTAlgorithm::new);
-			put("originalnj", OriginalNeighbourJoiningJAlgorithm::new);
-			put("simplifiednj", SimplifiedNeighbourJoiningJAlgorithm::new);
+			put("originalnj", SaitouNeiAlgorithm::new);
+			put("simplifiednj", StudierKeplerAlgorithm::new);
 			put("grapetree", GrapeTreeAlgorithm::new);
 			put("upgma", UPGMAAlgorithm::new);
 		}});
