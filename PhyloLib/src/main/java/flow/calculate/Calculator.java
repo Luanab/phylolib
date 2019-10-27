@@ -25,7 +25,7 @@ public abstract class Calculator extends Component {
 	public abstract DistanceMatrix calculate(DataSet dataset) throws IOException;
 
 	public static Calculator get(Parameters parameters) throws ParameterException {
-		return parameters.map("-calculator", "-c", new ArrayList<>(){{ add("hamming"); }}, new HashMap<>() {{
+		return parameters.map("-calculator", "-c", "hamming", new HashMap<>() {{
 			put("hamming", HammingCalculator::new);
 			put("jukescantor", JukesCantorCalculator::new);
 			put("grapetree", GrapeTreeCalculator::new);

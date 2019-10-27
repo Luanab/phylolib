@@ -33,7 +33,7 @@ public abstract class Algorithm extends Component {
 	}
 
 	public static Algorithm get(Parameters parameters) throws ParameterException {
-		return parameters.map("-algorithm", "-a", new ArrayList<>(){{ add("goeburst"); }}, new HashMap<>() {{
+		return parameters.map("-algorithm", "-a", "goeburst", new HashMap<>() {{
 			put("goeburst", GoeBURSTAlgorithm::new);
 			put("grapetree", GrapeTreeAlgorithm::new);
 			put("upgma", UPGMAAlgorithm::new);
