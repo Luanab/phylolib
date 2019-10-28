@@ -9,18 +9,18 @@ import java.util.List;
 
 public final class BIONJAlgorithm extends NeighbourJoiningAlgorithm {
 
-	public BIONJAlgorithm(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
-		super(name, value, parameters, 0);
-	}
+    public BIONJAlgorithm(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+        super(name, value, parameters, 0);
+    }
 
-	@Override
-	protected Pair<Cluster, Cluster> select(DistanceMatrix matrix) {
-		return null;
-	}
+    @Override
+    protected Pair<Cluster, Cluster> select(DistanceMatrix matrix) {
+        return null;
+    }
 
-	@Override
-	protected void reduce(DistanceMatrix matrix, Pair<Double, Double> distances) {
+    @Override
+    protected void reduce(DistanceMatrix matrix, Pair<Double, Double> distances) {
 
-	}
+    }
 
 }

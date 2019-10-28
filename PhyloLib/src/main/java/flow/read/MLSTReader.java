@@ -8,13 +8,13 @@ import java.util.stream.Stream;
 
 public final class MLSTReader extends Reader {
 
-	MLSTReader(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
-		super(name, value, parameters, 0);
-	}
+    MLSTReader(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+        super(name, value, parameters, 0);
+    }
 
-	@Override
-	protected DataSet parse(Stream<String> data) {
-		return null;
-	}
+    @Override
+    protected DataSet parse(Stream<String> data) {
+        return null;
+    }
 
 }

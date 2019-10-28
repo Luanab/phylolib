@@ -8,13 +8,13 @@ import java.util.stream.Stream;
 
 public final class SNPReader extends Reader {
 
-	SNPReader(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
-		super(name, value, parameters, 0);
-	}
+    SNPReader(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+        super(name, value, parameters, 0);
+    }
 
-	@Override
-	protected DataSet parse(Stream<String> data) {
-		return null;
-	}
+    @Override
+    protected DataSet parse(Stream<String> data) {
+        return null;
+    }
 
 }
