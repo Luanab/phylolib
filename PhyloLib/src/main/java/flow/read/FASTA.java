@@ -6,9 +6,9 @@ import exception.NumberOfArgumentsException;
 import java.util.List;
 import java.util.stream.Stream;
 
-public final class SNPReader extends Reader {
+public final class FASTA extends Reader {
 
-    SNPReader(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+    FASTA(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
         super(name, value, parameters, 0);
     }
 

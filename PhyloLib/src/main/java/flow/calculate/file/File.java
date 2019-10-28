@@ -11,11 +11,11 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
-public final class FileCalculator extends Calculator {
+public final class File extends Calculator {
 
     private final String from;
 
-    public FileCalculator(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+    public File(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
         super(name, value, parameters, 1);
         this.from = parameters.remove(0);
     }

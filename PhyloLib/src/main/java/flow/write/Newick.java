@@ -5,9 +5,9 @@ import exception.NumberOfArgumentsException;
 
 import java.util.List;
 
-public final class NewickWriter extends Writer {
+public final class Newick extends Writer {
 
-    NewickWriter(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+    Newick(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
         super(name, value, parameters, 0);
     }
 

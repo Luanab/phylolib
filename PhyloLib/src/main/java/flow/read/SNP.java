@@ -6,9 +6,9 @@ import exception.NumberOfArgumentsException;
 import java.util.List;
 import java.util.stream.Stream;
 
-public final class MLVAReader extends Reader {
+public final class SNP extends Reader {
 
-    MLVAReader(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+    SNP(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
         super(name, value, parameters, 0);
     }
 

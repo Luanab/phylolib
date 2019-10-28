@@ -6,10 +6,10 @@ import exception.NumberOfArgumentsException;
 import exception.ParameterException;
 import flow.Component;
 import flow.Parameters;
-import flow.calculate.file.FileCalculator;
-import flow.calculate.profile.explicit.GrapeTreeCalculator;
-import flow.calculate.profile.implicit.HammingCalculator;
-import flow.calculate.profile.implicit.JukesCantorCalculator;
+import flow.calculate.file.File;
+import flow.calculate.profile.explicit.GrapeTree;
+import flow.calculate.profile.implicit.Hamming;
+import flow.calculate.profile.implicit.JukesCantor;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -25,10 +25,10 @@ public abstract class Calculator extends Component {
 
     public static Calculator get(Parameters parameters) throws ParameterException {
         return parameters.map("-calculator", "-c", "hamming", new HashMap<>() {{
-            put("hamming", HammingCalculator::new);
-            put("jukescantor", JukesCantorCalculator::new);
-            put("grapetree", GrapeTreeCalculator::new);
-            put("file", FileCalculator::new);
+            put("hamming", Hamming::new);
+            put("jukescantor", JukesCantor::new);
+            put("grapetree", GrapeTree::new);
+            put("file", File::new);
         }});
     }
 

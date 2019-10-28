@@ -29,8 +29,8 @@ public abstract class Writer extends Component {
 
     public static Writer get(Parameters parameters) throws ParameterException {
         return parameters.map("-writer", "-w", null, new HashMap<>() {{
-            put("newick", NewickWriter::new);
-            put("nexus", NexusWriter::new);
+            put("newick", Newick::new);
+            put("nexus", Nexus::new);
         }});
     }
 

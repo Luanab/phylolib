@@ -6,9 +6,9 @@ import exception.NumberOfArgumentsException;
 import java.util.List;
 import java.util.stream.Stream;
 
-public final class FASTAReader extends Reader {
+public final class MLVA extends Reader {
 
-    FASTAReader(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+    MLVA(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
         super(name, value, parameters, 0);
     }
 

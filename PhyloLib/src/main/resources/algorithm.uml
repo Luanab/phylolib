@@ -3,83 +3,63 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="1498.0" y="500.5">flow.process.nj.OriginalNeighbourJoiningJAlgorithm</node>
-    <node x="939.4999999999999" y="0.0">flow.Component</node>
-    <node x="879.9999999999999" y="100.0">flow.process.Algorithm</node>
-    <node x="0.0" y="511.5">flow.process.gcp.UPGMAAlgorithm</node>
-    <node x="673.9999999999999" y="500.5">flow.process.mst.GrapeTreeAlgorithm</node>
-    <node x="1691.6666666666665" y="311.0">flow.process.nj.NeighbourJoiningAlgorithm</node>
-    <node x="1904.0" y="523.0">flow.process.nj.SimplifiedNeighbourJoiningJAlgorithm</node>
-    <node x="336.9999999999999" y="511.5">flow.process.gcp.WPGMAAlgorithm</node>
-    <node x="872.0454545454545" y="333.0">flow.process.mst.MinimumSpanningTreeAlgorithm</node>
-    <node x="1086.0" y="478.0">flow.process.mst.GoeBURSTAlgorithm</node>
-    <node x="130.9999999999999" y="322.0">flow.process.gcp.GloballyClosestPairsAlgorithm</node>
+    <node x="21.5" y="546.0">flow.process.nj.StudierKepler</node>
+    <node x="486.0" y="0.0">flow.Component</node>
+    <node x="469.0" y="100.0">flow.process.Algorithm</node>
+    <node x="0.0" y="334.0">flow.process.nj.NeighbourJoining</node>
+    <node x="632.5" y="501.0">flow.process.mst.GoeBURST</node>
+    <node x="917.5" y="345.0">flow.process.gcp.GloballyClosestPairs</node>
+    <node x="457.2222222222222" y="356.0">flow.process.mst.MinimumSpanningTree</node>
+    <node x="959.5" y="534.5">flow.process.gcp.UPGMA</node>
+    <node x="305.5" y="523.5">flow.process.mst.GrapeTree</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="flow.process.mst.MinimumSpanningTreeAlgorithm" target="flow.process.Algorithm">
-      <point x="0.0" y="-36.5" />
-      <point x="1066.0454545454545" y="286.0" />
-      <point x="1076.0" y="286.0" />
-      <point x="0.0" y="80.5" />
-    </edge>
-    <edge source="flow.process.gcp.GloballyClosestPairsAlgorithm" target="flow.process.Algorithm">
-      <point x="0.0" y="-47.5" />
-      <point x="326.9999999999999" y="286.0" />
-      <point x="945.3333333333331" y="286.0" />
-      <point x="-130.66666666666674" y="80.5" />
-    </edge>
-    <edge source="flow.process.gcp.UPGMAAlgorithm" target="flow.process.gcp.GloballyClosestPairsAlgorithm">
-      <point x="0.0" y="-36.5" />
-      <point x="158.5" y="453.0" />
-      <point x="228.9999999999999" y="453.0" />
-      <point x="-98.0" y="47.5" />
-    </edge>
-    <edge source="flow.process.nj.OriginalNeighbourJoiningJAlgorithm" target="flow.process.nj.NeighbourJoiningAlgorithm">
-      <point x="0.0" y="-47.5" />
-      <point x="1691.0" y="453.0" />
-      <point x="1789.6666666666665" y="453.0" />
-      <point x="-98.0" y="58.5" />
-    </edge>
-    <edge source="flow.process.mst.GrapeTreeAlgorithm" target="flow.process.mst.MinimumSpanningTreeAlgorithm">
-      <point x="0.0" y="-47.5" />
-      <point x="869.9999999999999" y="453.0" />
-      <point x="969.0454545454545" y="453.0" />
-      <point x="-97.0" y="36.5" />
-    </edge>
-    <edge source="flow.process.nj.SimplifiedNeighbourJoiningJAlgorithm" target="flow.process.nj.NeighbourJoiningAlgorithm">
-      <point x="1.1368683772161603E-13" y="-25.0" />
-      <point x="2103.0" y="453.0" />
-      <point x="1985.6666666666665" y="453.0" />
-      <point x="98.0" y="58.5" />
-    </edge>
-    <edge source="flow.process.mst.GoeBURSTAlgorithm" target="flow.process.mst.MinimumSpanningTreeAlgorithm">
+    <edge source="flow.process.mst.GoeBURST" target="flow.process.mst.MinimumSpanningTree">
       <point x="0.0" y="-70.0" />
-      <point x="1282.0" y="453.0" />
-      <point x="1163.0454545454545" y="453.0" />
-      <point x="97.0" y="36.5" />
+      <point x="786.0" y="476.0" />
+      <point x="707.7222222222222" y="476.0" />
+      <point x="83.5" y="36.5" />
+    </edge>
+    <edge source="flow.process.gcp.GloballyClosestPairs" target="flow.process.Algorithm">
+      <point x="0.0" y="-47.5" />
+      <point x="1076.0" y="309.0" />
+      <point x="724.8333333333333" y="309.0" />
+      <point x="102.33333333333326" y="92.0" />
+    </edge>
+    <edge source="flow.process.gcp.UPGMA" target="flow.process.gcp.GloballyClosestPairs">
+      <point x="0.0" y="-36.5" />
+      <point x="0.0" y="47.5" />
+    </edge>
+    <edge source="flow.process.mst.GrapeTree" target="flow.process.mst.MinimumSpanningTree">
+      <point x="0.0" y="-47.5" />
+      <point x="459.0" y="476.0" />
+      <point x="540.7222222222222" y="476.0" />
+      <point x="-83.5" y="36.5" />
+    </edge>
+    <edge source="flow.process.mst.MinimumSpanningTree" target="flow.process.Algorithm">
+      <point x="0.0" y="-36.5" />
+      <point x="624.2222222222222" y="309.0" />
+      <point x="622.5" y="309.0" />
+      <point x="0.0" y="92.0" />
+    </edge>
+    <edge source="flow.process.nj.StudierKepler" target="flow.process.nj.NeighbourJoining">
+      <point x="0.0" y="-25.0" />
+      <point x="0.0" y="58.5" />
+    </edge>
+    <edge source="flow.process.nj.NeighbourJoining" target="flow.process.Algorithm">
+      <point x="0.0" y="-58.5" />
+      <point x="153.5" y="309.0" />
+      <point x="520.1666666666666" y="309.0" />
+      <point x="-102.33333333333337" y="92.0" />
     </edge>
     <edge source="flow.process.Algorithm" target="flow.Component">
-      <point x="0.0" y="-80.5" />
+      <point x="0.0" y="-92.0" />
       <point x="0.0" y="25.0" />
     </edge>
-    <edge source="flow.process.gcp.WPGMAAlgorithm" target="flow.process.gcp.GloballyClosestPairsAlgorithm">
-      <point x="0.0" y="-36.5" />
-      <point x="495.4999999999999" y="453.0" />
-      <point x="424.9999999999999" y="453.0" />
-      <point x="98.0" y="47.5" />
-    </edge>
-    <edge source="flow.process.nj.NeighbourJoiningAlgorithm" target="flow.process.Algorithm">
-      <point x="0.0" y="-58.5" />
-      <point x="1887.6666666666665" y="286.0" />
-      <point x="1206.6666666666665" y="286.0" />
-      <point x="130.66666666666652" y="80.5" />
-    </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.8" x="1117.5" y="487.75" />
-  <SelectedNodes>
-    <node>flow.process.gcp.GloballyClosestPairsAlgorithm</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="0.8764940239043825" x="617.5" y="320.5" />
+  <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
     <Category>Constructors</Category>

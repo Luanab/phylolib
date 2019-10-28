@@ -30,10 +30,10 @@ public abstract class Reader extends Component {
 
     public static Reader get(Parameters parameters) throws ParameterException {
         return parameters.map("-reader", "-r", null, new HashMap<>() {{
-            put("mlst", MLSTReader::new);
-            put("snp", SNPReader::new);
-            put("mlva", MLVAReader::new);
-            put("fasta", FASTAReader::new);
+            put("mlst", MLST::new);
+            put("snp", SNP::new);
+            put("mlva", MLVA::new);
+            put("fasta", FASTA::new);
         }});
     }
 

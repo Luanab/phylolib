@@ -5,9 +5,9 @@ import exception.NumberOfArgumentsException;
 
 import java.util.List;
 
-public final class JukesCantorCalculator extends ImplicitCalculator {
+public final class Hamming extends Implicit {
 
-    public JukesCantorCalculator(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+    public Hamming(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
         super(name, value, parameters, 0);
     }
 

@@ -5,9 +5,9 @@ import exception.NumberOfArgumentsException;
 
 import java.util.List;
 
-public final class GrapeTreeCalculator extends ExplicitCalculator {
+public final class GrapeTree extends Explicit {
 
-    public GrapeTreeCalculator(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+    public GrapeTree(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
         super(name, value, parameters, 0);
     }
 

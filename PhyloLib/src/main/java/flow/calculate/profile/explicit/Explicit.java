@@ -8,9 +8,9 @@ import flow.calculate.Calculator;
 
 import java.util.List;
 
-public abstract class ExplicitCalculator extends Calculator {
+public abstract class Explicit extends Calculator {
 
-    ExplicitCalculator(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
+    Explicit(String name, String value, List<String> parameters, int mandatory) throws NumberOfArgumentsException {
         super(name, value, parameters, mandatory);
     }
 

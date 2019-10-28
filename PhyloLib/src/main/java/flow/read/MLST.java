@@ -6,9 +6,9 @@ import exception.NumberOfArgumentsException;
 import java.util.List;
 import java.util.stream.Stream;
 
-public final class MLSTReader extends Reader {
+public final class MLST extends Reader {
 
-    MLSTReader(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
+    MLST(String name, String value, List<String> parameters) throws NumberOfArgumentsException {
         super(name, value, parameters, 0);
     }
 
