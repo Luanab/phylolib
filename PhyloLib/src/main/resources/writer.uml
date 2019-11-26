@@ -3,31 +3,31 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="135.0" y="0.0">flow.Component</node>
-    <node x="0.0" y="290.0">flow.write.NewickWriter</node>
-    <node x="283.0" y="290.0">flow.write.NexusWriter</node>
-    <node x="149.5" y="100.0">flow.write.Writer</node>
+    <node x="244.0" y="290.0">flow.write.Newick</node>
+    <node x="99.0" y="0.0">flow.Component</node>
+    <node x="0.0" y="290.0">flow.write.Nexus</node>
+    <node x="113.5" y="100.0">flow.write.Writer</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="flow.write.NewickWriter" target="flow.write.Writer">
+    <edge source="flow.write.Nexus" target="flow.write.Writer">
       <point x="0.0" y="-36.5" />
-      <point x="131.5" y="265.0" />
-      <point x="210.5" y="265.0" />
+      <point x="112.0" y="265.0" />
+      <point x="174.5" y="265.0" />
       <point x="-61.0" y="70.0" />
     </edge>
     <edge source="flow.write.Writer" target="flow.Component">
       <point x="0.0" y="-70.0" />
       <point x="0.0" y="25.0" />
     </edge>
-    <edge source="flow.write.NexusWriter" target="flow.write.Writer">
+    <edge source="flow.write.Newick" target="flow.write.Writer">
       <point x="0.0" y="-36.5" />
-      <point x="411.5" y="265.0" />
-      <point x="332.5" y="265.0" />
+      <point x="359.0" y="265.0" />
+      <point x="296.5" y="265.0" />
       <point x="61.0" y="70.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="312.5" y="95.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="237.0" y="181.5" />
   <SelectedNodes />
   <Categories>
     <Category>Fields</Category>

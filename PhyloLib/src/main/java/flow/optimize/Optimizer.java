@@ -21,6 +21,9 @@ public abstract class Optimizer extends Component {
 
     public static List<Optimizer> get(Parameters parameters) throws ParameterException {
         return parameters.map("-optimizer", "-o", new HashMap<>() {{
+            put("nni", NNI::new);
+            put("spr", SPR::new);
+            put("tbr", TBR::new);
         }});
     }
 

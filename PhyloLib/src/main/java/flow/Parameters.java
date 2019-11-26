@@ -13,7 +13,8 @@ public class Parameters {
     public Parameters(String[] args) {
         this.parameters = new HashMap<>();
         List<String> current = new ArrayList<>();
-        for (String arg : args) {
+        for (int i = 0; i < args.length; i++) {
+            String arg = args[i].toLowerCase();
             if (arg.startsWith("-")) {
                 current = new ArrayList<>();
                 parameters.putIfAbsent(arg, new ArrayList<>());

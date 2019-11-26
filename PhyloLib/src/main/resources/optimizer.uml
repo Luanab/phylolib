@@ -3,8 +3,11 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="0.0" y="100.0">flow.optimize.Optimizer</node>
-    <node x="71.5" y="0.0">flow.Component</node>
+    <node x="409.5" y="0.0">flow.Component</node>
+    <node x="372.0" y="100.0">flow.optimize.Optimizer</node>
+    <node x="372.0" y="245.0">flow.optimize.NNI</node>
+    <node x="744.0" y="245.0">flow.optimize.SPR</node>
+    <node x="0.0" y="245.0">flow.optimize.TBR</node>
   </nodes>
   <notes />
   <edges>
@@ -12,8 +15,24 @@
       <point x="0.0" y="-47.5" />
       <point x="0.0" y="25.0" />
     </edge>
+    <edge source="flow.optimize.TBR" target="flow.optimize.Optimizer">
+      <point x="0.0" y="-36.5" />
+      <point x="176.0" y="220.0" />
+      <point x="430.6666666666667" y="220.0" />
+      <point x="-117.33333333333331" y="47.5" />
+    </edge>
+    <edge source="flow.optimize.SPR" target="flow.optimize.Optimizer">
+      <point x="0.0" y="-36.5" />
+      <point x="920.0" y="220.0" />
+      <point x="665.3333333333333" y="220.0" />
+      <point x="117.33333333333326" y="47.5" />
+    </edge>
+    <edge source="flow.optimize.NNI" target="flow.optimize.Optimizer">
+      <point x="0.0" y="-36.5" />
+      <point x="0.0" y="47.5" />
+    </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="313.0" y="95.0" />
+  <settings layout="Hierarchic Group" zoom="0.967741935483871" x="548.0" y="159.0" />
   <SelectedNodes />
   <Categories>
     <Category>Fields</Category>

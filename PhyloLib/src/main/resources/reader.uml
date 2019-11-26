@@ -3,48 +3,46 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="416.0" y="100.0">flow.read.Reader</node>
-    <node x="404.0" y="0.0">flow.Component</node>
-    <node x="0.0" y="290.0">flow.read.SNPReader</node>
-    <node x="549.0" y="290.0">flow.read.FASTAReader</node>
-    <node x="271.0" y="290.0">flow.read.MLSTReader</node>
-    <node x="833.0" y="290.0">flow.read.MLVAReader</node>
+    <node x="353.0" y="100.0">flow.read.Reader</node>
+    <node x="246.00000000000003" y="290.0">flow.read.MLST</node>
+    <node x="341.0" y="0.0">flow.Component</node>
+    <node x="730.0" y="290.0">flow.read.SNP</node>
+    <node x="487.0" y="290.0">flow.read.MLVA</node>
+    <node x="0.0" y="290.0">flow.read.FASTA</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="flow.read.SNPReader" target="flow.read.Reader">
-      <point x="5.6843418860808015E-14" y="-36.5" />
-      <point x="125.50000000000006" y="260.0" />
-      <point x="447.125" y="260.0" />
-      <point x="-93.375" y="70.0" />
-    </edge>
-    <edge source="flow.read.MLSTReader" target="flow.read.Reader">
+    <edge source="flow.read.MLVA" target="flow.read.Reader">
       <point x="0.0" y="-36.5" />
-      <point x="400.0" y="270.0" />
-      <point x="509.375" y="270.0" />
-      <point x="-31.125" y="70.0" />
-    </edge>
-    <edge source="flow.read.FASTAReader" target="flow.read.Reader">
-      <point x="0.0" y="-36.5" />
-      <point x="681.0" y="270.0" />
-      <point x="571.625" y="270.0" />
+      <point x="598.5" y="270.0" />
+      <point x="508.625" y="270.0" />
       <point x="31.125" y="70.0" />
     </edge>
-    <edge source="flow.read.MLVAReader" target="flow.read.Reader">
+    <edge source="flow.read.MLST" target="flow.read.Reader">
       <point x="0.0" y="-36.5" />
-      <point x="963.5" y="260.0" />
-      <point x="633.875" y="260.0" />
-      <point x="93.375" y="70.0" />
+      <point x="356.5" y="270.0" />
+      <point x="446.375" y="270.0" />
+      <point x="-31.125" y="70.0" />
+    </edge>
+    <edge source="flow.read.FASTA" target="flow.read.Reader">
+      <point x="0.0" y="-36.5" />
+      <point x="113.0" y="260.0" />
+      <point x="384.125" y="260.0" />
+      <point x="-93.375" y="70.0" />
     </edge>
     <edge source="flow.read.Reader" target="flow.Component">
       <point x="0.0" y="-70.0" />
       <point x="0.0" y="25.0" />
     </edge>
+    <edge source="flow.read.SNP" target="flow.read.Reader">
+      <point x="0.0" y="-36.5" />
+      <point x="836.5" y="260.0" />
+      <point x="570.875" y="260.0" />
+      <point x="93.375" y="70.0" />
+    </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.9813499111900533" x="540.4524886877828" y="309.80542986425337" />
-  <SelectedNodes>
-    <node>flow.Component</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="1.0" x="471.5" y="181.5" />
+  <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
     <Category>Constructors</Category>
