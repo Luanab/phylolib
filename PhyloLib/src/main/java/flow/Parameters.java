@@ -1,12 +1,12 @@
 package flow;
 
-import exception.*;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class Parameters {
+
+    private static final String PREFIX = "-";
 
     private final HashMap<String, List<List<String>>> parameters;
 
@@ -14,8 +14,8 @@ public class Parameters {
         this.parameters = new HashMap<>();
         List<String> current = new ArrayList<>();
         for (int i = 0; i < args.length; i++) {
-            String arg = args[i].toLowerCase();
-            if (arg.startsWith("-")) {
+            String arg = args[i].trim().toLowerCase();
+            if (arg.startsWith(PREFIX)) {
                 current = new ArrayList<>();
                 parameters.putIfAbsent(arg, new ArrayList<>());
                 parameters.get(arg).add(current);
@@ -24,39 +24,12 @@ public class Parameters {
         }
     }
 
-    public interface Option<T> {
-        T init(String name, String value, List<String> parameters) throws NumberOfArgumentsException;
+    public boolean contains(String key) {
+        return parameters.containsKey(PREFIX + key);
     }
 
-    public <T extends Component> T map(String name, String abbreviation, String _default, HashMap<String, Option<T>> options) throws ParameterException {
-        List<List<String>> params = get(name, abbreviation, _default);
-        if (params.isEmpty())
-            throw new MandatoryParameterException(name);
-        if (params.size() > 1)
-            throw new RepeatedParameterException(name);
-        return map(name, options, params.get(0));
-    }
-
-    public <T extends Component> List<T> map(String name, String abbreviation, HashMap<String, Option<T>> options) throws ParameterException {
-        List<T> components = new ArrayList<>();
-        for (List<String> parameters : get(name, abbreviation))
-            components.add(map(name, options, parameters));
-        return components;
-    }
-
-    private List<List<String>> get(String... names) {
-        for (String name : names)
-            if (parameters.containsKey(name))
-                return parameters.get(name);
-        return new ArrayList<>();
-    }
-
-    private static <T extends Component> T map(String name, HashMap<String, Option<T>> options, List<String> parameters) throws ParameterException {
-        String value = parameters.remove(0);
-        Option<T> option = options.get(value);
-        if (option == null)
-            throw new InvalidTypeParameterException(name, value);
-        return option.init(name, value, parameters);
+    public List<List<String>> get(String key) {
+        return parameters.get(PREFIX + key);
     }
 
 }
