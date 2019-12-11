@@ -5,12 +5,11 @@ import data.IReader;
 import data.IWriter;
 
 import java.util.HashMap;
-import java.util.function.Supplier;
 
 public interface IMatrixFormatter extends IReader<Matrix>, IWriter<Matrix> {
 
     static IMatrixFormatter get(String format) throws Exception {
-        return Formatter.get(format, new HashMap<String, Supplier<IMatrixFormatter>>() {{
+        return Formatter.get(format, new HashMap<>() {{
             put("csv", CSVFormatter::new);
         }});
     }
