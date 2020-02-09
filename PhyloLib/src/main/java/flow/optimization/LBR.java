@@ -5,9 +5,9 @@ import data.tree.Edge;
 
 import java.util.HashMap;
 
-public final class SPR extends Optimization {
+public final class LBR extends Optimization {
 
-    SPR(Context context, HashMap<String, String> values) throws Exception {
+    LBR(Context context, HashMap<String, String> values) throws Exception {
         super(context, values);
     }
 

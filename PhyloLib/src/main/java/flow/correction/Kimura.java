@@ -5,9 +5,9 @@ import data.matrix.Matrix;
 
 import java.util.HashMap;
 
-public final class JukesCantor extends Correction {
+public final class Kimura extends Correction {
 
-    public JukesCantor(Context context, HashMap<String, String> values) throws Exception {
+    public Kimura(Context context, HashMap<String, String> values) throws Exception {
         super(context, values);
     }
 

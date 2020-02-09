@@ -1,19 +1,29 @@
 package flow.optimization;
 
 import data.Context;
-import data.tree.Tree;
+import data.tree.Edge;
 
-import java.util.List;
+import java.util.HashMap;
 
-public class TBR extends Optimization {
+public final class TBR extends Optimization {
 
-    TBR(List<String> values, boolean previous, boolean next) throws Exception {
-        super(values, 0, previous, next);
+    TBR(Context context, HashMap<String, String> values) throws Exception {
+        super(context, values);
     }
 
     @Override
-    protected Tree process(Context context) {
+    protected Edge select() {
         return null;
+    }
+
+    @Override
+    protected Edge join() {
+        return null;
+    }
+
+    @Override
+    protected void reduce(Edge edge) {
+
     }
 
 }

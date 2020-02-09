@@ -1,37 +1,28 @@
 package flow.algorithm;
 
 import data.Context;
-import data.matrix.IMatrixFormatter;
-import data.matrix.Matrix;
 import data.tree.Cluster;
 import data.tree.ITreeFormatter;
+import data.tree.Pair;
 import data.tree.Tree;
 import flow.Component;
-import flow.Pair;
 import flow.Parameters;
 import flow.algorithm.gcp.UPGMA;
 import flow.algorithm.gcp.WPGMA;
 import flow.algorithm.mst.GoeBURST;
 import flow.algorithm.mst.GrapeTree;
 import flow.algorithm.nj.*;
-import flow.correction.Correction;
-import flow.distance.Distance;
-import flow.optimization.Optimization;
 
 import java.util.HashMap;
-import java.util.List;
-import java.util.Optional;
 
-public abstract class Algorithm extends Component<Matrix, Tree> {
+public abstract class Algorithm extends Component<Tree> {
 
-    public static final String NAME = "algorithm";
-
-    public Algorithm(List<String> values, int mandatory, boolean previous, boolean next) throws Exception {
-        super(values, mandatory, previous, next, Context::setMatrix, Context::setTree, IMatrixFormatter::get, ITreeFormatter::get);
+    public Algorithm(Context context, HashMap<String, String> values) throws Exception {
+        super(context, context::setTree, ITreeFormatter::get, values, false, true, false);
     }
 
-    public static Optional<Algorithm> get(Parameters parameters) throws Exception {
-        return Component.getSingle(parameters, NAME, new String[]{Distance.NAME, Correction.NAME}, new String[]{Optimization.NAME}, new HashMap<>() {{
+    public static void run(Parameters parameters, Context context) throws Exception {
+        Component.runSingle(parameters, context, "algorithm", new HashMap<>() {{
             put("goeburst", GoeBURST::new);
             put("grapetree", GrapeTree::new);
             put("upgma", UPGMA::new);
@@ -51,7 +42,7 @@ public abstract class Algorithm extends Component<Matrix, Tree> {
     protected abstract void reduce(Pair<Double, Double> distances);
 
     @Override
-    protected final Tree process(Context context) {
+    protected final Tree process() {
         return null;
     }
 

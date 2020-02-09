@@ -1,15 +1,17 @@
 package flow.algorithm.nj;
 
+import data.Context;
 import data.tree.Cluster;
-import flow.Pair;
+import data.tree.Pair;
 
-import java.util.List;
+import java.util.HashMap;
 
 public final class SaitouNei extends NeighbourJoining {
 
-    public SaitouNei(List<String> values, boolean previous, boolean next) throws Exception {
-        super(values, 0, previous, next);
+    public SaitouNei(Context context, HashMap<String, String> values) throws Exception {
+        super(context, values);
     }
+
 
     @Override
     protected Pair<Cluster, Cluster> select() {

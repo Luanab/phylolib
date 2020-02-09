@@ -5,11 +5,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-public interface IReader<R> {
+@FunctionalInterface
+public interface IReader<T> extends IFormatter {
 
-    R parse(Stream<String> data);
+    T parse(Stream<String> data);
 
-    default R read(String file) throws IOException {
+    default T read(String file) throws IOException {
         return parse(Files.lines(Paths.get(file)));
     }
 

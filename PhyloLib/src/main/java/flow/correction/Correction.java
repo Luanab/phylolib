@@ -5,24 +5,19 @@ import data.matrix.IMatrixFormatter;
 import data.matrix.Matrix;
 import flow.Component;
 import flow.Parameters;
-import flow.algorithm.Algorithm;
-import flow.distance.Distance;
 
 import java.util.HashMap;
-import java.util.List;
-import java.util.Optional;
 
-public abstract class Correction extends Component<Matrix, Matrix> {
+public abstract class Correction extends Component<Matrix> {
 
-    public static final String NAME = "correction";
-
-    public Correction(List<String> values, int mandatory, boolean previous, boolean next) throws Exception {
-        super(values, mandatory, previous, next, Context::setMatrix, Context::setMatrix, IMatrixFormatter::get, IMatrixFormatter::get);
+    public Correction(Context context, HashMap<String, String> values) throws Exception {
+        super(context, context::setMatrix, IMatrixFormatter::get, values, false, true, false);
     }
 
-    public static Optional<Correction> get(Parameters parameters) throws Exception {
-        return Component.getSingle(parameters, NAME, new String[]{Distance.NAME}, new String[]{Algorithm.NAME}, new HashMap<>() {{
+    public static void run(Parameters parameters, Context context) throws Exception {
+        Component.runSingle(parameters, context, "correction", new HashMap<>() {{
             put("jukescantor", JukesCantor::new);
+            put("kimura", Kimura::new);
         }});
     }
 

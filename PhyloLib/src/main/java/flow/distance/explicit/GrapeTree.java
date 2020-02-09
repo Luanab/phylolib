@@ -1,17 +1,18 @@
 package flow.distance.explicit;
 
+import data.Context;
 import data.dataset.Profile;
 
-import java.util.List;
+import java.util.HashMap;
 
 public final class GrapeTree extends Explicit {
 
-    public GrapeTree(List<String> values, boolean previous, boolean next) throws Exception {
-        super(values, 0, previous, next);
+    public GrapeTree(Context context, HashMap<String, String> values) throws Exception {
+        super(context, values);
     }
 
     @Override
-    protected final double distance(Profile a, Profile b) {
+    protected double distance(Profile a, Profile b) {
         return 0;
     }
 

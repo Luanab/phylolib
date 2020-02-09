@@ -1,17 +1,18 @@
 package flow.distance.implicit;
 
+import data.Context;
 import data.dataset.Profile;
 
-import java.util.List;
+import java.util.HashMap;
 
 public final class Hamming extends Implicit {
 
-    public Hamming(List<String> values, boolean previous, boolean next) throws Exception {
-        super(values, 0, previous, next);
+    public Hamming(Context context, HashMap<String, String> values) throws Exception {
+        super(context, values);
     }
 
     @Override
-    protected final double distance(Profile a, Profile b) {
+    protected double distance(Profile a, Profile b) {
         return 0;
     }
 

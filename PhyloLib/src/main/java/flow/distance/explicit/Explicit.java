@@ -6,18 +6,18 @@ import data.dataset.Profile;
 import data.matrix.Matrix;
 import flow.distance.Distance;
 
-import java.util.List;
+import java.util.HashMap;
 
 public abstract class Explicit extends Distance {
 
-    Explicit(List<String> values, int mandatory, boolean previous, boolean next) throws Exception {
-        super(values, mandatory, previous, next);
+    Explicit(Context context, HashMap<String, String> values) throws Exception {
+        super(context, values);
     }
 
     protected abstract double distance(Profile a, Profile b);
 
     @Override
-    protected Matrix process(Context context) {
+    protected final Matrix process() {
         Dataset dataset = context.getDataset();
         int size = dataset.size();
         double[][] matrix = new double[size][size];

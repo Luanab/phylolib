@@ -1,15 +1,17 @@
 package flow.algorithm.gcp;
 
 
-import flow.Pair;
+import data.Context;
+import data.tree.Pair;
 
-import java.util.List;
+import java.util.HashMap;
 
 public final class UPGMA extends GloballyClosestPairs {
 
-    public UPGMA(List<String> values, boolean previous, boolean next) throws Exception {
-        super(values, 0, previous, next);
+    public UPGMA(Context context, HashMap<String, String> values) throws Exception {
+        super(context, values);
     }
+
 
     @Override
     protected void reduce(Pair<Double, Double> distances) {

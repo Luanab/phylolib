@@ -1,15 +1,17 @@
 package flow.algorithm.mst;
 
-import flow.Pair;
+import data.Context;
+import data.tree.Pair;
 import flow.algorithm.Algorithm;
 
-import java.util.List;
+import java.util.HashMap;
 
 public abstract class MinimumSpanningTree extends Algorithm {
 
-    MinimumSpanningTree(List<String> values, int mandatory, boolean previous, boolean next) throws Exception {
-        super(values, mandatory, previous, next);
+    MinimumSpanningTree(Context context, HashMap<String, String> values) throws Exception {
+        super(context, values);
     }
+
 
     @Override
     protected final void reduce(Pair<Double, Double> distances) {

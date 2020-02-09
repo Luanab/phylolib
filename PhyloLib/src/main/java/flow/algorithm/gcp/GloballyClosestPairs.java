@@ -1,16 +1,18 @@
 package flow.algorithm.gcp;
 
+import data.Context;
 import data.tree.Cluster;
-import flow.Pair;
+import data.tree.Pair;
 import flow.algorithm.Algorithm;
 
-import java.util.List;
+import java.util.HashMap;
 
 public abstract class GloballyClosestPairs extends Algorithm {
 
-    GloballyClosestPairs(List<String> values, int mandatory, boolean previous, boolean next) throws Exception {
-        super(values, mandatory, previous, next);
+    GloballyClosestPairs(Context context, HashMap<String, String> values) throws Exception {
+        super(context, values);
     }
+
 
     @Override
     protected final Pair<Cluster, Cluster> select() {
