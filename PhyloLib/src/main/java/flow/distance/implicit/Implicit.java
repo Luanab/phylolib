@@ -1,6 +1,6 @@
 package flow.distance.implicit;
 
-import cli.Options;
+import cli.Parameters;
 import data.Context;
 import data.dataset.Dataset;
 import data.dataset.Profile;
@@ -9,11 +9,11 @@ import flow.distance.Distance;
 
 public abstract class Implicit extends Distance {
 
-    Implicit(Context context, Options options) throws Exception {
-        super(context, options);
+    protected Implicit(Context context, Parameters parameters) {
+        super(context, parameters);
     }
 
-    abstract double distance(Profile a, Profile b);
+    protected abstract double distance(Profile a, Profile b);
 
     @Override
     protected final Matrix process() {

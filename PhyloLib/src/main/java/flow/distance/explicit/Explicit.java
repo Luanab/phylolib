@@ -1,6 +1,6 @@
 package flow.distance.explicit;
 
-import cli.Options;
+import cli.Parameters;
 import data.Context;
 import data.dataset.Dataset;
 import data.dataset.Profile;
@@ -9,8 +9,8 @@ import flow.distance.Distance;
 
 public abstract class Explicit extends Distance {
 
-    Explicit(Context context, Options options) throws Exception {
-        super(context, options);
+    protected Explicit(Context context, Parameters parameters) {
+        super(context, parameters);
     }
 
     protected abstract double distance(Profile a, Profile b);

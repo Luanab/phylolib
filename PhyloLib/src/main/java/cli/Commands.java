@@ -1,12 +1,14 @@
 package cli;
 
+import exception.MissingOptionValueException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class Commands extends HashMap<String, List<Parameters>> {
 
-    public void init(String[] args) throws Exception {
+    public void parse(String[] args) throws Exception {
         for (int i = 0; i < args.length; i++) {
             String command = args[i++].toLowerCase();
             String type = args[i++].toLowerCase();
@@ -19,7 +21,7 @@ public class Commands extends HashMap<String, List<Parameters>> {
                         .replace("\"", "")
                         .split("=", 2);
                 if (parameter[1].isEmpty())
-                    throw new Exception("Key value parameter violation...");
+                    throw new MissingOptionValueException(command, parameter[0]);
                 options.put(parameter[0], parameter[1]);
             }
         }

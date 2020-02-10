@@ -1,6 +1,6 @@
 package flow.algorithm.nj;
 
-import cli.Options;
+import cli.Parameters;
 import data.Context;
 import data.tree.Cluster;
 import data.tree.Pair;
@@ -8,10 +8,9 @@ import flow.algorithm.Algorithm;
 
 public abstract class NeighbourJoining extends Algorithm {
 
-    NeighbourJoining(Context context, Options options) throws Exception {
-        super(context, options);
+    protected NeighbourJoining(Context context, Parameters parameters) {
+        super(context, parameters);
     }
-
 
     @Override
     protected Pair<Cluster, Cluster> select() {

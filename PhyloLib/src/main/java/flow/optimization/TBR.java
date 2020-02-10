@@ -1,13 +1,13 @@
 package flow.optimization;
 
-import cli.Options;
+import cli.Parameters;
 import data.Context;
 import data.tree.Edge;
 
 public final class TBR extends Optimization {
 
-    TBR(Context context, Options options) throws Exception {
-        super(context, options);
+    protected TBR(Context context, Parameters parameters) {
+        super(context, parameters);
     }
 
     @Override

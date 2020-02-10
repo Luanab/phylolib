@@ -1,6 +1,6 @@
 package flow.algorithm.mst;
 
-import cli.Options;
+import cli.Parameters;
 import data.Context;
 import data.tree.Cluster;
 import data.tree.Pair;
@@ -9,9 +9,9 @@ public final class GoeBURST extends MinimumSpanningTree {
 
     private final int lvs;
 
-    public GoeBURST(Context context, Options options) throws Exception {
-        super(context, options);
-        this.lvs = Integer.parseInt(options.getOrDefault("lvs", "3"));
+    public GoeBURST(Context context, Parameters parameters) {
+        super(context, parameters, true, true, false);
+        this.lvs = Integer.parseInt(parameters.options.getOrDefault("lvs", "3"));
     }
 
     @Override

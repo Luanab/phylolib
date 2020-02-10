@@ -1,13 +1,13 @@
 package flow.algorithm.gcp;
 
-import cli.Options;
+import cli.Parameters;
 import data.Context;
 import data.tree.Pair;
 
 public final class WPGMA extends GloballyClosestPairs {
 
-    public WPGMA(Context context, Options options) throws Exception {
-        super(context, options);
+    public WPGMA(Context context, Parameters parameters) {
+        super(context, parameters);
     }
 
 

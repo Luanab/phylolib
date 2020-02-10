@@ -1,14 +1,14 @@
 package flow.algorithm.gcp;
 
 
-import cli.Options;
+import cli.Parameters;
 import data.Context;
 import data.tree.Pair;
 
 public final class UPGMA extends GloballyClosestPairs {
 
-    public UPGMA(Context context, Options options) throws Exception {
-        super(context, options);
+    public UPGMA(Context context, Parameters parameters) {
+        super(context, parameters);
     }
 
 

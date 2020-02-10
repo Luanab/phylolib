@@ -1,13 +1,13 @@
 package flow.distance.implicit;
 
-import cli.Options;
+import cli.Parameters;
 import data.Context;
 import data.dataset.Profile;
 
 public final class Hamming extends Implicit {
 
-    public Hamming(Context context, Options options) throws Exception {
-        super(context, options);
+    public Hamming(Context context, Parameters parameters) {
+        super(context, parameters);
     }
 
     @Override

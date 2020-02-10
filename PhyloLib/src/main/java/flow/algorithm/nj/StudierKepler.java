@@ -1,12 +1,12 @@
 package flow.algorithm.nj;
 
-import cli.Options;
+import cli.Parameters;
 import data.Context;
 
 public final class StudierKepler extends NeighbourJoining {
 
-    public StudierKepler(Context context, Options options) throws Exception {
-        super(context, options);
+    public StudierKepler(Context context, Parameters parameters) {
+        super(context, parameters);
     }
 
 }

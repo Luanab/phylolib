@@ -1,16 +1,15 @@
 package flow.algorithm.mst;
 
-import cli.Options;
+import cli.Parameters;
 import data.Context;
 import data.tree.Cluster;
 import data.tree.Pair;
 
 public final class GrapeTree extends MinimumSpanningTree {
 
-    public GrapeTree(Context context, Options options) throws Exception {
-        super(context, options);
+    public GrapeTree(Context context, Parameters parameters) {
+        super(context, parameters);
     }
-
 
     @Override
     protected Pair<Cluster, Cluster> select() {

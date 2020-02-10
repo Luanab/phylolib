@@ -1,13 +1,13 @@
 package flow.distance.explicit;
 
-import cli.Options;
+import cli.Parameters;
 import data.Context;
 import data.dataset.Profile;
 
 public final class GrapeTree extends Explicit {
 
-    public GrapeTree(Context context, Options options) throws Exception {
-        super(context, options);
+    public GrapeTree(Context context, Parameters parameters) {
+        super(context, parameters);
     }
 
     @Override

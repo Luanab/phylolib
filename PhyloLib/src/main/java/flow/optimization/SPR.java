@@ -1,13 +1,13 @@
 package flow.optimization;
 
-import cli.Options;
+import cli.Parameters;
 import data.Context;
 import data.tree.Edge;
 
 public final class SPR extends Optimization {
 
-    SPR(Context context, Options options) throws Exception {
-        super(context, options);
+    protected SPR(Context context, Parameters parameters) {
+        super(context, parameters);
     }
 
     @Override
