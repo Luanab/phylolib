@@ -12,7 +12,6 @@ public abstract class GloballyClosestPairs extends Algorithm {
         super(context, parameters);
     }
 
-
     @Override
     protected final Pair<Cluster, Cluster> select() {
         return null;

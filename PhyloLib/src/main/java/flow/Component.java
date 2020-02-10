@@ -22,22 +22,21 @@ import java.util.function.Supplier;
 
 public abstract class Component<T> {
 
+    protected static final byte DATASET = 0b001, MATRIX = 0b0010, TREE = 0b0100;
+
     protected final Context context;
     private final Consumer<T> setter;
     private final IMapper<IWriter<T>> mapper;
     private final Parameters parameters;
-    private boolean dataset;
-    private boolean matrix;
-    private boolean tree;
 
-    protected Component(Context context, Consumer<T> setter, IMapper<IWriter<T>> mapper, Parameters parameters, boolean dataset, boolean matrix, boolean tree) {
+    protected byte input;
+
+    protected Component(Context context, Consumer<T> setter, IMapper<IWriter<T>> mapper, Parameters parameters) {
         this.context = context;
         this.setter = setter;
         this.mapper = mapper;
         this.parameters = parameters;
-        this.dataset = dataset;
-        this.matrix = matrix;
-        this.tree = tree;
+        this.input = 0b0000;
     }
 
     public static <T extends Component<?>> void runSingle(Commands commands, Context context, String command, HashMap<String, IConstructor<T>> constructors) throws RepeatedCommandException, InvalidTypeException, InvalidFormatException, MissingOptionException, IOException {
@@ -63,8 +62,8 @@ public abstract class Component<T> {
         constructor.construct(context, parameters).run();
     }
 
-    private <R> void read(Parameters parameters, String option, boolean input, Supplier<R> getter, Consumer<R> setter, IMapper<IReader<R>> mapper) throws MissingOptionException, InvalidFormatException, IOException {
-        if (input) {
+    private <R> void read(Parameters parameters, String option, byte mask, Supplier<R> getter, Consumer<R> setter, IMapper<IReader<R>> mapper) throws MissingOptionException, InvalidFormatException, IOException {
+        if ((input & mask) != 0) {
             boolean fromContext = getter.get() != null;
             boolean fromParameter = parameters.options.containsKey(option);
             if (!fromContext && !fromParameter)
@@ -81,9 +80,9 @@ public abstract class Component<T> {
     protected abstract T process();
 
     public final void run() throws MissingOptionException, InvalidFormatException, IOException {
-        read(parameters, "dataset", dataset, context::getDataset, context::setDataset, IDatasetFormatter::get);
-        read(parameters, "matrix", matrix, context::getMatrix, context::setMatrix, IMatrixFormatter::get);
-        read(parameters, "tree", tree, context::getTree, context::setTree, ITreeFormatter::get);
+        read(parameters, "dataset", DATASET, context::getDataset, context::setDataset, IDatasetFormatter::get);
+        read(parameters, "matrix", MATRIX, context::getMatrix, context::setMatrix, IMatrixFormatter::get);
+        read(parameters, "tree", TREE, context::getTree, context::setTree, ITreeFormatter::get);
         T result = process();
         setter.accept(result);
         String out = parameters.options.get("out");

@@ -19,7 +19,8 @@ import java.util.HashMap;
 public abstract class Distance extends Component<Matrix> {
 
     protected Distance(Context context, Parameters parameters) {
-        super(context, context::setMatrix, IMatrixFormatter::get, parameters, true, false, false);
+        super(context, context::setMatrix, IMatrixFormatter::get, parameters);
+        this.input |= DATASET;
     }
 
     public static void run(Commands commands, Context context) throws InvalidTypeException, RepeatedCommandException, IOException, MissingOptionException, InvalidFormatException {

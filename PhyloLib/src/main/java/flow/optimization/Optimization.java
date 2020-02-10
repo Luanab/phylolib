@@ -17,7 +17,8 @@ import java.util.HashMap;
 public abstract class Optimization extends Component<Tree> {
 
     protected Optimization(Context context, Parameters parameters) {
-        super(context, context::setTree, ITreeFormatter::get, parameters, false, false, true);
+        super(context, context::setTree, ITreeFormatter::get, parameters);
+        this.input |= TREE;
     }
 
     public static void run(Commands commands, Context context) throws InvalidTypeException, InvalidFormatException, MissingOptionException, IOException {

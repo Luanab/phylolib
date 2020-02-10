@@ -10,7 +10,6 @@ public final class WPGMA extends GloballyClosestPairs {
         super(context, parameters);
     }
 
-
     @Override
     protected void reduce(Pair<Double, Double> distances) {
 

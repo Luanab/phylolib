@@ -17,7 +17,8 @@ import java.util.HashMap;
 public abstract class Correction extends Component<Matrix> {
 
     protected Correction(Context context, Parameters parameters) {
-        super(context, context::setMatrix, IMatrixFormatter::get, parameters, false, true, false);
+        super(context, context::setMatrix, IMatrixFormatter::get, parameters);
+        this.input |= MATRIX;
     }
 
     public static void run(Commands commands, Context context) throws InvalidTypeException, RepeatedCommandException, IOException, MissingOptionException, InvalidFormatException {

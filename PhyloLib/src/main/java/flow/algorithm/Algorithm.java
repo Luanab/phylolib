@@ -24,11 +24,8 @@ import java.util.HashMap;
 public abstract class Algorithm extends Component<Tree> {
 
     protected Algorithm(Context context, Parameters parameters) {
-        super(context, context::setTree, ITreeFormatter::get, parameters, false, true, false);
-    }
-
-    protected Algorithm(Context context, Parameters parameters, boolean dataset, boolean matrix, boolean tree) {
-        super(context, context::setTree, ITreeFormatter::get, parameters, dataset, matrix, tree);
+        super(context, context::setTree, ITreeFormatter::get, parameters);
+        this.input |= DATASET;
     }
 
     public static void run(Commands commands, Context context) throws InvalidTypeException, RepeatedCommandException, IOException, MissingOptionException, InvalidFormatException {

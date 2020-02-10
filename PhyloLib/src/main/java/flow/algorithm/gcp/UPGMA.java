@@ -11,7 +11,6 @@ public final class UPGMA extends GloballyClosestPairs {
         super(context, parameters);
     }
 
-
     @Override
     protected void reduce(Pair<Double, Double> distances) {
 
