@@ -1,5 +1,6 @@
 import cli.Commands;
 import data.Context;
+import exception.CommandLineException;
 import flow.algorithm.Algorithm;
 import flow.correction.Correction;
 import flow.distance.Distance;
@@ -19,9 +20,11 @@ public class Main {
             Algorithm.run(commands, context);
             Optimization.run(commands, context);
         } catch (NoSuchFileException e) {
-            System.err.println("Error: No such file named '" + e.getMessage() + "'...");
-        } catch (Exception e) {
+            System.err.println("Error: No such file by the name of '" + e.getMessage() + "'...");
+        } catch (CommandLineException e) {
             System.err.println(e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

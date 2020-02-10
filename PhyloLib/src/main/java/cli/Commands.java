@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Commands extends HashMap<String, List<Parameters>> {
 
-    public void parse(String[] args) throws Exception {
+    public void parse(String[] args) throws MissingOptionValueException {
         for (int i = 0; i < args.length; i++) {
             String command = args[i++].toLowerCase();
             String type = args[i++].toLowerCase();
