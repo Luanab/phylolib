@@ -78,27 +78,19 @@ public abstract class Component<T> {
         }
     }
 
-    private void read() throws MissingOptionException, InvalidFormatException, IOException {
+    protected abstract T process();
+
+    public final void run() throws MissingOptionException, InvalidFormatException, IOException {
         read(parameters, "dataset", dataset, context::getDataset, context::setDataset, IDatasetFormatter::get);
         read(parameters, "matrix", matrix, context::getMatrix, context::setMatrix, IMatrixFormatter::get);
         read(parameters, "tree", tree, context::getTree, context::setTree, ITreeFormatter::get);
-    }
-
-    private void write(T result) throws InvalidFormatException, IOException {
+        T result = process();
         setter.accept(result);
         String out = parameters.options.get("out");
         if (out != null) {
             File file = new File(out);
             mapper.get(file.format).write(file.location, result);
         }
-    }
-
-    protected abstract T process();
-
-    public final void run() throws MissingOptionException, InvalidFormatException, IOException {
-        read();
-        T result = process();
-        write(result);
     }
 
 }
