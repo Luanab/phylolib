@@ -13,6 +13,11 @@ public class Options extends HashMap<String, String> {
     }
 
     @Override
+    public boolean containsKey(Object key) {
+        return super.containsKey(full(key)) || super.containsKey(alias(key));
+    }
+
+    @Override
     public String get(Object key) {
         return super.getOrDefault(full(key), super.get(alias(key)));
     }

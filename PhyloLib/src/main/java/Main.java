@@ -17,7 +17,7 @@ public class Main {
             Algorithm.run(commands, context);
             Optimization.run(commands, context);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println(e.toString());
         }
     }
 
