@@ -1,17 +1,16 @@
 package flow.distance.implicit;
 
+import cli.Options;
 import data.Context;
 import data.dataset.Dataset;
 import data.dataset.Profile;
 import data.matrix.Matrix;
 import flow.distance.Distance;
 
-import java.util.HashMap;
-
 public abstract class Implicit extends Distance {
 
-    Implicit(Context context, HashMap<String, String> values) throws Exception {
-        super(context, values);
+    Implicit(Context context, Options options) throws Exception {
+        super(context, options);
     }
 
     abstract double distance(Profile a, Profile b);

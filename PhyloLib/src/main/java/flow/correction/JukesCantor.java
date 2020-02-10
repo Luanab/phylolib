@@ -1,14 +1,13 @@
 package flow.correction;
 
+import cli.Options;
 import data.Context;
 import data.matrix.Matrix;
 
-import java.util.HashMap;
-
 public final class JukesCantor extends Correction {
 
-    public JukesCantor(Context context, HashMap<String, String> values) throws Exception {
-        super(context, values);
+    public JukesCantor(Context context, Options options) throws Exception {
+        super(context, options);
     }
 
     @Override

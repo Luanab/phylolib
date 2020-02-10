@@ -1,5 +1,5 @@
+import cli.Commands;
 import data.Context;
-import flow.Parameters;
 import flow.algorithm.Algorithm;
 import flow.correction.Correction;
 import flow.distance.Distance;
@@ -9,12 +9,13 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            Parameters parameters = new Parameters(args);
+            Commands commands = new Commands();
+            commands.init(args);
             Context context = new Context();
-            Distance.run(parameters, context);
-            Correction.run(parameters, context);
-            Algorithm.run(parameters, context);
-            Optimization.run(parameters, context);
+            Distance.run(commands, context);
+            Correction.run(commands, context);
+            Algorithm.run(commands, context);
+            Optimization.run(commands, context);
         } catch (Exception e) {
             e.printStackTrace();
         }

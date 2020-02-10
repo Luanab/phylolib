@@ -1,12 +1,11 @@
 package flow;
 
+import cli.Options;
 import data.Context;
 
-import java.util.HashMap;
-
 @FunctionalInterface
-public interface IConstructor {
+public interface IConstructor<T> {
 
-    Component construct(Context context, HashMap<String, String> values) throws Exception;
+    T construct(Context context, Options options) throws Exception;
 
 }

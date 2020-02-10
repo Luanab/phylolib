@@ -1,15 +1,14 @@
 package flow.algorithm.gcp;
 
 
+import cli.Options;
 import data.Context;
 import data.tree.Pair;
 
-import java.util.HashMap;
-
 public final class UPGMA extends GloballyClosestPairs {
 
-    public UPGMA(Context context, HashMap<String, String> values) throws Exception {
-        super(context, values);
+    public UPGMA(Context context, Options options) throws Exception {
+        super(context, options);
     }
 
 

@@ -2,12 +2,12 @@ package data.tree;
 
 public class Pair<T, R> {
 
-    public final T t;
-    public final R r;
+    public final T first;
+    public final R second;
 
-    public Pair(T t, R r) {
-        this.t = t;
-        this.r = r;
+    public Pair(T first, R second) {
+        this.first = first;
+        this.second = second;
     }
 
 }

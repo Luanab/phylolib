@@ -1,15 +1,14 @@
 package flow.algorithm.nj;
 
+import cli.Options;
 import data.Context;
 import data.tree.Cluster;
 import data.tree.Pair;
 
-import java.util.HashMap;
-
 public final class BIONJ extends NeighbourJoining {
 
-    public BIONJ(Context context, HashMap<String, String> values) throws Exception {
-        super(context, values);
+    public BIONJ(Context context, Options options) throws Exception {
+        super(context, options);
     }
 
 

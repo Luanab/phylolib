@@ -1,17 +1,16 @@
 package flow.distance.explicit;
 
+import cli.Options;
 import data.Context;
 import data.dataset.Dataset;
 import data.dataset.Profile;
 import data.matrix.Matrix;
 import flow.distance.Distance;
 
-import java.util.HashMap;
-
 public abstract class Explicit extends Distance {
 
-    Explicit(Context context, HashMap<String, String> values) throws Exception {
-        super(context, values);
+    Explicit(Context context, Options options) throws Exception {
+        super(context, options);
     }
 
     protected abstract double distance(Profile a, Profile b);

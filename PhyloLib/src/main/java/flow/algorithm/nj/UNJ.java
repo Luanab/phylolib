@@ -1,15 +1,14 @@
 package flow.algorithm.nj;
 
+import cli.Options;
 import data.Context;
 import data.tree.Cluster;
 import data.tree.Pair;
 
-import java.util.HashMap;
-
 public final class UNJ extends NeighbourJoining {
 
-    public UNJ(Context context, HashMap<String, String> values) throws Exception {
-        super(context, values);
+    public UNJ(Context context, Options options) throws Exception {
+        super(context, options);
     }
 
 

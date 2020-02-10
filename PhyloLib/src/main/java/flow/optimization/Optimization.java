@@ -1,22 +1,23 @@
 package flow.optimization;
 
+import cli.Commands;
+import cli.Options;
 import data.Context;
 import data.tree.Edge;
 import data.tree.ITreeFormatter;
 import data.tree.Tree;
 import flow.Component;
-import flow.Parameters;
 
 import java.util.HashMap;
 
 public abstract class Optimization extends Component<Tree> {
 
-    public Optimization(Context context, HashMap<String, String> values) throws Exception {
-        super(context, context::setTree, ITreeFormatter::get, values, false, false, true);
+    public Optimization(Context context, Options options) throws Exception {
+        super(context, context::setTree, ITreeFormatter::get, options, false, false, true);
     }
 
-    public static void run(Parameters parameters, Context context) throws Exception {
-        Component.runAll(parameters, context, "optimization", new HashMap<>() {{
+    public static void run(Commands commands, Context context) throws Exception {
+        Component.runAll(commands, context, "optimization", new HashMap<>() {{
             put("lbr", LBR::new);
             put("nni", NNI::new);
             put("spr", SPR::new);

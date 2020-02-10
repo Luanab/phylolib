@@ -1,14 +1,13 @@
 package flow.distance.implicit;
 
+import cli.Options;
 import data.Context;
 import data.dataset.Profile;
 
-import java.util.HashMap;
-
 public final class Hamming extends Implicit {
 
-    public Hamming(Context context, HashMap<String, String> values) throws Exception {
-        super(context, values);
+    public Hamming(Context context, Options options) throws Exception {
+        super(context, options);
     }
 
     @Override

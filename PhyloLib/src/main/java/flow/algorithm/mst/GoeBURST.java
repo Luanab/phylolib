@@ -1,20 +1,17 @@
 package flow.algorithm.mst;
 
+import cli.Options;
 import data.Context;
 import data.tree.Cluster;
 import data.tree.Pair;
 
-import java.util.HashMap;
-
 public final class GoeBURST extends MinimumSpanningTree {
-
-    private static final String LVS = "--lvs";
 
     private final int lvs;
 
-    public GoeBURST(Context context, HashMap<String, String> values) throws Exception {
-        super(context, values);
-        this.lvs = Integer.parseInt(values.get(LVS));
+    public GoeBURST(Context context, Options options) throws Exception {
+        super(context, options);
+        this.lvs = Integer.parseInt(options.getOrDefault("lvs", "3"));
     }
 
     @Override

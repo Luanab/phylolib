@@ -1,12 +1,13 @@
 package flow.algorithm;
 
+import cli.Commands;
+import cli.Options;
 import data.Context;
 import data.tree.Cluster;
 import data.tree.ITreeFormatter;
 import data.tree.Pair;
 import data.tree.Tree;
 import flow.Component;
-import flow.Parameters;
 import flow.algorithm.gcp.UPGMA;
 import flow.algorithm.gcp.WPGMA;
 import flow.algorithm.mst.GoeBURST;
@@ -17,12 +18,12 @@ import java.util.HashMap;
 
 public abstract class Algorithm extends Component<Tree> {
 
-    public Algorithm(Context context, HashMap<String, String> values) throws Exception {
-        super(context, context::setTree, ITreeFormatter::get, values, false, true, false);
+    public Algorithm(Context context, Options options) throws Exception {
+        super(context, context::setTree, ITreeFormatter::get, options, false, true, false);
     }
 
-    public static void run(Parameters parameters, Context context) throws Exception {
-        Component.runSingle(parameters, context, "algorithm", new HashMap<>() {{
+    public static void run(Commands commands, Context context) throws Exception {
+        Component.runSingle(commands, context, "algorithm", new HashMap<>() {{
             put("goeburst", GoeBURST::new);
             put("grapetree", GrapeTree::new);
             put("upgma", UPGMA::new);

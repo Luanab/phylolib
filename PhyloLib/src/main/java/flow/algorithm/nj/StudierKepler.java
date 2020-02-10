@@ -1,13 +1,12 @@
 package flow.algorithm.nj;
 
+import cli.Options;
 import data.Context;
-
-import java.util.HashMap;
 
 public final class StudierKepler extends NeighbourJoining {
 
-    public StudierKepler(Context context, HashMap<String, String> values) throws Exception {
-        super(context, values);
+    public StudierKepler(Context context, Options options) throws Exception {
+        super(context, options);
     }
 
 }

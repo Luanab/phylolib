@@ -1,14 +1,13 @@
 package flow.optimization;
 
+import cli.Options;
 import data.Context;
 import data.tree.Edge;
 
-import java.util.HashMap;
-
 public final class LBR extends Optimization {
 
-    LBR(Context context, HashMap<String, String> values) throws Exception {
-        super(context, values);
+    LBR(Context context, Options options) throws Exception {
+        super(context, options);
     }
 
     @Override

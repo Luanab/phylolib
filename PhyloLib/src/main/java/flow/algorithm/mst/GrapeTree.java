@@ -1,15 +1,14 @@
 package flow.algorithm.mst;
 
+import cli.Options;
 import data.Context;
 import data.tree.Cluster;
 import data.tree.Pair;
 
-import java.util.HashMap;
-
 public final class GrapeTree extends MinimumSpanningTree {
 
-    public GrapeTree(Context context, HashMap<String, String> values) throws Exception {
-        super(context, values);
+    public GrapeTree(Context context, Options options) throws Exception {
+        super(context, options);
     }
 
 
