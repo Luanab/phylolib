@@ -1,9 +1,9 @@
 package exception;
 
-public class RepeatedCommandException extends CommandLineException {
+public class RepeatedCommandException extends ArgumentException {
 
     public RepeatedCommandException(String command) {
-        super("Command '" + command + "' can only be defined once");
+        super("Command '" + command + "' can only be called once");
     }
 
 }

@@ -1,16 +1,13 @@
 package flow.algorithm;
 
-import cli.Commands;
+import cli.Arguments;
 import cli.Parameters;
 import data.Context;
 import data.tree.Cluster;
 import data.tree.ITreeFormatter;
 import data.tree.Pair;
 import data.tree.Tree;
-import exception.InvalidFormatException;
-import exception.InvalidTypeException;
-import exception.MissingOptionException;
-import exception.RepeatedCommandException;
+import exception.ArgumentException;
 import flow.Component;
 import flow.algorithm.gcp.UPGMA;
 import flow.algorithm.gcp.WPGMA;
@@ -28,8 +25,8 @@ public abstract class Algorithm extends Component<Tree> {
         this.input |= DATASET;
     }
 
-    public static void run(Commands commands, Context context) throws InvalidTypeException, RepeatedCommandException, IOException, MissingOptionException, InvalidFormatException {
-        Component.runSingle(commands, context, "algorithm", new HashMap<>() {{
+    public static void run(Arguments arguments, Context context) throws ArgumentException, IOException {
+        Component.run(arguments, context, "algorithm", true, new HashMap<>() {{
             put("goeburst", GoeBURST::new);
             put("grapetree", GrapeTree::new);
             put("upgma", UPGMA::new);

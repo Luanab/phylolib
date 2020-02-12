@@ -1,14 +1,15 @@
 package cli;
 
+import exception.InvalidOptionFormatException;
 import exception.MissingOptionValueException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Commands extends HashMap<String, List<Parameters>> {
+public class Arguments extends HashMap<String, List<Parameters>> {
 
-    public void parse(String[] args) throws MissingOptionValueException {
+    public void parse(String[] args) throws InvalidOptionFormatException, MissingOptionValueException {
         for (int i = 0; i < args.length; i++) {
             String command = args[i++].toLowerCase();
             String type = args[i++].toLowerCase();
@@ -16,13 +17,16 @@ public class Commands extends HashMap<String, List<Parameters>> {
             putIfAbsent(command, new ArrayList<>());
             get(command).add(new Parameters(type, options));
             while (i < args.length && !args[i].equals(":")) {
-                String[] parameter = args[i++]
+                String[] option = args[i++]
                         .toLowerCase()
                         .replace("\"", "")
                         .split("=", 2);
-                if (parameter[1].isEmpty())
-                    throw new MissingOptionValueException(command, parameter[0]);
-                options.put(parameter[0], parameter[1]);
+                String name = option[0], value = option[1];
+                if (!name.matches("^(-.|--.*)$"))
+                    throw new InvalidOptionFormatException(name);
+                if (value.isEmpty())
+                    throw new MissingOptionValueException(command, name);
+                options.put(name, value);
             }
         }
     }

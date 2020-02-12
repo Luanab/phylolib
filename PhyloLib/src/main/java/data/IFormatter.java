@@ -1,6 +1,6 @@
 package data;
 
-import exception.InvalidFormatException;
+import exception.InvalidFileFormatException;
 
 import java.util.HashMap;
 import java.util.Optional;
@@ -8,10 +8,10 @@ import java.util.function.Supplier;
 
 public interface IFormatter {
 
-    static <T> T get(String format, HashMap<String, Supplier<T>> map) throws InvalidFormatException {
+    static <T> T get(String format, HashMap<String, Supplier<T>> map) throws InvalidFileFormatException {
         return Optional.ofNullable(map.get(format))
                 .map(Supplier::get)
-                .orElseThrow(() -> new InvalidFormatException(format));
+                .orElseThrow(() -> new InvalidFileFormatException(format));
     }
 
 }

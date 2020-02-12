@@ -1,6 +1,6 @@
-import cli.Commands;
+import cli.Arguments;
 import data.Context;
-import exception.CommandLineException;
+import exception.ArgumentException;
 import flow.algorithm.Algorithm;
 import flow.correction.Correction;
 import flow.distance.Distance;
@@ -12,16 +12,16 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            Commands commands = new Commands();
-            commands.parse(args);
+            Arguments arguments = new Arguments();
+            arguments.parse(args);
             Context context = new Context();
-            Distance.run(commands, context);
-            Correction.run(commands, context);
-            Algorithm.run(commands, context);
-            Optimization.run(commands, context);
+            Distance.run(arguments, context);
+            Correction.run(arguments, context);
+            Algorithm.run(arguments, context);
+            Optimization.run(arguments, context);
         } catch (NoSuchFileException e) {
             System.err.println("Error: No such file by the name of '" + e.getMessage() + "'...");
-        } catch (CommandLineException e) {
+        } catch (ArgumentException e) {
             System.err.println(e.getMessage());
         } catch (Exception e) {
             e.printStackTrace();

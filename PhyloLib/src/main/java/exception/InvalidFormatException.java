@@ -1,9 +1,9 @@
 package exception;
 
-public class InvalidFormatException extends CommandLineException {
+public abstract class InvalidFormatException extends ArgumentException {
 
-    public InvalidFormatException(String format) {
-        super("Invalid format '" + format + "'");
+    public InvalidFormatException(String name, String value) {
+        super("Invalid " + name + " format '" + value + "'");
     }
 
 }

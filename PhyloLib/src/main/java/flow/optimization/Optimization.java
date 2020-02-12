@@ -1,14 +1,12 @@
 package flow.optimization;
 
-import cli.Commands;
+import cli.Arguments;
 import cli.Parameters;
 import data.Context;
 import data.tree.Edge;
 import data.tree.ITreeFormatter;
 import data.tree.Tree;
-import exception.InvalidFormatException;
-import exception.InvalidTypeException;
-import exception.MissingOptionException;
+import exception.ArgumentException;
 import flow.Component;
 
 import java.io.IOException;
@@ -21,8 +19,8 @@ public abstract class Optimization extends Component<Tree> {
         this.input |= TREE;
     }
 
-    public static void run(Commands commands, Context context) throws InvalidTypeException, InvalidFormatException, MissingOptionException, IOException {
-        Component.runAll(commands, context, "optimization", new HashMap<>() {{
+    public static void run(Arguments arguments, Context context) throws ArgumentException, IOException {
+        Component.run(arguments, context, "optimization", false, new HashMap<>() {{
             put("lbr", LBR::new);
             put("nni", NNI::new);
             put("spr", SPR::new);

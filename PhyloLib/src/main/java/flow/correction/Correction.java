@@ -1,14 +1,11 @@
 package flow.correction;
 
-import cli.Commands;
+import cli.Arguments;
 import cli.Parameters;
 import data.Context;
 import data.matrix.IMatrixFormatter;
 import data.matrix.Matrix;
-import exception.InvalidFormatException;
-import exception.InvalidTypeException;
-import exception.MissingOptionException;
-import exception.RepeatedCommandException;
+import exception.ArgumentException;
 import flow.Component;
 
 import java.io.IOException;
@@ -21,8 +18,8 @@ public abstract class Correction extends Component<Matrix> {
         this.input |= MATRIX;
     }
 
-    public static void run(Commands commands, Context context) throws InvalidTypeException, RepeatedCommandException, IOException, MissingOptionException, InvalidFormatException {
-        Component.runSingle(commands, context, "correction", new HashMap<>() {{
+    public static void run(Arguments arguments, Context context) throws ArgumentException, IOException {
+        Component.run(arguments, context, "correction", true, new HashMap<>() {{
             put("jukescantor", JukesCantor::new);
             put("kimura", Kimura::new);
         }});

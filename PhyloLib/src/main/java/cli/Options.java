@@ -2,29 +2,26 @@ package cli;
 
 import java.util.HashMap;
 
-public class Options extends HashMap<String, String> {
+public class Options {
 
-    private static String full(Object key) {
-        return "--" + key.toString();
+    private static final String FULL = "--", ALIAS = "-";
+
+    private final HashMap<String, String> options = new HashMap<>();
+
+    public void put(String name, String value) {
+        options.put(name, value);
     }
 
-    private static String alias(Object key) {
-        return "-" + key.toString().charAt(0);
+    public boolean contains(String full, char alias) {
+        return options.containsKey(FULL + full) || options.containsKey(ALIAS + alias);
     }
 
-    @Override
-    public boolean containsKey(Object key) {
-        return super.containsKey(full(key)) || super.containsKey(alias(key));
+    public String get(String full, char alias) {
+        return options.getOrDefault(FULL + full, options.get(ALIAS + alias));
     }
 
-    @Override
-    public String get(Object key) {
-        return super.getOrDefault(full(key), super.get(alias(key)));
-    }
-
-    @Override
-    public String getOrDefault(Object key, String value) {
-        return super.getOrDefault(full(key), super.getOrDefault(alias(key), value));
+    public String get(String full, char alias, String value) {
+        return options.getOrDefault(FULL + full, options.getOrDefault(ALIAS + alias, value));
     }
 
 }
