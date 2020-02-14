@@ -15,13 +15,15 @@ import java.util.HashMap;
 
 public abstract class Distance extends Component<Matrix> {
 
+    public static final String NAME = "distance";
+
     protected Distance(Context context, Parameters parameters) {
         super(context, context::setMatrix, IMatrixFormatter::get, parameters);
         this.input |= DATASET;
     }
 
     public static void run(Arguments arguments, Context context) throws ArgumentException, IOException {
-        Component.run(arguments, context, "distance", true, new HashMap<>() {{
+        Component.run(arguments, context, NAME, true, new HashMap<>() {{
             put("hamming", Hamming::new);
             put("grapetree", GrapeTree::new);
         }});

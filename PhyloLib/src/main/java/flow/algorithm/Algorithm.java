@@ -20,13 +20,15 @@ import java.util.HashMap;
 
 public abstract class Algorithm extends Component<Tree> {
 
+    public static final String NAME = "algorithm";
+
     protected Algorithm(Context context, Parameters parameters) {
         super(context, context::setTree, ITreeFormatter::get, parameters);
         this.input |= DATASET;
     }
 
     public static void run(Arguments arguments, Context context) throws ArgumentException, IOException {
-        Component.run(arguments, context, "algorithm", true, new HashMap<>() {{
+        Component.run(arguments, context, NAME, true, new HashMap<>() {{
             put("goeburst", GoeBURST::new);
             put("grapetree", GrapeTree::new);
             put("upgma", UPGMA::new);

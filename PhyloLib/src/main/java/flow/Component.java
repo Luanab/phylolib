@@ -55,14 +55,17 @@ public abstract class Component<T> {
         }
     }
 
-    private <R> void read(Parameters parameters, String option, byte mask, Supplier<R> getter, Consumer<R> setter,
-                          IMapper<IReader<R>> mapper) throws ArgumentException, IOException {
+    private void warning(String message) {
+        System.out.println("Warning: " + message + " for type '" + parameters.type + "'...");
+    }
+
+    private <R> void read(String option, byte mask, Supplier<R> getter, Consumer<R> setter, IMapper<IReader<R>> mapper) throws ArgumentException, IOException {
         if ((input & mask) != 0) {
             boolean context = getter.get() != null;
-            Optional<String> in = parameters.options.get(option, option.charAt(0));
+            Optional<String> in = parameters.options.remove(option, option.charAt(0));
             if (in.isPresent()) {
                 if (context)
-                    System.out.println("Warning: Overwriting '" + option + "' context value with parameter value...");
+                    warning("Overwriting '" + option + "' context value with parameter value");
                 File file = new File(in.get());
                 setter.accept(mapper.get(file.format).read(file.location));
             } else if (!context)
@@ -73,16 +76,17 @@ public abstract class Component<T> {
     protected abstract T process();
 
     public final void run() throws ArgumentException, IOException {
-        read(parameters, "dataset", DATASET, context::getDataset, context::setDataset, IDatasetFormatter::get);
-        read(parameters, "matrix", MATRIX, context::getMatrix, context::setMatrix, IMatrixFormatter::get);
-        read(parameters, "tree", TREE, context::getTree, context::setTree, ITreeFormatter::get);
+        read("dataset", DATASET, context::getDataset, context::setDataset, IDatasetFormatter::get);
+        read("matrix", MATRIX, context::getMatrix, context::setMatrix, IMatrixFormatter::get);
+        read("tree", TREE, context::getTree, context::setTree, ITreeFormatter::get);
         T result = process();
         setter.accept(result);
-        Optional<String> out = parameters.options.get("out", 'o');
+        Optional<String> out = parameters.options.remove("out", 'o');
         if (out.isPresent()) {
             File file = new File(out.get());
             mapper.get(file.format).write(file.location, result);
         }
+        parameters.options.keys().forEach(option -> warning("Ignoring invalid option '" + option + "'"));
     }
 
 }

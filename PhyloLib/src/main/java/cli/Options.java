@@ -2,6 +2,7 @@ package cli;
 
 import java.util.HashMap;
 import java.util.Optional;
+import java.util.Set;
 
 public class Options {
 
@@ -11,8 +12,16 @@ public class Options {
         options.put(key, value);
     }
 
-    public Optional<String> get(String key, char alias) {
-        return Optional.ofNullable(options.getOrDefault("--" + key, options.get("-" + alias)));
+    public Optional<String> remove(String key, char alias) {
+        return remove("--" + key).or(() -> remove("-" + alias));
+    }
+
+    private Optional<String> remove(String key) {
+        return Optional.ofNullable(options.remove(key));
+    }
+
+    public Set<String> keys() {
+        return options.keySet();
     }
 
 }

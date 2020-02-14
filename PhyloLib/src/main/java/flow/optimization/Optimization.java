@@ -14,13 +14,15 @@ import java.util.HashMap;
 
 public abstract class Optimization extends Component<Tree> {
 
+    public static final String NAME = "optimization";
+
     protected Optimization(Context context, Parameters parameters) {
         super(context, context::setTree, ITreeFormatter::get, parameters);
         this.input |= TREE;
     }
 
     public static void run(Arguments arguments, Context context) throws ArgumentException, IOException {
-        Component.run(arguments, context, "optimization", false, new HashMap<>() {{
+        Component.run(arguments, context, NAME, false, new HashMap<>() {{
             put("lbr", LBR::new);
             put("nni", NNI::new);
             put("spr", SPR::new);

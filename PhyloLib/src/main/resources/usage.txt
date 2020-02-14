@@ -1,0 +1,15 @@
+PhyloLib.
+
+Usage:
+    phylolib -h | --help
+    phylolib distance (hamming|grapetree) [options]
+    phylolib correction (jukescantor|kimura) [options]
+    phylolib algorithm (goeburst|grapetree|upgma|wpgma|saitounei|studierkepler|unj|fnj|bionj) [options]
+    phylolib optimization (lbr|spr|nni|tbr) [options]
+
+Options:
+    -o=<file> --out=<file>      Output file as <format>:<location>.
+    -d=<file> --dataset=<file>  Input dataset file as <format>:<location>.
+    -m=<file> --matrix=<file>   Input distance matrix file as <format>:<location>.
+    -t=<file> --tree=<file>     Input phylogenetic tree file as <format>:<location>.
+    -l=<number> --lvs=<number>  Limit of locus variants to consider using goeBURST algorithm [default: 3].
