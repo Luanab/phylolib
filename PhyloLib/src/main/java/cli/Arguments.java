@@ -3,6 +3,7 @@ package cli;
 import exception.InvalidCommandException;
 import exception.InvalidOptionFormatException;
 import exception.MissingOptionValueException;
+import exception.RepeatedOptionException;
 import flow.algorithm.Algorithm;
 import flow.correction.Correction;
 import flow.distance.Distance;
@@ -17,7 +18,7 @@ public class Arguments extends HashMap<String, List<Parameters>> {
 
     private static final String[] COMMANDS = {Distance.NAME, Correction.NAME, Algorithm.NAME, Optimization.NAME};
 
-    public boolean parse(String[] args) throws InvalidCommandException, InvalidOptionFormatException, MissingOptionValueException {
+    public boolean parse(String[] args) throws InvalidCommandException, InvalidOptionFormatException, MissingOptionValueException, RepeatedOptionException {
         if (args.length == 0 || args[0].toLowerCase().matches("^(-h|--help)$"))
             return false;
         for (int i = 0; i < args.length; i++) {
@@ -37,8 +38,9 @@ public class Arguments extends HashMap<String, List<Parameters>> {
                 if (!name.matches("^(-.|--.*)$"))
                     throw new InvalidOptionFormatException(name);
                 if (value.isEmpty())
-                    throw new MissingOptionValueException(command, name);
-                options.put(name, value);
+                    throw new MissingOptionValueException(name);
+                if (options.put(name, value).isPresent())
+                    throw new RepeatedOptionException(name);
             }
         }
         return true;

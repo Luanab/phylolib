@@ -8,8 +8,8 @@ public class Options {
 
     private final HashMap<String, String> options = new HashMap<>();
 
-    public void put(String key, String value) {
-        options.put(key, value);
+    public Optional<String> put(String key, String value) {
+        return Optional.ofNullable(options.put(key, value));
     }
 
     public Optional<String> remove(String key, char alias) {
