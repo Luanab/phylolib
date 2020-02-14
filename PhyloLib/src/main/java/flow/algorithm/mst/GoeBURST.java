@@ -12,7 +12,7 @@ public final class GoeBURST extends MinimumSpanningTree {
     public GoeBURST(Context context, Parameters parameters) {
         super(context, parameters);
         this.input |= DATASET;
-        this.lvs = Integer.parseInt(parameters.options.get("lvs", 'l', "3"));
+        this.lvs = parameters.options.get("lvs", 'l').map(Integer::parseInt).orElse(3);
     }
 
     @Override

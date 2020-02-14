@@ -17,6 +17,7 @@ import exception.RepeatedCommandException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -57,16 +58,15 @@ public abstract class Component<T> {
     private <R> void read(Parameters parameters, String option, byte mask, Supplier<R> getter, Consumer<R> setter,
                           IMapper<IReader<R>> mapper) throws ArgumentException, IOException {
         if ((input & mask) != 0) {
-            boolean fromContext = getter.get() != null;
-            boolean fromParameter = parameters.options.contains(option, option.charAt(0));
-            if (!fromContext && !fromParameter)
-                throw new MissingOptionException(parameters.type, option);
-            if (fromParameter) {
-                if (fromContext)
+            boolean context = getter.get() != null;
+            Optional<String> in = parameters.options.get(option, option.charAt(0));
+            if (in.isPresent()) {
+                if (context)
                     System.out.println("Warning: Overwriting '" + option + "' context value with parameter value...");
-                File file = new File(parameters.options.get(option, option.charAt(0)));
+                File file = new File(in.get());
                 setter.accept(mapper.get(file.format).read(file.location));
-            }
+            } else if (!context)
+                throw new MissingOptionException(parameters.type, option);
         }
     }
 
@@ -78,9 +78,9 @@ public abstract class Component<T> {
         read(parameters, "tree", TREE, context::getTree, context::setTree, ITreeFormatter::get);
         T result = process();
         setter.accept(result);
-        String out = parameters.options.get("out", 'o');
-        if (out != null) {
-            File file = new File(out);
+        Optional<String> out = parameters.options.get("out", 'o');
+        if (out.isPresent()) {
+            File file = new File(out.get());
             mapper.get(file.format).write(file.location, result);
         }
     }
