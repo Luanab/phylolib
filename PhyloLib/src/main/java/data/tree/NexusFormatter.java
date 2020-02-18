@@ -12,8 +12,8 @@ public final class NexusFormatter extends NewickFormatter {
 	@Override
 	public Tree parse(Stream<String> data) {
 		return super.parse(data
-								   .filter(line -> line.trim().startsWith("Tree best="))
-								   .map(line -> line.split("=", 2)[0]));
+				.filter(line -> line.trim().startsWith("Tree best="))
+				.map(line -> line.split("=", 2)[0]));
 	}
 
 }

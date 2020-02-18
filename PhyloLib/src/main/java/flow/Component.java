@@ -41,7 +41,7 @@ public abstract class Component<T> {
 	}
 
 	public static <T extends Component<?>> void run(Arguments arguments, Context context, String command, boolean single,
-													HashMap<String, IConstructor<T>> constructors) throws ArgumentException, IOException {
+			HashMap<String, IConstructor<T>> constructors) throws ArgumentException, IOException {
 		if (!arguments.containsKey(command))
 			return;
 		List<Parameters> commands = arguments.get(command);
