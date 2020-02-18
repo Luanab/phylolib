@@ -1,5 +1,5 @@
 package data.tree;
 
-public class Cluster {
+public final class Cluster {
 
 }

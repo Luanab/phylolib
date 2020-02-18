@@ -7,18 +7,18 @@ import data.tree.Pair;
 
 public final class BIONJ extends NeighbourJoining {
 
-    public BIONJ(Context context, Parameters parameters) {
-        super(context, parameters);
-    }
+	public BIONJ(Context context, Parameters parameters) {
+		super(context, parameters);
+	}
 
-    @Override
-    protected Pair<Cluster, Cluster> select() {
-        return null;
-    }
+	@Override
+	protected Pair<Cluster, Cluster> select() {
+		return null;
+	}
 
-    @Override
-    protected void reduce(Pair<Double, Double> distances) {
+	@Override
+	protected void reduce(Pair<Double, Double> distances) {
 
-    }
+	}
 
 }

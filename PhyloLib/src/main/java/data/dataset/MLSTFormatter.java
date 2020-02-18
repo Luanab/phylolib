@@ -2,11 +2,11 @@ package data.dataset;
 
 import java.util.stream.Stream;
 
-public class MLSTFormatter implements IDatasetFormatter {
+public final class MLSTFormatter extends MLVAFormatter {
 
-    @Override
-    public Dataset parse(Stream<String> data) {
-        return null;
-    }
+	@Override
+	public Dataset parse(Stream<String> data) {
+		return super.parse(data.skip(1));
+	}
 
 }

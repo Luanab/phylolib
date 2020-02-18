@@ -7,13 +7,13 @@ import data.tree.Pair;
 
 public final class UPGMA extends GloballyClosestPairs {
 
-    public UPGMA(Context context, Parameters parameters) {
-        super(context, parameters);
-    }
+	public UPGMA(Context context, Parameters parameters) {
+		super(context, parameters);
+	}
 
-    @Override
-    protected void reduce(Pair<Double, Double> distances) {
+	@Override
+	protected void reduce(Pair<Double, Double> distances) {
 
-    }
+	}
 
 }

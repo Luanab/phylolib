@@ -8,10 +8,10 @@ import java.util.stream.Stream;
 @FunctionalInterface
 public interface IReader<T> extends IFormatter {
 
-    T parse(Stream<String> data);
+	T parse(Stream<String> data);
 
-    default T read(String file) throws IOException {
-        return parse(Files.lines(Paths.get(file)));
-    }
+	default T read(String file) throws IOException {
+		return parse(Files.lines(Paths.get(file)));
+	}
 
 }

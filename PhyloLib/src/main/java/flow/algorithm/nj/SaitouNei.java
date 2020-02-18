@@ -7,18 +7,18 @@ import data.tree.Pair;
 
 public final class SaitouNei extends NeighbourJoining {
 
-    public SaitouNei(Context context, Parameters parameters) {
-        super(context, parameters);
-    }
+	public SaitouNei(Context context, Parameters parameters) {
+		super(context, parameters);
+	}
 
-    @Override
-    protected Pair<Cluster, Cluster> select() {
-        return null;
-    }
+	@Override
+	protected Pair<Cluster, Cluster> select() {
+		return null;
+	}
 
-    @Override
-    protected void reduce(Pair<Double, Double> distances) {
+	@Override
+	protected void reduce(Pair<Double, Double> distances) {
 
-    }
+	}
 
 }

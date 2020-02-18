@@ -1,13 +1,21 @@
 package data.tree;
 
-public class Pair<T, R> {
+public final class Pair<T, R> {
 
-    public final T first;
-    public final R second;
+	private final T first;
+	private final R second;
 
-    public Pair(T first, R second) {
-        this.first = first;
-        this.second = second;
-    }
+	public Pair(T first, R second) {
+		this.first = first;
+		this.second = second;
+	}
+
+	public T getFirst() {
+		return first;
+	}
+
+	public R getSecond() {
+		return second;
+	}
 
 }

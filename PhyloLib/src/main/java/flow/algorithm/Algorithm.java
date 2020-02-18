@@ -20,36 +20,36 @@ import java.util.HashMap;
 
 public abstract class Algorithm extends Component<Tree> {
 
-    public static final String NAME = "algorithm";
+	public static final String NAME = "algorithm";
 
-    protected Algorithm(Context context, Parameters parameters) {
-        super(context, context::setTree, ITreeFormatter::get, parameters);
-        this.input |= DATASET;
-    }
+	protected Algorithm(Context context, Parameters parameters) {
+		super(context, context::setTree, ITreeFormatter::get, parameters);
+		this.input |= DATASET;
+	}
 
-    public static void run(Arguments arguments, Context context) throws ArgumentException, IOException {
-        Component.run(arguments, context, NAME, true, new HashMap<>() {{
-            put("goeburst", GoeBURST::new);
-            put("grapetree", GrapeTree::new);
-            put("upgma", UPGMA::new);
-            put("wpgma", WPGMA::new);
-            put("saitounei", SaitouNei::new);
-            put("studierkepler", StudierKepler::new);
-            put("unj", UNJ::new);
-            put("fnj", FNJ::new);
-            put("bionj", BIONJ::new);
-        }});
-    }
+	public static void run(Arguments arguments, Context context) throws ArgumentException, IOException {
+		Component.run(arguments, context, NAME, true, new HashMap<>() {{
+			put("goeburst", GoeBURST::new);
+			put("grapetree", GrapeTree::new);
+			put("upgma", UPGMA::new);
+			put("wpgma", WPGMA::new);
+			put("saitounei", SaitouNei::new);
+			put("studierkepler", StudierKepler::new);
+			put("unj", UNJ::new);
+			put("fnj", FNJ::new);
+			put("bionj", BIONJ::new);
+		}});
+	}
 
-    protected abstract Pair<Cluster, Cluster> select();
+	protected abstract Pair<Cluster, Cluster> select();
 
-    protected abstract Pair<Double, Double> join(Pair<Cluster, Cluster> clusters);
+	protected abstract Pair<Double, Double> join(Pair<Cluster, Cluster> clusters);
 
-    protected abstract void reduce(Pair<Double, Double> distances);
+	protected abstract void reduce(Pair<Double, Double> distances);
 
-    @Override
-    protected final Tree process() {
-        return null;
-    }
+	@Override
+	protected final Tree process() {
+		return null;
+	}
 
 }

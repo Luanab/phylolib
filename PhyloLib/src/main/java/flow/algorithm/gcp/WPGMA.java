@@ -6,13 +6,13 @@ import data.tree.Pair;
 
 public final class WPGMA extends GloballyClosestPairs {
 
-    public WPGMA(Context context, Parameters parameters) {
-        super(context, parameters);
-    }
+	public WPGMA(Context context, Parameters parameters) {
+		super(context, parameters);
+	}
 
-    @Override
-    protected void reduce(Pair<Double, Double> distances) {
+	@Override
+	protected void reduce(Pair<Double, Double> distances) {
 
-    }
+	}
 
 }

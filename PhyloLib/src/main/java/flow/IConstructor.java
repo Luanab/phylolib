@@ -6,6 +6,6 @@ import data.Context;
 @FunctionalInterface
 public interface IConstructor<T> {
 
-    T construct(Context context, Parameters parameters);
+	T construct(Context context, Parameters parameters);
 
 }
