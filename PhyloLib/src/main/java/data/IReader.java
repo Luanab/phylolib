@@ -11,7 +11,9 @@ public interface IReader<T> extends IFormatter {
 	T parse(Stream<String> data);
 
 	default T read(String file) throws IOException {
-		return parse(Files.lines(Paths.get(file)));
+		try (Stream<String> data = Files.lines(Paths.get(file))) {
+			return parse(data);
+		}
 	}
 
 }

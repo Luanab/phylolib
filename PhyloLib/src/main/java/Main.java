@@ -9,6 +9,7 @@ import flow.optimization.Optimization;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -22,7 +23,9 @@ public class Main {
 				Algorithm.run(arguments, context);
 				Optimization.run(arguments, context);
 			} else
-				Files.lines(Paths.get("src/main/resources/usage.txt")).forEach(System.out::println);
+				try (Stream<String> usage = Files.lines(Paths.get("src/main/resources/usage.txt"))) {
+					usage.forEach(System.out::println);
+				}
 		} catch (ArgumentException e) {
 			System.err.println(e.getMessage());
 		} catch (NoSuchFileException e) {
