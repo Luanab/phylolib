@@ -21,7 +21,7 @@ public final class GrapeTree extends Distance {
 			if (b.getLocus(i) == null)
 				missings++;
 			if (!Objects.equals(a.getLocus(i), b.getLocus(i)) && b.getLocus(i) != null)
-				distance += 1;
+				distance++;
 		}
 		return distance / missings;
 	}

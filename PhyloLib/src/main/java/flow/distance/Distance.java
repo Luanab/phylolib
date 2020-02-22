@@ -24,6 +24,7 @@ public abstract class Distance extends Component<Matrix> {
 		Component.run(arguments, context, NAME, true, new HashMap<>() {{
 			put("hamming", Hamming::new);
 			put("grapetree", GrapeTree::new);
+			put("kimura", Kimura::new);
 		}});
 	}
 

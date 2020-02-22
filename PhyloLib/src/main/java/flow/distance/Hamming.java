@@ -18,7 +18,7 @@ public final class Hamming extends Distance {
 		double distance = 0;
 		for (int i = 0; i < a.length(); i++)
 			if (!Objects.equals(a.getLocus(i), b.getLocus(i)))
-				distance += 1;
+				distance++;
 		return distance;
 	}
 
