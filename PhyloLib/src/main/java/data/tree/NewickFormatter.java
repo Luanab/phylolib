@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 public class NewickFormatter implements ITreeFormatter {
 
-	private static void format(Tree tree, StringBuilder data) {
+	private void format(Tree tree, StringBuilder data) {
 		if (tree.getChildren() != null) {
 			data.append('(');
 			for (Tree child : tree.getChildren()) {
