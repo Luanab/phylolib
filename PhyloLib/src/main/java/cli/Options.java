@@ -12,6 +12,13 @@ public final class Options {
 		return Optional.ofNullable(options.put(key, value));
 	}
 
+	public String remove(String key, char alias, String _default) {
+		Optional<String> value = remove(key, alias);
+		if (!value.isPresent())
+			Logger.info("Using default value '" + _default + "' for option --" + key);
+		return value.orElse(_default);
+	}
+
 	public Optional<String> remove(String key, char alias) {
 		return remove("--" + key).or(() -> remove("-" + alias));
 	}

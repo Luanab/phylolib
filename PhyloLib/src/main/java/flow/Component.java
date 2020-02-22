@@ -2,6 +2,7 @@ package flow;
 
 import cli.Arguments;
 import cli.File;
+import cli.Logger;
 import cli.Parameters;
 import data.Context;
 import data.IReader;
@@ -42,21 +43,22 @@ public abstract class Component<T> {
 
 	public static <T extends Component<?>> void run(Arguments arguments, Context context, String command, boolean single,
 			HashMap<String, IConstructor<T>> constructors) throws ArgumentException, IOException {
-		if (!arguments.containsKey(command))
+		if (!arguments.containsKey(command)) {
+			Logger.warning("Command '" + command + "' does not exist");
 			return;
+		}
 		List<Parameters> commands = arguments.get(command);
 		if (single && commands.size() > 1)
 			throw new RepeatedCommandException(command);
 		for (Parameters parameters : commands) {
-			IConstructor<T> constructor = constructors.get(parameters.getType());
+			String type = parameters.getType();
+			IConstructor<T> constructor = constructors.get(type);
 			if (constructor == null)
-				throw new InvalidTypeException(command, parameters.getType());
+				throw new InvalidTypeException(command, type);
+			Logger.info("Command '" + command + "' with type '" + type + "' started running");
 			constructor.construct(context, parameters).run();
+			Logger.info("Command '" + command + "' with type '" + type + "' finished running");
 		}
-	}
-
-	private void warning(String message) {
-		System.out.println("Warning: " + message + " for type '" + parameters.getType() + "'...");
 	}
 
 	private <R> void read(String option, byte mask, Supplier<R> getter, Consumer<R> setter, IMapper<IReader<R>> mapper) throws ArgumentException, IOException {
@@ -65,7 +67,7 @@ public abstract class Component<T> {
 			Optional<String> in = parameters.getOptions().remove(option, option.charAt(0));
 			if (in.isPresent()) {
 				if (context)
-					warning("Overwriting '" + option + "' context value with parameter value"); // TODO ignoring
+					Logger.info("Overwriting '" + option + "' context value with parameter value");
 				File file = new File(in.get());
 				setter.accept(mapper.get(file.getFormat()).read(file.getLocation()));
 			} else if (!context)
@@ -84,9 +86,10 @@ public abstract class Component<T> {
 		Optional<String> out = parameters.getOptions().remove("out", 'o');
 		if (out.isPresent()) {
 			File file = new File(out.get());
-			mapper.get(file.getFormat()).write(file.getFormat(), result);
+			mapper.get(file.getFormat()).write(file.getLocation(), result);
+			Logger.info("Writing output to '" + file.getLocation() + "'");
 		}
-		parameters.getOptions().keys().forEach(option -> warning("Ignoring invalid option '" + option + "'"));
+		parameters.getOptions().keys().forEach(option -> Logger.warning("Ignoring invalid option '" + option + "'"));
 	}
 
 }

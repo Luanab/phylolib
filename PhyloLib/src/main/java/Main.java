@@ -1,4 +1,5 @@
 import cli.Arguments;
+import cli.Logger;
 import data.Context;
 import exception.ArgumentException;
 import flow.algorithm.Algorithm;
@@ -6,10 +7,7 @@ import flow.correction.Correction;
 import flow.distance.Distance;
 import flow.optimization.Optimization;
 
-import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
-import java.nio.file.Paths;
-import java.util.stream.Stream;
 
 public class Main {
 
@@ -23,13 +21,11 @@ public class Main {
 				Algorithm.run(arguments, context);
 				Optimization.run(arguments, context);
 			} else
-				try (Stream<String> usage = Files.lines(Paths.get("src/main/resources/usage.txt"))) {
-					usage.forEach(System.out::println);
-				}
+				Logger.usage();
 		} catch (ArgumentException e) {
-			System.err.println(e.getMessage());
+			Logger.error(e.getMessage(), true);
 		} catch (NoSuchFileException e) {
-			System.err.println("Error: No such file by the name of '" + e.getMessage() + "'...");
+			Logger.error("No such file by the name of '" + e.getMessage() + "'", false);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
