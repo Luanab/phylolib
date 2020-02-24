@@ -32,10 +32,10 @@ public final class Arguments extends HashMap<String, List<Parameters>> {
 						.toLowerCase()
 						.replace("\"", "")
 						.split("=", 2);
-				String name = option[0], value = option[1];
+				String name = option[0], value;
 				if (!name.matches("^(-.|--.*)$"))
 					throw new InvalidOptionFormatException(name);
-				if (value.isEmpty())
+				if (option.length == 1 || (value = option[1]).isBlank())
 					throw new MissingOptionValueException(name);
 				if (options.put(name, value).isPresent())
 					throw new RepeatedOptionException(name);
