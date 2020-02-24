@@ -22,7 +22,7 @@ public final class Arguments extends HashMap<String, List<Parameters>> {
 			return false;
 		for (int i = 0; i < args.length; i++) {
 			String command = args[i++].toLowerCase();
-			if (i == args.length || args[i].matches("(^-)|(^:$)"))
+			if (i == args.length || args[i].startsWith("-") || args[i].equals(":"))
 				throw new MissingTypeException(command);
 			String type = args[i++].toLowerCase();
 			Options options = new Options();
