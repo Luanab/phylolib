@@ -1,4 +1,4 @@
-package flow.correction;
+package flow.distance;
 
 public final class KimuraTest {
 
