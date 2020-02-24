@@ -1,9 +1,6 @@
 package cli;
 
-import exception.InvalidOptionFormatException;
-import exception.MissingOptionValueException;
-import exception.NoCommandException;
-import exception.RepeatedOptionException;
+import exception.*;
 import flow.algorithm.Algorithm;
 import flow.correction.Correction;
 import flow.distance.Distance;
@@ -18,13 +15,15 @@ public final class Arguments extends HashMap<String, List<Parameters>> {
 
 	private static final String[] COMMANDS = { Distance.NAME, Correction.NAME, Algorithm.NAME, Optimization.NAME };
 
-	public boolean parse(String[] args) throws NoCommandException, InvalidOptionFormatException, MissingOptionValueException, RepeatedOptionException {
+	public boolean parse(String[] args) throws NoCommandException, MissingTypeException, InvalidOptionFormatException, MissingOptionValueException, RepeatedOptionException {
 		if (args.length == 0)
 			throw new NoCommandException();
 		if (args[0].toLowerCase().matches("^(-h|--help)$"))
 			return false;
 		for (int i = 0; i < args.length; i++) {
 			String command = args[i++].toLowerCase();
+			if (i == args.length || args[i].matches("(^-)|(^:$)"))
+				throw new MissingTypeException(command);
 			String type = args[i++].toLowerCase();
 			Options options = new Options();
 			while (i < args.length && !args[i].equals(":")) {
