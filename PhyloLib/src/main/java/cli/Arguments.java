@@ -15,7 +15,7 @@ public final class Arguments extends HashMap<String, List<Parameters>> {
 
 	private static final String[] COMMANDS = { Distance.NAME, Correction.NAME, Algorithm.NAME, Optimization.NAME };
 
-	public boolean parse(String[] args) throws NoCommandException, InvalidCommandException, InvalidOptionFormatException, MissingOptionValueException, RepeatedOptionException {
+	public boolean parse(String[] args) throws NoCommandException, InvalidOptionFormatException, MissingOptionValueException, RepeatedOptionException {
 		if (args.length == 0)
 			throw new NoCommandException();
 		if (args[0].toLowerCase().matches("^(-h|--help)$"))
@@ -23,7 +23,7 @@ public final class Arguments extends HashMap<String, List<Parameters>> {
 		for (int i = 0; i < args.length; i++) {
 			String command = args[i++].toLowerCase();
 			if (!Arrays.asList(COMMANDS).contains(command))
-				throw new InvalidCommandException(command);
+				Logger.warning("Ignoring invalid command '" + command + "'");
 			String type = args[i++].toLowerCase();
 			Options options = new Options();
 			putIfAbsent(command, new ArrayList<>());
