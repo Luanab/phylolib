@@ -1,6 +1,9 @@
 package cli;
 
-import exception.*;
+import exception.InvalidOptionFormatException;
+import exception.MissingOptionValueException;
+import exception.NoCommandException;
+import exception.RepeatedOptionException;
 import flow.algorithm.Algorithm;
 import flow.correction.Correction;
 import flow.distance.Distance;
@@ -22,12 +25,8 @@ public final class Arguments extends HashMap<String, List<Parameters>> {
 			return false;
 		for (int i = 0; i < args.length; i++) {
 			String command = args[i++].toLowerCase();
-			if (!Arrays.asList(COMMANDS).contains(command))
-				Logger.warning("Ignoring invalid command '" + command + "'");
 			String type = args[i++].toLowerCase();
 			Options options = new Options();
-			putIfAbsent(command, new ArrayList<>());
-			get(command).add(new Parameters(type, options));
 			while (i < args.length && !args[i].equals(":")) {
 				String[] option = args[i++]
 						.toLowerCase()
@@ -41,7 +40,15 @@ public final class Arguments extends HashMap<String, List<Parameters>> {
 				if (options.put(name, value).isPresent())
 					throw new RepeatedOptionException(name);
 			}
+			if (!Arrays.asList(COMMANDS).contains(command))
+				Logger.warning("Ignoring invalid command '" + command + "'");
+			else {
+				putIfAbsent(command, new ArrayList<>());
+				get(command).add(new Parameters(type, options));
+			}
 		}
+		if (isEmpty())
+			throw new NoCommandException();
 		return true;
 	}
 
