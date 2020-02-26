@@ -14,7 +14,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 @FunctionalInterface
-public interface IReader<T> extends IFormatter {
+public interface IReader<T> {
 
 	static <T> T read(Options options, String option, char alias, T value, HashMap<String, ? extends IReader<T>> map)
 			throws InvalidFileException, InvalidFormatException, MissingInputException, IOException {

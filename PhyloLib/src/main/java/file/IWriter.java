@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Optional;
 
 @FunctionalInterface
-public interface IWriter<T> extends IFormatter {
+public interface IWriter<T> {
 
 	static <T> void write(Options options, T value, HashMap<String, ? extends IWriter<T>> map)
 			throws InvalidFileException, IOException, InvalidFormatException {

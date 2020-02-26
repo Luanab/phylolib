@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
-public final class File<T extends IFormatter> {
+public final class File<T> {
 
 	private final T formatter;
 	private final Path path;
