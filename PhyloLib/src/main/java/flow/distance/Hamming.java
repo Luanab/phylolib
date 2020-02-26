@@ -1,6 +1,6 @@
 package flow.distance;
 
-import cli.Parameters;
+import cli.Options;
 import data.Context;
 import data.dataset.Dataset;
 import data.dataset.Profile;
@@ -10,8 +10,8 @@ import java.util.Objects;
 
 public final class Hamming extends Distance {
 
-	protected Hamming(Context context, Parameters parameters) {
-		super(context, parameters);
+	protected Hamming(Context context, Options options) {
+		super(context, options);
 	}
 
 	private double distance(Profile a, Profile b) {

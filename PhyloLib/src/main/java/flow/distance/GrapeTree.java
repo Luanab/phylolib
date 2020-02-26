@@ -1,6 +1,6 @@
 package flow.distance;
 
-import cli.Parameters;
+import cli.Options;
 import data.Context;
 import data.dataset.Dataset;
 import data.dataset.Profile;
@@ -10,8 +10,8 @@ import java.util.Objects;
 
 public final class GrapeTree extends Distance {
 
-	protected GrapeTree(Context context, Parameters parameters) {
-		super(context, parameters);
+	protected GrapeTree(Context context, Options options) {
+		super(context, options);
 	}
 
 	protected double distance(Profile a, Profile b) {

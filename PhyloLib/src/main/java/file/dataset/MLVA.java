@@ -1,9 +1,12 @@
-package data.dataset;
+package file.dataset;
+
+import data.dataset.Dataset;
+import data.dataset.Profile;
 
 import java.util.Arrays;
 import java.util.stream.Stream;
 
-public class MLVAFormatter implements IDatasetFormatter {
+public class MLVA implements IDatasetFormatter {
 
 	@Override
 	public Dataset parse(Stream<String> data) {

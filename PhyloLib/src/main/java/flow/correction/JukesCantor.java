@@ -1,13 +1,13 @@
 package flow.correction;
 
-import cli.Parameters;
+import cli.Options;
 import data.Context;
 import data.matrix.Matrix;
 
 public final class JukesCantor extends Correction {
 
-	public JukesCantor(Context context, Parameters parameters) {
-		super(context, parameters);
+	public JukesCantor(Context context, Options options) {
+		super(context, options);
 	}
 
 	@Override

@@ -1,11 +1,11 @@
 package flow;
 
-import cli.Parameters;
+import cli.Options;
 import data.Context;
+import exception.InvalidFormatException;
 
-@FunctionalInterface
 public interface IConstructor<T> {
 
-	T construct(Context context, Parameters parameters);
+	T construct(Context context, Options options) throws InvalidFormatException;
 
 }

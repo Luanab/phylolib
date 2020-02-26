@@ -1,6 +1,6 @@
 package flow.algorithm.gcp;
 
-import cli.Parameters;
+import cli.Options;
 import data.Context;
 import data.tree.Cluster;
 import data.tree.Pair;
@@ -8,8 +8,8 @@ import flow.algorithm.Algorithm;
 
 public abstract class GloballyClosestPairs extends Algorithm {
 
-	protected GloballyClosestPairs(Context context, Parameters parameters) {
-		super(context, parameters);
+	protected GloballyClosestPairs(Context context, Options options) {
+		super(context, options);
 	}
 
 	@Override

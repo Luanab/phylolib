@@ -1,10 +1,9 @@
 package flow.optimization;
 
 import cli.Arguments;
-import cli.Parameters;
+import cli.Options;
 import data.Context;
 import data.tree.Edge;
-import data.tree.ITreeFormatter;
 import data.tree.Tree;
 import exception.ArgumentException;
 import flow.Component;
@@ -16,9 +15,8 @@ public abstract class Optimization extends Component<Tree> {
 
 	public static final String NAME = "optimization";
 
-	protected Optimization(Context context, Parameters parameters) {
-		super(context, context::setTree, ITreeFormatter::get, parameters);
-		this.input |= TREE;
+	protected Optimization(Context context, Options options) {
+		super(context, options, context::readTree, context::writeTree);
 	}
 
 	public static void run(Arguments arguments, Context context) throws ArgumentException, IOException {

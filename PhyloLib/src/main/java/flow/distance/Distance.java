@@ -1,9 +1,8 @@
 package flow.distance;
 
 import cli.Arguments;
-import cli.Parameters;
+import cli.Options;
 import data.Context;
-import data.matrix.IMatrixFormatter;
 import data.matrix.Matrix;
 import exception.ArgumentException;
 import flow.Component;
@@ -15,9 +14,8 @@ public abstract class Distance extends Component<Matrix> {
 
 	public static final String NAME = "distance";
 
-	protected Distance(Context context, Parameters parameters) {
-		super(context, context::setMatrix, IMatrixFormatter::get, parameters);
-		this.input |= DATASET;
+	protected Distance(Context context, Options options) {
+		super(context, options, context::readDataset, context::writeMatrix);
 	}
 
 	public static void run(Arguments arguments, Context context) throws ArgumentException, IOException {

@@ -1,11 +1,13 @@
-package data.tree;
+package file.tree;
+
+import data.tree.Tree;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class NewickFormatter implements ITreeFormatter {
+public class Newick implements ITreeFormatter {
 
 	private void format(Tree tree, StringBuilder data) {
 		if (tree.getChildren() != null) {

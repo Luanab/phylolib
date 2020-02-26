@@ -3,11 +3,11 @@ package data.matrix;
 public final class Matrix {
 
 	private final int size;
-	private final DistanceProvider provider;
+	private final IDistance distance;
 
-	public Matrix(int size, DistanceProvider provider) {
+	public Matrix(int size, IDistance distance) {
 		this.size = size;
-		this.provider = provider;
+		this.distance = distance;
 	}
 
 	public final int size() {
@@ -15,13 +15,7 @@ public final class Matrix {
 	}
 
 	public double get(int i, int j) {
-		return provider.provide(i, j);
-	}
-
-	public interface DistanceProvider {
-
-		double provide(int i, int j);
-
+		return distance.get(i, j);
 	}
 
 }

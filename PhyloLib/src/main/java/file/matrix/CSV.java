@@ -1,9 +1,11 @@
-package data.matrix;
+package file.matrix;
+
+import data.matrix.Matrix;
 
 import java.util.Arrays;
 import java.util.stream.Stream;
 
-public final class CSVFormatter implements IMatrixFormatter {
+public final class CSV implements IMatrixFormatter {
 
 	@Override
 	public Matrix parse(Stream<String> data) {

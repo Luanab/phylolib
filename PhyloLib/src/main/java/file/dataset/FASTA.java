@@ -1,11 +1,14 @@
-package data.dataset;
+package file.dataset;
+
+import data.dataset.Dataset;
+import data.dataset.Profile;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
-public final class FASTAFormatter implements IDatasetFormatter {
+public final class FASTA implements IDatasetFormatter {
 
 	@Override
 	public Dataset parse(Stream<String> data) {

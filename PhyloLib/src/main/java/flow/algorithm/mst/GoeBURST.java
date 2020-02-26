@@ -1,18 +1,20 @@
 package flow.algorithm.mst;
 
-import cli.Parameters;
+import cli.Format;
+import cli.Options;
 import data.Context;
 import data.tree.Cluster;
 import data.tree.Pair;
+import exception.InvalidFormatException;
 
 public final class GoeBURST extends MinimumSpanningTree {
 
 	private final int lvs;
 
-	public GoeBURST(Context context, Parameters parameters) {
-		super(context, parameters);
-		this.input |= DATASET;
-		this.lvs = Integer.parseInt(parameters.getOptions().remove("lvs", 'l', "3"));
+	public GoeBURST(Context context, Options options) throws InvalidFormatException {
+		super(context, options);
+		inputs.add(context::readDataset);
+		this.lvs = Integer.parseInt(options.remove("lvs", 'l', Format.NATURAL, "3"));
 	}
 
 	@Override

@@ -1,9 +1,8 @@
 package flow.correction;
 
 import cli.Arguments;
-import cli.Parameters;
+import cli.Options;
 import data.Context;
-import data.matrix.IMatrixFormatter;
 import data.matrix.Matrix;
 import exception.ArgumentException;
 import flow.Component;
@@ -15,9 +14,8 @@ public abstract class Correction extends Component<Matrix> {
 
 	public static final String NAME = "correction";
 
-	protected Correction(Context context, Parameters parameters) {
-		super(context, context::setMatrix, IMatrixFormatter::get, parameters);
-		this.input |= MATRIX;
+	protected Correction(Context context, Options options) {
+		super(context, options, context::readMatrix, context::writeMatrix);
 	}
 
 	public static void run(Arguments arguments, Context context) throws ArgumentException, IOException {

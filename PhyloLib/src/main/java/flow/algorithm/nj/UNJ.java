@@ -1,14 +1,14 @@
 package flow.algorithm.nj;
 
-import cli.Parameters;
+import cli.Options;
 import data.Context;
 import data.tree.Cluster;
 import data.tree.Pair;
 
 public final class UNJ extends NeighbourJoining {
 
-	public UNJ(Context context, Parameters parameters) {
-		super(context, parameters);
+	public UNJ(Context context, Options options) {
+		super(context, options);
 	}
 
 	@Override

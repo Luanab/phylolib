@@ -1,8 +1,19 @@
 package data;
 
+import cli.Options;
 import data.dataset.Dataset;
 import data.matrix.Matrix;
 import data.tree.Tree;
+import exception.InvalidFileException;
+import exception.InvalidFormatException;
+import exception.MissingInputException;
+import file.IReader;
+import file.IWriter;
+import file.dataset.IDatasetFormatter;
+import file.matrix.IMatrixFormatter;
+import file.tree.ITreeFormatter;
+
+import java.io.IOException;
 
 public final class Context {
 
@@ -14,24 +25,32 @@ public final class Context {
 		return dataset;
 	}
 
-	public void setDataset(Dataset dataset) {
-		this.dataset = dataset;
-	}
-
 	public Matrix getMatrix() {
 		return matrix;
-	}
-
-	public void setMatrix(Matrix matrix) {
-		this.matrix = matrix;
 	}
 
 	public Tree getTree() {
 		return tree;
 	}
 
-	public void setTree(Tree tree) {
-		this.tree = tree;
+	public void readDataset(Options options) throws InvalidFileException, InvalidFormatException, MissingInputException, IOException {
+		dataset = IReader.read(options, "dataset", 'd', dataset, IDatasetFormatter.FORMATTERS);
+	}
+
+	public void readMatrix(Options options) throws InvalidFileException, InvalidFormatException, MissingInputException, IOException {
+		matrix = IReader.read(options, "matrix", 'm', matrix, IMatrixFormatter.FORMATTERS);
+	}
+
+	public void readTree(Options options) throws InvalidFileException, InvalidFormatException, MissingInputException, IOException {
+		tree = IReader.read(options, "tree", 't', tree, ITreeFormatter.FORMATTERS);
+	}
+
+	public void writeMatrix(Options options, Matrix value) throws InvalidFileException, IOException, InvalidFormatException {
+		IWriter.write(options, matrix = value, IMatrixFormatter.FORMATTERS);
+	}
+
+	public void writeTree(Options options, Tree value) throws InvalidFileException, IOException, InvalidFormatException {
+		IWriter.write(options, tree = value, ITreeFormatter.FORMATTERS);
 	}
 
 }

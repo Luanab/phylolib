@@ -1,6 +1,6 @@
 package flow.distance;
 
-import cli.Parameters;
+import cli.Options;
 import data.Context;
 import data.dataset.Dataset;
 import data.dataset.Profile;
@@ -10,8 +10,8 @@ import java.util.Objects;
 
 public final class Kimura extends Distance {
 
-	protected Kimura(Context context, Parameters parameters) {
-		super(context, parameters);
+	protected Kimura(Context context, Options options) {
+		super(context, options);
 	}
 
 	private double distance(Profile a, Profile b) {

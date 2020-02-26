@@ -1,10 +1,9 @@
 package flow.algorithm;
 
 import cli.Arguments;
-import cli.Parameters;
+import cli.Options;
 import data.Context;
 import data.tree.Cluster;
-import data.tree.ITreeFormatter;
 import data.tree.Pair;
 import data.tree.Tree;
 import exception.ArgumentException;
@@ -22,9 +21,8 @@ public abstract class Algorithm extends Component<Tree> {
 
 	public static final String NAME = "algorithm";
 
-	protected Algorithm(Context context, Parameters parameters) {
-		super(context, context::setTree, ITreeFormatter::get, parameters);
-		this.input |= DATASET;
+	protected Algorithm(Context context, Options options) {
+		super(context, options, context::readMatrix, context::writeTree);
 	}
 
 	public static void run(Arguments arguments, Context context) throws ArgumentException, IOException {

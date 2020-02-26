@@ -1,8 +1,10 @@
-package data.tree;
+package file.tree;
+
+import data.tree.Tree;
 
 import java.util.stream.Stream;
 
-public final class NexusFormatter extends NewickFormatter {
+public final class Nexus extends Newick {
 
 	private void format(Tree tree, StringBuilder data) {
 		data.append(' ');
