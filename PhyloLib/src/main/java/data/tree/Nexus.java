@@ -1,6 +1,4 @@
-package file.tree;
-
-import data.tree.Tree;
+package data.tree;
 
 import java.util.stream.Stream;
 

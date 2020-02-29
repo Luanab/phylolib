@@ -1,8 +1,7 @@
-package file.matrix;
+package data.matrix;
 
-import data.matrix.Matrix;
-import file.IReader;
-import file.IWriter;
+import data.IReader;
+import data.IWriter;
 
 import java.util.HashMap;
 

@@ -1,7 +1,6 @@
-package file.dataset;
+package data.dataset;
 
-import data.dataset.Dataset;
-import file.IReader;
+import data.IReader;
 
 import java.util.HashMap;
 

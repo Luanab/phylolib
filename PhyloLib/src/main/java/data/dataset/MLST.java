@@ -1,6 +1,4 @@
-package file.dataset;
-
-import data.dataset.Dataset;
+package data.dataset;
 
 import java.util.stream.Stream;
 

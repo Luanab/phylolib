@@ -1,6 +1,4 @@
-package file.matrix;
-
-import data.matrix.Matrix;
+package data.matrix;
 
 import java.util.Arrays;
 import java.util.stream.Stream;

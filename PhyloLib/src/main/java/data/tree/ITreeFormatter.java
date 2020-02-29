@@ -1,8 +1,7 @@
-package file.tree;
+package data.tree;
 
-import data.tree.Tree;
-import file.IReader;
-import file.IWriter;
+import data.IReader;
+import data.IWriter;
 
 import java.util.HashMap;
 

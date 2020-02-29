@@ -1,4 +1,4 @@
-package file;
+package data;
 
 import exception.InvalidFileException;
 import exception.InvalidFormatException;

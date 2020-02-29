@@ -1,6 +1,4 @@
-package file.tree;
-
-import data.tree.Tree;
+package data.tree;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,8 +50,7 @@ public class Newick implements ITreeFormatter {
 					String id = values[0];
 					Double distance = values.length == 1 || values[1].isBlank() ? null : Double.parseDouble(values[1]);
 					List<Tree> children = trees.remove(depth + 1);
-					trees.putIfAbsent(depth, new ArrayList<>());
-					trees.get(depth).add(new Tree(id, distance, children));
+					trees.computeIfAbsent(depth, k -> new ArrayList<>()).add(new Tree(id, distance, children));
 					continue;
 			}
 			newick = newick.substring(1);

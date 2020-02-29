@@ -2,16 +2,14 @@ package data;
 
 import cli.Options;
 import data.dataset.Dataset;
+import data.dataset.IDatasetFormatter;
+import data.matrix.IMatrixFormatter;
 import data.matrix.Matrix;
+import data.tree.ITreeFormatter;
 import data.tree.Tree;
 import exception.InvalidFileException;
 import exception.InvalidFormatException;
 import exception.MissingInputException;
-import file.IReader;
-import file.IWriter;
-import file.dataset.IDatasetFormatter;
-import file.matrix.IMatrixFormatter;
-import file.tree.ITreeFormatter;
 
 import java.io.IOException;
 
