@@ -28,7 +28,7 @@ public abstract class Component<T> {
 
 	public static <T extends Component<?>> void run(Arguments arguments, Context context, String command, boolean single, HashMap<String, IConstructor<T>> constructors)
 			throws RepeatedCommandException, InvalidTypeException, InvalidFileException, InvalidFormatException, MissingInputException, IOException {
-		List<Parameters> commands = arguments.get(command);
+		List<Parameters> commands = arguments.getOrDefault(command, new ArrayList<>());
 		if (single && commands.size() > 1)
 			throw new RepeatedCommandException(command);
 		for (Parameters parameters : commands) {

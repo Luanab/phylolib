@@ -31,8 +31,11 @@ public final class Arguments extends HashMap<String, List<Parameters>> {
 				while (i < args.length && !args[i].equals(":"))
 					options.put(args[i++]);
 				arguments.computeIfAbsent(command, k -> new ArrayList<>()).add(new Parameters(type, options));
-			} else
+			} else {
 				Logger.warning("Ignoring invalid command '" + command + "'");
+				while (i < args.length && !args[i].equals(":"))
+					i++;
+			}
 		}
 		if (arguments.isEmpty())
 			throw new NoCommandException();

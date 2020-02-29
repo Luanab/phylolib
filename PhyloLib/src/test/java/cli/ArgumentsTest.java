@@ -16,7 +16,7 @@ public class ArgumentsTest {
 
 	@Test(expectedExceptions = NoCommandException.class)
 	public void parse_OnlyInvalidCommands_ExceptionThrown() throws MissingOptionValueException, NoCommandException, RepeatedOptionException, MissingTypeException, InvalidFormatException {
-		Arguments.parse(new String[] { "distanc", "hamming", ":", "correct", "jukescantor", "--out=csv:output.csv" });
+		Arguments.parse(new String[] { "distanc", "distance", ":", "correct", "jukescantor", "--out=csv:output.csv" });
 	}
 
 	@Test
