@@ -4,9 +4,12 @@ import java.util.List;
 
 public final class Tree {
 
-	private final String id;
-	private final Double distance;
-	private final List<Tree> children;
+	private String id;
+	private Double distance;
+	private List<Tree> children;
+
+	public Tree() {
+	}
 
 	public Tree(String id, Double distance, List<Tree> children) {
 		this.id = id;
@@ -18,12 +21,24 @@ public final class Tree {
 		return id;
 	}
 
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public Double getDistance() {
 		return distance;
 	}
 
+	public void setDistance(Double distance) {
+		this.distance = distance;
+	}
+
 	public List<Tree> getChildren() {
 		return children;
+	}
+
+	public void setChildren(List<Tree> children) {
+		this.children = children;
 	}
 
 }

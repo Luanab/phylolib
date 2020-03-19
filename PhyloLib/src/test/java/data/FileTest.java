@@ -3,49 +3,54 @@ package data;
 import data.dataset.IDatasetFormatter;
 import data.matrix.IMatrixFormatter;
 import data.tree.ITreeFormatter;
-import exception.InvalidFileException;
-import exception.InvalidFormatException;
 import org.testng.annotations.Test;
 
-import java.nio.file.InvalidPathException;
+import java.util.Optional;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class FileTest {
 
-	@Test(expectedExceptions = InvalidFileException.class)
-	public void constructor_MissingLocation_ExceptionThrown() throws InvalidFileException, InvalidFormatException {
-		new File<>("mlst", IDatasetFormatter.FORMATTERS);
-	}
-
-	@Test(expectedExceptions = InvalidFileException.class)
-	public void constructor_EmptyLocation_ExceptionThrown() throws InvalidFileException, InvalidFormatException {
-		new File<>("fasta:", IDatasetFormatter.FORMATTERS);
-	}
-
-	@Test(expectedExceptions = InvalidFileException.class)
-	public void constructor_BlankLocation_ExceptionThrown() throws InvalidFileException, InvalidFormatException {
-		new File<>("csv: ", IMatrixFormatter.FORMATTERS);
-	}
-
-	@Test(expectedExceptions = InvalidFormatException.class)
-	public void constructor_InvalidFormat_ExceptionThrown() throws InvalidFileException, InvalidFormatException {
-		new File<>("csc:matrix.csv", IMatrixFormatter.FORMATTERS);
-	}
-
-	@Test(expectedExceptions = InvalidPathException.class)
-	public void constructor_InvalidPath_ExceptionThrown() throws InvalidFileException, InvalidFormatException {
-		new File<>("newick:C:/xpto?", ITreeFormatter.FORMATTERS);
+	@Test
+	public void get_MissingFile_Empty() {
+		assertTrue(File.get("", IDatasetFormatter.FORMATTERS).isEmpty());
 	}
 
 	@Test
-	public void constructor_ValidFormat_Success() throws InvalidFileException, InvalidFormatException {
+	public void get_MissingLocation_Empty() {
+		assertTrue(File.get("mlst", ITreeFormatter.FORMATTERS).isEmpty());
+	}
+
+	@Test
+	public void get_EmptyLocation_Empty() {
+		assertTrue(File.get("fasta:", IDatasetFormatter.FORMATTERS).isEmpty());
+	}
+
+	@Test
+	public void get_BlankLocation_Empty() {
+		assertTrue(File.get("csv: ", IMatrixFormatter.FORMATTERS).isEmpty());
+	}
+
+	@Test
+	public void get_InvalidFormat_Empty() {
+		assertTrue(File.get("csc:matrix.csv", IMatrixFormatter.FORMATTERS).isEmpty());
+	}
+
+	@Test
+	public void get_InvalidPath_Empty() {
+		assertTrue(File.get("newick:C:/xpto?", ITreeFormatter.FORMATTERS).isEmpty());
+	}
+
+	@Test
+	public void get_ValidFile_Success() {
 		String arg = "nexus:output.txt";
 
-		File<ITreeFormatter> file = new File<>(arg, ITreeFormatter.FORMATTERS);
+		Optional<File<ITreeFormatter>> file = File.get(arg, ITreeFormatter.FORMATTERS);
 
-		assertEquals(file.getFormatter(), ITreeFormatter.FORMATTERS.get("nexus"));
-		assertEquals(file.getPath().toString(), "output.txt");
+		assertTrue(file.isPresent());
+		assertEquals(file.get().getFormatter(), ITreeFormatter.FORMATTERS.get("nexus"));
+		assertEquals(file.get().getPath().toString(), "output.txt");
 	}
 
 }

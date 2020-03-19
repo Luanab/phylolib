@@ -2,12 +2,17 @@ package cli;
 
 public enum Format {
 
-	FILE("^\\w+:.+$"), NATURAL("^\\d+$");
+	FILE("^\\w+:.+$"),
+	NATURAL("^\\d+$");
 
-	public final String regex;
+	private final String regex;
 
 	Format(String regex) {
 		this.regex = regex;
+	}
+
+	public boolean matches(String string) {
+		return string.matches(regex);
 	}
 
 }

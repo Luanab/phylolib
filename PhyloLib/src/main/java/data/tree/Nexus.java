@@ -1,31 +1,48 @@
 package data.tree;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.stream.Stream;
 
 public final class Nexus extends Newick {
 
-	private void format(Tree tree, StringBuilder data) {
-		data.append(' ');
-		data.append(tree.getId());
-		tree.getChildren().forEach(child -> format(child, data));
+	@Override
+	public Tree parse(Stream<String> data) {
+		Iterator<String> iterator = data
+				.dropWhile(line -> !line.equals("BEGIN TREES;"))
+				.takeWhile(line -> !line.equals("END;"))
+				.dropWhile(line -> !line.contains("("))
+				.iterator();
+		List<String> lines = new ArrayList<>();
+		String next;
+		if (iterator.hasNext()) {
+			next = iterator.next();
+			lines.add(next.substring(next.indexOf('(')));
+		}
+		while (iterator.hasNext()) {
+			lines.add(next = iterator.next());
+			if (next.contains(";"))
+				break;
+		}
+		return super.parse(lines.stream());
 	}
 
 	@Override
 	public String format(Tree tree) {
-		StringBuilder data = new StringBuilder("BEGIN TAXA;\nTAXLABELS");
-		format(tree, data);
+		StringBuilder data = new StringBuilder("BEGIN TAXA;\n\tTaxLabels");
+		ids(tree, data);
 		data.append("\nEND;\nBEGIN TREES;\n\tTree result = ")
 				.append(super.format(tree))
-				.append(";\nEND;");
+				.append("\nEND;");
 		return data.toString();
 	}
 
-	@Override
-	public Tree parse(Stream<String> data) {
-		return super.parse(data
-				.dropWhile(line -> !line.equals("BEGIN TREES;"))
-				.filter(line -> line.trim().contains("("))
-				.map(line -> line.substring(line.indexOf('('))));
+	private void ids(Tree tree, StringBuilder data) {
+		if (tree.getId() != null)
+			data.append(' ').append(tree.getId());
+		if (tree.getChildren() != null)
+			tree.getChildren().forEach(child -> ids(child, data));
 	}
 
 }

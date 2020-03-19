@@ -1,9 +1,9 @@
 PhyloLib.
 
 Usage:
-    phylolib -h | --help
-    phylolib distance (hamming|grapetree) [options]
-    phylolib correction (jukescantor|kimura) [options]
+    phylolib help
+    phylolib distance (hamming|grapetree|kimura) [options]
+    phylolib correction (jukescantor) [options]
     phylolib algorithm (goeburst|grapetree|upgma|wpgma|saitounei|studierkepler|unj|fnj|bionj) [options]
     phylolib optimization (lbr|spr|nni|tbr) [options]
 

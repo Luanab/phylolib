@@ -1,14 +1,11 @@
 import cli.Arguments;
 import cli.Logger;
+import command.algorithm.Algorithm;
+import command.correction.Correction;
+import command.distance.Distance;
+import command.optimization.Optimization;
 import data.Context;
-import exception.ArgumentException;
-import flow.algorithm.Algorithm;
-import flow.correction.Correction;
-import flow.distance.Distance;
-import flow.optimization.Optimization;
-
-import java.nio.file.InvalidPathException;
-import java.nio.file.NoSuchFileException;
+import exception.MissingInputException;
 
 public class Main {
 
@@ -23,12 +20,8 @@ public class Main {
 				Optimization.run(arguments, context);
 			} else
 				Logger.usage();
-		} catch (ArgumentException e) {
-			Logger.error(e.getMessage(), true);
-		} catch (InvalidPathException e) {
-			Logger.error(e.getMessage(), false);
-		} catch (NoSuchFileException e) {
-			Logger.error("No such file by the name of '" + e.getMessage() + "'", false);
+		} catch (MissingInputException e) {
+			Logger.error(e.getMessage());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

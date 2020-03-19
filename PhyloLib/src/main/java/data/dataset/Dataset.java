@@ -1,11 +1,13 @@
 package data.dataset;
 
+import java.util.stream.Stream;
+
 public final class Dataset {
 
 	private final Profile[] profiles;
 
-	public Dataset(Profile[] profiles) {
-		this.profiles = profiles;
+	public Dataset(Stream<Profile> profiles) {
+		this.profiles = profiles.toArray(Profile[]::new);
 	}
 
 	public int size() {

@@ -17,12 +17,9 @@ public final class FASTA implements IDatasetFormatter {
 			StringBuilder sequence = new StringBuilder();
 			while (iterator.hasNext() && !(next = iterator.next()).startsWith(">"))
 				sequence.append(next);
-			profiles.add(new Profile(id, sequence.toString().chars()
-					.map(value -> value == ' ' ? null : value)
-					.boxed()
-					.toArray(Integer[]::new)));
+			profiles.add(new Profile(id, sequence.toString()));
 		}
-		return new Dataset(profiles.toArray(Profile[]::new));
+		return new Dataset(profiles.stream());
 	}
 
 }
