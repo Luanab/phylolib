@@ -12,7 +12,7 @@ public final class CSV implements IMatrixFormatter {
 						.map(Double::parseDouble)
 						.toArray(Double[]::new))
 				.toArray(Double[][]::new);
-		return new AsymmetricMatrix(matrix.length, (i, j) -> matrix[i][j]);
+		return new Matrix(matrix.length, (i, j) -> matrix[i][j]);
 	}
 
 	@Override
