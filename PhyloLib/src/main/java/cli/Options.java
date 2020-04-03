@@ -1,5 +1,7 @@
 package cli;
 
+import logging.Log;
+
 import java.util.HashMap;
 import java.util.Optional;
 import java.util.Set;
@@ -20,28 +22,28 @@ public final class Options {
 		String[] parts = option.toLowerCase().split(SEPARATOR, 2);
 		String key = parts[0], value;
 		if (!key.startsWith(ALIAS) || parts.length == 1 || (value = parts[1]).isBlank())
-			Logger.warning(INVALID_OPTION, option);
+			Log.warning(INVALID_OPTION, option);
 		else if (options.putIfAbsent(key, value) != null)
-			Logger.warning(DUPLICATED_OPTION, option);
+			Log.warning(DUPLICATED_OPTION, option);
 	}
 
 	public Set<String> keys() {
 		return options.keySet();
 	}
 
-	public String remove(Option option, Format format, String _default) {
-		Optional<String> value = remove(option, format);
+	public String remove(Option option, String _default) {
+		Optional<String> value = remove(option);
 		if (value.isEmpty()) {
-			Logger.info(DEFAULT, _default, option.getAlias(), option.getKey());
+			Log.info(DEFAULT, _default, option.getAlias(), option.getKey());
 			return _default;
 		}
 		return value.get();
 	}
 
-	public Optional<String> remove(Option option, Format format) {
+	public Optional<String> remove(Option option) {
 		Optional<String> result = remove(KEY + option.getKey()).or(() -> remove(ALIAS + option.getAlias()));
-		if (result.isPresent() && !format.matches(result.get())) {
-			Logger.warning(INVALID_VALUE, result.get(), option.getAlias(), option.getKey());
+		if (result.isPresent() && !option.getFormat().matches(result.get())) {
+			Log.warning(INVALID_VALUE, result.get(), option.getAlias(), option.getKey());
 			return Optional.empty();
 		}
 		return result;

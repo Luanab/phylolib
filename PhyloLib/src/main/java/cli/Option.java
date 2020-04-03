@@ -2,16 +2,18 @@ package cli;
 
 public enum Option {
 
-	OUT('o'),
-	DATASET('d'),
-	MATRIX('m'),
-	TREE('t'),
-	LVS('l');
+	OUT('o', Format.FILE),
+	DATASET('d', Format.FILE),
+	MATRIX('m', Format.FILE),
+	TREE('t', Format.FILE),
+	LVS('l', Format.NATURAL);
 
 	private final char alias;
+	private final Format format;
 
-	Option(char alias) {
+	Option(char alias, Format format) {
 		this.alias = alias;
+		this.format = format;
 	}
 
 	public String getKey() {
@@ -20,6 +22,10 @@ public enum Option {
 
 	public char getAlias() {
 		return alias;
+	}
+
+	public Format getFormat() {
+		return format;
 	}
 
 }

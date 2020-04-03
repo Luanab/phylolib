@@ -1,5 +1,7 @@
 package cli;
 
+import logging.Log;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -11,7 +13,7 @@ public final class Arguments extends HashMap<String, List<Parameters>> {
 	private static final List<String> COMMANDS = Arrays.stream(Command.values()).map(Command::getName).collect(Collectors.toList());
 	private static final String HELP = "help";
 	private static final String SEPARATOR = ":";
-	private static final String IGNORING = "Ignoring invalid command '%s'";
+	private static final String INVALID_COMMAND = "Ignoring invalid command '%s'";
 
 	public static Arguments parse(String[] args) {
 		Arguments arguments = new Arguments();
@@ -28,7 +30,7 @@ public final class Arguments extends HashMap<String, List<Parameters>> {
 					options.put(args[i++]);
 				arguments.computeIfAbsent(command, k -> new ArrayList<>()).add(new Parameters(type, options));
 			} else {
-				Logger.warning(IGNORING, command);
+				Log.warning(INVALID_COMMAND, command);
 				while (i < args.length && !args[i].equals(SEPARATOR))
 					i++;
 			}

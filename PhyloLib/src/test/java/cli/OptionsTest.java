@@ -4,9 +4,7 @@ import org.testng.annotations.Test;
 
 import java.util.Optional;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.*;
 
 public class OptionsTest {
 
@@ -58,7 +56,7 @@ public class OptionsTest {
 		assertEquals(options.keys().size(), 2);
 		assertTrue(options.keys().contains("--out"));
 		assertTrue(options.keys().contains("--lvs"));
-		assertEquals(options.remove(Option.OUT, Format.FILE).get(), "newick:output.txt");
+		assertEquals(options.remove(Option.OUT).get(), "newick:output.txt");
 	}
 
 	@Test
@@ -69,8 +67,8 @@ public class OptionsTest {
 		options.put("--matrix=csv:matrix.csv");
 
 		assertEquals(options.keys().size(), 2);
-		assertEquals(options.remove(Option.LVS, Format.NATURAL).get(), "7");
-		assertEquals(options.remove(Option.MATRIX, Format.FILE).get(), "csv:matrix.csv");
+		assertEquals(options.remove(Option.LVS).get(), "7");
+		assertEquals(options.remove(Option.MATRIX).get(), "csv:matrix.csv");
 	}
 
 	@Test
@@ -78,15 +76,15 @@ public class OptionsTest {
 		Options options = new Options();
 		options.put("-l=-4");
 
-		assertEquals(options.remove(Option.LVS, Format.NATURAL, "2"), "2");
+		assertEquals(options.remove(Option.LVS, "2"), "2");
 	}
 
 	@Test
 	public void remove_InvalidFileFormat_Ignored() {
 		Options options = new Options();
-		options.put("--matrix=csv:matrix.csv");
+		options.put("--matrix=csv-matrix.csv");
 
-		assertTrue(options.remove(Option.MATRIX, Format.NATURAL).isEmpty());
+		assertTrue(options.remove(Option.MATRIX).isEmpty());
 	}
 
 	@Test
@@ -95,7 +93,7 @@ public class OptionsTest {
 		options.put("-t=1");
 		options.put("--lts=2");
 
-		String value = options.remove(Option.LVS, Format.NATURAL, "3");
+		String value = options.remove(Option.LVS, "3");
 
 		assertEquals(value, "3");
 		assertEquals(options.keys().size(), 2);
@@ -108,7 +106,7 @@ public class OptionsTest {
 		Options options = new Options();
 		options.put("--lvs=5");
 
-		String value = options.remove(Option.LVS, Format.NATURAL, "3");
+		String value = options.remove(Option.LVS, "3");
 
 		assertEquals(value, "5");
 		assertTrue(options.keys().isEmpty());
@@ -119,7 +117,7 @@ public class OptionsTest {
 		Options options = new Options();
 		options.put("-l=7");
 
-		String value = options.remove(Option.LVS, Format.NATURAL, "3");
+		String value = options.remove(Option.LVS, "3");
 
 		assertEquals(value, "7");
 		assertTrue(options.keys().isEmpty());
@@ -130,7 +128,7 @@ public class OptionsTest {
 		Options options = new Options();
 		options.put("--tee=nexus:tree.txt");
 
-		Optional<String> value = options.remove(Option.TREE, Format.FILE);
+		Optional<String> value = options.remove(Option.TREE);
 
 		assertTrue(value.isEmpty());
 		assertEquals(options.keys().size(), 1);
@@ -142,7 +140,7 @@ public class OptionsTest {
 		Options options = new Options();
 		options.put("--lvs=3");
 
-		Optional<String> value = options.remove(Option.LVS, Format.NATURAL);
+		Optional<String> value = options.remove(Option.LVS);
 
 		assertTrue(value.isPresent());
 		assertEquals(value.get(), "3");
@@ -156,7 +154,7 @@ public class OptionsTest {
 		options.put("--dataset=mlva:dataset.txt");
 		options.put("--tree=newick:tree.txt");
 
-		Optional<String> value = options.remove(Option.DATASET, Format.FILE);
+		Optional<String> value = options.remove(Option.DATASET);
 
 		assertTrue(value.isPresent());
 		assertEquals(value.get(), "mlva:dataset.txt");
