@@ -1,13 +1,19 @@
 import cli.Arguments;
-import cli.Logger;
 import command.algorithm.Algorithm;
 import command.correction.Correction;
 import command.distance.Distance;
 import command.optimization.Optimization;
 import data.Context;
-import exception.MissingInputException;
+import logging.Log;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
+
+	private static final String LOCATION = "src/main/resources/usage.txt";
 
 	public static void main(String[] args) {
 		try {
@@ -19,11 +25,11 @@ public class Main {
 				Algorithm.run(arguments, context);
 				Optimization.run(arguments, context);
 			} else
-				Logger.usage();
-		} catch (MissingInputException e) {
-			Logger.error(e.getMessage());
+				try (Stream<String> usage = Files.lines(Paths.get(LOCATION))) {
+					Log.info(usage.collect(Collectors.joining()));
+				}
 		} catch (Exception e) {
-			e.printStackTrace();
+			Log.error(e.getMessage());
 		}
 	}
 
