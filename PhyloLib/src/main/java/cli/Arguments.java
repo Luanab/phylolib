@@ -1,5 +1,6 @@
 package cli;
 
+import command.Command;
 import logging.Log;
 
 import java.util.ArrayList;

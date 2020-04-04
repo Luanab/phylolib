@@ -1,29 +1,27 @@
 package command.algorithm;
 
 import cli.Arguments;
-import cli.Command;
+import command.Command;
 import command.ICommand;
-import command.algorithm.gcp.*;
-import command.algorithm.mst.GoeBURST;
-import command.algorithm.mst.GrapeTree;
-import command.algorithm.nj.SaitouNei;
-import command.algorithm.nj.StudierKeppler;
-import command.algorithm.nj.UNJ;
+import command.algorithm.complex.gcp.*;
+import command.algorithm.complex.nj.SaitouNei;
+import command.algorithm.complex.nj.StudierKeppler;
+import command.algorithm.complex.nj.UNJ;
+import command.algorithm.simple.mst.GoeBURST;
+import command.algorithm.simple.mst.GrapeTree;
 import data.Context;
 import data.matrix.Matrix;
-import data.tree.ClusterSet;
-import data.tree.Pair;
+import data.tree.Edge;
 import data.tree.Tree;
 import exception.MissingInputException;
 
 import java.util.HashMap;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public abstract class Algorithm implements ICommand<Matrix, Tree> {
 
 	public static void run(Arguments arguments, Context context) throws MissingInputException {
-		ICommand.run(arguments, context, Command.ALGORITHM, context::readMatrix, context::writeTree, new HashMap<>() {{
+		ICommand.run(arguments, context, Command.ALGORITHM, context::getMatrix, context::setTree, new HashMap<>() {{
 			put("goeburst", new GoeBURST());
 			put("grapetree", new GrapeTree());
 			put("sl", new SL());

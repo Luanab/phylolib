@@ -1,8 +1,11 @@
 package command;
 
-import cli.*;
+import cli.Arguments;
+import cli.Options;
+import cli.Parameters;
 import data.Context;
 import exception.MissingInputException;
+import logging.Log;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,24 +23,24 @@ public interface ICommand<T, R> {
 
 	static <T, R> void run(Arguments arguments, Context context, Command command, IGetter<T> getter, BiConsumer<Options, R> setter, HashMap<String, ICommand<T, R>> map) throws MissingInputException {
 		List<Parameters> commands = arguments.getOrDefault(command.getName(), new ArrayList<>());
-		if (command.getGranularity() == Granularity.SINGLE && commands.size() > 1) {
-			Logger.warning(DUPLICATED_COMMAND, command.getName());
+		if (command.getMultiplicity() == Multiplicity.SINGLE && commands.size() > 1) {
+			Log.warning(DUPLICATED_COMMAND, command.getName());
 			commands = commands.subList(0, 1);
 		}
 		for (Parameters parameters : commands) {
 			String type = parameters.getType();
 			ICommand<T, R> component = map.get(type);
 			if (component == null)
-				Logger.warning(INVALID_TYPE, command.getName(), type);
+				Log.warning(INVALID_TYPE, command.getName(), type);
 			else {
 				Options options = parameters.getOptions();
-				Logger.info(RUNNING, command.getName(), type, STARTED);
+				Log.info(RUNNING, command.getName(), type, STARTED);
 				T data = getter.get(options);
 				component.init(context, options);
 				R result = component.process(data);
 				setter.accept(options, result);
-				options.keys().forEach(option -> Logger.warning(INVALID_OPTION, option));
-				Logger.info(RUNNING, command.getName(), type, FINISHED);
+				options.keys().forEach(option -> Log.warning(INVALID_OPTION, option));
+				Log.info(RUNNING, command.getName(), type, FINISHED);
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 package command.correction;
 
 import cli.Arguments;
-import cli.Command;
+import command.Command;
 import command.ICommand;
 import data.Context;
 import data.matrix.Matrix;
@@ -12,7 +12,7 @@ import java.util.HashMap;
 public abstract class Correction implements ICommand<Matrix, Matrix> {
 
 	public static void run(Arguments arguments, Context context) throws MissingInputException {
-		ICommand.run(arguments, context, Command.CORRECTION, context::readMatrix, context::writeMatrix, new HashMap<>() {{
+		ICommand.run(arguments, context, Command.CORRECTION, context::getMatrix, context::setMatrix, new HashMap<>() {{
 			put("jukescantor", new JukesCantor());
 		}});
 	}

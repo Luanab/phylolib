@@ -1,7 +1,7 @@
 package command.optimization;
 
 import cli.Arguments;
-import cli.Command;
+import command.Command;
 import command.ICommand;
 import data.Context;
 import data.tree.Edge;
@@ -13,7 +13,7 @@ import java.util.HashMap;
 public abstract class Optimization implements ICommand<Tree, Tree> {
 
 	public static void run(Arguments arguments, Context context) throws MissingInputException {
-		ICommand.run(arguments, context, Command.OPTIMIZATION, context::readTree, context::writeTree, new HashMap<>() {{
+		ICommand.run(arguments, context, Command.OPTIMIZATION, context::getTree, context::setTree, new HashMap<>() {{
 			put("lbr", new LBR());
 			put("nni", new NNI());
 			put("spr", new SPR());
