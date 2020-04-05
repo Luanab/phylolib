@@ -15,13 +15,13 @@ public final class Nexus extends Newick {
 				.dropWhile(line -> !line.contains("("))
 				.iterator();
 		List<String> lines = new ArrayList<>();
-		String next;
 		if (iterator.hasNext()) {
-			next = iterator.next();
+			String next = iterator.next();
 			lines.add(next.substring(next.indexOf('(')));
 		}
 		while (iterator.hasNext()) {
-			lines.add(next = iterator.next());
+			String next = iterator.next();
+			lines.add(next);
 			if (next.contains(";"))
 				break;
 		}
@@ -30,19 +30,7 @@ public final class Nexus extends Newick {
 
 	@Override
 	public String format(Tree tree) {
-		StringBuilder data = new StringBuilder("BEGIN TAXA;\n\tTaxLabels");
-		ids(tree, data);
-		data.append("\nEND;\nBEGIN TREES;\n\tTree result = ")
-				.append(super.format(tree))
-				.append("\nEND;");
-		return data.toString();
-	}
-
-	private void ids(Tree tree, StringBuilder data) {
-		if (tree.getId() != null)
-			data.append(' ').append(tree.getId());
-		if (tree.getChildren() != null)
-			tree.getChildren().forEach(child -> ids(child, data));
+		return String.format("BEGIN TREES;\n\tTree result = %s\nEND;", super.format(tree));
 	}
 
 }

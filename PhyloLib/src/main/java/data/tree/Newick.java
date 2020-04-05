@@ -1,12 +1,14 @@
 package data.tree;
 
+import logging.Log;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Newick implements ITreeFormatter {
+public class Newick implements ITreeProcessor {
 
 	@Override
 	public Tree parse(Stream<String> data) {
@@ -27,12 +29,23 @@ public class Newick implements ITreeFormatter {
 					newick = newick.substring(info.length());
 					String[] values = info.split(":", 2);
 					String id = values[0].isBlank() ? null : values[0];
-					Double distance = values.length == 1 || values[1].isBlank() ? null : Double.parseDouble(values[1]);
+					Double distance = null;
+					if (values.length == 2 && !values[1].isBlank()) {
+						if (!values[1].matches("^(\\d*(\\.\\d+)?)$")) {
+							Log.warning(INVALID_TREE);
+							return null;
+						}
+						distance = Double.parseDouble(values[1]);
+					}
 					List<Tree> children = trees.remove(depth + 1);
 					trees.computeIfAbsent(depth, k -> new ArrayList<>()).add(new Tree(id, distance, children));
 					continue;
 			}
 			newick = newick.substring(1);
+		}
+		if (trees.size() != 1 || trees.get(0).size() != 1) {
+			Log.warning(INVALID_TREE);
+			return null;
 		}
 		return trees.get(0).get(0);
 	}

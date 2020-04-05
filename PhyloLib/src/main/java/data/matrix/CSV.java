@@ -1,18 +1,38 @@
 package data.matrix;
 
+import logging.Log;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public final class CSV implements IMatrixFormatter {
+public final class CSV implements IMatrixProcessor {
 
 	@Override
 	public Matrix parse(Stream<String> data) {
-		Double[][] matrix = data
-				.map(line -> Arrays.stream(line.split("\\t"))
-						.map(Double::parseDouble)
-						.toArray(Double[]::new))
-				.toArray(Double[][]::new);
-		return new Matrix(matrix.length, (i, j) -> matrix[i][j]);
+		Iterator<String[]> iterator = data.map(line -> line.split("\\t")).iterator();
+		List<List<Double>> matrix = new ArrayList<>();
+		int counter = 1;
+		while (iterator.hasNext()) {
+			String[] next = iterator.next();
+			if (Arrays.stream(next).allMatch(n -> n.matches("^(\\d*(\\.\\d+)?)$")) &&
+				(matrix.isEmpty() || (next.length == matrix.get(0).size() && matrix.size() < matrix.get(0).size())))
+				matrix.add(Arrays.stream(next).map(Double::parseDouble).collect(Collectors.toList()));
+			else
+				Log.warning(INVALID_ROW, counter);
+			counter++;
+		}
+		if (matrix.isEmpty())
+			return null;
+		for (int i = matrix.get(0).size(); i > matrix.size(); i--) {
+			int column = i;
+			Log.warning(INVALID_COLUMN, column);
+			matrix.forEach(row -> row.remove(column - 1));
+		}
+		return new Matrix(matrix.size(), (i, j) -> matrix.get(i).get(j));
 	}
 
 	@Override
@@ -23,7 +43,8 @@ public final class CSV implements IMatrixFormatter {
 				data.append(matrix.get(i, j)).append('\t');
 			data.replace(data.length() - 1, data.length(), "\n");
 		}
-		data.deleteCharAt(data.length() - 1);
+		if (data.length() > 0)
+			data.deleteCharAt(data.length() - 1);
 		return data.toString();
 	}
 

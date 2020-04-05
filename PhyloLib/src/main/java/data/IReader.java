@@ -1,32 +1,38 @@
 package data;
 
-import cli.Logger;
+import cli.Option;
+import cli.Options;
+import exception.MissingInputException;
 
-import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.stream.Stream;
 
 @FunctionalInterface
-public interface IReader<T> {
+public interface IReader<T> extends IProcessor {
 
-	String READING = "Reading from '%s'";
-	String SUCCEEDED = " succeeded";
-	String FAILED = " failed";
+	String READ = "Read";
 
-	default T read(Path path) {
-		String file = path.toString();
-		Logger.info(READING, file);
-		try (Stream<String> data = Files.lines(path)) {
-			T result = parse(data);
-			Logger.info(READING + SUCCEEDED, file);
-			return result;
-		} catch (IOException e) {
-			Logger.warning(READING + FAILED, file);
-			return null;
-		}
+	static <T> T read(Options options, Option option, T previous, HashMap<String, ? extends IReader<T>> map) throws MissingInputException {
+		Holder<T> result = new Holder<>();
+		IProcessor.process(options, option, map, READ, file -> {
+			try (Stream<String> data = Files.lines(file.getPath())) {
+				result.value = file.getProcessor().parse(data);
+			}
+		});
+		if (result.value != null)
+			return result.value;
+		if (previous == null)
+			throw new MissingInputException(option.getKey());
+		return previous;
 	}
 
 	T parse(Stream<String> data);
+
+	class Holder<T> {
+
+		T value;
+
+	}
 
 }

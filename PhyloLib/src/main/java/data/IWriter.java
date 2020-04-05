@@ -1,27 +1,18 @@
 package data;
 
-import cli.Logger;
+import cli.Option;
+import cli.Options;
 
-import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
+import java.util.HashMap;
 
 @FunctionalInterface
-public interface IWriter<T> {
+public interface IWriter<T> extends IProcessor {
 
-	String WRITING = "Writing to '%s'";
-	String SUCCEEDED = " succeeded";
-	String FAILED = " failed";
+	String WRITE = "Write";
 
-	default void write(Path path, T data) {
-		String file = path.toString();
-		Logger.info(WRITING, file);
-		try {
-			Files.write(path, format(data).getBytes());
-			Logger.info(WRITING + SUCCEEDED, file);
-		} catch (IOException e) {
-			Logger.warning(WRITING + FAILED, file);
-		}
+	static <T> void write(Options options, T value, HashMap<String, ? extends IWriter<T>> map) {
+		IProcessor.process(options, Option.OUT, map, WRITE, file -> Files.write(file.getPath(), (value == null ? "" : file.getProcessor().format(value)).getBytes()));
 	}
 
 	String format(T data);

@@ -9,7 +9,7 @@ public final class Profile {
 
 	public Profile(String id, String loci) {
 		this.id = id;
-		this.loci = loci.chars().map(value -> value == ' ' ? null : value).boxed().toArray(Integer[]::new);
+		this.loci = loci.chars().mapToObj(value -> value == ' ' ? null : value).toArray(Integer[]::new);
 	}
 
 	public Profile(String id, Stream<String> loci) {
