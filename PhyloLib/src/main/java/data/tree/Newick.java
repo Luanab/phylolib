@@ -12,64 +12,66 @@ public class Newick implements ITreeProcessor {
 
 	@Override
 	public Tree parse(Stream<String> data) {
+		Tree tree = new Tree();
 		String newick = data.map(String::trim).collect(Collectors.joining());
-		HashMap<Integer, List<Tree>> trees = new HashMap<>();
+		HashMap<Integer, List<Edge>> edges = new HashMap<>();
 		int depth = 0;
+		int counter = 0;
 		while (newick.length() > 0) {
 			switch (newick.charAt(0)) {
-				case '(': depth++;
-					break;
+				case '(': depth++; break;
 				case ',': break;
-				case ')': depth--;
-					break;
-				case ';': newick = ";";
-					break;
+				case ')': depth--; break;
+				case ';': newick = ";"; break;
 				default:
 					String info = newick.split("[),;]", 2)[0];
 					newick = newick.substring(info.length());
 					String[] values = info.split(":", 2);
-					String id = values[0].isBlank() ? null : values[0];
-					Double distance = null;
-					if (values.length == 2 && !values[1].isBlank()) {
-						if (!values[1].matches("^(\\d*(\\.\\d+)?)$")) {
-							Log.warning(INVALID_TREE);
-							return null;
+					if (newick.length() > 0  && !newick.startsWith(";")) {
+						if (values.length != 2 || values[1].isBlank() || !values[1].matches("^((-)?\\d*(\\.\\d+)?)$")) {
+							Log.warning(IGNORING);
+							return new Tree();
 						}
-						distance = Double.parseDouble(values[1]);
+						edges.computeIfAbsent(depth, k -> new ArrayList<>()).add(new Edge(-1, counter, Double.parseDouble(values[1])));
 					}
-					List<Tree> children = trees.remove(depth + 1);
-					trees.computeIfAbsent(depth, k -> new ArrayList<>()).add(new Tree(id, distance, children));
+					Log.info(RENAMING, values[0], counter);
+					List<Edge> children = edges.remove(depth + 1);
+					if (children != null)
+						for (Edge edge : children)
+							tree.add(new Edge(counter, edge.to(), edge.distance()));
+						counter++;
 					continue;
 			}
 			newick = newick.substring(1);
 		}
-		if (trees.size() != 1 || trees.get(0).size() != 1) {
-			Log.warning(INVALID_TREE);
-			return null;
+		if (!edges.isEmpty()) {
+			Log.warning(IGNORING);
+			return new Tree();
 		}
-		return trees.get(0).get(0);
+		return tree;
 	}
 
 	@Override
 	public String format(Tree tree) {
 		StringBuilder data = new StringBuilder();
-		format(tree, data);
+		if (!tree.isEmpty()) {
+			int root = tree.root();
+			format(tree, root, data);
+			data.append(root);
+		}
 		return data.append(';').toString();
 	}
 
-	private void format(Tree tree, StringBuilder data) {
-		if (tree.getChildren() != null) {
+	private void format(Tree tree, int root, StringBuilder data) {
+		List<Edge> edges = tree.get(root);
+		if (edges != null) {
 			data.append('(');
-			for (Tree child : tree.getChildren()) {
-				format(child, data);
-				data.append(',');
+			for (Edge edge : edges) {
+				format(tree, edge.to(), data);
+				data.append(edge.to()).append(':').append(edge.distance()).append(',');
 			}
 			data.replace(data.length() - 1, data.length(), ")");
 		}
-		if (tree.getId() != null)
-			data.append(tree.getId());
-		if (tree.getDistance() != null)
-			data.append(':').append(tree.getDistance());
 	}
 
 }

@@ -2,25 +2,25 @@ package data.tree;
 
 public final class Edge {
 
-	private final int source;
-	private final int target;
+	private final int from;
+	private final int to;
 	private final double distance;
 
-	public Edge(int source, int target, double distance) {
-		this.source = source;
-		this.target = target;
+	public Edge(int from, int to, double distance) {
+		this.from = from;
+		this.to = to;
 		this.distance = distance;
 	}
 
-	public int getSource() {
-		return source;
+	public int from() {
+		return from;
 	}
 
-	public int getTarget() {
-		return target;
+	public int to() {
+		return to;
 	}
 
-	public double getDistance() {
+	public double distance() {
 		return distance;
 	}
 

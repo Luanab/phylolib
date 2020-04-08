@@ -1,37 +1,27 @@
 package data.dataset;
 
-import logging.Log;
+import javafx.util.Pair;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
-import java.util.stream.Stream;
 
 public final class FASTA implements IDatasetProcessor {
 
+	private String id;
+
 	@Override
-	public Dataset parse(Stream<String> data) {
-		Iterator<String> iterator = data.iterator();
-		List<Profile> profiles = new ArrayList<>();
-		String next = iterator.hasNext() ? iterator.next() : null;
-		int counter = 1;
-		while (iterator.hasNext()) {
-			String id = next.substring(1);
-			StringBuilder sequence = new StringBuilder();
-			while (iterator.hasNext() && !(next = iterator.next()).startsWith(">")) {
-				if (!next.matches("^[ACTG ]*$")) {
-					sequence = new StringBuilder();
-					break;
-				}
-				sequence.append(next);
-			}
-			if (sequence.length() > 0 && (profiles.isEmpty() || sequence.length() == profiles.get(0).length()))
-				profiles.add(new Profile(id, sequence.toString()));
-			else
-				Log.warning(INVALID_PROFILE, counter);
-			counter++;
-		}
-		return profiles.isEmpty() ? null : new Dataset(profiles);
+	public void init(Iterator<String> iterator) {
+		id = iterator.hasNext() ? iterator.next() : null;
+	}
+
+	@Override
+	public Pair<String, Profile> parse(Iterator<String> iterator) {
+		String id = this.id;
+		StringBuilder sequence = new StringBuilder();
+		String next = "";
+		while (iterator.hasNext() && !(next = iterator.next()).startsWith(">"))
+			sequence.append(next);
+		this.id = next;
+		return new Pair<>(id, id.startsWith(">") && sequence.toString().matches("^[ACTG ]+$") ? new Profile(sequence.toString()) : null);
 	}
 
 }

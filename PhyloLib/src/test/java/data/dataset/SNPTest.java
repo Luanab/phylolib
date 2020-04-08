@@ -10,13 +10,13 @@ import static org.testng.Assert.assertNull;
 public class SNPTest {
 
 	@Test
-	public void parse_Empty_Null() {
-		assertNull(new SNP().parse(Stream.empty()));
+	public void parse_Empty_Empty() {
+		assertEquals(new SNP().parse(Stream.empty()).size(), 0);
 	}
 
 	@Test
-	public void parse_Blank_Null() {
-		assertNull(new SNP().parse(Stream.of(" ")));
+	public void parse_Blank_Empty() {
+		assertEquals(new SNP().parse(Stream.of(" ")).size(), 0);
 	}
 
 	@Test
@@ -26,32 +26,49 @@ public class SNPTest {
 		Dataset dataset = new SNP().parse(data);
 
 		assertEquals(dataset.size(), 1);
-		assertEquals(dataset.get(0).getId(), "2");
-		assertEquals(dataset.get(0).length(), 5);
-		assertNull(dataset.get(0).getLocus(3));
+		assertEquals(dataset.profile(0).length(), 5);
+		assertNull(dataset.profile(0).locus(3));
 	}
 
 	@Test
-	public void parse_SequenceWithNoLength_Ignore() {
+	public void parse_SequenceWithNoLoci_Ignore() {
 		Stream<String> data = Stream.of("1\t", "2\t100010");
 
 		Dataset dataset = new SNP().parse(data);
 
 		assertEquals(dataset.size(), 1);
-		assertEquals(dataset.get(0).getId(), "2");
-		assertEquals(dataset.get(0).length(), 6);
+		assertEquals(dataset.profile(0).length(), 6);
 	}
 
 	@Test
-	public void parse_SequenceWithDifferentLength_Ignore() {
+	public void parse_SequenceWithTooFewLoci_Ignore() {
+		Stream<String> data = Stream.of("1\t1", "2\t10001");
+
+		Dataset dataset = new SNP().parse(data);
+
+		assertEquals(dataset.size(), 1);
+		assertEquals(dataset.profile(0).length(), 5);
+	}
+
+	@Test
+	public void parse_SequenceWithLessLoci_Ignore() {
 		Stream<String> data = Stream.of("1\t1101 1", "2\t10001");
 
 		Dataset dataset = new SNP().parse(data);
 
 		assertEquals(dataset.size(), 1);
-		assertEquals(dataset.get(0).getId(), "1");
-		assertEquals(dataset.get(0).length(), 6);
-		assertNull(dataset.get(0).getLocus(4));
+		assertEquals(dataset.profile(0).length(), 6);
+		assertNull(dataset.profile(0).locus(4));
+	}
+
+	@Test
+	public void parse_SequenceWithMoreLoci_Ignore() {
+		Stream<String> data = Stream.of("1\t1101", "2\t10001");
+
+		Dataset dataset = new SNP().parse(data);
+
+		assertEquals(dataset.size(), 1);
+		assertEquals(dataset.profile(0).length(), 4);
 	}
 
 	@Test
@@ -61,9 +78,8 @@ public class SNPTest {
 		Dataset dataset = new SNP().parse(data);
 
 		assertEquals(dataset.size(), 1);
-		assertEquals(dataset.get(0).getId(), "2");
-		assertEquals(dataset.get(0).length(), 5);
-		assertNull(dataset.get(0).getLocus(1));
+		assertEquals(dataset.profile(0).length(), 5);
+		assertNull(dataset.profile(0).locus(1));
 	}
 
 	@Test
@@ -73,11 +89,10 @@ public class SNPTest {
 		Dataset dataset = new SNP().parse(data);
 
 		assertEquals(dataset.size(), 2);
-		assertEquals(dataset.get(0).getId(), "1");
-		assertEquals(dataset.get(0).length(), 6);
-		assertNull(dataset.get(0).getLocus(4));
-		assertEquals(dataset.get(1).getId(), "2");
-		assertEquals(dataset.get(1).length(), 6);
+		assertEquals(dataset.profile(0).length(), 6);
+		assertNull(dataset.profile(0).locus(4));
+		assertEquals(dataset.profile(1).length(), 6);
+		assertEquals(dataset.profile(1).locus(4), Integer.valueOf('1'));
 	}
 
 }

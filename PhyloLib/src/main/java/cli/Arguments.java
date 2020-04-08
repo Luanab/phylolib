@@ -3,15 +3,12 @@ package cli;
 import command.Command;
 import logging.Log;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public final class Arguments extends HashMap<String, List<Parameters>> {
 
-	private static final List<String> COMMANDS = Arrays.stream(Command.values()).map(Command::getName).collect(Collectors.toList());
+	private static final Set<String> COMMANDS = Arrays.stream(Command.values()).map(Command::getName).collect(Collectors.toSet());
 	private static final String HELP = "help";
 	private static final String SEPARATOR = ":";
 	private static final String INVALID_COMMAND = "Ignoring invalid command '%s'";

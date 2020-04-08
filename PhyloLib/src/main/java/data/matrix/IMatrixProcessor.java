@@ -7,8 +7,8 @@ import java.util.HashMap;
 
 public interface IMatrixProcessor extends IReader<Matrix>, IWriter<Matrix> {
 
-	String INVALID_ROW = "Ignoring invalid row %d";
-	String INVALID_COLUMN = "Ignoring invalid column %d";
+	String IGNORING_ROW = "Ignoring invalid row %d";
+	String IGNORING_COLUMN = "Ignoring invalid column %d";
 
 	HashMap<String, IMatrixProcessor> PROCESSORS = new HashMap<>() {{
 		put("csv", new CSV());

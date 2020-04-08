@@ -8,8 +8,8 @@ import exception.MissingInputException;
 import logging.Log;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.BiConsumer;
 
 public interface ICommand<T, R> {
@@ -21,7 +21,7 @@ public interface ICommand<T, R> {
 	String INVALID_TYPE = "Ignoring command '%s' with invalid type '%s'";
 	String INVALID_OPTION = "Ignoring invalid option '%s'";
 
-	static <T, R> void run(Arguments arguments, Context context, Command command, IGetter<T> getter, BiConsumer<Options, R> setter, HashMap<String, ICommand<T, R>> map) throws MissingInputException {
+	static <T, R> void run(Arguments arguments, Context context, Command command, IGetter<T> getter, BiConsumer<Options, R> setter, Map<String, ICommand<T, R>> map) throws MissingInputException {
 		List<Parameters> commands = arguments.getOrDefault(command.getName(), new ArrayList<>());
 		if (command.getMultiplicity() == Multiplicity.SINGLE && commands.size() > 1) {
 			Log.warning(DUPLICATED_COMMAND, command.getName());

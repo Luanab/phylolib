@@ -3,6 +3,7 @@ package cli;
 import logging.Log;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
@@ -16,7 +17,7 @@ public final class Options {
 	private static final String DUPLICATED_OPTION = "Ignoring duplicated option '%s'";
 	private static final String INVALID_VALUE = "Ignoring invalid value '%s' for option -%c --%s";
 
-	private final HashMap<String, String> options = new HashMap<>();
+	private final Map<String, String> options = new HashMap<>();
 
 	public void put(String option) {
 		String[] parts = option.toLowerCase().split(SEPARATOR, 2);

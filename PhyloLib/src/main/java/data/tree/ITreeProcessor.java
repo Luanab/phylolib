@@ -7,7 +7,8 @@ import java.util.HashMap;
 
 public interface ITreeProcessor extends IReader<Tree>, IWriter<Tree> {
 
-	String INVALID_TREE = "Ignoring invalid tree";
+	String RENAMING = "Renaming node '%s' to '%d'";
+	String IGNORING = "Ignoring invalid tree";
 
 	HashMap<String, ITreeProcessor> PROCESSORS = new HashMap<>() {{
 		put("newick", new Newick());

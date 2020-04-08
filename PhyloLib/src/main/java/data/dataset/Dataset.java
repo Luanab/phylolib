@@ -14,7 +14,7 @@ public final class Dataset {
 		return profiles.length;
 	}
 
-	public Profile get(int i) {
+	public Profile profile(int i) {
 		return profiles[i];
 	}
 

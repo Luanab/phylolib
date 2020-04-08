@@ -5,7 +5,7 @@ import logging.Log;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 public class File<T> {
@@ -24,7 +24,7 @@ public class File<T> {
 		this.path = path;
 	}
 
-	public static <T> Optional<File<T>> get(String file, HashMap<String, T> map) {
+	public static <T> Optional<File<T>> get(String file, Map<String, T> map) {
 		String[] values = file.split(SEPARATOR, 2);
 		if (values.length == 1 || values[0].isBlank() || values[1].isBlank()) {
 			Log.warning(INVALID, FILE, file);
