@@ -23,9 +23,7 @@ public abstract class Distance implements ICommand<Dataset, Matrix> {
 
 	@Override
 	public final Matrix process(Dataset dataset) {
-		int size = dataset.size();
-		Double[][] m = new Double[size][size];
-		return new Matrix(size, (i, j) -> m[i][j] != null ? m[i][j] : (m[i][j] = distance(dataset.profile(i), dataset.profile(j))));
+		return new Matrix(dataset.size(), (i, j) -> distance(dataset.profile(i), dataset.profile(j)));
 	}
 
 	protected abstract double distance(Profile a, Profile b);

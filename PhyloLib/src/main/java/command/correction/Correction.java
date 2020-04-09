@@ -19,9 +19,7 @@ public abstract class Correction implements ICommand<Matrix, Matrix> {
 
 	@Override
 	public final Matrix process(Matrix matrix) {
-		int size = matrix.size();
-		Double[][] m = new Double[size][size];
-		return new Matrix(size, (i, j) -> m[i][j] != null ? m[i][j] : (m[i][j] = correct(matrix.get(i, j))));
+		return new Matrix(matrix.size(), (i, j) -> correct(matrix.get(i, j)));
 	}
 
 	protected abstract double correct(double distance);

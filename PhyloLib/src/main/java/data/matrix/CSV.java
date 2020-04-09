@@ -32,7 +32,7 @@ public final class CSV implements IMatrixProcessor {
 				matrix.forEach(row -> row.remove(column - 1));
 			}
 		}
-		return new Matrix(matrix.size(), (i, j) -> matrix.get(i).get(j));
+		return new Matrix(matrix);
 	}
 
 	@Override
