@@ -1,31 +1,18 @@
 package command.distance;
 
-import data.dataset.Dataset;
 import data.dataset.Profile;
-import data.matrix.Matrix;
 
 import java.util.Objects;
 
 public final class Kimura extends Distance {
 
 	@Override
-	public final Matrix process(Dataset dataset) {
-		int size = dataset.size() - 1;
-		Double[][] matrix = new Double[size][];
-		for (int i = 0; i < size; i++) {
-			matrix[i] = new Double[size - i];
-			for (int j = 0; j < size - i; j++)
-				matrix[i][j] = distance(dataset.get(i), dataset.get(j + 1 + i));
-		}
-		return new Matrix(size + 1, (i, j) -> matrix[Math.min(i, j)][Math.max(i, j)]);
-	}
-
-	private double distance(Profile a, Profile b) {
+	protected strictfp double distance(Profile a, Profile b) {
 		int transitions = 0;
 		int transversions = 0;
 		for (int i = 0; i < a.length(); i++) {
-			Integer first = a.getLocus(i);
-			Integer second = b.getLocus(i);
+			Integer first = a.locus(i);
+			Integer second = b.locus(i);
 			if (Objects.equals(first, second) || first == null || second == null)
 				continue;
 			int min = Math.min(first, second);
