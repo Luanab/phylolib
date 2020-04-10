@@ -1,5 +1,5 @@
 package command.optimization;
 
-public final class LBRTest {
+public class LBRTest {
 
 }

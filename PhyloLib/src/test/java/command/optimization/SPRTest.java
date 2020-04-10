@@ -1,5 +1,5 @@
 package command.optimization;
 
-public final class SPRTest {
+public class SPRTest {
 
 }

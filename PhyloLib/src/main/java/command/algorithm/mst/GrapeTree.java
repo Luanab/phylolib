@@ -1,23 +1,33 @@
 package command.algorithm.mst;
 
-import data.matrix.Matrix;
-import data.tree.ClusterSet;
-import data.tree.Pair;
+import cli.Option;
+import cli.Options;
+import data.Context;
+import exception.MissingInputException;
+
+import java.util.stream.IntStream;
 
 public final class GrapeTree extends MinimumSpanningTree {
 
+	private int root;
+
 	@Override
-	protected int tiebreak(Matrix matrix, ClusterSet set, Pair<Integer, Integer> i, Pair<Integer, Integer> j) {
-		return (int) (Math.min(mean(set, i.getFirst()), mean(set, i.getSecond())) -
-					  Math.min(mean(set, j.getFirst()), mean(set, j.getSecond())));
+	public void init(Context context, Options options) throws MissingInputException {
+		super.init(context, options);
+		this.root = Integer.parseInt(options.remove(Option.ROOT, "0"));
 	}
 
-	private double mean(ClusterSet set, int i) {
-		double sum = set.elements()
-				.filter(j -> i != j)
-				.mapToDouble(j -> Math.pow(set.get(i, j), -1))
+	@Override
+	protected int tiebreak(int ifrom, int ito, int jfrom, int jto) {
+		return (int) (Math.min(mean(ifrom), mean(ito)) - Math.min(mean(jfrom), mean(jto)));
+	}
+
+	private double mean(int i) {
+		double sum = IntStream.range(0, elements())
+				.filter(j -> j != i)
+				.mapToDouble(j -> Math.pow(distance(i, j), -1))
 				.sum();
-		return Math.pow(sum / (set.elements().count() - 1), -1);
+		return Math.pow(sum / (elements() - 1), -1);
 	}
 
 }

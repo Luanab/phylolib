@@ -19,15 +19,21 @@ public class Newick implements ITreeProcessor {
 		int counter = 0;
 		while (newick.length() > 0) {
 			switch (newick.charAt(0)) {
-				case '(': depth++; break;
-				case ',': break;
-				case ')': depth--; break;
-				case ';': newick = ";"; break;
+				case '(': depth++;
+					newick = newick.substring(1);
+					break;
+				case ',': newick = newick.substring(1);
+					break;
+				case ')': depth--;
+					newick = newick.substring(1);
+					break;
+				case ';': newick = ";";
+					break;
 				default:
 					String info = newick.split("[),;]", 2)[0];
 					newick = newick.substring(info.length());
 					String[] values = info.split(":", 2);
-					if (newick.length() > 0  && !newick.startsWith(";")) {
+					if (newick.length() > 0 && !newick.startsWith(";")) {
 						if (values.length != 2 || values[1].isBlank() || !values[1].matches("^((-)?\\d*(\\.\\d+)?)$")) {
 							Log.warning(IGNORING);
 							return new Tree();
@@ -39,10 +45,8 @@ public class Newick implements ITreeProcessor {
 					if (children != null)
 						for (Edge edge : children)
 							tree.add(new Edge(counter, edge.to(), edge.distance()));
-						counter++;
-					continue;
+					counter++;
 			}
-			newick = newick.substring(1);
 		}
 		if (!edges.isEmpty()) {
 			Log.warning(IGNORING);

@@ -31,7 +31,7 @@ public class SNPTest {
 	}
 
 	@Test
-	public void parse_SequenceWithNoLoci_Ignore() {
+	public void parse_NoLoci_Ignore() {
 		Stream<String> data = Stream.of("1\t", "2\t100010");
 
 		Dataset dataset = new SNP().parse(data);
@@ -41,7 +41,7 @@ public class SNPTest {
 	}
 
 	@Test
-	public void parse_SequenceWithTooFewLoci_Ignore() {
+	public void parse_TooFewLoci_Ignore() {
 		Stream<String> data = Stream.of("1\t1", "2\t10001");
 
 		Dataset dataset = new SNP().parse(data);
@@ -51,7 +51,7 @@ public class SNPTest {
 	}
 
 	@Test
-	public void parse_SequenceWithLessLoci_Ignore() {
+	public void parse_LessLoci_Ignore() {
 		Stream<String> data = Stream.of("1\t1101 1", "2\t10001");
 
 		Dataset dataset = new SNP().parse(data);
@@ -62,7 +62,7 @@ public class SNPTest {
 	}
 
 	@Test
-	public void parse_SequenceWithMoreLoci_Ignore() {
+	public void parse_MoreLoci_Ignore() {
 		Stream<String> data = Stream.of("1\t1101", "2\t10001");
 
 		Dataset dataset = new SNP().parse(data);
@@ -72,7 +72,7 @@ public class SNPTest {
 	}
 
 	@Test
-	public void parse_SequenceWithInvalidLocus_Ignore() {
+	public void parse_InvalidLocus_Ignore() {
 		Stream<String> data = Stream.of("1\t11x1 1", "2\t1 001");
 
 		Dataset dataset = new SNP().parse(data);

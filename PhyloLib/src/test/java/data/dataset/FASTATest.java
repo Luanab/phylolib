@@ -42,7 +42,7 @@ public class FASTATest {
 	}
 
 	@Test
-	public void parse_SequenceWithNoLoci_Ignore() {
+	public void parse_NoLoci_Ignore() {
 		Stream<String> data = Stream.of(">1", "", ">2 profile", "TACTGATC");
 
 		Dataset dataset = new FASTA().parse(data);
@@ -52,7 +52,7 @@ public class FASTATest {
 	}
 
 	@Test
-	public void parse_SequenceWithTooFewLoci_Ignore() {
+	public void parse_TooFewLoci_Ignore() {
 		Stream<String> data = Stream.of(">1", "A", ">2 profile", "TACTGATC", "ACTGGATC");
 
 		Dataset dataset = new FASTA().parse(data);
@@ -62,7 +62,7 @@ public class FASTATest {
 	}
 
 	@Test
-	public void parse_SequenceWithLessLoci_Ignore() {
+	public void parse_LessLoci_Ignore() {
 		Stream<String> data = Stream.of(">1", "ACTGG TC", "ACTGGATC", ">2 profile", "TACTGATC");
 
 		Dataset dataset = new FASTA().parse(data);
@@ -73,7 +73,7 @@ public class FASTATest {
 	}
 
 	@Test
-	public void parse_SequenceWithMoreLoci_Ignore() {
+	public void parse_MoreLoci_Ignore() {
 		Stream<String> data = Stream.of(">1", "ACTGG TC", ">2 profile", "TACTGATC", "ACTGGATC");
 
 		Dataset dataset = new FASTA().parse(data);
@@ -84,7 +84,7 @@ public class FASTATest {
 	}
 
 	@Test
-	public void parse_SequenceWithInvalidLocus_Ignore() {
+	public void parse_InvalidLocus_Ignore() {
 		Stream<String> data = Stream.of(">1", "ACTGG TC", ">2 profile", "TACTGATC", "ACTGXATC");
 
 		Dataset dataset = new FASTA().parse(data);
