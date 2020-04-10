@@ -13,8 +13,6 @@ import java.util.stream.Stream;
 
 public class Main {
 
-	private static final String LOCATION = "src/main/resources/usage.txt";
-
 	public static void main(String[] args) {
 		try {
 			Arguments arguments = Arguments.parse(args);
@@ -25,8 +23,8 @@ public class Main {
 				Algorithm.run(arguments, context);
 				Optimization.run(arguments, context);
 			} else
-				try (Stream<String> usage = Files.lines(Paths.get(LOCATION))) {
-					Log.info(usage.collect(Collectors.joining()));
+				try (Stream<String> usage = Files.lines(Paths.get(Main.class.getClassLoader().getResource("usage.txt").toURI()))) {
+					System.out.println(usage.collect(Collectors.joining("\n")));
 				}
 		} catch (Exception e) {
 			Log.error(e.getMessage());
