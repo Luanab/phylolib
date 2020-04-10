@@ -6,8 +6,7 @@ public enum Option {
 	DATASET('d', Format.FILE),
 	MATRIX('m', Format.FILE),
 	TREE('t', Format.FILE),
-	LVS('l', Format.NATURAL),
-	ROOT('r', Format.NATURAL);
+	LVS('l', Format.NATURAL);
 
 	private final char alias;
 	private final Format format;

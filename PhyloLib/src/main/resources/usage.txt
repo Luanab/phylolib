@@ -4,7 +4,7 @@ Usage:
     phylolib help
     phylolib distance (hamming|grapetree|kimura) [options]
     phylolib correction (jukescantor) [options]
-    phylolib algorithm (goeburst|grapetree|upgma|wpgma|saitounei|studierkepler|unj|fnj|bionj) [options]
+    phylolib algorithm (goeburst|grapetree|sl|cl|upgma|upgmc|wpgma|wpgmc|saitounei|studierkepler|unj) [options]
     phylolib optimization (lbr|spr|nni|tbr) [options]
 
 Options:
