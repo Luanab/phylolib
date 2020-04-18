@@ -13,8 +13,8 @@ public class HammingTest {
 	}
 
 	@Test
-	public void distance_OneMissing_Zero() {
-		assertEquals(new Hamming().distance(new Profile("0 0000"), new Profile("0 0000")), 0);
+	public void distance_OneMissing_One() {
+		assertEquals(new Hamming().distance(new Profile("0 0000"), new Profile("0 0000")), 1);
 	}
 
 	@Test
@@ -34,7 +34,7 @@ public class HammingTest {
 
 	@Test
 	public void distance_OneMissingAndOneDifferent_Two() {
-		assertEquals(new Hamming().distance(new Profile("010 1"), new Profile("011 1")), 1);
+		assertEquals(new Hamming().distance(new Profile("010 1"), new Profile("011 1")), 2);
 	}
 
 	@Test

@@ -2,8 +2,6 @@ package command.distance;
 
 import data.dataset.Profile;
 
-import java.util.Objects;
-
 public final class GrapeTree extends Distance {
 
 	@Override
@@ -13,7 +11,7 @@ public final class GrapeTree extends Distance {
 		for (int l = 0; l < i.length(); l++) {
 			if (j.locus(l) != null) {
 				nonmissing++;
-				if (!Objects.equals(i.locus(l), j.locus(l)))
+				if (!j.locus(l).equals(i.locus(l)))
 					differences++;
 			}
 		}

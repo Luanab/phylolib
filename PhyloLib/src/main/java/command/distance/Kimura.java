@@ -2,8 +2,6 @@ package command.distance;
 
 import data.dataset.Profile;
 
-import java.util.Objects;
-
 public final class Kimura extends Distance {
 
 	@Override
@@ -13,7 +11,7 @@ public final class Kimura extends Distance {
 		for (int l = 0; l < i.length(); l++) {
 			Integer first = i.locus(l);
 			Integer second = j.locus(l);
-			if (Objects.equals(first, second) || first == null || second == null)
+			if (first == null || second == null || first.equals(second))
 				continue;
 			int min = Math.min(first, second);
 			int max = Math.max(first, second);
