@@ -1,20 +1,25 @@
 package data.matrix;
 
-import java.util.List;
-
 public final class Matrix {
 
+	private final String[] ids;
 	private final Double[][] values;
 	private final IDistance distance;
 
-	public Matrix(int size, IDistance distance) {
-		this.values = new Double[size][size];
+	public Matrix(String[] ids, IDistance distance) {
+		this.ids = ids;
+		this.values = new Double[ids.length][ids.length];
 		this.distance = distance;
 	}
 
-	public Matrix(List<List<Double>> values) {
-		this.values = values.stream().map(l -> l.toArray(new Double[0])).toArray(Double[][]::new);
-		this.distance = null;
+	public Matrix(String[] ids, Double[][] values) {
+		this.ids = ids;
+		this.values = values;
+		this.distance = (i, j) -> 0;
+	}
+
+	public String[] ids() {
+		return ids;
 	}
 
 	public final int size() {
@@ -22,7 +27,7 @@ public final class Matrix {
 	}
 
 	public double get(int i, int j) {
-		return values[i][j] != null ? values[i][j] : (values[i][j] = distance.get(i, j));
+		return values[i][j] != null ? values[i][j] : (values[i][j] = i == j ? 0 : distance.get(i, j));
 	}
 
 }

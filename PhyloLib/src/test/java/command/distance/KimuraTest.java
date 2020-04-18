@@ -1,45 +1,29 @@
 package command.distance;
 
 import data.dataset.Profile;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
 public class KimuraTest {
 
-	@Test
-	public void distance_Equal_Zero() {
-		assertEquals(new Kimura().distance(new Profile("ACTG"), new Profile("ACTG")), 0);
+	@DataProvider
+	public Object[][] data() {
+		return new Object[][] {
+				{ "ACTG", "ACTG", 0 },
+				{ "A TG", "A TG", 0 },
+				{ "A TG", "ACTG", 0 },
+				{ "ACTG", "A TG", 0 },
+				{ "ACTG", "GCTG", -Math.log(0.5) / 2.0 },
+				{ "ACTG", "ACGG", -Math.log(0.75 * Math.sqrt(0.5)) / 2.0 },
+				{ "ACTG", "GCGG", -Math.log(0.25 * Math.sqrt(0.5)) / 2.0 }
+		};
 	}
 
-	@Test
-	public void distance_OneMissing_Zero() {
-		assertEquals(new Kimura().distance(new Profile("A TG"), new Profile("A TG")), 0);
-	}
-
-	@Test
-	public void distance_OneMissingInFirst_Zero() {
-		assertEquals(new Kimura().distance(new Profile("A TG"), new Profile("ACTG")), 0);
-	}
-
-	@Test
-	public void distance_OneMissingInSecond_Zero() {
-		assertEquals(new Kimura().distance(new Profile("ACTG"), new Profile("A TG")), 0);
-	}
-
-	@Test
-	public void distance_OneTransition_Value() {
-		assertEquals(new Kimura().distance(new Profile("ACTG"), new Profile("GCTG")), -Math.log(0.5) / 2.0);
-	}
-
-	@Test
-	public void distance_OneTransversion_Value() {
-		assertEquals(new Kimura().distance(new Profile("ACTG"), new Profile("ACGG")), -Math.log(0.75 * Math.sqrt(0.5)) / 2.0);
-	}
-
-	@Test
-	public void distance_OneTransitionOneTransversions_Value() {
-		assertEquals(new Kimura().distance(new Profile("ACTG"), new Profile("GCGG")), -Math.log(0.25 * Math.sqrt(0.5)) / 2.0);
+	@Test(dataProvider = "data")
+	public void distance_Valid_Success(String i, String j, double result) {
+		assertEquals(new Kimura().distance(new Profile(null, i), new Profile(null, j)), result);
 	}
 
 }

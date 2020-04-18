@@ -8,7 +8,7 @@ public final class GrapeTree extends Distance {
 	protected strictfp double distance(Profile i, Profile j) {
 		double differences = 0;
 		double nonmissing = 0;
-		for (int l = 0; l < i.length(); l++) {
+		for (int l = 0; l < i.size(); l++) {
 			if (j.locus(l) != null) {
 				nonmissing++;
 				if (!j.locus(l).equals(i.locus(l)))

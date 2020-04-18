@@ -1,5 +1,6 @@
 package data.dataset;
 
+import java.util.Arrays;
 import java.util.List;
 
 public final class Dataset {
@@ -8,6 +9,10 @@ public final class Dataset {
 
 	public Dataset(List<Profile> profiles) {
 		this.profiles = profiles.toArray(Profile[]::new);
+	}
+
+	public String[] ids() {
+		return Arrays.stream(profiles).map(Profile::id).toArray(String[]::new);
 	}
 
 	public int size() {

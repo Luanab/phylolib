@@ -27,6 +27,10 @@ public abstract class MinimumSpanningTree extends Algorithm {
 		return matrix.get(i, j);
 	}
 
+	protected String[] ids() {
+		return matrix.ids();
+	}
+
 	@Override
 	public void init(Context context, Options options) throws MissingInputException {
 		super.init(context, options);

@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public final class CSV implements IMatrixProcessor {
@@ -32,7 +33,8 @@ public final class CSV implements IMatrixProcessor {
 				matrix.forEach(row -> row.remove(column - 1));
 			}
 		}
-		return new Matrix(matrix);
+		return new Matrix(IntStream.range(0, matrix.size()).mapToObj(String::valueOf).toArray(String[]::new),
+				matrix.stream().map(l -> l.toArray(new Double[0])).toArray(Double[][]::new));
 	}
 
 	@Override

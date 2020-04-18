@@ -31,7 +31,7 @@ public class NexusTest {
 
 	@Test
 	public void parse_Valid_Success() {
-		Stream<String> data = Stream.of("BEGIN TAXA;", "\tTaxLabels A B C", "END;", "BEGIN TREES;", "\tTree result = ((A:2.3,B:1)C:3.1,D:0.2)E;", "END;");
+		Stream<String> data = Stream.of("BEGIN TAXA;", "\tTaxLabels A B C", "END;", "BEGIN TREES;", "\tTree result = ((A:2.3,B:1.0)_:3.1,C:0.2)_;", "END;");
 
 		Tree tree = new Nexus().parse(data);
 
@@ -58,15 +58,15 @@ public class NexusTest {
 
 	@Test
 	public void format_Valid_Success() {
-		Tree tree = new Tree();
-		tree.add(new Edge(2, 0, 2.3));
-		tree.add(new Edge(2, 1, 1));
-		tree.add(new Edge(4, 2, 3.1));
-		tree.add(new Edge(4, 3, 0.2));
+		Tree tree = new Tree(new String[] { "A", "B", "C" });
+		tree.add(new Edge(3, 0, 2.3));
+		tree.add(new Edge(3, 1, 1));
+		tree.add(new Edge(4, 3, 3.1));
+		tree.add(new Edge(4, 2, 0.2));
 
 		String data = new Nexus().format(tree);
 
-		assertEquals(data, "BEGIN TREES;\n\tTree result = ((0:2.3,1:1.0)2:3.1,3:0.2)4;\nEND;");
+		assertEquals(data, "BEGIN TREES;\n\tTree result = ((A:2.3,B:1.0)_:3.1,C:0.2)_;\nEND;");
 	}
 
 }

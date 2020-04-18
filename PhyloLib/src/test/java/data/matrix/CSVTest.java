@@ -1,5 +1,6 @@
 package data.matrix;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.stream.Stream;
@@ -18,22 +19,19 @@ public class CSVTest {
 		assertEquals(new CSV().parse(Stream.of(" ")).size(), 0);
 	}
 
-	@Test
-	public void parse_InvalidDistance_Ignore() {
-		Stream<String> data = Stream.of("0\t2", "2\tb", "2\t0");
-
-		Matrix matrix = new CSV().parse(data);
-
-		assertEquals(matrix.size(), 2);
-		assertEquals(matrix.get(0, 0), 0);
-		assertEquals(matrix.get(0, 1), 2);
-		assertEquals(matrix.get(1, 0), 2);
-		assertEquals(matrix.get(1, 1), 0);
+	@DataProvider
+	public Object[][] rows() {
+		return new Object[][] {
+				{ "0\t4.5", "4.5\tb", "4.5\t0" },
+				{ "0\t4.5", "4.5\t0", "7\t0" },
+				{ "0\t4.5\t3", "4.5\t0\t0" },
+				{ "0\t4.5\t", "4.5\t0" },
+		};
 	}
 
-	@Test
-	public void parse_TooManyRows_Ignore() {
-		Stream<String> data = Stream.of("0\t4.5", "4.5\t0", "7\t0");
+	@Test(dataProvider = "rows")
+	public void parse_Valid_Success(String... rows) {
+		Stream<String> data = Stream.of(rows);
 
 		Matrix matrix = new CSV().parse(data);
 
@@ -41,38 +39,12 @@ public class CSVTest {
 		assertEquals(matrix.get(0, 0), 0);
 		assertEquals(matrix.get(0, 1), 4.5);
 		assertEquals(matrix.get(1, 0), 4.5);
-		assertEquals(matrix.get(1, 1), 0);
-	}
-
-	@Test
-	public void parse_TooManyColumns_Ignore() {
-		Stream<String> data = Stream.of("0\t4.5\t3", "4.5\t0\t0");
-
-		Matrix matrix = new CSV().parse(data);
-
-		assertEquals(matrix.size(), 2);
-		assertEquals(matrix.get(0, 0), 0);
-		assertEquals(matrix.get(0, 1), 4.5);
-		assertEquals(matrix.get(1, 0), 4.5);
-		assertEquals(matrix.get(1, 1), 0);
-	}
-
-	@Test
-	public void parse_Valid_Success() {
-		Stream<String> data = Stream.of("0\t3.14\t", "15\t0");
-
-		Matrix matrix = new CSV().parse(data);
-
-		assertEquals(matrix.size(), 2);
-		assertEquals(matrix.get(0, 0), 0);
-		assertEquals(matrix.get(0, 1), 3.14);
-		assertEquals(matrix.get(1, 0), 15);
 		assertEquals(matrix.get(1, 1), 0);
 	}
 
 	@Test
 	public void format_Empty_Empty() {
-		assertEquals(new CSV().format(new Matrix(0, null)), "");
+		assertEquals(new CSV().format(new Matrix(new String[0], (i, j) -> 0)), "");
 	}
 
 	@Test
@@ -82,7 +54,7 @@ public class CSVTest {
 		distances[0][1] = 50.36;
 		distances[1][0] = 50.36;
 		distances[1][1] = 0.0;
-		Matrix matrix = new Matrix(2, (i, j) -> distances[i][j]);
+		Matrix matrix = new Matrix(new String[2], (i, j) -> distances[i][j]);
 
 		String data = new CSV().format(matrix);
 

@@ -9,7 +9,7 @@ public class CorrectionTest {
 
 	@Test
 	public void process_Empty_Empty() {
-		assertEquals(new JukesCantor().process(new Matrix(0, (i, j) -> 0)).size(), 0);
+		assertEquals(new JukesCantor().process(new Matrix(new String[0], (i, j) -> 0)).size(), 0);
 	}
 
 	@Test
@@ -19,7 +19,7 @@ public class CorrectionTest {
 		distances[0][1] = 0.64875;
 		distances[1][0] = 0.64875;
 		distances[1][1] = 0.0;
-		Matrix matrix = new Matrix(2, (i, j) -> distances[i][j]);
+		Matrix matrix = new Matrix(new String[2], (i, j) -> distances[i][j]);
 
 		Matrix corrected = new JukesCantor().process(matrix);
 

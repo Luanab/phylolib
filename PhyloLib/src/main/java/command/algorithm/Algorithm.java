@@ -9,7 +9,7 @@ public abstract class Algorithm implements ICommand<Matrix, Tree> {
 
 	@Override
 	public final Tree process(Matrix matrix) {
-		Tree tree = new Tree();
+		Tree tree = new Tree(matrix.ids());
 		while (distinct() > 1) {
 			Edge edge = select();
 			join(edge);

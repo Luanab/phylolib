@@ -8,7 +8,7 @@ public final class Kimura extends Distance {
 	protected strictfp double distance(Profile i, Profile j) {
 		double transitions = 0;
 		double transversions = 0;
-		for (int l = 0; l < i.length(); l++) {
+		for (int l = 0; l < i.size(); l++) {
 			Integer first = i.locus(l);
 			Integer second = j.locus(l);
 			if (first == null || second == null || first.equals(second))
@@ -20,8 +20,8 @@ public final class Kimura extends Distance {
 			else
 				transversions++;
 		}
-		transitions /= i.length();
-		transversions /= i.length();
+		transitions /= i.size();
+		transversions /= i.size();
 		return -Math.log((1.0 - 2.0 * transitions - transversions) * Math.sqrt(1.0 - 2.0 * transversions)) / 2.0;
 	}
 

@@ -19,8 +19,8 @@ public class DistanceTest {
 	@Test
 	public void correct_Valid_Full() {
 		Dataset dataset = new Dataset(new ArrayList<>() {{
-			add(new Profile("000000"));
-			add(new Profile("10 001"));
+			add(new Profile("", "000000"));
+			add(new Profile("", "10 001"));
 		}});
 
 		Matrix matrix = new Hamming().process(dataset);

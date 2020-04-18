@@ -32,7 +32,11 @@ public final class GoeBURST extends MinimumSpanningTree {
 				return diff;
 		}
 		diff = Math.min(ifrom, ito) - Math.min(jfrom, jto);
-		return diff != 0 ? diff : (Math.max(ifrom, ito) - Math.max(jfrom, jto));
+		return diff != 0 ? diff : (Math.max(id(ifrom), id(ito)) - Math.max(id(jfrom), id(jto)));
+	}
+
+	protected final int id(int i) {
+		return Integer.parseInt(ids()[i]);
 	}
 
 }

@@ -1,6 +1,7 @@
 package data;
 
 import data.tree.Nexus;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.Optional;
@@ -10,38 +11,25 @@ import static org.testng.Assert.assertTrue;
 
 public class FileTest {
 
-	@Test
-	public void get_MissingFile_Empty() {
-		assertTrue(File.get("", Processor.DATASET).isEmpty());
+	@DataProvider
+	public Object[][] data() {
+		return new Object[][] {
+				{ "", Processor.DATASET },
+				{ "mlst", Processor.TREE },
+				{ "fasta:", Processor.DATASET },
+				{ "csv: ", Processor.MATRIX },
+				{ "csc:matrix.csv", Processor.MATRIX },
+				{ "newick:C:/xpto?", Processor.TREE }
+		};
+	}
+
+	@Test(dataProvider = "data")
+	public void get_Invalid_Empty(String file, Processor processor) {
+		assertTrue(File.get(file, processor).isEmpty());
 	}
 
 	@Test
-	public void get_MissingLocation_Empty() {
-		assertTrue(File.get("mlst", Processor.TREE).isEmpty());
-	}
-
-	@Test
-	public void get_EmptyLocation_Empty() {
-		assertTrue(File.get("fasta:", Processor.DATASET).isEmpty());
-	}
-
-	@Test
-	public void get_BlankLocation_Empty() {
-		assertTrue(File.get("csv: ", Processor.MATRIX).isEmpty());
-	}
-
-	@Test
-	public void get_InvalidFormat_Empty() {
-		assertTrue(File.get("csc:matrix.csv", Processor.MATRIX).isEmpty());
-	}
-
-	@Test
-	public void get_InvalidPath_Empty() {
-		assertTrue(File.get("newick:C:/xpto?", Processor.TREE).isEmpty());
-	}
-
-	@Test
-	public void get_ValidFile_Success() {
+	public void get_Valid_Success() {
 		String arg = "nexus:output.txt";
 
 		Optional<File> file = File.get(arg, Processor.TREE);
