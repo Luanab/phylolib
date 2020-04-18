@@ -21,7 +21,7 @@ public class SNPTest {
 
 	@Test
 	public void parse_NoSequence_Ignore() {
-		Stream<String> data = Stream.of("", "2\t100 1");
+		Stream<String> data = Stream.of("", "2\t100-1");
 
 		Dataset dataset = new SNP().parse(data);
 
@@ -73,7 +73,7 @@ public class SNPTest {
 
 	@Test
 	public void parse_InvalidLocus_Ignore() {
-		Stream<String> data = Stream.of("1\t11x1 1", "2\t1 001");
+		Stream<String> data = Stream.of("1\t11x1 1", "2\t1-001");
 
 		Dataset dataset = new SNP().parse(data);
 

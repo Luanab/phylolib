@@ -21,7 +21,7 @@ public final class FASTA implements IDatasetProcessor {
 		while (iterator.hasNext() && !(next = iterator.next()).startsWith(">"))
 			sequence.append(next);
 		this.id = next;
-		return new Pair<>(id, id.startsWith(">") && sequence.toString().matches("^[ACTG ]+$") ? new Profile(sequence.toString()) : null);
+		return new Pair<>(id, id.startsWith(">") && sequence.toString().matches("^[ACTG -]+$") ? new Profile(sequence.toString()) : null);
 	}
 
 }

@@ -63,7 +63,7 @@ public class FASTATest {
 
 	@Test
 	public void parse_LessLoci_Ignore() {
-		Stream<String> data = Stream.of(">1", "ACTGG TC", "ACTGGATC", ">2 profile", "TACTGATC");
+		Stream<String> data = Stream.of(">1", "ACTGG-TC", "ACTGGATC", ">2 profile", "TACTGATC");
 
 		Dataset dataset = new FASTA().parse(data);
 
@@ -85,7 +85,7 @@ public class FASTATest {
 
 	@Test
 	public void parse_InvalidLocus_Ignore() {
-		Stream<String> data = Stream.of(">1", "ACTGG TC", ">2 profile", "TACTGATC", "ACTGXATC");
+		Stream<String> data = Stream.of(">1", "ACTGG-TC", ">2 profile", "TACTGATC", "ACTGXATC");
 
 		Dataset dataset = new FASTA().parse(data);
 

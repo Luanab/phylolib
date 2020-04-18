@@ -11,7 +11,7 @@ public final class ML implements IDatasetProcessor {
 	public Pair<String, Profile> parse(Iterator<String> iterator) {
 		String[] profile = iterator.next().split("\\t");
 		String[] loci = Arrays.copyOfRange(profile, 1, profile.length);
-		return new Pair<>(profile[0], Arrays.stream(loci).allMatch(l -> l.matches("^(\\d+| )$")) ? new Profile(loci) : null);
+		return new Pair<>(profile[0], Arrays.stream(loci).allMatch(l -> l.matches("^(\\d+| |-)?$")) ? new Profile(loci) : null);
 	}
 
 }

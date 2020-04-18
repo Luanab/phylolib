@@ -51,7 +51,7 @@ public class MLTest {
 
 	@Test
 	public void parse_LessLoci_Ignore() {
-		Stream<String> data = Stream.of("ST\taroe\taroi\tarou", "1\t1\t \t1", "2\t1\t2\t1\t1");
+		Stream<String> data = Stream.of("ST\taroe\taroi\tarou", "1\t1\t-\t1", "2\t1\t2\t1\t1");
 
 		Dataset dataset = new ML().parse(data);
 
@@ -62,7 +62,7 @@ public class MLTest {
 
 	@Test
 	public void parse_MoreLoci_Ignore() {
-		Stream<String> data = Stream.of("ST\taroe\taroi\tarou", "1\t1\t \t1", "2\t1\t2");
+		Stream<String> data = Stream.of("ST\taroe\taroi\tarou", "1\t1\t\t1", "2\t1\t2");
 
 		Dataset dataset = new ML().parse(data);
 

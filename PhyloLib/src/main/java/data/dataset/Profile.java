@@ -7,11 +7,11 @@ public final class Profile {
 	private final Integer[] loci;
 
 	public Profile(String loci) {
-		this.loci = loci.chars().mapToObj(value -> value == ' ' ? null : value).toArray(Integer[]::new);
+		this.loci = loci.chars().mapToObj(value -> value == ' ' || value == '-' ? null : value).toArray(Integer[]::new);
 	}
 
 	public Profile(String[] loci) {
-		this.loci = Arrays.stream(loci).map(value -> value.isBlank() ? null : Integer.valueOf(value)).toArray(Integer[]::new);
+		this.loci = Arrays.stream(loci).map(value -> value.isBlank() || value.equals("-") ? null : Integer.valueOf(value)).toArray(Integer[]::new);
 	}
 
 	public int length() {
