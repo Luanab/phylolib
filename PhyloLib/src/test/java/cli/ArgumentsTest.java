@@ -1,5 +1,6 @@
 package cli;
 
+import exception.*;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -8,50 +9,48 @@ import static org.testng.Assert.*;
 
 public class ArgumentsTest {
 
-	@Test
-	public void parse_NoCommand_NotNull() {
-		assertTrue(Arguments.parse(new String[0]).isEmpty());
+	@Test(expectedExceptions = NoCommandException.class)
+	public void parse_NoCommand_Exception() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
+		Arguments.parse(new String[0]);
 	}
 
 	@Test
-	public void parse_OnlyInvalidCommands_Ignored() {
-		assertTrue(Arguments.parse(new String[] { "distanc", "distance", ":", "correct", "jukescantor", "--out=csv:output.csv" }).isEmpty());
-	}
-
-	@Test
-	public void parse_Help_Null() {
+	public void parse_Help_Null() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
 		assertNull(Arguments.parse(new String[] { "help" }));
 	}
 
-	@Test
-	public void parse_MissingTypeStartOfOptions_Ignored() {
-		assertTrue(Arguments.parse(new String[] { "distance", "--out=csv:output.csv" }).isEmpty());
+	@Test(expectedExceptions = InvalidCommandException.class)
+	public void parse_InvalidCommand_Exception() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
+		Arguments.parse(new String[] { "distanc", "distance", ":", "correct", "jukescantor", "--out=csv:output.csv" });
+	}
+
+	@Test(expectedExceptions = RepeatedCommandException.class)
+	public void parse_RepeatedCommand_Exception() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
+		Arguments.parse(new String[] { "distance", "hamming", ":", "distance", "kimura", "--out=csv:output.csv" });
+	}
+
+	@Test(expectedExceptions = MissingTypeException.class)
+	public void parse_MissingTypeStartOfOptions_Exception() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
+		Arguments.parse(new String[] { "distance", "--out=csv:output.csv" });
+	}
+
+	@Test(expectedExceptions = MissingTypeException.class)
+	public void parse_MissingTypeStartOfArgs_Exception() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
+		Arguments.parse(new String[] { "algorithm", ":", "correction", "jukescantor", "--out=csv:output.csv" });
+	}
+
+	@Test(expectedExceptions = MissingTypeException.class)
+	public void parse_MissingTypeEndOfArgs_Exception() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
+		Arguments.parse(new String[] { "correction", "jukescantor", ":", "optimization" });
+	}
+
+	@Test(expectedExceptions = InvalidTypeException.class)
+	public void parse_InvalidType_Exception() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
+		Arguments.parse(new String[] { "correction", "hamming" });
 	}
 
 	@Test
-	public void parse_MissingTypeStartOfArgs_Ignored() {
-		String[] args = { "algorithm", ":", "correction", "jukescantor", "--out=csv:output.csv" };
-
-		Arguments arguments = Arguments.parse(args);
-
-		assertEquals(arguments.size(), 1);
-		assertFalse(arguments.containsKey("algorithm"));
-		assertTrue(arguments.containsKey("correction"));
-	}
-
-	@Test
-	public void parse_MissingTypeEndOfArgs_Ignored() {
-		String[] args = { "correction", "jukescantor", ":", "optimization" };
-
-		Arguments arguments = Arguments.parse(args);
-
-		assertEquals(arguments.size(), 1);
-		assertFalse(arguments.containsKey("optimization"));
-		assertTrue(arguments.containsKey("correction"));
-	}
-
-	@Test
-	public void parse_ValidCommands_NotNull() {
+	public void parse_ValidCommands_NotNull() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
 		String[] args = new String[] { "optimization", "nni", ":", "distance", "hamming", "--dataset=snp:dataset.txt", ":", "optimization", "spr", "-o=newick:output.txt", ":", "algorithm", "upgma" };
 
 		Arguments arguments = Arguments.parse(args);

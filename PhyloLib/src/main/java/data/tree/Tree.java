@@ -1,9 +1,7 @@
 package data.tree;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Stream;
 
 public final class Tree {
 
@@ -26,6 +24,10 @@ public final class Tree {
 				.filter(id -> edges.values().stream().noneMatch(edges -> edges.stream().anyMatch(edge -> edge.to() == id)))
 				.findFirst()
 				.orElse(0);
+	}
+
+	public Stream<Edge> edges() {
+		return edges.values().stream().flatMap(Collection::stream);
 	}
 
 }

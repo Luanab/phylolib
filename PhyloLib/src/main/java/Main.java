@@ -1,8 +1,6 @@
 import cli.Arguments;
-import command.algorithm.Algorithm;
-import command.correction.Correction;
-import command.distance.Distance;
-import command.optimization.Optimization;
+import command.Command;
+import command.ICommand;
 import data.Context;
 import logging.Log;
 
@@ -18,10 +16,10 @@ public class Main {
 			Arguments arguments = Arguments.parse(args);
 			if (arguments != null) {
 				Context context = new Context();
-				Distance.run(arguments, context);
-				Correction.run(arguments, context);
-				Algorithm.run(arguments, context);
-				Optimization.run(arguments, context);
+				ICommand.run(arguments, context, Command.DISTANCE, context::getDataset, context::setMatrix);
+				ICommand.run(arguments, context, Command.CORRECTION, context::getMatrix, context::setMatrix);
+				ICommand.run(arguments, context, Command.ALGORITHM, context::getMatrix, context::setTree);
+				ICommand.run(arguments, context, Command.OPTIMIZATION, context::getTree, context::setTree);
 			} else
 				try (Stream<String> usage = Files.lines(Paths.get(Main.class.getClassLoader().getResource("usage.txt").toURI()))) {
 					System.out.println(usage.collect(Collectors.joining("\n")));

@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 @FunctionalInterface
 public interface IReader<T> {
 
-	String READING = "Reading from file '%s' %s";
+	String READING = "Read operation on file '%s' %s";
 	String STARTED = "started";
 	String SUCCEEDED = "succeeded";
 	String FAILED = "failed";

@@ -1,35 +1,32 @@
 package command.optimization;
 
-import cli.Arguments;
-import command.Command;
 import command.ICommand;
-import data.Context;
 import data.tree.Edge;
 import data.tree.Tree;
-import exception.MissingInputException;
 
-import java.util.HashMap;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public abstract class Optimization implements ICommand<Tree, Tree> {
 
-	public static void run(Arguments arguments, Context context) throws MissingInputException {
-		ICommand.run(arguments, context, Command.OPTIMIZATION, context::getTree, context::setTree, new HashMap<>() {{
-			put("lbr", new LBR());
-			put("nni", new NNI());
-			put("spr", new SPR());
-			put("tbr", new TBR());
-		}});
-	}
-
 	@Override
 	public final Tree process(Tree tree) {
-		return null;
+		Set<Edge> edges = tree.edges().collect(Collectors.toSet());
+		while (!edges.isEmpty()) {
+			Edge previous = select(edges);
+			Edge current = join(tree);
+			reduce(previous, current, edges, tree);
+		}
+		return tree;
 	}
 
-	protected abstract Edge select();
+	protected abstract Edge select(Set<Edge> edges);
 
-	protected abstract Edge join();
+	protected abstract Edge join(Tree tree);
 
-	protected abstract void reduce(Edge edge);
+	protected void reduce(Edge previous, Edge current, Set<Edge> edges, Tree tree) {
+		edges.remove(previous);
+		tree.add(current);
+	}
 
 }

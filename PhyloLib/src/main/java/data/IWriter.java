@@ -12,7 +12,7 @@ import java.util.Optional;
 @FunctionalInterface
 public interface IWriter<T> {
 
-	String WRITING = "Writing to file '%s' %s";
+	String WRITING = "Write operation on file '%s' %s";
 	String STARTED = "started";
 	String SUCCEEDED = "succeeded";
 	String FAILED = "failed";

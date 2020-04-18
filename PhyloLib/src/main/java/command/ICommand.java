@@ -7,47 +7,32 @@ import data.Context;
 import exception.MissingInputException;
 import logging.Log;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.function.BiConsumer;
 
 public interface ICommand<T, R> {
 
-	String RUNNING = "Command '%s' with type '%s' %s running";
-	String STARTED = "started";
-	String FINISHED = "finished";
-	String DUPLICATED_COMMAND = "Ignoring duplicates of command '%s'";
-	String INVALID_TYPE = "Ignoring command '%s' with invalid type '%s'";
+	String RUNNING = "%s running command '%s' with type '%s'";
+	String STARTED = "Started";
+	String FINISHED = "Finished";
 	String INVALID_OPTION = "Ignoring invalid option '%s'";
 
-	static <T, R> void run(Arguments arguments, Context context, Command command, IGetter<T> getter, BiConsumer<Options, R> setter, Map<String, ICommand<T, R>> map) throws MissingInputException {
-		List<Parameters> commands = arguments.getOrDefault(command.getName(), new ArrayList<>());
-		if (command.getMultiplicity() == Multiplicity.SINGLE && commands.size() > 1) {
-			Log.warning(DUPLICATED_COMMAND, command.getName());
-			commands = commands.subList(0, 1);
-		}
-		for (Parameters parameters : commands) {
-			String type = parameters.getType();
-			ICommand<T, R> component = map.get(type);
-			if (component == null)
-				Log.warning(INVALID_TYPE, command.getName(), type);
-			else {
-				Options options = parameters.getOptions();
-				Log.info(RUNNING, command.getName(), type, STARTED);
-				T data = getter.get(options);
-				component.init(context, options);
-				R result = component.process(data);
-				setter.accept(options, result);
-				options.keys().forEach(option -> Log.warning(INVALID_OPTION, option));
-				Log.info(RUNNING, command.getName(), type, FINISHED);
-			}
+	static <T, R> void run(Arguments arguments, Context context, Command command, IGetter<T> getter, BiConsumer<Options, R> setter) throws MissingInputException, IllegalAccessException, InvocationTargetException, InstantiationException {
+		for (Parameters parameters : arguments.getOrDefault(command.getName(), new ArrayList<>())) {
+			ICommand<T, R> component = (ICommand<T, R>) command.getType(parameters.getType()).newInstance();
+			Log.info(RUNNING, STARTED, command.getName(), parameters.getType());
+			Options options = parameters.getOptions();
+			T data = getter.get(options);
+			component.init(context, options);
+			R result = component.process(data);
+			setter.accept(options, result);
+			options.keys().forEach(option -> Log.warning(INVALID_OPTION, option));
+			Log.info(RUNNING, FINISHED, command.getName(), parameters.getType());
 		}
 	}
 
-	default void init(Context context, Options options) throws MissingInputException {
-
-	}
+	default void init(Context context, Options options) throws MissingInputException { }
 
 	R process(T data);
 
