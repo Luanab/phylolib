@@ -1,12 +1,8 @@
 package data;
 
-import cli.Option;
 import cli.Options;
 import data.dataset.Dataset;
-import data.dataset.IDatasetProcessor;
-import data.matrix.IMatrixProcessor;
 import data.matrix.Matrix;
-import data.tree.ITreeProcessor;
 import data.tree.Tree;
 import exception.MissingInputException;
 
@@ -17,23 +13,23 @@ public final class Context {
 	private Tree tree;
 
 	public Dataset getDataset(Options options) throws MissingInputException {
-		return dataset = IReader.read(options, Option.DATASET, dataset, IDatasetProcessor.PROCESSORS);
+		return dataset = IReader.read(options, dataset, Processor.DATASET);
 	}
 
 	public Matrix getMatrix(Options options) throws MissingInputException {
-		return matrix = IReader.read(options, Option.MATRIX, matrix, IMatrixProcessor.PROCESSORS);
+		return matrix = IReader.read(options, matrix, Processor.MATRIX);
 	}
 
 	public Tree getTree(Options options) throws MissingInputException {
-		return tree = IReader.read(options, Option.TREE, tree, ITreeProcessor.PROCESSORS);
+		return tree = IReader.read(options, tree, Processor.TREE);
 	}
 
 	public void setMatrix(Options options, Matrix value) {
-		IWriter.write(options, matrix = value, IMatrixProcessor.PROCESSORS);
+		IWriter.write(options, matrix = value, Processor.MATRIX);
 	}
 
 	public void setTree(Options options, Tree value) {
-		IWriter.write(options, tree = value, ITreeProcessor.PROCESSORS);
+		IWriter.write(options, tree = value, Processor.TREE);
 	}
 
 }

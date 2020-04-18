@@ -5,7 +5,6 @@ import javafx.util.Pair;
 import logging.Log;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
@@ -14,13 +13,6 @@ public interface IDatasetProcessor extends IReader<Dataset> {
 
 	String RENAMING = "Renaming profile '%s' to '%d'";
 	String IGNORING = "Ignoring invalid profile '%s'";
-
-	HashMap<String, IDatasetProcessor> PROCESSORS = new HashMap<>() {{
-		put("fasta", new FASTA());
-		put("mlst", new ML());
-		put("mlva", new ML());
-		put("snp", new SNP());
-	}};
 
 	@Override
 	default Dataset parse(Stream<String> data) {

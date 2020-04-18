@@ -1,13 +1,11 @@
 package data;
 
-import cli.Option;
 import cli.Options;
 import exception.MissingInputException;
 import logging.Log;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -19,15 +17,15 @@ public interface IReader<T> {
 	String SUCCEEDED = "succeeded";
 	String FAILED = "failed";
 
-	static <T, R extends IReader<T>> T read(Options options, Option option, T previous, Map<String, R> map) throws MissingInputException {
-		Optional<String> input = options.remove(option);
+	static <T> T read(Options options, T previous, Processor processor) throws MissingInputException {
+		Optional<String> input = options.remove(processor.getOption());
 		if (input.isPresent()) {
-			Optional<File<R>> file = File.get(input.get(), map);
+			Optional<File> file = File.get(input.get(), processor);
 			if (file.isPresent()) {
 				Path path = file.get().getPath();
 				Log.info(READING, path, STARTED);
 				try (Stream<String> data = Files.lines(path)) {
-					T result = file.get().getProcessor().parse(data);
+					T result = ((IReader<T>) file.get().getProcessor()).parse(data);
 					Log.info(READING, path, SUCCEEDED);
 					return result;
 				} catch (Exception e) {
@@ -36,7 +34,7 @@ public interface IReader<T> {
 			}
 		}
 		if (previous == null)
-			throw new MissingInputException(option.getKey());
+			throw new MissingInputException(processor.getName());
 		return previous;
 	}
 

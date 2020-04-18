@@ -11,17 +11,17 @@ import java.util.Map;
 
 public enum Command {
 
-	DISTANCE(false, Reflection.types(Distance.class)),
-	CORRECTION(false, Reflection.types(Correction.class)),
-	ALGORITHM(false, Reflection.types(Algorithm.class)),
-	OPTIMIZATION(true, Reflection.types(Optimization.class));
+	DISTANCE(false, Distance.class),
+	CORRECTION(false, Correction.class),
+	ALGORITHM(false, Algorithm.class),
+	OPTIMIZATION(true, Optimization.class);
 
 	private final boolean repeatable;
 	private final Map<String, Constructor<?>> types;
 
-	Command(boolean repeatable, Map<String, Constructor<?>> types) {
+	Command(boolean repeatable, Class<?> type) {
 		this.repeatable = repeatable;
-		this.types = types;
+		this.types = Reflection.types("command." + getName(), type);
 	}
 
 	public static Command get(String command) {

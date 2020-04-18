@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 public final class Log {
 
-	private static final Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	private static final Logger LOGGER = Logger.getGlobal();
 
 	static {
 		try {
@@ -26,6 +26,10 @@ public final class Log {
 
 	public static void error(String message, Object... parts) {
 		LOGGER.severe(String.format(message, parts));
+	}
+
+	public static void throwing(String sourceClass, String sourceMethod, Throwable thrown) {
+		LOGGER.throwing(sourceClass, sourceMethod, thrown);
 	}
 
 }

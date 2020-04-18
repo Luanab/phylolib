@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 
 public class Reflection {
 
-	public static <T> Map<String, Constructor<?>> types(Class<T> type) {
-		return new Reflections("command")
+	public static <T> Map<String, Constructor<?>> types(String prefix, Class<T> type) {
+		return new Reflections(prefix)
 				.getSubTypesOf(type).stream()
 				.filter(c -> !Modifier.isAbstract(c.getModifiers()))
 				.collect(Collectors.toMap(c -> c.getSimpleName().toLowerCase(), c -> c.getConstructors()[0]));
