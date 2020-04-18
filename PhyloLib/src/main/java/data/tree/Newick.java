@@ -27,7 +27,7 @@ public class Newick implements ITreeProcessor {
 				case ')': depth--;
 					newick = newick.substring(1);
 					break;
-				case ';': newick = ";";
+				case ';': newick = "";
 					break;
 				default:
 					String info = newick.split("[),;]", 2)[0];
