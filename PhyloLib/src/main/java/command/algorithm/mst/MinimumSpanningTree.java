@@ -41,7 +41,8 @@ public abstract class MinimumSpanningTree extends Algorithm {
 		for (int i = 0; i < size; i++) {
 			this.clusters[i] = i;
 			for (int j = 0; j < size; j++)
-				this.edges.add(new Edge(i, j, matrix.get(i, j)));
+				if (i != j)
+					this.edges.add(new Edge(i, j, matrix.get(i, j)));
 		}
 	}
 

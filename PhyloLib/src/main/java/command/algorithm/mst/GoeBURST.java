@@ -17,7 +17,7 @@ public final class GoeBURST extends MinimumSpanningTree {
 		for (int i = 0; i < elements(); i++)
 			for (int j = 0; j < elements(); j++)
 				if (distance(i, j) < lvs)
-					this.lvs[i][lvs]++;
+					this.lvs[i][lvs - 1]++;
 	}
 
 	@Override
