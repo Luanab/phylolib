@@ -1,6 +1,7 @@
 package cli;
 
 import exception.*;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -9,44 +10,27 @@ import static org.testng.Assert.*;
 
 public class ArgumentsTest {
 
-	@Test(expectedExceptions = NoCommandException.class)
-	public void parse_NoCommand_Exception() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
-		Arguments.parse(new String[0]);
+	@DataProvider
+	public Object[][] data() {
+		return new Object[][] {
+				{ NoCommandException.class, new String[0] },
+				{ InvalidCommandException.class, new String[] { "distanc", "hamming", ":", "correct", "jukescantor", "--out=csv:output.csv" } },
+				{ RepeatedCommandException.class, new String[] { "distance", "hamming", ":", "distance", "kimura", "--out=csv:output.csv" } },
+				{ MissingTypeException.class, new String[] { "distance", "--out=csv:output.csv" } },
+				{ MissingTypeException.class, new String[] { "algorithm", ":", "correction", "jukescantor", "--out=csv:output.csv" } },
+				{ MissingTypeException.class, new String[] { "correction", "jukescantor", ":", "optimization" } },
+				{ InvalidTypeException.class, new String[] { "correction", "hamming" } }
+		};
+	}
+
+	@Test(dataProvider = "data")
+	public void get_Invalid_Exception(Class<Throwable> exception, String[] data) {
+		assertThrows(exception, () -> Arguments.parse(data));
 	}
 
 	@Test
 	public void parse_Help_Null() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
 		assertNull(Arguments.parse(new String[] { "help" }));
-	}
-
-	@Test(expectedExceptions = InvalidCommandException.class)
-	public void parse_InvalidCommand_Exception() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
-		Arguments.parse(new String[] { "distanc", "distance", ":", "correct", "jukescantor", "--out=csv:output.csv" });
-	}
-
-	@Test(expectedExceptions = RepeatedCommandException.class)
-	public void parse_RepeatedCommand_Exception() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
-		Arguments.parse(new String[] { "distance", "hamming", ":", "distance", "kimura", "--out=csv:output.csv" });
-	}
-
-	@Test(expectedExceptions = MissingTypeException.class)
-	public void parse_MissingTypeStartOfOptions_Exception() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
-		Arguments.parse(new String[] { "distance", "--out=csv:output.csv" });
-	}
-
-	@Test(expectedExceptions = MissingTypeException.class)
-	public void parse_MissingTypeStartOfArgs_Exception() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
-		Arguments.parse(new String[] { "algorithm", ":", "correction", "jukescantor", "--out=csv:output.csv" });
-	}
-
-	@Test(expectedExceptions = MissingTypeException.class)
-	public void parse_MissingTypeEndOfArgs_Exception() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
-		Arguments.parse(new String[] { "correction", "jukescantor", ":", "optimization" });
-	}
-
-	@Test(expectedExceptions = InvalidTypeException.class)
-	public void parse_InvalidType_Exception() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
-		Arguments.parse(new String[] { "correction", "hamming" });
 	}
 
 	@Test

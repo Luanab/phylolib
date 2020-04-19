@@ -1,5 +1,6 @@
 package data.tree;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.stream.Stream;
@@ -9,24 +10,20 @@ import static org.testng.Assert.assertTrue;
 
 public class NexusTest {
 
-	@Test
-	public void parse_Empty_Empty() {
-		assertTrue(new Nexus().parse(Stream.empty()).isEmpty());
+	@DataProvider
+	public Object[][] trees() {
+		return new Object[][] {
+				{ Stream.empty() },
+				{ Stream.of("") },
+				{ Stream.of(" ") },
+				{ Stream.of("BEGIN TREES;\n\tTree result = ;\nEND;") },
+				{ Stream.of("BEGIN TREES;\n\tTree result = ((A:2.3,B:1:3.1,C:0.2)_;\nEND;") }
+		};
 	}
 
-	@Test
-	public void parse_Blank_Empty() {
-		assertTrue(new Nexus().parse(Stream.of(" ")).isEmpty());
-	}
-
-	@Test
-	public void parse_NoTree_Empty() {
-		assertTrue(new Nexus().parse(Stream.of("BEGIN TREES;\n\tTree result = ;\nEND;")).isEmpty());
-	}
-
-	@Test
-	public void parse_InvalidFormat_Empty() {
-		assertTrue(new Nexus().parse(Stream.of("BEGIN TREES;\n\tTree result = ((A:2.3,B:1:3.1,C:0.2)D;\nEND;")).isEmpty());
+	@Test(dataProvider = "trees")
+	public void parse_Valid_Empty(Stream<String> data) {
+		assertTrue(new Nexus().parse(data).isEmpty());
 	}
 
 	@Test

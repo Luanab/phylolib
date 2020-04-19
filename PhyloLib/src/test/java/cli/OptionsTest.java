@@ -1,5 +1,6 @@
 package cli;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.Optional;
@@ -8,40 +9,23 @@ import static org.testng.Assert.*;
 
 public class OptionsTest {
 
-	@Test
-	public void put_OptionWithoutDash_Ignored() {
-		Options options = new Options();
-
-		options.put("out=newick:output.txt");
-
-		assertFalse(options.keys().contains("out"));
+	@DataProvider
+	public Object[][] options() {
+		return new Object[][] {
+				{ "--out" },
+				{ "--out=" },
+				{ "--out= " },
+				{ "out=newick:output.txt" },
+		};
 	}
 
-	@Test
-	public void put_MissingOptionValue_Ignored() {
+	@Test(dataProvider = "options")
+	public void put_Invalid_Ignored(String option) {
 		Options options = new Options();
 
-		options.put("--out");
+		options.put(option);
 
-		assertFalse(options.keys().contains("--out"));
-	}
-
-	@Test
-	public void put_EmptyOptionValue_Ignored() {
-		Options options = new Options();
-
-		options.put("--out=");
-
-		assertFalse(options.keys().contains("--out"));
-	}
-
-	@Test
-	public void put_BlankOptionValue_Ignored() {
-		Options options = new Options();
-
-		options.put("--out= ");
-
-		assertFalse(options.keys().contains("--out"));
+		assertFalse(options.remove(Option.OUT).isPresent());
 	}
 
 	@Test
@@ -76,15 +60,9 @@ public class OptionsTest {
 		Options options = new Options();
 		options.put("-l=-4");
 
-		assertEquals(options.remove(Option.LVS, "2"), "2");
-	}
+		String lvs = options.remove(Option.LVS, "2");
 
-	@Test
-	public void remove_InvalidFileFormat_Ignored() {
-		Options options = new Options();
-		options.put("--matrix=csv-matrix.csv");
-
-		assertTrue(options.remove(Option.MATRIX).isEmpty());
+		assertEquals(lvs, "2");
 	}
 
 	@Test
@@ -124,13 +102,23 @@ public class OptionsTest {
 	}
 
 	@Test
+	public void remove_InvalidFileFormat_Ignored() {
+		Options options = new Options();
+		options.put("--matrix=csv-matrix.csv");
+
+		Optional<String> matrix = options.remove(Option.MATRIX);
+
+		assertTrue(matrix.isEmpty());
+	}
+
+	@Test
 	public void remove_NoMatch_Empty() {
 		Options options = new Options();
 		options.put("--tee=nexus:tree.txt");
 
-		Optional<String> value = options.remove(Option.TREE);
+		Optional<String> tree = options.remove(Option.TREE);
 
-		assertTrue(value.isEmpty());
+		assertTrue(tree.isEmpty());
 		assertEquals(options.keys().size(), 1);
 		assertTrue(options.keys().contains("--tee"));
 	}

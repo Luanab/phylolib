@@ -1,5 +1,6 @@
 package data.tree;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -10,24 +11,20 @@ import static org.testng.Assert.assertTrue;
 
 public class NewickTest {
 
-	@Test
-	public void parse_Empty_Empty() {
-		assertTrue(new Newick().parse(Stream.empty()).isEmpty());
+	@DataProvider
+	public Object[][] trees() {
+		return new Object[][] {
+				{ Stream.empty() },
+				{ Stream.of("") },
+				{ Stream.of(" ") },
+				{ Stream.of(";") },
+				{ Stream.of("((A:2.3,B:1.0:3.1,C:0.2)_;") }
+		};
 	}
 
-	@Test
-	public void parse_Blank_Empty() {
-		assertTrue(new Newick().parse(Stream.of(" ")).isEmpty());
-	}
-
-	@Test
-	public void parse_NoTree_Empty() {
-		assertTrue(new Newick().parse(Stream.of(";")).isEmpty());
-	}
-
-	@Test
-	public void parse_InvalidFormat_Empty() {
-		assertTrue(new Newick().parse(Stream.of("((A:2.3,B:1.0)_:3.1C:0.2)_;")).isEmpty());
+	@Test(dataProvider = "trees")
+	public void parse_Valid_Empty(Stream<String> data) {
+		assertTrue(new Newick().parse(data).isEmpty());
 	}
 
 	@Test
@@ -60,7 +57,7 @@ public class NewickTest {
 
 	@Test
 	public void format_Valid_Success() {
-		Tree tree = new Tree(new String[]{ "A", "B", "C" });
+		Tree tree = new Tree(new String[] { "A", "B", "C" });
 		tree.add(new Edge(3, 0, 2.3));
 		tree.add(new Edge(3, 1, 1));
 		tree.add(new Edge(4, 3, 3.1));
