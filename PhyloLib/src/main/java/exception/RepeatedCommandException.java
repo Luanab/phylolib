@@ -1,6 +1,6 @@
 package exception;
 
-public class RepeatedCommandException extends Exception {
+public class RepeatedCommandException extends ArgumentException {
 
 	public RepeatedCommandException(String command) {
 		super("Repeated command '" + command + "'");

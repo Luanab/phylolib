@@ -36,8 +36,10 @@ public final class Tree {
 		edges.add(edge);
 	}
 
-	public List<Edge> get(int i) {
-		return edges.stream().filter(e -> e.from() == i).collect(Collectors.toList());
+	public List<Edge> remove(int i) {
+		List<Edge> edges = this.edges.stream().filter(e -> e.from() == i || e.to() == i).collect(Collectors.toList());
+		this.edges.removeAll(edges);
+		return edges;
 	}
 
 	public int root() {

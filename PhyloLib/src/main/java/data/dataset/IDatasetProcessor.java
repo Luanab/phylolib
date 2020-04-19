@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 public interface IDatasetProcessor extends IReader<Dataset> {
 
-	String IGNORING = "Ignoring invalid profile '%s'";
+	String INVALID = "Ignored invalid profile '%s'";
 
 	@Override
 	default Dataset parse(Stream<String> data) {
@@ -22,7 +22,7 @@ public interface IDatasetProcessor extends IReader<Dataset> {
 			if (profile.size() > 1 && (profiles.isEmpty() || profile.size() == profiles.get(0).size()))
 				profiles.add(profile);
 			else
-				Log.warning(IGNORING, profile.id());
+				Log.warning(INVALID, profile.id());
 		}
 		return new Dataset(profiles);
 	}

@@ -12,10 +12,10 @@ public final class Options {
 	private static final String SEPARATOR = "=";
 	private static final String ALIAS = "-";
 	private static final String KEY = "--";
-	private static final String DEFAULT = "Using default value '%s' for option -%c --%s";
-	private static final String INVALID_OPTION = "Ignoring invalid option '%s'";
-	private static final String DUPLICATED_OPTION = "Ignoring duplicated option '%s'";
-	private static final String INVALID_VALUE = "Ignoring invalid value '%s' for option -%c --%s";
+	private static final String DEFAULT = "Used default value '%s' for option -%c --%s";
+	private static final String INVALID_OPTION = "Ignored invalid option '%s'";
+	private static final String DUPLICATED_OPTION = "Ignored duplicated option '%s'";
+	private static final String INVALID_VALUE = "Ignored invalid value '%s' for option -%c --%s";
 
 	private final Map<String, String> options = new HashMap<>();
 

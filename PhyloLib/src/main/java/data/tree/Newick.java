@@ -38,7 +38,7 @@ public class Newick implements ITreeProcessor {
 					ids.add(values[0].isBlank() ? "_" : values[0]);
 					if (newick.length() > 0 && !newick.startsWith(";")) {
 						if (values.length != 2 || values[1].isBlank() || !values[1].matches("^((-)?\\d*(\\.\\d+)?)$")) {
-							Log.warning(IGNORING);
+							Log.warning(INVALID);
 							return new Tree();
 						}
 						levels.peek().add(new Edge(-1, id, Double.parseDouble(values[1])));
@@ -46,7 +46,7 @@ public class Newick implements ITreeProcessor {
 			}
 		}
 		if (!levels.isEmpty()) {
-			Log.warning(IGNORING);
+			Log.warning(INVALID);
 			return new Tree();
 		}
 		return new Tree(ids.toArray(new String[0]), edges);
@@ -64,10 +64,12 @@ public class Newick implements ITreeProcessor {
 	}
 
 	private void format(Tree tree, int root, StringBuilder data) {
-		List<Edge> edges = tree.get(root);
+		List<Edge> edges = tree.remove(root);
 		if (!edges.isEmpty()) {
 			data.append('(');
 			for (Edge edge : edges) {
+				if (edge.to() == root)
+					edge = new Edge(edge.to(), edge.from(), edge.distance());
 				format(tree, edge.to(), data);
 				data.append(id(tree, edge.to())).append(':').append(edge.distance()).append(',');
 			}

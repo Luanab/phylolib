@@ -1,6 +1,7 @@
 package logging;
 
 import java.io.IOException;
+import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
@@ -11,8 +12,8 @@ public final class Log {
 	static {
 		try {
 			LogManager.getLogManager().readConfiguration(Log.class.getClassLoader().getResourceAsStream("logging.properties"));
-		} catch (SecurityException | IOException e) {
-			LOGGER.severe(e.getMessage());
+		} catch (SecurityException | IOException exception) {
+			LOGGER.severe(exception.getMessage());
 		}
 	}
 
@@ -28,8 +29,8 @@ public final class Log {
 		LOGGER.severe(String.format(message, parts));
 	}
 
-	public static void throwing(String sourceClass, String sourceMethod, Throwable thrown) {
-		LOGGER.throwing(sourceClass, sourceMethod, thrown);
+	public static void exception(Exception exception) {
+		LOGGER.log(Level.SEVERE, exception.getMessage(), exception);
 	}
 
 }

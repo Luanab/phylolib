@@ -3,6 +3,7 @@ package data.tree;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.stream.Stream;
 
 import static org.testng.Assert.assertEquals;
@@ -32,20 +33,21 @@ public class NexusTest {
 
 		Tree tree = new Nexus().parse(data);
 
-		assertEquals(tree.get(4).size(), 2);
-		assertEquals(tree.get(4).get(0).from(), 4);
-		assertEquals(tree.get(4).get(0).to(), 2);
-		assertEquals(tree.get(4).get(0).distance(), 3.1);
-		assertEquals(tree.get(4).get(1).from(), 4);
-		assertEquals(tree.get(4).get(1).to(), 3);
-		assertEquals(tree.get(4).get(1).distance(), 0.2);
-		assertEquals(tree.get(2).size(), 2);
-		assertEquals(tree.get(2).get(0).from(), 2);
-		assertEquals(tree.get(2).get(0).to(), 0);
-		assertEquals(tree.get(2).get(0).distance(), 2.3);
-		assertEquals(tree.get(2).get(1).from(), 2);
-		assertEquals(tree.get(2).get(1).to(), 1);
-		assertEquals(tree.get(2).get(1).distance(), 1);
+		List<Edge> edges = tree.edges();
+
+		assertEquals(edges.size(), 4);
+		assertEquals(edges.get(0).from(), 2);
+		assertEquals(edges.get(0).to(), 0);
+		assertEquals(edges.get(0).distance(), 2.3);
+		assertEquals(edges.get(1).from(), 2);
+		assertEquals(edges.get(1).to(), 1);
+		assertEquals(edges.get(1).distance(), 1);
+		assertEquals(edges.get(2).from(), 4);
+		assertEquals(edges.get(2).to(), 2);
+		assertEquals(edges.get(2).distance(), 3.1);
+		assertEquals(edges.get(3).from(), 4);
+		assertEquals(edges.get(3).to(), 3);
+		assertEquals(edges.get(3).distance(), 0.2);
 	}
 
 	@Test

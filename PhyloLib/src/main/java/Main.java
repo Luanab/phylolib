@@ -2,6 +2,7 @@ import cli.Arguments;
 import command.Command;
 import command.ICommand;
 import data.Context;
+import exception.ArgumentException;
 import logging.Log;
 
 import java.nio.file.Files;
@@ -24,8 +25,10 @@ public class Main {
 				try (Stream<String> usage = Files.lines(Paths.get(Main.class.getClassLoader().getResource("usage.txt").toURI()))) {
 					System.out.println(usage.collect(Collectors.joining("\n")));
 				}
-		} catch (Exception e) {
-			Log.error(e.getMessage());
+		} catch (ArgumentException exception) {
+			Log.error(exception.getMessage());
+		} catch (Exception exception) {
+			Log.exception(exception);
 		}
 	}
 

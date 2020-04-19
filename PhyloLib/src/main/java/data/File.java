@@ -11,7 +11,7 @@ import java.util.Optional;
 public class File {
 
 	private static final String SEPARATOR = ":";
-	private static final String INVALID = "Ignoring invalid %s '%s'";
+	private static final String INVALID = "Ignored invalid %s '%s'";
 	private static final String FILE = "file";
 	private static final String FORMAT = "format";
 	private static final String PATH = "path";
@@ -37,11 +37,11 @@ public class File {
 		}
 		try {
 			return Optional.of(new File(processor.getType(format).newInstance(), Paths.get(path)));
-		} catch (InvalidPathException e) {
+		} catch (InvalidPathException exception) {
 			Log.warning(INVALID, PATH, path);
 			return Optional.empty();
-		} catch (IllegalAccessException | InstantiationException | InvocationTargetException e) {
-			Log.throwing("File", "get", e);
+		} catch (IllegalAccessException | InstantiationException | InvocationTargetException exception) {
+			Log.exception(exception);
 			return Optional.empty();
 		}
 	}

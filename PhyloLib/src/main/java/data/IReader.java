@@ -12,10 +12,10 @@ import java.util.stream.Stream;
 @FunctionalInterface
 public interface IReader<T> {
 
-	String READING = "Read operation on file '%s' %s";
-	String STARTED = "started";
-	String SUCCEEDED = "succeeded";
-	String FAILED = "failed";
+	String READ = "%s reading file '%s'";
+	String STARTED = "Started";
+	String FINISHED = "Finished";
+	String FAILED = "Failed";
 
 	static <T> T read(Options options, T previous, Processor processor) throws MissingInputException {
 		Optional<String> input = options.remove(processor.getOption());
@@ -23,13 +23,13 @@ public interface IReader<T> {
 			Optional<File> file = File.get(input.get(), processor);
 			if (file.isPresent()) {
 				Path path = file.get().getPath();
-				Log.info(READING, path, STARTED);
+				Log.info(READ, STARTED, path);
 				try (Stream<String> data = Files.lines(path)) {
 					T result = ((IReader<T>) file.get().getProcessor()).parse(data);
-					Log.info(READING, path, SUCCEEDED);
+					Log.info(READ, FINISHED, path);
 					return result;
-				} catch (Exception e) {
-					Log.warning(READING, path, FAILED);
+				} catch (Exception exception) {
+					Log.warning(READ, FAILED, path);
 				}
 			}
 		}

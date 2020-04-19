@@ -23,13 +23,13 @@ public final class CSV implements IMatrixProcessor {
 				(matrix.isEmpty() || (next.length == matrix.get(0).size() && matrix.size() < matrix.get(0).size())))
 				matrix.add(Arrays.stream(next).map(Double::parseDouble).collect(Collectors.toList()));
 			else
-				Log.warning(IGNORING_ROW, counter);
+				Log.warning(INVALID_ROW, counter);
 			counter++;
 		}
 		if (!matrix.isEmpty()) {
 			for (int i = matrix.get(0).size(); i > matrix.size(); i--) {
 				int column = i;
-				Log.warning(IGNORING_COLUMN, column);
+				Log.warning(INVALID_COLUMN, column);
 				matrix.forEach(row -> row.remove(column - 1));
 			}
 		}

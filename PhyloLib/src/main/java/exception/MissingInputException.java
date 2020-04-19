@@ -1,6 +1,6 @@
 package exception;
 
-public class MissingInputException extends Exception {
+public class MissingInputException extends ArgumentException {
 
 	public MissingInputException(String input) {
 		super("Missing input for '" + input + "'");

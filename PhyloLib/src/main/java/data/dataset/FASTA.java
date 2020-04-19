@@ -19,7 +19,9 @@ public final class FASTA implements IDatasetProcessor {
 		while (iterator.hasNext() && !(next = iterator.next()).startsWith(">"))
 			sequence.append(next);
 		this.id = next;
-		return new Profile(id.replaceFirst(">", ""), id.startsWith(">") && sequence.toString().matches("^[ACTG -]+$") ? sequence.toString() : "");
+		return id.startsWith(">")
+			   ? new Profile(id.substring(1), sequence.toString().matches("^[ACTG -]+$") ? sequence.toString() : "")
+			   : new Profile(id, "");
 	}
 
 }
