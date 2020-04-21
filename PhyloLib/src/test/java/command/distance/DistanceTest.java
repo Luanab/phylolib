@@ -26,10 +26,10 @@ public class DistanceTest {
 		Matrix matrix = new Hamming().process(dataset);
 
 		assertEquals(matrix.size(), 2);
-		assertEquals(matrix.get(0, 0), 0);
-		assertEquals(matrix.get(0, 1), 3);
-		assertEquals(matrix.get(1, 0), 3);
-		assertEquals(matrix.get(1, 1), 0);
+		assertEquals(matrix.distance(0, 0), 0);
+		assertEquals(matrix.distance(0, 1), 3);
+		assertEquals(matrix.distance(1, 0), 3);
+		assertEquals(matrix.distance(1, 1), 0);
 	}
 
 }

@@ -36,10 +36,10 @@ public class CSVTest {
 		Matrix matrix = new CSV().parse(data);
 
 		assertEquals(matrix.size(), 2);
-		assertEquals(matrix.get(0, 0), 0);
-		assertEquals(matrix.get(0, 1), 4.5);
-		assertEquals(matrix.get(1, 0), 4.5);
-		assertEquals(matrix.get(1, 1), 0);
+		assertEquals(matrix.distance(0, 0), 0);
+		assertEquals(matrix.distance(0, 1), 4.5);
+		assertEquals(matrix.distance(1, 0), 4.5);
+		assertEquals(matrix.distance(1, 1), 0);
 	}
 
 	@Test

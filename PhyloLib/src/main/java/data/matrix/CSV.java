@@ -42,7 +42,7 @@ public final class CSV implements IMatrixProcessor {
 		StringBuilder data = new StringBuilder();
 		for (int i = 0; i < matrix.size(); i++) {
 			for (int j = 0; j < matrix.size(); j++)
-				data.append(matrix.get(i, j)).append('\t');
+				data.append(matrix.distance(i, j)).append('\t');
 			data.replace(data.length() - 1, data.length(), "\n");
 		}
 		if (data.length() > 0)

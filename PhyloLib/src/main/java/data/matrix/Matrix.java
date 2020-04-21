@@ -26,7 +26,7 @@ public final class Matrix {
 		return values.length;
 	}
 
-	public double get(int i, int j) {
+	public double distance(int i, int j) {
 		return values[i][j] != null ? values[i][j] : (values[i][j] = i == j ? 0 : distance.get(i, j));
 	}
 

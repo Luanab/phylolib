@@ -10,7 +10,8 @@ public abstract class Algorithm implements ICommand<Matrix, Tree> {
 	@Override
 	public final Tree process(Matrix matrix) {
 		Tree tree = new Tree(matrix.ids());
-		while (distinct() > 1) {
+		init(matrix);
+		while (!isFinished(tree)) {
 			Edge edge = select();
 			join(edge);
 			reduce(edge, tree);
@@ -18,7 +19,9 @@ public abstract class Algorithm implements ICommand<Matrix, Tree> {
 		return tree;
 	}
 
-	protected abstract long distinct();
+	protected abstract void init(Matrix matrix);
+
+	protected abstract boolean isFinished(Tree tree);
 
 	protected abstract Edge select();
 

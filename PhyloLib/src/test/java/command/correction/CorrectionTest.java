@@ -24,10 +24,10 @@ public class CorrectionTest {
 		Matrix corrected = new JukesCantor().process(matrix);
 
 		assertEquals(corrected.size(), 2);
-		assertEquals(corrected.get(0, 0), 0);
-		assertEquals(corrected.get(0, 1), -0.75 * Math.log(0.135));
-		assertEquals(corrected.get(1, 0), -0.75 * Math.log(0.135));
-		assertEquals(corrected.get(1, 1), 0);
+		assertEquals(corrected.distance(0, 0), 0);
+		assertEquals(corrected.distance(0, 1), -0.75 * Math.log(0.135));
+		assertEquals(corrected.distance(1, 0), -0.75 * Math.log(0.135));
+		assertEquals(corrected.distance(1, 1), 0);
 	}
 
 }
