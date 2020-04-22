@@ -22,19 +22,21 @@ public final class GoeBURST extends MinimumSpanningTree {
 		super.init(matrix);
 		this.lv = new int[elements()][lvs];
 		for (int i = 0; i < elements(); i++)
-			for (int j = 0; j < elements(); j++)
-				if (matrix.distance(i, j) < lvs)
-					this.lv[i][lvs - 1]++;
+			for (int j = 0; j < elements(); j++) {
+				int distance = (int) matrix.distance(i, j);
+				if (distance != 0 && distance < lvs)
+					this.lv[i][distance - 1]++;
+			}
 	}
 
 	@Override
 	protected int tiebreak(int ifrom, int ito, int jfrom, int jto) {
 		int diff;
-		for (int lv = 0; lv < this.lv[0].length; lv++) {
-			diff = Math.max(this.lv[ifrom][lv], this.lv[ito][lv]) - Math.max(this.lv[jfrom][lv], this.lv[jto][lv]);
+		for (int index = 0; index < lvs; index++) {
+			diff = Math.max(lv[ifrom][index], lv[ito][index]) - Math.max(lv[jfrom][index], lv[jto][index]);
 			if (diff != 0)
 				return diff;
-			diff = Math.min(this.lv[ifrom][lv], this.lv[ito][lv]) - Math.min(this.lv[jfrom][lv], this.lv[jto][lv]);
+			diff = Math.min(lv[ifrom][index], lv[ito][index]) - Math.min(lv[jfrom][index], lv[jto][index]);
 			if (diff != 0)
 				return diff;
 		}
