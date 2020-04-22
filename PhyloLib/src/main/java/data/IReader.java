@@ -19,7 +19,7 @@ public interface IReader<T> {
 
 	@SuppressWarnings("unchecked")
 	static <T> T read(Options options, T previous, Processor processor) throws MissingInputException {
-		Optional<String> input = options.remove(processor.getOption());
+		Optional<String> input = options.remove(processor.option());
 		if (input.isPresent()) {
 			Optional<File> file = File.get(input.get(), processor);
 			if (file.isPresent()) {
@@ -35,7 +35,7 @@ public interface IReader<T> {
 			}
 		}
 		if (previous == null)
-			throw new MissingInputException(processor.getName());
+			throw new MissingInputException(processor.toString());
 		return previous;
 	}
 

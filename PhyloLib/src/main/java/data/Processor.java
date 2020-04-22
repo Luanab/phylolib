@@ -16,31 +16,25 @@ public enum Processor {
 	TREE(Option.TREE, ITreeProcessor.class);
 
 	private final Option option;
-	private final Map<String, Constructor<?>> types;
+	private final Class<?> processor;
+	private Map<String, Constructor<?>> types;
 
-	Processor(Option option, Class<?> type) {
+	Processor(Option option, Class<?> processor) {
 		this.option = option;
-		this.types = Reflection.types("data." + getName(), type);
+		this.processor = processor;
 	}
 
-	public static Processor get(String command) {
-		return valueOf(command.toUpperCase());
-	}
-
-	public String getName() {
+	@Override
+	public String toString() {
 		return name().toLowerCase();
 	}
 
-	public Option getOption() {
+	public Option option() {
 		return option;
 	}
 
-	public boolean hasType(String type) {
-		return types.containsKey(type);
-	}
-
-	public Constructor<?> getType(String type) {
-		return types.get(type);
+	public Constructor<?> type(String type) {
+		return (types == null ? types = Reflection.types("data." + toString(), processor) : types).get(type);
 	}
 
 }

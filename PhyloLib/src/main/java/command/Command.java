@@ -17,18 +17,20 @@ public enum Command {
 	OPTIMIZATION(true, Optimization.class);
 
 	private final boolean repeatable;
-	private final Map<String, Constructor<?>> types;
+	private final Class<?> command;
+	private Map<String, Constructor<?>> types;
 
-	Command(boolean repeatable, Class<?> type) {
+	Command(boolean repeatable, Class<?> command) {
 		this.repeatable = repeatable;
-		this.types = Reflection.types("command." + getName(), type);
+		this.command = command;
 	}
 
 	public static Command get(String command) {
 		return valueOf(command.toUpperCase());
 	}
 
-	public String getName() {
+	@Override
+	public String toString() {
 		return name().toLowerCase();
 	}
 
@@ -36,12 +38,8 @@ public enum Command {
 		return repeatable;
 	}
 
-	public boolean hasType(String type) {
-		return types.containsKey(type);
-	}
-
-	public Constructor<?> getType(String type) {
-		return types.get(type);
+	public Constructor<?> type(String type) {
+		return (types == null ? types = Reflection.types("command." + toString(), command) : types).get(type);
 	}
 
 }

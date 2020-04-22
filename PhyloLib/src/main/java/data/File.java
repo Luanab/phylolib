@@ -2,6 +2,7 @@ package data;
 
 import logging.Log;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
@@ -31,12 +32,13 @@ public class File {
 			return Optional.empty();
 		}
 		String format = values[0], path = values[1];
-		if (!processor.hasType(format)) {
+		Constructor<?> type = processor.type(format);
+		if (type == null) {
 			Log.warning(INVALID, FORMAT, format);
 			return Optional.empty();
 		}
 		try {
-			return Optional.of(new File(processor.getType(format).newInstance(), Paths.get(path)));
+			return Optional.of(new File(type.newInstance(), Paths.get(path)));
 		} catch (InvalidPathException exception) {
 			Log.warning(INVALID, PATH, path);
 			return Optional.empty();
