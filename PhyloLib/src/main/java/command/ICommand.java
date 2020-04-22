@@ -18,6 +18,7 @@ public interface ICommand<T, R> {
 	String FINISHED = "Finished";
 	String UNUSED = "Ignored unused option '%s'";
 
+	@SuppressWarnings("unchecked")
 	static <T, R> void run(Arguments arguments, Context context, Command command, IGetter<T> getter, BiConsumer<Options, R> setter) throws MissingInputException, IllegalAccessException, InvocationTargetException, InstantiationException {
 		for (Parameters parameters : arguments.getOrDefault(command.getName(), new ArrayList<>())) {
 			ICommand<T, R> component = (ICommand<T, R>) command.getType(parameters.getType()).newInstance();

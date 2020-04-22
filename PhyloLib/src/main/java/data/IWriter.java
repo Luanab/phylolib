@@ -16,6 +16,7 @@ public interface IWriter<T> {
 	String FINISHED = "Finished";
 	String FAILED = "Failed";
 
+	@SuppressWarnings("unchecked")
 	static <T> void write(Options options, T value, Processor processor) {
 		Optional<String> output = options.remove(Option.OUT);
 		if (output.isPresent()) {

@@ -17,6 +17,7 @@ public interface IReader<T> {
 	String FINISHED = "Finished";
 	String FAILED = "Failed";
 
+	@SuppressWarnings("unchecked")
 	static <T> T read(Options options, T previous, Processor processor) throws MissingInputException {
 		Optional<String> input = options.remove(processor.getOption());
 		if (input.isPresent()) {
