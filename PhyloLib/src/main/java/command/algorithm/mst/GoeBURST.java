@@ -20,9 +20,9 @@ public final class GoeBURST extends MinimumSpanningTree {
 	@Override
 	protected void init(Matrix matrix) {
 		super.init(matrix);
-		this.lv = new int[elements()][lvs];
-		for (int i = 0; i < elements(); i++)
-			for (int j = 0; j < elements(); j++) {
+		this.lv = new int[matrix.size()][lvs];
+		for (int i = 0; i < matrix.size(); i++)
+			for (int j = 0; j < matrix.size(); j++) {
 				int distance = (int) matrix.distance(i, j);
 				if (distance != 0 && distance < lvs)
 					this.lv[i][distance - 1]++;
