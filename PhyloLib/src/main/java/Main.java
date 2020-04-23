@@ -1,5 +1,5 @@
 import cli.Arguments;
-import command.Command;
+import cli.Command;
 import command.ICommand;
 import data.Context;
 import exception.ArgumentException;

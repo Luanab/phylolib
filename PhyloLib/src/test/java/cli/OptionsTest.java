@@ -3,8 +3,6 @@ package cli;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.util.Optional;
-
 import static org.testng.Assert.*;
 
 public class OptionsTest {
@@ -40,8 +38,8 @@ public class OptionsTest {
 		options.put("--out=nexus:out.txt");
 
 		assertEquals(options.keys().size(), 2);
-		assertEquals(options.remove(Option.LVS).get(), "3");
-		assertEquals(options.remove(Option.OUT).get(), "newick:output.txt");
+		assertEquals(options.remove(Option.LVS), "3");
+		assertEquals(options.remove(Option.OUT), "newick:output.txt");
 	}
 
 	@Test
@@ -52,8 +50,8 @@ public class OptionsTest {
 		options.put("--matrix=csv:matrix.csv");
 
 		assertEquals(options.keys().size(), 2);
-		assertEquals(options.remove(Option.LVS).get(), "7");
-		assertEquals(options.remove(Option.MATRIX).get(), "csv:matrix.csv");
+		assertEquals(options.remove(Option.LVS), "7");
+		assertEquals(options.remove(Option.MATRIX), "csv:matrix.csv");
 	}
 
 	@Test
@@ -61,9 +59,9 @@ public class OptionsTest {
 		Options options = new Options();
 		options.put("-t=newick:output.txt");
 
-		String value = options.remove(Option.LVS, "3");
+		String lvs = options.remove(Option.LVS, "3");
 
-		assertEquals(value, "3");
+		assertEquals(lvs, "3");
 		assertEquals(options.keys().size(), 1);
 		assertTrue(options.keys().contains(Option.TREE));
 	}
@@ -73,9 +71,9 @@ public class OptionsTest {
 		Options options = new Options();
 		options.put("--lvs=5");
 
-		String value = options.remove(Option.LVS, "3");
+		String lvs = options.remove(Option.LVS, "3");
 
-		assertEquals(value, "5");
+		assertEquals(lvs, "5");
 		assertTrue(options.keys().isEmpty());
 	}
 
@@ -84,9 +82,9 @@ public class OptionsTest {
 		Options options = new Options();
 		options.put("-l=7");
 
-		String value = options.remove(Option.LVS, "3");
+		String lvs = options.remove(Option.LVS, "3");
 
-		assertEquals(value, "7");
+		assertEquals(lvs, "7");
 		assertTrue(options.keys().isEmpty());
 	}
 
@@ -95,9 +93,9 @@ public class OptionsTest {
 		Options options = new Options();
 		options.put("--tree=nexus:tree.txt");
 
-		Optional<String> tree = options.remove(Option.MATRIX);
+		String matrix = options.remove(Option.MATRIX);
 
-		assertTrue(tree.isEmpty());
+		assertNull(matrix);
 		assertEquals(options.keys().size(), 1);
 		assertTrue(options.keys().contains(Option.TREE));
 	}
@@ -107,10 +105,9 @@ public class OptionsTest {
 		Options options = new Options();
 		options.put("--lvs=3");
 
-		Optional<String> value = options.remove(Option.LVS);
+		String lvs = options.remove(Option.LVS);
 
-		assertTrue(value.isPresent());
-		assertEquals(value.get(), "3");
+		assertEquals(lvs, "3");
 		assertTrue(options.keys().isEmpty());
 	}
 
@@ -121,10 +118,9 @@ public class OptionsTest {
 		options.put("--dataset=mlva:dataset.txt");
 		options.put("--tree=newick:tree.txt");
 
-		Optional<String> value = options.remove(Option.DATASET);
+		String dataset = options.remove(Option.DATASET);
 
-		assertTrue(value.isPresent());
-		assertEquals(value.get(), "mlva:dataset.txt");
+		assertEquals(dataset, "mlva:dataset.txt");
 		assertEquals(options.keys().size(), 2);
 		assertTrue(options.keys().contains(Option.MATRIX));
 		assertTrue(options.keys().contains(Option.TREE));

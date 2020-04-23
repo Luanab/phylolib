@@ -1,5 +1,9 @@
 package cli;
 
+import command.algorithm.bt.gcp.UPGMA;
+import command.distance.Hamming;
+import command.optimization.rearrangement.NNI;
+import command.optimization.rearrangement.SPR;
 import exception.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -41,22 +45,22 @@ public class ArgumentsTest {
 
 		assertNotNull(arguments);
 		assertEquals(arguments.size(), 3);
-		List<Parameters> distance = arguments.get("distance");
+		List<Parameters> distance = arguments.get(Command.DISTANCE);
 		assertEquals(distance.size(), 1);
-		assertEquals(distance.get(0).getType(), "hamming");
-		assertEquals(distance.get(0).getOptions().keys().size(), 1);
-		assertEquals(distance.get(0).getOptions().remove(Option.DATASET).get(), "snp:dataset.txt");
-		List<Parameters> algorithm = arguments.get("algorithm");
+		assertEquals(distance.get(0).type().getDeclaringClass(), Hamming.class);
+		assertEquals(distance.get(0).options().keys().size(), 1);
+		assertEquals(distance.get(0).options().remove(Option.DATASET), "snp:dataset.txt");
+		List<Parameters> algorithm = arguments.get(Command.ALGORITHM);
 		assertEquals(algorithm.size(), 1);
-		assertEquals(algorithm.get(0).getType(), "upgma");
-		assertEquals(algorithm.get(0).getOptions().keys().size(), 0);
-		List<Parameters> optimization = arguments.get("optimization");
+		assertEquals(algorithm.get(0).type().getDeclaringClass(), UPGMA.class);
+		assertEquals(algorithm.get(0).options().keys().size(), 0);
+		List<Parameters> optimization = arguments.get(Command.OPTIMIZATION);
 		assertEquals(optimization.size(), 2);
-		assertEquals(optimization.get(0).getType(), "nni");
-		assertEquals(optimization.get(0).getOptions().keys().size(), 0);
-		assertEquals(optimization.get(1).getType(), "spr");
-		assertEquals(optimization.get(1).getOptions().keys().size(), 1);
-		assertEquals(optimization.get(1).getOptions().remove(Option.OUT).get(), "newick:output.txt");
+		assertEquals(optimization.get(0).type().getDeclaringClass(), NNI.class);
+		assertEquals(optimization.get(0).options().keys().size(), 0);
+		assertEquals(optimization.get(1).type().getDeclaringClass(), SPR.class);
+		assertEquals(optimization.get(1).options().keys().size(), 1);
+		assertEquals(optimization.get(1).options().remove(Option.OUT), "newick:output.txt");
 	}
 
 }

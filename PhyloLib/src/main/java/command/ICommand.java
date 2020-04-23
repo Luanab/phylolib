@@ -1,6 +1,7 @@
 package command;
 
 import cli.Arguments;
+import cli.Command;
 import cli.Options;
 import cli.Parameters;
 import data.Context;
@@ -20,16 +21,16 @@ public interface ICommand<T, R> {
 
 	@SuppressWarnings("unchecked")
 	static <T, R> void run(Arguments arguments, Context context, Command command, IGetter<T> getter, BiConsumer<Options, R> setter) throws MissingInputException, IllegalAccessException, InvocationTargetException, InstantiationException {
-		for (Parameters parameters : arguments.getOrDefault(command.toString(), new ArrayList<>())) {
-			ICommand<T, R> component = (ICommand<T, R>) command.type(parameters.getType()).newInstance();
-			Log.info(COMMAND, STARTED, command.toString(), parameters.getType());
-			Options options = parameters.getOptions();
+		for (Parameters parameters : arguments.getOrDefault(command, new ArrayList<>())) {
+			ICommand<T, R> component = (ICommand<T, R>) parameters.type().newInstance();
+			Log.info(COMMAND, STARTED, command, parameters.type());
+			Options options = parameters.options();
 			T data = getter.get(options);
 			component.init(context, options);
 			R result = component.process(data);
 			setter.accept(options, result);
 			options.keys().forEach(option -> Log.warning(UNUSED, option));
-			Log.info(COMMAND, FINISHED, command.toString(), parameters.getType());
+			Log.info(COMMAND, FINISHED, command, parameters.type());
 		}
 	}
 

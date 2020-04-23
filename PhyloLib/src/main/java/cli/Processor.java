@@ -1,6 +1,5 @@
-package data;
+package cli;
 
-import cli.Option;
 import data.dataset.IDatasetProcessor;
 import data.matrix.IMatrixProcessor;
 import data.tree.ITreeProcessor;

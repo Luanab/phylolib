@@ -1,5 +1,6 @@
 package data;
 
+import cli.Processor;
 import logging.Log;
 
 import java.lang.reflect.Constructor;
@@ -7,15 +8,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Optional;
 
 public class File {
 
-	private static final String SEPARATOR = ":";
-	private static final String INVALID = "Ignored invalid %s '%s'";
-	private static final String FILE = "file";
-	private static final String FORMAT = "format";
-	private static final String PATH = "path";
+	private static final String INVALID = "Ignored invalid %s file option '%s'";
 
 	private final Object processor;
 	private final Path path;
@@ -25,34 +21,29 @@ public class File {
 		this.path = path;
 	}
 
-	public static Optional<File> get(String file, Processor processor) {
-		String[] values = file.split(SEPARATOR, 2);
-		if (values.length == 1 || values[0].isBlank() || values[1].isBlank()) {
-			Log.warning(INVALID, FILE, file);
-			return Optional.empty();
-		}
-		String format = values[0], path = values[1];
-		Constructor<?> type = processor.type(format);
-		if (type == null) {
-			Log.warning(INVALID, FORMAT, format);
-			return Optional.empty();
+	public static File get(String file, Processor processor) {
+		String[] values = file.split(":", 2);
+		Constructor<?> type;
+		if (values.length == 1 || values[0].isBlank() || values[1].isBlank() || (type = processor.type(values[0])) == null) {
+			Log.warning(INVALID, processor, file);
+			return null;
 		}
 		try {
-			return Optional.of(new File(type.newInstance(), Paths.get(path)));
+			return new File(type.newInstance(), Paths.get(values[1]));
 		} catch (InvalidPathException exception) {
-			Log.warning(INVALID, PATH, path);
-			return Optional.empty();
+			Log.warning(INVALID, processor, file);
+			return null;
 		} catch (IllegalAccessException | InstantiationException | InvocationTargetException exception) {
 			Log.exception(exception);
-			return Optional.empty();
+			return null;
 		}
 	}
 
-	public Object getProcessor() {
+	public Object processor() {
 		return processor;
 	}
 
-	public Path getPath() {
+	public Path path() {
 		return path;
 	}
 

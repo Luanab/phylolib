@@ -1,20 +1,22 @@
 package cli;
 
+import java.lang.reflect.Constructor;
+
 public final class Parameters {
 
-	private final String type;
+	private final Constructor<?> type;
 	private final Options options;
 
-	public Parameters(String type, Options options) {
+	public Parameters(Constructor<?> type, Options options) {
 		this.type = type;
 		this.options = options;
 	}
 
-	public String getType() {
+	public Constructor<?> type() {
 		return type;
 	}
 
-	public Options getOptions() {
+	public Options options() {
 		return options;
 	}
 

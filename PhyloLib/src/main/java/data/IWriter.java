@@ -2,11 +2,11 @@ package data;
 
 import cli.Option;
 import cli.Options;
+import cli.Processor;
 import logging.Log;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Optional;
 
 @FunctionalInterface
 public interface IWriter<T> {
@@ -18,14 +18,14 @@ public interface IWriter<T> {
 
 	@SuppressWarnings("unchecked")
 	static <T> void write(Options options, T value, Processor processor) {
-		Optional<String> output = options.remove(Option.OUT);
-		if (output.isPresent()) {
-			Optional<File> file = File.get(output.get(), processor);
-			if (file.isPresent()) {
-				Path path = file.get().getPath();
+		String output = options.remove(Option.OUT);
+		if (output != null) {
+			File file = File.get(output, processor);
+			if (file != null) {
+				Path path = file.path();
 				Log.info(WRITE, STARTED, path);
 				try {
-					Files.write(path, (value == null ? "" : ((IWriter<T>) file.get().getProcessor()).format(value)).getBytes());
+					Files.write(path, (value == null ? "" : ((IWriter<T>) file.processor()).format(value)).getBytes());
 					Log.info(WRITE, FINISHED, path);
 				} catch (Exception exception) {
 					Log.warning(WRITE, FAILED, path);

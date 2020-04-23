@@ -1,12 +1,12 @@
 package data;
 
 import cli.Options;
+import cli.Processor;
 import exception.MissingInputException;
 import logging.Log;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Optional;
 import java.util.stream.Stream;
 
 @FunctionalInterface
@@ -19,14 +19,14 @@ public interface IReader<T> {
 
 	@SuppressWarnings("unchecked")
 	static <T> T read(Options options, T previous, Processor processor) throws MissingInputException {
-		Optional<String> input = options.remove(processor.option());
-		if (input.isPresent()) {
-			Optional<File> file = File.get(input.get(), processor);
-			if (file.isPresent()) {
-				Path path = file.get().getPath();
+		String input = options.remove(processor.option());
+		if (input != null) {
+			File file = File.get(input, processor);
+			if (file != null) {
+				Path path = file.path();
 				Log.info(READ, STARTED, path);
 				try (Stream<String> data = Files.lines(path)) {
-					T result = ((IReader<T>) file.get().getProcessor()).parse(data);
+					T result = ((IReader<T>) file.processor()).parse(data);
 					Log.info(READ, FINISHED, path);
 					return result;
 				} catch (Exception exception) {
