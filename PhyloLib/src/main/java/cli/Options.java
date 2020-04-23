@@ -9,49 +9,37 @@ import java.util.Set;
 
 public final class Options {
 
-	private static final String SEPARATOR = "=";
-	private static final String ALIAS = "-";
-	private static final String KEY = "--";
-	private static final String DEFAULT = "Used default value '%s' for option -%c --%s";
+	private static final String DEFAULT = "Used default value '%s' for option --%s";
 	private static final String INVALID_OPTION = "Ignored invalid option '%s'";
 	private static final String DUPLICATED_OPTION = "Ignored duplicated option '%s'";
-	private static final String INVALID_VALUE = "Ignored invalid value '%s' for option -%c --%s";
 
-	private final Map<String, String> options = new HashMap<>();
+	private final Map<Option, String> options = new HashMap<>();
 
 	public void put(String option) {
-		String[] parts = option.toLowerCase().split(SEPARATOR, 2);
-		String key = parts[0], value;
-		if (!key.startsWith(ALIAS) || parts.length == 1 || (value = parts[1]).isBlank())
+		String[] parts = option.toLowerCase().split("=", 2);
+		Optional<Option> key = Option.get(parts[0]);
+		String value;
+		if (key.isEmpty() || parts.length == 1 || !key.get().getFormat().matches(value = parts[1]))
 			Log.warning(INVALID_OPTION, option);
-		else if (options.putIfAbsent(key, value) != null)
+		else if (options.putIfAbsent(key.get(), value) != null)
 			Log.warning(DUPLICATED_OPTION, option);
 	}
 
-	public Set<String> keys() {
+	public Set<Option> keys() {
 		return options.keySet();
 	}
 
 	public String remove(Option option, String _default) {
 		Optional<String> value = remove(option);
 		if (value.isEmpty()) {
-			Log.info(DEFAULT, _default, option.getAlias(), option.getKey());
+			Log.info(DEFAULT, _default, option.toString());
 			return _default;
 		}
 		return value.get();
 	}
 
 	public Optional<String> remove(Option option) {
-		Optional<String> result = remove(KEY + option.getKey()).or(() -> remove(ALIAS + option.getAlias()));
-		if (result.isPresent() && !option.getFormat().matches(result.get())) {
-			Log.warning(INVALID_VALUE, result.get(), option.getAlias(), option.getKey());
-			return Optional.empty();
-		}
-		return result;
-	}
-
-	private Optional<String> remove(String key) {
-		return Optional.ofNullable(options.remove(key));
+		return Optional.ofNullable(options.remove(option));
 	}
 
 }

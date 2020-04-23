@@ -1,5 +1,8 @@
 package cli;
 
+import java.util.Arrays;
+import java.util.Optional;
+
 public enum Option {
 
 	OUT('o', Format.FILE),
@@ -16,16 +19,16 @@ public enum Option {
 		this.format = format;
 	}
 
-	public String getKey() {
-		return name().toLowerCase();
+	public static Optional<Option> get(String key) {
+		return Arrays.stream(values()).filter(option -> key.equals("--" + option.toString()) || key.equals("-" + option.alias)).findFirst();
 	}
 
-	public char getAlias() {
-		return alias;
+	@Override
+	public String toString() {
+		return name().toLowerCase();
 	}
 
 	public Format getFormat() {
 		return format;
 	}
-
 }

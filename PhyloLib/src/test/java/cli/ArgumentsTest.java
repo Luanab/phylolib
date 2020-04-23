@@ -45,7 +45,7 @@ public class ArgumentsTest {
 		assertEquals(distance.size(), 1);
 		assertEquals(distance.get(0).getType(), "hamming");
 		assertEquals(distance.get(0).getOptions().keys().size(), 1);
-		assertTrue(distance.get(0).getOptions().keys().contains("--dataset"));
+		assertEquals(distance.get(0).getOptions().remove(Option.DATASET).get(), "snp:dataset.txt");
 		List<Parameters> algorithm = arguments.get("algorithm");
 		assertEquals(algorithm.size(), 1);
 		assertEquals(algorithm.get(0).getType(), "upgma");
@@ -56,7 +56,7 @@ public class ArgumentsTest {
 		assertEquals(optimization.get(0).getOptions().keys().size(), 0);
 		assertEquals(optimization.get(1).getType(), "spr");
 		assertEquals(optimization.get(1).getOptions().keys().size(), 1);
-		assertTrue(optimization.get(1).getOptions().keys().contains("-o"));
+		assertEquals(optimization.get(1).getOptions().remove(Option.OUT).get(), "newick:output.txt");
 	}
 
 }

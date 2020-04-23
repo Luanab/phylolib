@@ -16,6 +16,9 @@ public class OptionsTest {
 				{ "--out=" },
 				{ "--out= " },
 				{ "out=newick:output.txt" },
+				{ "-c=3" },
+				{ "-l=-4" },
+				{ "--matrix=csv-matrix.csv" }
 		};
 	}
 
@@ -25,26 +28,24 @@ public class OptionsTest {
 
 		options.put(option);
 
-		assertFalse(options.remove(Option.OUT).isPresent());
+		assertTrue(options.keys().isEmpty());
 	}
 
 	@Test
-	public void put_RepeatedOption_Ignored() {
+	public void put_Repeated_Ignored() {
 		Options options = new Options();
 		options.put("--out=newick:output.txt");
 		options.put("--lvs=3");
 
 		options.put("--out=nexus:out.txt");
 
-
 		assertEquals(options.keys().size(), 2);
-		assertTrue(options.keys().contains("--out"));
-		assertTrue(options.keys().contains("--lvs"));
+		assertEquals(options.remove(Option.LVS).get(), "3");
 		assertEquals(options.remove(Option.OUT).get(), "newick:output.txt");
 	}
 
 	@Test
-	public void put_ValidOptions_Success() {
+	public void put_Valid_Success() {
 		Options options = new Options();
 
 		options.put("-l=7");
@@ -56,27 +57,15 @@ public class OptionsTest {
 	}
 
 	@Test
-	public void remove_InvalidNaturalFormat_Default() {
+	public void remove_NoMatchWithDefault_DefaultValue() {
 		Options options = new Options();
-		options.put("-l=-4");
-
-		String lvs = options.remove(Option.LVS, "2");
-
-		assertEquals(lvs, "2");
-	}
-
-	@Test
-	public void remove_NoMatch_DefaultValue() {
-		Options options = new Options();
-		options.put("-t=1");
-		options.put("--lts=2");
+		options.put("-t=newick:output.txt");
 
 		String value = options.remove(Option.LVS, "3");
 
 		assertEquals(value, "3");
-		assertEquals(options.keys().size(), 2);
-		assertTrue(options.keys().contains("-t"));
-		assertTrue(options.keys().contains("--lts"));
+		assertEquals(options.keys().size(), 1);
+		assertTrue(options.keys().contains(Option.TREE));
 	}
 
 	@Test
@@ -102,25 +91,15 @@ public class OptionsTest {
 	}
 
 	@Test
-	public void remove_InvalidFileFormat_Ignored() {
-		Options options = new Options();
-		options.put("--matrix=csv-matrix.csv");
-
-		Optional<String> matrix = options.remove(Option.MATRIX);
-
-		assertTrue(matrix.isEmpty());
-	}
-
-	@Test
 	public void remove_NoMatch_Empty() {
 		Options options = new Options();
-		options.put("--tee=nexus:tree.txt");
+		options.put("--tree=nexus:tree.txt");
 
-		Optional<String> tree = options.remove(Option.TREE);
+		Optional<String> tree = options.remove(Option.MATRIX);
 
 		assertTrue(tree.isEmpty());
 		assertEquals(options.keys().size(), 1);
-		assertTrue(options.keys().contains("--tee"));
+		assertTrue(options.keys().contains(Option.TREE));
 	}
 
 	@Test
@@ -147,8 +126,8 @@ public class OptionsTest {
 		assertTrue(value.isPresent());
 		assertEquals(value.get(), "mlva:dataset.txt");
 		assertEquals(options.keys().size(), 2);
-		assertTrue(options.keys().contains("--matrix"));
-		assertTrue(options.keys().contains("--tree"));
+		assertTrue(options.keys().contains(Option.MATRIX));
+		assertTrue(options.keys().contains(Option.TREE));
 	}
 
 }
