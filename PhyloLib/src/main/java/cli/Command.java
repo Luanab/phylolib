@@ -30,6 +30,11 @@ public enum Command {
 		return Arrays.stream(values()).filter(c -> command.equalsIgnoreCase(c.name())).findFirst().orElse(null);
 	}
 
+	@Override
+	public String toString() {
+		return name().toLowerCase();
+	}
+
 	public boolean isRepeatable() {
 		return repeatable;
 	}

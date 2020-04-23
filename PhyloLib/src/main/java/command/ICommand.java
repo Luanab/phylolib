@@ -23,14 +23,15 @@ public interface ICommand<T, R> {
 	static <T, R> void run(Arguments arguments, Context context, Command command, IGetter<T> getter, BiConsumer<Options, R> setter) throws MissingInputException, IllegalAccessException, InvocationTargetException, InstantiationException {
 		for (Parameters parameters : arguments.getOrDefault(command, new ArrayList<>())) {
 			ICommand<T, R> component = (ICommand<T, R>) parameters.type().newInstance();
-			Log.info(COMMAND, STARTED, command, parameters.type());
+			String type = component.getClass().getSimpleName().toLowerCase();
+			Log.info(COMMAND, STARTED, command, type);
 			Options options = parameters.options();
 			T data = getter.get(options);
 			component.init(context, options);
 			R result = component.process(data);
 			setter.accept(options, result);
 			options.keys().forEach(option -> Log.warning(UNUSED, option));
-			Log.info(COMMAND, FINISHED, command, parameters.type());
+			Log.info(COMMAND, FINISHED, command, type);
 		}
 	}
 

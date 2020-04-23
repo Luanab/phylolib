@@ -42,6 +42,10 @@ public final class Tree {
 		return edges;
 	}
 
+	public void remove(Edge edge) {
+		edges.remove(edge);
+	}
+
 	public int root() {
 		return edges.stream()
 				.map(Edge::from)
