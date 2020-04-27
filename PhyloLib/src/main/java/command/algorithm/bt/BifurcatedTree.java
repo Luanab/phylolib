@@ -26,7 +26,7 @@ public abstract class BifurcatedTree extends Algorithm {
 		}
 	}
 
-	protected final Stream<Integer> ids() {
+	protected final Stream<Integer> clusters() {
 		return clusters.keySet().stream();
 	}
 
@@ -38,14 +38,10 @@ public abstract class BifurcatedTree extends Algorithm {
 		return clusters.get(i).elements;
 	}
 
-	protected final int clusters() {
-		return clusters.size();
-	}
-
 	@Override
 	protected final Edge select() {
-		return ids()
-				.flatMap(i -> ids().filter(j -> !i.equals(j)).map(j -> new Edge(i, j, distance(i, j))))
+		return clusters()
+				.flatMap(i -> clusters().filter(j -> !i.equals(j)).map(j -> new Edge(i, j, distance(i, j))))
 				.min((i, j) -> (int) (dissimilarity(i) - dissimilarity(j)))
 				.orElseThrow();
 	}

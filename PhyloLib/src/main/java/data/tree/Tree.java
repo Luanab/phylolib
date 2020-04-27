@@ -3,6 +3,7 @@ package data.tree;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public final class Tree {
 
@@ -32,6 +33,10 @@ public final class Tree {
 		return edges.isEmpty();
 	}
 
+	public Stream<Edge> edges() {
+		return edges.stream();
+	}
+
 	public void add(Edge edge) {
 		edges.add(edge);
 	}
@@ -44,18 +49,6 @@ public final class Tree {
 
 	public void remove(Edge edge) {
 		edges.remove(edge);
-	}
-
-	public int root() {
-		return edges.stream()
-				.map(Edge::from)
-				.filter(i -> edges.stream().noneMatch(edge -> edge.to() == i))
-				.findFirst()
-				.orElse(0);
-	}
-
-	public List<Edge> edges() {
-		return edges;
 	}
 
 }

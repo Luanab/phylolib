@@ -10,9 +10,9 @@ public abstract class NeighbourJoining extends BifurcatedTree {
 
 	@Override
 	protected final boolean isFinished(Tree tree) {
-		if (clusters() > 2)
+		if (clusters().count() > 2)
 			return false;
-		Iterator<Integer> iterator = ids().iterator();
+		Iterator<Integer> iterator = clusters().iterator();
 		int i = iterator.next();
 		int j = iterator.next();
 		tree.add(new Edge(i, j, distance(i, j)));
@@ -21,13 +21,17 @@ public abstract class NeighbourJoining extends BifurcatedTree {
 
 	@Override
 	protected final strictfp double dissimilarity(Edge edge) {
-		return (ids().count() - 2.0) * edge.distance() - ids().mapToDouble(k -> distance(edge.from(), k) + distance(edge.to(), k)).sum();
+		return (clusters().count() - 2.0) * edge.distance() - clusters().mapToDouble(k -> distance(edge.from(), k) + distance(edge.to(), k)).sum();
 	}
 
 	@Override
 	protected final strictfp double branch(int i, int j) {
-		return distance(i, j) / 2.0 + (1 / (2.0 * (ids().count() - 2.0))) * ids().mapToDouble(k -> (distance(i, k) - distance(j, k))).sum();
+		return distance(i, j) / 2.0 + (1 / (2.0 * (clusters().count() - (weight(i) + weight(j))))) * clusters()
+				.mapToDouble(k -> weight(k) * (distance(i, k) - distance(j, k)))
+				.sum();
 	}
+
+	protected abstract int weight(int i);
 
 	@Override
 	protected final double offset(int i, int j) {

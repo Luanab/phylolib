@@ -4,16 +4,16 @@ import command.ICommand;
 import data.tree.Edge;
 import data.tree.Tree;
 
-import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public abstract class Optimization implements ICommand<Tree, Tree> {
 
 	@Override
 	public final Tree process(Tree tree) {
-		Set<Edge> edges = new HashSet<>(tree.edges());
+		Set<Edge> edges = tree.edges().collect(Collectors.toSet());
 		while (!edges.isEmpty()) {
 			Edge previous = select(edges, tree);
 			Edge current = join(tree);

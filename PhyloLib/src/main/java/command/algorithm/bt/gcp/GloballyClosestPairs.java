@@ -8,7 +8,7 @@ public abstract class GloballyClosestPairs extends BifurcatedTree {
 
 	@Override
 	protected final boolean isFinished(Tree tree) {
-		return clusters() == 1;
+		return clusters().count() == 1;
 	}
 
 	@Override

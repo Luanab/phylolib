@@ -56,7 +56,11 @@ public class Newick implements ITreeProcessor {
 	public String format(Tree tree) {
 		StringBuilder data = new StringBuilder();
 		if (!tree.isEmpty()) {
-			int root = tree.root();
+			int root = tree.edges()
+					.map(Edge::from)
+					.filter(i -> tree.edges().noneMatch(edge -> edge.to() == i))
+					.findFirst()
+					.orElse(0);
 			format(tree, root, data);
 			data.append(id(tree, root));
 		}
