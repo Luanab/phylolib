@@ -3,7 +3,6 @@ package data.tree;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public final class Tree {
 
@@ -29,12 +28,12 @@ public final class Tree {
 		return ids;
 	}
 
-	public boolean isEmpty() {
-		return edges.isEmpty();
+	public List<Edge> edges() {
+		return edges;
 	}
 
-	public Stream<Edge> edges() {
-		return edges.stream();
+	public boolean isEmpty() {
+		return edges.isEmpty();
 	}
 
 	public void add(Edge edge) {

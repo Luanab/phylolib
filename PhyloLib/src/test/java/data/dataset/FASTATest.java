@@ -11,13 +11,13 @@ import static org.testng.Assert.assertNull;
 public class FASTATest {
 
 	@Test
-	public void parse_Empty_Empty() {
-		assertEquals(new FASTA().parse(Stream.empty()).size(), 0);
+	public void parse_Empty_Null() {
+		assertNull(new FASTA().parse(Stream.empty()));
 	}
 
 	@Test
-	public void parse_Blank_Empty() {
-		assertEquals(new FASTA().parse(Stream.of(" ")).size(), 0);
+	public void parse_Blank_Null() {
+		assertNull(new FASTA().parse(Stream.of(" ")));
 	}
 
 	@DataProvider

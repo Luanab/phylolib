@@ -6,17 +6,18 @@ import org.testng.annotations.Test;
 import java.util.stream.Stream;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNull;
 
 public class CSVTest {
 
 	@Test
-	public void parse_Empty_Empty() {
-		assertEquals(new CSV().parse(Stream.empty()).size(), 0);
+	public void parse_Empty_Null() {
+		assertNull(new CSV().parse(Stream.empty()));
 	}
 
 	@Test
-	public void parse_Blank_Empty() {
-		assertEquals(new CSV().parse(Stream.of(" ")).size(), 0);
+	public void parse_Blank_Null() {
+		assertNull(new CSV().parse(Stream.of(" ")));
 	}
 
 	@DataProvider

@@ -8,11 +8,6 @@ import static org.testng.Assert.assertEquals;
 public class CorrectionTest {
 
 	@Test
-	public void process_Empty_Empty() {
-		assertEquals(new JukesCantor().process(new Matrix(new String[0], (i, j) -> 0)).size(), 0);
-	}
-
-	@Test
 	public void process_Valid_Full() {
 		Double[][] distances = new Double[2][2];
 		distances[0][0] = 0.0;

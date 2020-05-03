@@ -5,6 +5,4 @@ import data.IWriter;
 
 public interface ITreeProcessor extends IReader<Tree>, IWriter<Tree> {
 
-	String INVALID = "Ignored invalid tree";
-
 }

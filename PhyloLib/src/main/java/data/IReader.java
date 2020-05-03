@@ -27,8 +27,11 @@ public interface IReader<T> {
 				Log.info(READ, STARTED, path);
 				try (Stream<String> data = Files.lines(path)) {
 					T result = ((IReader<T>) file.processor()).parse(data);
-					Log.info(READ, FINISHED, path);
-					return result;
+					if (result != null) {
+						Log.info(READ, FINISHED, path);
+						return result;
+					}
+					Log.warning(READ, FAILED, path);
 				} catch (Exception exception) {
 					Log.warning(READ, FAILED, path);
 				}

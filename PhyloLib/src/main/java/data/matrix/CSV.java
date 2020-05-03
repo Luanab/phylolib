@@ -26,12 +26,12 @@ public final class CSV implements IMatrixProcessor {
 				Log.warning(INVALID_ROW, counter);
 			counter++;
 		}
-		if (!matrix.isEmpty()) {
-			for (int i = matrix.get(0).size(); i > matrix.size(); i--) {
-				int column = i;
-				Log.warning(INVALID_COLUMN, column);
-				matrix.forEach(row -> row.remove(column - 1));
-			}
+		if (matrix.isEmpty())
+			return null;
+		for (int i = matrix.get(0).size(); i > matrix.size(); i--) {
+			int column = i;
+			Log.warning(INVALID_COLUMN, column);
+			matrix.forEach(row -> row.remove(column - 1));
 		}
 		return new Matrix(IntStream.range(0, matrix.size()).mapToObj(String::valueOf).toArray(String[]::new),
 				matrix.stream().map(l -> l.toArray(new Double[0])).toArray(Double[][]::new));

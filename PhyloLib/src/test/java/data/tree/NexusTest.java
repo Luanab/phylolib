@@ -6,8 +6,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.*;
 
 public class NexusTest {
 
@@ -23,8 +22,8 @@ public class NexusTest {
 	}
 
 	@Test(dataProvider = "trees")
-	public void parse_Valid_Empty(Stream<String> data) {
-		assertTrue(new Nexus().parse(data).isEmpty());
+	public void parse_Invalid_Null(Stream<String> data) {
+		assertNull(new Nexus().parse(data));
 	}
 
 	@Test

@@ -12,11 +12,6 @@ import static org.testng.Assert.assertEquals;
 public class DistanceTest {
 
 	@Test
-	public void process_Empty_Empty() {
-		assertEquals(new Hamming().process(new Dataset(new ArrayList<>())).size(), 0);
-	}
-
-	@Test
 	public void correct_Valid_Full() {
 		Dataset dataset = new Dataset(new ArrayList<>() {{
 			add(new Profile("", "000000"));

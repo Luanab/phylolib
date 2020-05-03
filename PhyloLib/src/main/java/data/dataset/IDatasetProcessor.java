@@ -24,7 +24,7 @@ public interface IDatasetProcessor extends IReader<Dataset> {
 			else
 				Log.warning(INVALID, profile.id());
 		}
-		return new Dataset(profiles);
+		return profiles.isEmpty() ? null : new Dataset(profiles);
 	}
 
 	default void init(Iterator<String> iterator) { }

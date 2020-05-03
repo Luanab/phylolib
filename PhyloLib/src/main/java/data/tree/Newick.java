@@ -1,7 +1,5 @@
 package data.tree;
 
-import logging.Log;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -37,28 +35,22 @@ public class Newick implements ITreeProcessor {
 					String[] values = info.split(":", 2);
 					ids.add(values[0].isBlank() ? "_" : values[0]);
 					if (newick.length() > 0 && !newick.startsWith(";")) {
-						if (values.length != 2 || values[1].isBlank() || !values[1].matches("^((-)?\\d*(\\.\\d+)?)$")) {
-							Log.warning(INVALID);
-							return new Tree();
-						}
+						if (values.length != 2 || values[1].isBlank() || !values[1].matches("^((-)?\\d*(\\.\\d+)?)$"))
+							return null;
 						levels.peek().add(new Edge(-1, id, Double.parseDouble(values[1])));
 					}
 			}
 		}
-		if (!levels.isEmpty()) {
-			Log.warning(INVALID);
-			return new Tree();
-		}
-		return new Tree(ids.toArray(new String[0]), edges);
+		return !levels.isEmpty() || edges.isEmpty() ? null : new Tree(ids.toArray(new String[0]), edges);
 	}
 
 	@Override
 	public String format(Tree tree) {
 		StringBuilder data = new StringBuilder();
 		if (!tree.isEmpty()) {
-			int root = tree.edges()
+			int root = tree.edges().stream()
 					.map(Edge::from)
-					.filter(i -> tree.edges().noneMatch(edge -> edge.to() == i))
+					.filter(i -> tree.edges().stream().noneMatch(edge -> edge.to() == i))
 					.findFirst()
 					.orElse(0);
 			format(tree, root, data);
