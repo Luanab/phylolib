@@ -5,7 +5,7 @@ import data.dataset.Profile;
 public final class GrapeTree extends Distance {
 
 	@Override
-	protected strictfp double distance(Profile i, Profile j) {
+	protected double distance(Profile i, Profile j) {
 		double differences = 0;
 		double nonmissing = 0;
 		for (int l = 0; l < i.size(); l++) {

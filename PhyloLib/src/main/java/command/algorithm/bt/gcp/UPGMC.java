@@ -3,10 +3,11 @@ package command.algorithm.bt.gcp;
 public final class UPGMC extends GloballyClosestPairs {
 
 	@Override
-	protected strictfp double dissimilarity(int i, int j, int u, int k) {
+	protected double dissimilarity(int i, int j, int u, int k) {
 		long ci = elements(i);
 		long cj = elements(j);
-		return (distance(i, k) * ci + distance(j, k) * cj) / (ci + cj) - distance(i, j) * ci * cj / Math.pow(ci + cj, 2);
+		long cij = ci + cj;
+		return (distance(i, k) * ci + distance(j, k) * cj) / (cij) - distance(i, j) * ci * cj / (cij * cij);
 	}
 
 }

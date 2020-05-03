@@ -8,7 +8,7 @@ public final class UNJ extends NeighbourJoining {
 	}
 
 	@Override
-	protected strictfp double lambda(int i, int j) {
+	protected double lambda(int i, int j) {
 		double count = elements(i);
 		return count / (count + elements(j));
 	}

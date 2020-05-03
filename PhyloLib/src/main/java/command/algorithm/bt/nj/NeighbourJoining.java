@@ -20,15 +20,14 @@ public abstract class NeighbourJoining extends BifurcatedTree {
 	}
 
 	@Override
-	protected final strictfp double dissimilarity(Edge edge) {
-		return (clusters().count() - 2.0) * edge.distance() - clusters().mapToDouble(k -> distance(edge.from(), k) + distance(edge.to(), k)).sum();
+	protected final double dissimilarity(Edge edge) {
+		return (clusters().count() - 2) * edge.distance() - clusters().mapToDouble(k -> distance(edge.from(), k) + distance(edge.to(), k)).sum();
 	}
 
 	@Override
-	protected final strictfp double branch(int i, int j) {
-		return distance(i, j) / 2.0 + (1 / (2.0 * (clusters().count() - (weight(i) + weight(j))))) * clusters()
-				.mapToDouble(k -> weight(k) * (distance(i, k) - distance(j, k)))
-				.sum();
+	protected final double branch(int i, int j) {
+		return distance(i, j) / 2 + clusters().mapToDouble(k -> weight(k) * (distance(i, k) - distance(j, k))).sum()
+									/ (2 * (clusters().count() - (weight(i) + weight(j))));
 	}
 
 	protected abstract int weight(int i);
@@ -39,7 +38,7 @@ public abstract class NeighbourJoining extends BifurcatedTree {
 	}
 
 	@Override
-	protected final strictfp double dissimilarity(int i, int j, int u, int k) {
+	protected final double dissimilarity(int i, int j, int u, int k) {
 		double lambda = lambda(i, j);
 		return lambda * (distance(i, k) - length(i, u)) + (1 - lambda) * (distance(j, k) - length(j, u));
 	}

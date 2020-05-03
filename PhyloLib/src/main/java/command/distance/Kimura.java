@@ -5,7 +5,7 @@ import data.dataset.Profile;
 public final class Kimura extends Distance {
 
 	@Override
-	protected strictfp double distance(Profile i, Profile j) {
+	protected double distance(Profile i, Profile j) {
 		double transitions = 0;
 		double transversions = 0;
 		for (int l = 0; l < i.size(); l++) {
@@ -22,7 +22,7 @@ public final class Kimura extends Distance {
 		}
 		transitions /= i.size();
 		transversions /= i.size();
-		return -Math.log((1.0 - 2.0 * transitions - transversions) * Math.sqrt(1.0 - 2.0 * transversions)) / 2.0;
+		return -Math.log((1 - 2 * transitions - transversions) * Math.sqrt(1 - 2 * transversions)) / 2;
 	}
 
 }

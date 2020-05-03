@@ -10,11 +10,7 @@ public final class GrapeTree extends MinimumSpanningTree {
 	}
 
 	private double mean(int i) {
-		double sum = IntStream.range(0, elements())
-				.filter(j -> j != i)
-				.mapToDouble(j -> Math.pow(distance(i, j), -1))
-				.sum();
-		return Math.pow(sum / (elements() - 1), -1);
+		return (elements() - 1) / IntStream.range(0, elements()).filter(j -> j != i).mapToDouble(j -> 1 / distance(i, j)).sum();
 	}
 
 }

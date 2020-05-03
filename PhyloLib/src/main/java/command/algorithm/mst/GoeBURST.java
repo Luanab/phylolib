@@ -4,7 +4,6 @@ import cli.Option;
 import cli.Options;
 import data.Context;
 import data.matrix.Matrix;
-import exception.MissingInputException;
 
 public final class GoeBURST extends MinimumSpanningTree {
 
@@ -12,8 +11,7 @@ public final class GoeBURST extends MinimumSpanningTree {
 	private int[][] lv;
 
 	@Override
-	public void init(Context context, Options options) throws MissingInputException {
-		super.init(context, options);
+	public void init(Context context, Options options) {
 		this.lvs = Integer.parseInt(options.remove(Option.LVS, "3"));
 	}
 
