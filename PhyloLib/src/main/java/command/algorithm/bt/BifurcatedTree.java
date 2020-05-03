@@ -5,6 +5,7 @@ import data.matrix.Matrix;
 import data.tree.Edge;
 import data.tree.Tree;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -42,7 +43,7 @@ public abstract class BifurcatedTree extends Algorithm {
 	protected final Edge select() {
 		return clusters()
 				.flatMap(i -> clusters().filter(j -> !i.equals(j)).map(j -> new Edge(i, j, distance(i, j))))
-				.min((i, j) -> (int) (dissimilarity(i) - dissimilarity(j)))
+				.min(Comparator.comparingDouble(this::dissimilarity))
 				.orElseThrow();
 	}
 

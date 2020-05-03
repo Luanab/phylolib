@@ -49,7 +49,9 @@ public abstract class MinimumSpanningTree extends Algorithm {
 	@Override
 	protected final Edge select() {
 		return edges.stream()
-				.min((i, j) -> i.distance() == j.distance() ? tiebreak(i.from(), i.to(), j.from(), j.to()) : (int) (i.distance() - j.distance()))
+				.min((i, j) -> i.distance() == j.distance()
+							   ? tiebreak(i.from(), i.to(), j.from(), j.to())
+							   : Double.compare(i.distance(), j.distance()))
 				.orElseThrow();
 	}
 

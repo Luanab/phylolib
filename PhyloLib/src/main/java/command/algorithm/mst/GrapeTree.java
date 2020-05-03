@@ -6,7 +6,7 @@ public final class GrapeTree extends MinimumSpanningTree {
 
 	@Override
 	protected int tiebreak(int ifrom, int ito, int jfrom, int jto) {
-		return (int) (Math.min(mean(ifrom), mean(ito)) - Math.min(mean(jfrom), mean(jto)));
+		return Double.compare(Math.min(mean(ifrom), mean(ito)), Math.min(mean(jfrom), mean(jto)));
 	}
 
 	private double mean(int i) {

@@ -33,15 +33,15 @@ public final class GoeBURST extends MinimumSpanningTree {
 	protected int tiebreak(int ifrom, int ito, int jfrom, int jto) {
 		int diff;
 		for (int index = 0; index < lvs; index++) {
-			diff = Math.max(lv[ifrom][index], lv[ito][index]) - Math.max(lv[jfrom][index], lv[jto][index]);
+			diff = Integer.compare(Math.max(lv[ifrom][index], lv[ito][index]), Math.max(lv[jfrom][index], lv[jto][index]));
 			if (diff != 0)
 				return diff;
-			diff = Math.min(lv[ifrom][index], lv[ito][index]) - Math.min(lv[jfrom][index], lv[jto][index]);
+			diff = Integer.compare(Math.min(lv[ifrom][index], lv[ito][index]), Math.min(lv[jfrom][index], lv[jto][index]));
 			if (diff != 0)
 				return diff;
 		}
-		diff = Math.min(ifrom, ito) - Math.min(jfrom, jto);
-		return diff != 0 ? diff : (Math.max(id(ifrom), id(ito)) - Math.max(id(jfrom), id(jto)));
+		diff = Integer.compare(Math.min(ifrom, ito), Math.min(jfrom, jto));
+		return diff != 0 ? diff : Integer.compare(Math.max(id(ifrom), id(ito)), Math.max(id(jfrom), id(jto)));
 	}
 
 }
