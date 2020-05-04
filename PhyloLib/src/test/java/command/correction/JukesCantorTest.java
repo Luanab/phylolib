@@ -18,8 +18,8 @@ public class JukesCantorTest {
 	}
 
 	@Test(dataProvider = "data")
-	public void correct_Valid_Success(double distance, double result) {
-		assertEquals(new JukesCantor().correct(distance), result);
+	public void correct_Valid_Success(double distance, double expected) {
+		assertEquals(new JukesCantor().correct(distance), expected);
 	}
 
 }
