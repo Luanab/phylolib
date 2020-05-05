@@ -10,18 +10,23 @@ import static org.testng.Assert.assertNull;
 
 public class FASTATest {
 
-	@Test
-	public void parse_Empty_Null() {
-		assertNull(new FASTA().parse(Stream.empty()));
+	@DataProvider
+	public Object[][] invalid() {
+		return new Object[][] {
+				{ Stream.empty() },
+				{ Stream.of(" ") },
+				{ Stream.of(">1", "TACGCAGT") },
+				{ Stream.of(">1", "TACGCXGT", ">2", "TACGCAGT") }
+		};
 	}
 
-	@Test
-	public void parse_Blank_Null() {
-		assertNull(new FASTA().parse(Stream.of(" ")));
+	@Test(dataProvider = "invalid")
+	public void parse_Invalid_Null(Stream<String> profiles) {
+		assertNull(new FASTA().parse(profiles));
 	}
 
 	@DataProvider
-	public Object[][] profiles() {
+	public Object[][] valid() {
 		return new Object[][] {
 				{ "TACTGATC", "TACTGATC", ">A", "TATTG TC", ">B", "ATCTAGTC" },
 				{ ">A", "TACTG TC", ">2 profile", ">B", "ATCTAGTC" },
@@ -34,7 +39,7 @@ public class FASTATest {
 		};
 	}
 
-	@Test(dataProvider = "profiles")
+	@Test(dataProvider = "valid")
 	public void parse_Valid_Success(String... profiles) {
 		Stream<String> data = Stream.of(profiles);
 

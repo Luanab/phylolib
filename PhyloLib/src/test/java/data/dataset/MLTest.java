@@ -10,18 +10,23 @@ import static org.testng.Assert.assertNull;
 
 public class MLTest {
 
-	@Test
-	public void parse_Empty_Null() {
-		assertNull(new ML().parse(Stream.empty()));
+	@DataProvider
+	public Object[][] invalid() {
+		return new Object[][] {
+				{ Stream.empty() },
+				{ Stream.of(" ") },
+				{ Stream.of("ST\taroe\taroi", "1\t1\t1") },
+				{ Stream.of("ST\taroe\taroi", "1\t1\t1", "2\tb\t2") }
+		};
 	}
 
-	@Test
-	public void parse_Blank_Null() {
-		assertNull(new ML().parse(Stream.of(" ")));
+	@Test(dataProvider = "invalid")
+	public void parse_Invalid_Null(Stream<String> profiles) {
+		assertNull(new ML().parse(profiles));
 	}
 
 	@DataProvider
-	public Object[][] profiles() {
+	public Object[][] valid() {
 		return new Object[][] {
 				{ "ST\taroe\taroi\tarou", "", "1\t1\t2\t1\t1", "2\t \t2\t1\t1" },
 				{ "ST\taroe\taroi\tarou", "1", "1\t1\t2\t1\t1", "2\t \t2\t1\t1" },
@@ -33,7 +38,7 @@ public class MLTest {
 		};
 	}
 
-	@Test(dataProvider = "profiles")
+	@Test(dataProvider = "valid")
 	public void parse_Valid_Success(String... profiles) {
 		Stream<String> data = Stream.of(profiles);
 

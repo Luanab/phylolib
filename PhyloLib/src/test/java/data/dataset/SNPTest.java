@@ -10,18 +10,23 @@ import static org.testng.Assert.assertNull;
 
 public class SNPTest {
 
-	@Test
-	public void parse_Empty_Null() {
-		assertNull(new SNP().parse(Stream.empty()));
+	@DataProvider
+	public Object[][] invalid() {
+		return new Object[][] {
+				{ Stream.empty() },
+				{ Stream.of(" ") },
+				{ Stream.of("1\t10100111") },
+				{ Stream.of("1\t10100111", "2\t1x100111") }
+		};
 	}
 
-	@Test
-	public void parse_Blank_Null() {
-		assertNull(new SNP().parse(Stream.of(" ")));
+	@Test(dataProvider = "invalid")
+	public void parse_Invalid_Null(Stream<String> profiles) {
+		assertNull(new SNP().parse(profiles));
 	}
 
 	@DataProvider
-	public Object[][] profiles() {
+	public Object[][] valid() {
 		return new Object[][] {
 				{ "", "X\t10-01", "Y\t10101" },
 				{ "1\t", "X\t10 01", "Y\t01001" },
@@ -33,7 +38,7 @@ public class SNPTest {
 		};
 	}
 
-	@Test(dataProvider = "profiles")
+	@Test(dataProvider = "valid")
 	public void parse_Valid_Success(String... profiles) {
 		Stream<String> data = Stream.of(profiles);
 

@@ -26,7 +26,7 @@ public final class CSV implements IMatrixProcessor {
 				Log.warning(INVALID_ROW, counter);
 			counter++;
 		}
-		if (matrix.isEmpty())
+		if (matrix.size() < 2)
 			return null;
 		for (int i = matrix.get(0).size(); i > matrix.size(); i--) {
 			int column = i;

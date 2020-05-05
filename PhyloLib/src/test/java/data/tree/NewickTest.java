@@ -12,17 +12,18 @@ import static org.testng.Assert.assertNull;
 public class NewickTest {
 
 	@DataProvider
-	public Object[][] trees() {
+	public Object[][] invalid() {
 		return new Object[][] {
 				{ Stream.empty() },
 				{ Stream.of("") },
 				{ Stream.of(" ") },
 				{ Stream.of(";") },
+				{ Stream.of("(1:0.5)2;") },
 				{ Stream.of("((A:2.3,B:1.0:3.1,C:0.2)_;") }
 		};
 	}
 
-	@Test(dataProvider = "trees")
+	@Test(dataProvider = "invalid")
 	public void parse_Invalid_Null(Stream<String> data) {
 		assertNull(new Newick().parse(data));
 	}

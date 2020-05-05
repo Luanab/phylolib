@@ -10,18 +10,23 @@ import static org.testng.Assert.assertNull;
 
 public class CSVTest {
 
-	@Test
-	public void parse_Empty_Null() {
-		assertNull(new CSV().parse(Stream.empty()));
+	@DataProvider
+	public Object[][] invalid() {
+		return new Object[][] {
+				{ Stream.empty() },
+				{ Stream.of(" ") },
+				{ Stream.of("0.0") },
+				{ Stream.of("0.0", "1.0") }
+		};
 	}
 
-	@Test
-	public void parse_Blank_Null() {
-		assertNull(new CSV().parse(Stream.of(" ")));
+	@Test(dataProvider = "invalid")
+	public void parse_Invalid_Null(Stream<String> rows) {
+		assertNull(new CSV().parse(rows));
 	}
 
 	@DataProvider
-	public Object[][] rows() {
+	public Object[][] valid() {
 		return new Object[][] {
 				{ "0\t4.5", "4.5\tb", "4.5\t0" },
 				{ "0\t4.5", "4.5\t0", "7\t0" },
@@ -30,7 +35,7 @@ public class CSVTest {
 		};
 	}
 
-	@Test(dataProvider = "rows")
+	@Test(dataProvider = "valid")
 	public void parse_Valid_Success(String... rows) {
 		Stream<String> data = Stream.of(rows);
 
