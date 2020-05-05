@@ -5,6 +5,11 @@ import data.dataset.Profile;
 public final class Kimura extends Distance {
 
 	@Override
+	protected boolean symmetric() {
+		return true;
+	}
+
+	@Override
 	protected double distance(Profile i, Profile j) {
 		double transitions = 0;
 		double transversions = 0;

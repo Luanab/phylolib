@@ -9,8 +9,10 @@ public abstract class Distance implements ICommand<Dataset, Matrix> {
 
 	@Override
 	public final Matrix process(Dataset dataset) {
-		return new Matrix(dataset.ids(), (i, j) -> distance(dataset.profile(i), dataset.profile(j)));
+		return new Matrix(symmetric(), dataset.ids(), (i, j) -> distance(dataset.profile(i), dataset.profile(j)));
 	}
+
+	protected abstract boolean symmetric();
 
 	protected abstract double distance(Profile i, Profile j);
 

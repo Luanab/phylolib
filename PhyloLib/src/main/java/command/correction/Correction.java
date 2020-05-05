@@ -7,7 +7,7 @@ public abstract class Correction implements ICommand<Matrix, Matrix> {
 
 	@Override
 	public final Matrix process(Matrix matrix) {
-		return new Matrix(matrix.ids(), (i, j) -> correct(matrix.distance(i, j)));
+		return matrix.correct(this::correct);
 	}
 
 	protected abstract double correct(double distance);

@@ -33,7 +33,7 @@ public final class CSV implements IMatrixProcessor {
 			Log.warning(INVALID_COLUMN, column);
 			matrix.forEach(row -> row.remove(column - 1));
 		}
-		return new Matrix(IntStream.range(0, matrix.size()).mapToObj(String::valueOf).toArray(String[]::new),
+		return new Matrix(false, IntStream.range(0, matrix.size()).mapToObj(String::valueOf).toArray(String[]::new),
 				matrix.stream().map(l -> l.toArray(new Double[0])).toArray(Double[][]::new));
 	}
 

@@ -50,7 +50,7 @@ public class CSVTest {
 
 	@Test
 	public void format_Empty_Empty() {
-		assertEquals(new CSV().format(new Matrix(new String[0], (i, j) -> 0)), "");
+		assertEquals(new CSV().format(new Matrix(false, new String[0], (i, j) -> 0)), "");
 	}
 
 	@Test
@@ -60,7 +60,7 @@ public class CSVTest {
 		distances[0][1] = 50.36;
 		distances[1][0] = 50.36;
 		distances[1][1] = 0.0;
-		Matrix matrix = new Matrix(new String[2], (i, j) -> distances[i][j]);
+		Matrix matrix = new Matrix(false, new String[2], (i, j) -> distances[i][j]);
 
 		String data = new CSV().format(matrix);
 

@@ -5,6 +5,11 @@ import data.dataset.Profile;
 public final class GrapeTree extends Distance {
 
 	@Override
+	protected boolean symmetric() {
+		return false;
+	}
+
+	@Override
 	protected double distance(Profile i, Profile j) {
 		double differences = 0;
 		double nonmissing = 0;
