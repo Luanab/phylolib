@@ -41,7 +41,7 @@ public class Newick implements ITreeProcessor {
 					}
 			}
 		}
-		return !levels.isEmpty() || edges.size() < 2 ? null : new Tree(ids.toArray(new String[0]), edges);
+		return !levels.isEmpty() || edges.isEmpty() ? null : new Tree(ids.toArray(new String[0]), edges);
 	}
 
 	@Override

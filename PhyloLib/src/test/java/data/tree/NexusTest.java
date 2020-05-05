@@ -18,7 +18,7 @@ public class NexusTest {
 				{ Stream.of("") },
 				{ Stream.of(" ") },
 				{ Stream.of("BEGIN TREES;\n\tTree result = ;\nEND;") },
-				{ Stream.of("BEGIN TREES;\n\tTree result = (1:0.5)2;\nEND;") },
+				{ Stream.of("BEGIN TREES;\n\tTree result = 1;\nEND;") },
 				{ Stream.of("BEGIN TREES;\n\tTree result = ((A:2.3,B:1:3.1,C:0.2)_;\nEND;") }
 		};
 	}
