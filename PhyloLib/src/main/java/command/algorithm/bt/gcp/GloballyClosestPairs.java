@@ -12,8 +12,13 @@ public abstract class GloballyClosestPairs extends BifurcatedTree {
 	}
 
 	@Override
-	protected final double dissimilarity(Edge edge) {
+	protected double dissimilarity(Edge edge) {
 		return edge.distance();
+	}
+
+	@Override
+	protected int tiebreak(Edge edge) {
+		return -(elements(edge.from()) + elements(edge.to()));
 	}
 
 	@Override

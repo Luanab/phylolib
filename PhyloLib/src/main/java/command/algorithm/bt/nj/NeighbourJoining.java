@@ -19,9 +19,13 @@ public abstract class NeighbourJoining extends BifurcatedTree {
 		return true;
 	}
 
-	@Override
 	protected final double dissimilarity(Edge edge) {
 		return (clusters().count() - 2) * edge.distance() - clusters().mapToDouble(k -> distance(edge.from(), k) + distance(edge.to(), k)).sum();
+	}
+
+	@Override
+	protected int tiebreak(Edge edge) {
+		return 0;
 	}
 
 	@Override

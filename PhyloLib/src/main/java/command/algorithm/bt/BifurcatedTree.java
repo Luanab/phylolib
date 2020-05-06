@@ -8,6 +8,7 @@ import data.tree.Tree;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.ToDoubleFunction;
 import java.util.stream.Stream;
 
 public abstract class BifurcatedTree extends Algorithm {
@@ -43,11 +44,13 @@ public abstract class BifurcatedTree extends Algorithm {
 	protected final Edge select() {
 		return clusters()
 				.flatMap(i -> clusters().filter(j -> !i.equals(j)).map(j -> new Edge(i, j, distance(i, j))))
-				.min(Comparator.comparingDouble(this::dissimilarity))
+				.min(Comparator.comparingDouble((ToDoubleFunction<Edge>) this::dissimilarity).thenComparing(this::tiebreak))
 				.orElseThrow();
 	}
 
 	protected abstract double dissimilarity(Edge edge);
+
+	protected abstract int tiebreak(Edge edge);
 
 	@Override
 	protected final void join(Edge edge) {
