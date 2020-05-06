@@ -7,6 +7,7 @@ import data.tree.Tree;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public abstract class MinimumSpanningTree extends Algorithm {
@@ -49,9 +50,7 @@ public abstract class MinimumSpanningTree extends Algorithm {
 	@Override
 	protected final Edge select() {
 		return edges.stream()
-				.min((i, j) -> i.distance() == j.distance()
-							   ? tiebreak(i.from(), i.to(), j.from(), j.to())
-							   : Double.compare(i.distance(), j.distance()))
+				.min(Comparator.comparingDouble(Edge::distance).thenComparing((i, j) -> tiebreak(i.from(), i.to(), j.from(), j.to())))
 				.orElseThrow();
 	}
 
