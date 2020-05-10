@@ -17,6 +17,17 @@ public abstract class BifurcatedTree extends Algorithm {
 	private Map<Integer, Cluster> clusters;
 
 	@Override
+	public Tree process(Matrix matrix) {
+		Tree tree = new Tree(matrix.ids());
+		init(matrix);
+		while (!isFinished(tree)) {
+			Edge edge = select();
+			join(edge);
+			reduce(edge, tree);
+		}
+		return tree;
+	}
+
 	protected final void init(Matrix matrix) {
 		this.cluster = matrix.size();
 		this.clusters = new HashMap<>();
@@ -40,7 +51,8 @@ public abstract class BifurcatedTree extends Algorithm {
 		return clusters.get(i).elements;
 	}
 
-	@Override
+	protected abstract boolean isFinished(Tree tree);
+
 	protected final Edge select() {
 		return clusters()
 				.flatMap(i -> clusters().filter(j -> !i.equals(j)).map(j -> new Edge(i, j, distance(i, j))))
@@ -52,7 +64,6 @@ public abstract class BifurcatedTree extends Algorithm {
 
 	protected abstract int tiebreak(Edge edge);
 
-	@Override
 	protected final void join(Edge edge) {
 		int i = edge.from();
 		int j = edge.to();
@@ -81,7 +92,6 @@ public abstract class BifurcatedTree extends Algorithm {
 
 	protected abstract double dissimilarity(int i, int j, int u, int k);
 
-	@Override
 	protected final void reduce(Edge edge, Tree tree) {
 		int i = edge.from();
 		int j = edge.to();
