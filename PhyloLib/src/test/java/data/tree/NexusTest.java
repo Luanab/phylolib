@@ -4,6 +4,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.testng.Assert.assertEquals;
@@ -34,7 +35,7 @@ public class NexusTest {
 
 		Tree tree = new Nexus().parse(data);
 
-		List<Edge> edges = tree.edges();
+		List<Edge> edges = tree.edges().collect(Collectors.toList());
 
 		assertEquals(edges.size(), 5);
 		assertEquals(edges.get(0).from(), 2);
