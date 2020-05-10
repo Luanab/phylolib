@@ -17,7 +17,10 @@ public class Newick implements ITreeProcessor {
 		int counter = 0;
 		while (newick.length() > 0) {
 			switch (newick.charAt(0)) {
-				case ';': newick = "";
+				case ';':
+					if (!levels.isEmpty() || edges.isEmpty())
+						return null;
+					newick = newick.substring(1);
 					break;
 				case ',': newick = newick.substring(1);
 					break;
@@ -47,16 +50,16 @@ public class Newick implements ITreeProcessor {
 	@Override
 	public String format(Tree tree) {
 		StringBuilder data = new StringBuilder();
-		if (!tree.isEmpty()) {
-			int root = tree.edges().stream()
-					.map(Edge::from)
-					.filter(i -> tree.edges().stream().noneMatch(edge -> edge.to() == i))
-					.findFirst()
-					.orElse(0);
+		Integer[] roots = tree.edges().stream()
+				.map(Edge::from)
+				.filter(i -> tree.edges().stream().noneMatch(edge -> edge.to() == i))
+				.distinct()
+				.toArray(Integer[]::new);
+		for (Integer root : roots) {
 			format(tree, root, data);
-			data.append(id(tree, root));
+			data.append(id(tree, root)).append(';');
 		}
-		return data.append(';').toString();
+		return data.toString();
 	}
 
 	private void format(Tree tree, int root, StringBuilder data) {

@@ -30,13 +30,13 @@ public class NewickTest {
 
 	@Test
 	public void parse_Valid_Success() {
-		Stream<String> data = Stream.of("((A:2.3,B:1.0)_:3.1,C:0.2)_;");
+		Stream<String> data = Stream.of("((A:2.3,B:1.0)_:3.1,C:0.2)_;(D:0.5)E;");
 
 		Tree tree = new Newick().parse(data);
 
 		List<Edge> edges = tree.edges();
 
-		assertEquals(edges.size(), 4);
+		assertEquals(edges.size(), 5);
 		assertEquals(edges.get(0).from(), 2);
 		assertEquals(edges.get(0).to(), 0);
 		assertEquals(edges.get(0).distance(), 2.3);
@@ -49,11 +49,14 @@ public class NewickTest {
 		assertEquals(edges.get(3).from(), 4);
 		assertEquals(edges.get(3).to(), 3);
 		assertEquals(edges.get(3).distance(), 0.2);
+		assertEquals(edges.get(4).from(), 6);
+		assertEquals(edges.get(4).to(), 5);
+		assertEquals(edges.get(4).distance(), 0.5);
 	}
 
 	@Test
 	public void format_Empty_Empty() {
-		assertEquals(new Newick().format(new Tree()), ";");
+		assertEquals(new Newick().format(new Tree(new String[0])), "");
 	}
 
 	@Test

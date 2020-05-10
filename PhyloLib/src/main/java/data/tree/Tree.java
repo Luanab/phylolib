@@ -9,11 +9,6 @@ public final class Tree {
 	private final String[] ids;
 	private final List<Edge> edges;
 
-	public Tree() {
-		this.ids = new String[0];
-		this.edges = new ArrayList<>();
-	}
-
 	public Tree(String[] ids) {
 		this.ids = ids;
 		this.edges = new ArrayList<>();
@@ -30,10 +25,6 @@ public final class Tree {
 
 	public List<Edge> edges() {
 		return edges;
-	}
-
-	public boolean isEmpty() {
-		return edges.isEmpty();
 	}
 
 	public void add(Edge edge) {

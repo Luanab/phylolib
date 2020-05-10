@@ -55,12 +55,7 @@ public class CSVTest {
 
 	@Test
 	public void format_Valid_Success() {
-		Double[][] distances = new Double[2][2];
-		distances[0][0] = 0.0;
-		distances[0][1] = 50.36;
-		distances[1][0] = 50.36;
-		distances[1][1] = 0.0;
-		Matrix matrix = new Matrix(false, new String[2], (i, j) -> distances[i][j]);
+		Matrix matrix = new Matrix(false, new String[2], (i, j) -> 50.36);
 
 		String data = new CSV().format(matrix);
 

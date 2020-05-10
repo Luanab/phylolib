@@ -2,8 +2,7 @@ package cli;
 
 import command.algorithm.bt.gcp.UPGMA;
 import command.distance.Hamming;
-import command.optimization.rearrangement.NNI;
-import command.optimization.rearrangement.SPR;
+import command.optimization.LBR;
 import exception.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -39,7 +38,7 @@ public class ArgumentsTest {
 
 	@Test
 	public void parse_ValidCommands_NotNull() throws NoCommandException, InvalidCommandException, InvalidTypeException, RepeatedCommandException, MissingTypeException {
-		String[] args = new String[] { "optimization", "nni", ":", "distance", "hamming", "--dataset=snp:dataset.txt", ":", "optimization", "spr", "-o=newick:output.txt", ":", "algorithm", "upgma" };
+		String[] args = new String[] { "optimization", "lbr", ":", "distance", "hamming", "--dataset=snp:dataset.txt", ":", "optimization", "lbr", "-o=newick:output.txt", ":", "algorithm", "upgma" };
 
 		Arguments arguments = Arguments.parse(args);
 
@@ -56,9 +55,9 @@ public class ArgumentsTest {
 		assertEquals(algorithm.get(0).options().keys().size(), 0);
 		List<Parameters> optimization = arguments.get(Command.OPTIMIZATION);
 		assertEquals(optimization.size(), 2);
-		assertEquals(optimization.get(0).type().getDeclaringClass(), NNI.class);
+		assertEquals(optimization.get(0).type().getDeclaringClass(), LBR.class);
 		assertEquals(optimization.get(0).options().keys().size(), 0);
-		assertEquals(optimization.get(1).type().getDeclaringClass(), SPR.class);
+		assertEquals(optimization.get(1).type().getDeclaringClass(), LBR.class);
 		assertEquals(optimization.get(1).options().keys().size(), 1);
 		assertEquals(optimization.get(1).options().remove(Option.OUT), "newick:output.txt");
 	}
