@@ -50,9 +50,9 @@ public class Newick implements ITreeProcessor {
 	@Override
 	public String format(Tree tree) {
 		StringBuilder data = new StringBuilder();
-		Integer[] roots = tree.edges().stream()
+		Integer[] roots = tree.edges()
 				.map(Edge::from)
-				.filter(i -> tree.edges().stream().noneMatch(edge -> edge.to() == i))
+				.filter(i -> tree.edges().noneMatch(edge -> edge.to() == i))
 				.distinct()
 				.toArray(Integer[]::new);
 		for (Integer root : roots) {
