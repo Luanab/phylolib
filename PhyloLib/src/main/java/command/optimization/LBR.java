@@ -9,7 +9,6 @@ import data.tree.Tree;
 import exception.MissingInputException;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -29,7 +28,7 @@ public final class LBR extends Optimization {
 
 	@Override
 	public final Tree process(Tree tree) {
-		Set<Edge> edges = new HashSet<>(tree.edges());
+		Set<Edge> edges = tree.edges().collect(Collectors.toSet());
 		while (!edges.isEmpty()) {
 			Edge previous = edges.stream().min(Comparator.comparingDouble(Edge::distance)).orElseThrow();
 			tree.remove(previous);
@@ -59,9 +58,9 @@ public final class LBR extends Optimization {
 	}
 
 	private Set<Integer> neighbours(Tree tree, int u) {
-		return tree.edges().stream()
+		return tree.edges()
 				.map(Edge::from)
-				.filter(i -> tree.edges().stream().noneMatch(edge -> edge.to() == i))
+				.filter(i -> tree.edges().noneMatch(edge -> edge.to() == i))
 				.map(i -> children(tree, i).collect(Collectors.toSet()))
 				.filter(neighbours -> neighbours.remove(u))
 				.findFirst()
@@ -69,7 +68,7 @@ public final class LBR extends Optimization {
 	}
 
 	private Stream<Integer> children(Tree tree, int i) {
-		return Stream.concat(Stream.of(i), tree.edges().stream().filter(edge -> edge.from() == i).flatMap(edge -> children(tree, edge.to())));
+		return Stream.concat(Stream.of(i), tree.edges().filter(edge -> edge.from() == i).flatMap(edge -> children(tree, edge.to())));
 	}
 
 	private double contemporary(double uw, double uv, double wv) {
