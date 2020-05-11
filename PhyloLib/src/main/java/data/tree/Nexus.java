@@ -22,8 +22,6 @@ public final class Nexus extends Newick {
 		while (iterator.hasNext()) {
 			String next = iterator.next();
 			lines.add(next);
-			if (next.contains(";"))
-				break;
 		}
 		return super.parse(lines.stream());
 	}
