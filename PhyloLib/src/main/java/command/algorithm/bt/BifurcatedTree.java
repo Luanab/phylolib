@@ -65,10 +65,9 @@ public abstract class BifurcatedTree extends Algorithm {
 	private void join(Edge edge) {
 		int i = edge.from();
 		int j = edge.to();
-		double iu = branch(edge);
-		double ju = edge.distance() - iu;
-		clusters.get(i).distances.put(this.cluster, iu);
-		clusters.get(j).distances.put(this.cluster, ju);
+		double branch = branch(edge);
+		clusters.get(i).distances.put(this.cluster, branch);
+		clusters.get(j).distances.put(this.cluster, edge.distance() - branch);
 		Cluster cluster = new Cluster(elements(i) + elements(j), offset(edge));
 		clusters.put(this.cluster, cluster);
 		cluster.distances.put(this.cluster, 0.0);
@@ -91,14 +90,11 @@ public abstract class BifurcatedTree extends Algorithm {
 	protected abstract double dissimilarity(Edge edge, int u, int k);
 
 	private void reduce(Edge edge, Tree tree) {
+		int i = edge.from();
+		int j = edge.to();
 		int u = cluster++;
-		reduce(tree, u, edge.from());
-		reduce(tree, u, edge.to());
-	}
-
-	private void reduce(Tree tree, int u, int i) {
-		tree.add(new Edge(u, i, distance(i, u) - clusters.get(i).offset));
-		clusters.remove(i);
+		tree.add(new Edge(u, i, distance(i, u) - clusters.remove(i).offset));
+		tree.add(new Edge(u, j, distance(j, u) - clusters.remove(j).offset));
 	}
 
 	private static final class Cluster {
