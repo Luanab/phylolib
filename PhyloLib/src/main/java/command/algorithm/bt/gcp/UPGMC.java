@@ -1,13 +1,15 @@
 package command.algorithm.bt.gcp;
 
+import data.tree.Edge;
+
 public final class UPGMC extends GloballyClosestPairs {
 
 	@Override
-	protected double dissimilarity(int i, int j, int u, int k) {
-		long ci = elements(i);
-		long cj = elements(j);
+	protected double dissimilarity(Edge edge, int u, int k) {
+		long ci = elements(edge.from());
+		long cj = elements(edge.to());
 		long cij = ci + cj;
-		return (distance(i, k) * ci + distance(j, k) * cj) / (cij) - distance(i, j) * ci * cj / (cij * cij);
+		return (distance(edge.from(), k) * ci + distance(edge.to(), k) * cj) / (cij) - edge.distance() * ci * cj / (cij * cij);
 	}
 
 }

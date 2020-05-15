@@ -9,24 +9,22 @@ import java.util.stream.Collectors;
 
 public final class Forest {
 
-	private final Map<Edge, EdgeNode> edgesInTree;
+	private final Map<Edge, EdgeNode> edges;
 	private final EdgeNode[] pi;
 	private final Set<Integer> rset;
-	private final int[] maxArr;
-	private final int size;
+	private final int[] max;
 
 	public Forest(int size) {
-		this.edgesInTree = new HashMap<>(size * size - size);
+		this.edges = new HashMap<>(size * size - size);
 		this.pi = new EdgeNode[size];
 		this.rset = new HashSet<>();
-		this.maxArr = new int[size];
-		this.size = size;
+		this.max = new int[size];
 		for (int i = 0; i < size; i++)
-			this.maxArr[i] = i;
+			this.max[i] = i;
 	}
 
-	public void add(EdgeNode edgeNode) {
-		edgesInTree.put(edgeNode.getWeightedEdge(), edgeNode);
+	public void add(EdgeNode node) {
+		edges.put(node.getEdge(), node);
 	}
 
 	public void addPi(int p, EdgeNode node) {
@@ -37,22 +35,21 @@ public final class Forest {
 		rset.add(root);
 	}
 
-	public void updateMaxArray(int p1, int p2) {
-		maxArr[p1] = maxArr[p2];
+	public void updateMax(int p1, int p2) {
+		max[p1] = max[p2];
 	}
 
 	public Tree expansion(Matrix matrix) {
 		Tree tree = new Tree(matrix.ids());
-		List<EdgeNode> N = edgesInTree.values().stream().filter(EdgeNode::isRoot).collect(Collectors.toList());
-		rset.stream().map(node -> pi[maxArr[node]]).filter(Objects::nonNull).forEach(node -> removeFromRoots(node, N));
-		while (!N.isEmpty()) {
-			EdgeNode edgeNode = N.remove(0);
-			if (edgeNode.isRemoveF())
+		List<EdgeNode> nodes = edges.values().stream().filter(EdgeNode::isRoot).collect(Collectors.toList());
+		rset.stream().map(node -> pi[max[node]]).filter(Objects::nonNull).forEach(node -> removeFromRoots(node, nodes));
+		while (!nodes.isEmpty()) {
+			EdgeNode node = nodes.remove(0);
+			if (node.isRemoveF())
 				continue;
-			Edge edge = edgeNode.getWeightedEdge();
+			Edge edge = node.getEdge();
 			tree.add(edge);
-			int dst = edge.to();
-			removeFromRoots(pi[dst], N);
+			removeFromRoots(pi[edge.to()], nodes);
 		}
 		return tree;
 	}

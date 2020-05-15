@@ -9,11 +9,11 @@ import java.util.*;
 
 public final class Edmonds extends Algorithm {
 
-	private Comparator<EdgeNode> maxDisjointCmp;
+	private Comparator<EdgeNode> comparator;
 	private BinomialHeap[] queues;
 	private DisjointSet weaklyConnected;
-	private FasterDirectedMSTDisjointSet stronglyConnected;
-	private List<Integer> roots;
+	private WeightedDisjointSet stronglyConnected;
+	private LinkedList<Integer> roots;
 	private Forest forest;
 	private EdgeNode[] inEdgeNode;
 	private List<List<EdgeNode>> edgeNodeCycle;
@@ -22,13 +22,13 @@ public final class Edmonds extends Algorithm {
 	public Tree process(Matrix matrix) {
 		init(matrix);
 		while (!roots.isEmpty()) {
-			int root = roots.remove(0);
+			int root = roots.pop();
 			EdgeNode min = getMinEdgeNode(root);
 			if (min == null)
 				continue;
 			processCameriniForest(min, root);
-			int u = min.getWeightedEdge().from();
-			int v = min.getWeightedEdge().to();
+			int u = min.getEdge().from();
+			int v = min.getEdge().to();
 			if (weaklyConnected.findSet(u) != weaklyConnected.findSet(v)) {
 				inEdgeNode[root] = min;
 				weaklyConnected.unionSet(u, v);
@@ -40,20 +40,19 @@ public final class Edmonds extends Algorithm {
 
 	public void init(Matrix matrix) {
 		int size = matrix.size();
-		Comparator<Edge> cmp = Comparator.comparingDouble(this::getAdjustedWeight)
+		this.comparator = Comparator.comparing(EdgeNode::getEdge, Comparator.comparingDouble(this::getAdjustedWeight)
 				.thenComparingInt(i -> Integer.min(i.from(), i.to()))
-				.thenComparingInt(i -> Integer.max(i.from(), i.to()));
-		this.maxDisjointCmp = (i, j) -> cmp.compare(i.getWeightedEdge(), (j.getWeightedEdge()));
-		this.stronglyConnected = new FasterDirectedMSTDisjointSet(size);
+				.thenComparingInt(i -> Integer.max(i.from(), i.to())));
+		this.stronglyConnected = new WeightedDisjointSet(size);
 		this.weaklyConnected = new DisjointSet(size);
 		this.queues = new BinomialHeap[size];
 		this.inEdgeNode = new EdgeNode[size];
 		this.forest = new Forest(size);
-		this.roots = new ArrayList<>(size);
+		this.roots = new LinkedList<>();
 		this.edgeNodeCycle = new ArrayList<>(size);
 		for (int i = 0; i < size; i++) {
 			this.roots.add(i);
-			this.queues[i] = new BinomialHeap(this.maxDisjointCmp);
+			this.queues[i] = new BinomialHeap(this.comparator);
 			this.edgeNodeCycle.add(i, null);
 		}
 		for (int i = 0; i < size; i++) {
@@ -71,22 +70,22 @@ public final class Edmonds extends Algorithm {
 		Map<Integer, EdgeNode> map = new HashMap<>();
 		map.put(stronglyConnected.findSet(v), min);
 		inEdgeNode[root] = null;
-		for (int i = stronglyConnected.findSet(u); inEdgeNode[i] != null; i = stronglyConnected.findSet(inEdgeNode[i].getWeightedEdge().from())) {
+		for (int i = stronglyConnected.findSet(u); inEdgeNode[i] != null; i = stronglyConnected.findSet(inEdgeNode[i].getEdge().from())) {
 			map.put(i, inEdgeNode[i]);
 			nodes.add(inEdgeNode[i]);
 			contractionSet.add(i);
 		}
-		Edge edge = Collections.max(nodes, maxDisjointCmp).getWeightedEdge();
+		Edge edge = Collections.max(nodes, comparator).getEdge();
 		int dst = stronglyConnected.findSet(edge.to());
 		double max = getAdjustedWeight(edge);
 		for (Integer node : contractionSet)
-			stronglyConnected.addWeight(node, max - getAdjustedWeight(map.get(node).getWeightedEdge()));
+			stronglyConnected.addWeight(node, max - getAdjustedWeight(map.get(node).getEdge()));
 		for (EdgeNode node : nodes)
-			stronglyConnected.unionSet(node.getWeightedEdge().from(), node.getWeightedEdge().to());
+			stronglyConnected.unionSet(node.getEdge().from(), node.getEdge().to());
 		int rep = stronglyConnected.findSet(edge.to());
 		roots.add(0, rep);
 		performHeapUnion(rep, contractionSet);
-		forest.updateMaxArray(rep, dst);
+		forest.updateMax(rep, dst);
 		edgeNodeCycle.set(rep, nodes);
 	}
 
@@ -104,10 +103,10 @@ public final class Edmonds extends Algorithm {
 			return null;
 		}
 		EdgeNode minEdgeNode = pq.pop();
-		Edge min = minEdgeNode.getWeightedEdge();
+		Edge min = minEdgeNode.getEdge();
 		while (!pq.isEmpty() && stronglyConnected.sameSet(min.from(), min.to())) {
 			minEdgeNode = pq.pop();
-			min = minEdgeNode.getWeightedEdge();
+			min = minEdgeNode.getEdge();
 		}
 		if (stronglyConnected.sameSet(min.from(), min.to())) {
 			forest.addEntryToRset(root);

@@ -1,10 +1,10 @@
 package command.algorithm.mst.edmonds;
 
-public final class FasterDirectedMSTDisjointSet extends DisjointSet {
+public final class WeightedDisjointSet extends DisjointSet {
 
 	private final double[] weight;
 
-	public FasterDirectedMSTDisjointSet(int n) {
+	public WeightedDisjointSet(int n) {
 		super(n);
 		this.weight = new double[this.size];
 	}
@@ -30,18 +30,15 @@ public final class FasterDirectedMSTDisjointSet extends DisjointSet {
 	public void unionSet(int i, int j) {
 		i = findSet(i);
 		j = findSet(j);
-		if (i == j)
-			return;
-		if (rank[i] > rank[j]) {
-			pi[j] = i;
+		if (i != j) {
+			if (rank[i] > rank[j])
+				pi[j] = i;
+			else {
+				pi[i] = j;
+				if (rank[i] == rank[j])
+					rank[j]++;
+			}
 			weight[i] -= weight[j];
-		} else if (rank[i] < rank[j]) {
-			pi[i] = j;
-			weight[i] -= weight[j];
-		} else {
-			pi[i] = j;
-			weight[i] -= weight[j];
-			rank[j]++;
 		}
 	}
 

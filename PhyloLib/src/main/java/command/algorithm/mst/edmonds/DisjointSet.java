@@ -27,15 +27,14 @@ public class DisjointSet {
 	public void unionSet(int i, int j) {
 		i = findSet(i);
 		j = findSet(j);
-		if (i == j)
-			return;
-		if (rank[i] > rank[j]) {
-			pi[j] = i;
-		} else if (rank[i] < rank[j]) {
-			pi[i] = j;
-		} else {
-			pi[i] = j;
-			rank[j]++;
+		if (i != j) {
+			if (rank[i] > rank[j])
+				pi[j] = i;
+			else {
+				pi[i] = j;
+				if (rank[i] == rank[j])
+					rank[j]++;
+			}
 		}
 	}
 

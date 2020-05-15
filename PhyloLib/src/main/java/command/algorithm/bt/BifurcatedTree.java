@@ -5,9 +5,7 @@ import data.matrix.Matrix;
 import data.tree.Edge;
 import data.tree.Tree;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.ToDoubleFunction;
 import java.util.stream.Stream;
 
@@ -28,7 +26,7 @@ public abstract class BifurcatedTree extends Algorithm {
 		return tree;
 	}
 
-	protected final void init(Matrix matrix) {
+	private void init(Matrix matrix) {
 		this.cluster = matrix.size();
 		this.clusters = new HashMap<>();
 		for (int i = 0; i < this.cluster; i++) {
@@ -53,7 +51,7 @@ public abstract class BifurcatedTree extends Algorithm {
 
 	protected abstract boolean isFinished(Tree tree);
 
-	protected final Edge select() {
+	private Edge select() {
 		return clusters()
 				.flatMap(i -> clusters().filter(j -> !i.equals(j)).map(j -> new Edge(i, j, distance(i, j))))
 				.min(Comparator.comparingDouble((ToDoubleFunction<Edge>) this::dissimilarity).thenComparing(this::tiebreak))
@@ -64,19 +62,19 @@ public abstract class BifurcatedTree extends Algorithm {
 
 	protected abstract int tiebreak(Edge edge);
 
-	protected final void join(Edge edge) {
+	private void join(Edge edge) {
 		int i = edge.from();
 		int j = edge.to();
-		double iu = branch(i, j);
+		double iu = branch(edge);
 		double ju = edge.distance() - iu;
 		clusters.get(i).distances.put(this.cluster, iu);
 		clusters.get(j).distances.put(this.cluster, ju);
-		Cluster cluster = new Cluster(elements(i) + elements(j), offset(i, j));
+		Cluster cluster = new Cluster(elements(i) + elements(j), offset(edge));
 		clusters.put(this.cluster, cluster);
 		cluster.distances.put(this.cluster, 0.0);
 		clusters.keySet().forEach(k -> {
 			if (k != this.cluster && k != i && k != j) {
-				double distance = dissimilarity(i, j, this.cluster, k);
+				double distance = dissimilarity(edge, this.cluster, k);
 				cluster.distances.put(k, distance);
 				Map<Integer, Double> distances = clusters.get(k).distances;
 				distances.remove(i);
@@ -86,20 +84,21 @@ public abstract class BifurcatedTree extends Algorithm {
 		});
 	}
 
-	protected abstract double branch(int i, int j);
+	protected abstract double branch(Edge edge);
 
-	protected abstract double offset(int i, int j);
+	protected abstract double offset(Edge edge);
 
-	protected abstract double dissimilarity(int i, int j, int u, int k);
+	protected abstract double dissimilarity(Edge edge, int u, int k);
 
-	protected final void reduce(Edge edge, Tree tree) {
-		int i = edge.from();
-		int j = edge.to();
+	private void reduce(Edge edge, Tree tree) {
 		int u = cluster++;
+		reduce(tree, u, edge.from());
+		reduce(tree, u, edge.to());
+	}
+
+	private void reduce(Tree tree, int u, int i) {
 		tree.add(new Edge(u, i, distance(i, u) - clusters.get(i).offset));
-		tree.add(new Edge(u, j, distance(j, u) - clusters.get(j).offset));
 		clusters.remove(i);
-		clusters.remove(j);
 	}
 
 	private static final class Cluster {

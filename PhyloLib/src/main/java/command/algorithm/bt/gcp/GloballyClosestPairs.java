@@ -22,13 +22,13 @@ public abstract class GloballyClosestPairs extends BifurcatedTree {
 	}
 
 	@Override
-	protected final double branch(int i, int j) {
-		return distance(i, j) / 2;
+	protected final double branch(Edge edge) {
+		return edge.distance() / 2;
 	}
 
 	@Override
-	protected final double offset(int i, int j) {
-		return branch(i, j);
+	protected final double offset(Edge edge) {
+		return branch(edge);
 	}
 
 }

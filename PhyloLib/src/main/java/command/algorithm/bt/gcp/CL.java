@@ -1,10 +1,12 @@
 package command.algorithm.bt.gcp;
 
+import data.tree.Edge;
+
 public final class CL extends GloballyClosestPairs {
 
 	@Override
-	protected double dissimilarity(int i, int j, int u, int k) {
-		return Math.max(distance(i, k), distance(j, k));
+	protected double dissimilarity(Edge edge, int u, int k) {
+		return Math.max(distance(edge.from(), k), distance(edge.to(), k));
 	}
 
 }

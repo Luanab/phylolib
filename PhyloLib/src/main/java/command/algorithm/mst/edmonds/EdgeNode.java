@@ -16,21 +16,21 @@ public final class EdgeNode {
 
 	public EdgeNode(Edge edge) {
 		this.edge = edge;
+		this.children = new LinkedList<>();
 		this.removeF = false;
 		this.parent = null;
 		this.initialParent = null;
-		this.children = new LinkedList<>();
 	}
 
-	public void addChild(EdgeNode edgeNode) {
-		children.add(edgeNode);
+	public void addChild(EdgeNode node) {
+		children.add(node);
 	}
 
 	public boolean isRoot() {
 		return parent == null;
 	}
 
-	public Edge getWeightedEdge() {
+	public Edge getEdge() {
 		return edge;
 	}
 

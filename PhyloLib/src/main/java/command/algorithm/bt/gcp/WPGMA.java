@@ -1,10 +1,12 @@
 package command.algorithm.bt.gcp;
 
+import data.tree.Edge;
+
 public final class WPGMA extends GloballyClosestPairs {
 
 	@Override
-	protected double dissimilarity(int i, int j, int u, int k) {
-		return (distance(i, k) + distance(j, k)) / 2;
+	protected double dissimilarity(Edge edge, int u, int k) {
+		return (distance(edge.from(), k) + distance(edge.to(), k)) / 2;
 	}
 
 }
