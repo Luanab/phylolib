@@ -1,6 +1,6 @@
 package cli;
 
-import command.algorithm.bt.gcp.UPGMA;
+import command.algorithm.gcp.UPGMA;
 import command.distance.Hamming;
 import command.optimization.LBR;
 import exception.*;

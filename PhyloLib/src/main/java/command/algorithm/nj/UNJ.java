@@ -1,4 +1,4 @@
-package command.algorithm.bt.nj;
+package command.algorithm.nj;
 
 public final class UNJ extends NeighbourJoining {
 

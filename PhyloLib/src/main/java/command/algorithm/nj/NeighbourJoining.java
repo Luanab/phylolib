@@ -1,17 +1,17 @@
-package command.algorithm.bt;
+package command.algorithm.nj;
 
 import command.algorithm.Algorithm;
 import data.matrix.Matrix;
 import data.tree.Edge;
 import data.tree.Tree;
+import javafx.util.Pair;
 
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
-import java.util.function.ToDoubleFunction;
-import java.util.stream.Stream;
 
-public abstract class BifurcatedTree extends Algorithm {
+public abstract class NeighbourJoining extends Algorithm {
 
 	private int cluster;
 	private Map<Integer, Cluster> clusters;
@@ -20,11 +20,13 @@ public abstract class BifurcatedTree extends Algorithm {
 	public Tree process(Matrix matrix) {
 		Tree tree = new Tree(matrix.ids());
 		init(matrix);
-		while (!isFinished(tree)) {
+		while (clusters.size() > 2) {
 			Edge edge = clusters.entrySet().stream()
 					.flatMap(i -> i.getValue().distances.entrySet().stream()
 							.map(j -> new Edge(i.getKey(), j.getKey(), j.getValue())))
-					.min(Comparator.comparingDouble((ToDoubleFunction<Edge>) this::dissimilarity).thenComparing(this::tiebreak))
+					.map(e -> new Pair<>(e, dissimilarity(e)))
+					.min(Comparator.comparingDouble(Pair::getValue))
+					.map(Pair::getKey)
 					.orElseThrow();
 
 			int u = cluster++;
@@ -32,14 +34,14 @@ public abstract class BifurcatedTree extends Algorithm {
 			double ju = edge.distance() - iu;
 			Cluster i = clusters.remove(edge.from());
 			Cluster j = clusters.remove(edge.to());
-			Cluster cluster = new Cluster(i.elements + j.elements, offset(edge));
+			Cluster cluster = new Cluster(i.elements + j.elements);
 			clusters.put(u, cluster);
-			tree.add(new Edge(u, edge.from(), iu - i.offset));
-			tree.add(new Edge(u, edge.to(), ju - j.offset));
+			tree.add(new Edge(u, edge.from(), iu));
+			tree.add(new Edge(u, edge.to(), ju));
 
 			clusters.keySet().forEach(k -> {
 				if (k != u) {
-					double distance = dissimilarity(edge, i.elements, j.elements, u, iu, ju, k, i.distances.get(k), j.distances.get(k));
+					double distance = dissimilarity(edge, iu, ju, i.distances.get(k), j.distances.get(k));
 					cluster.distances.put(k, distance);
 					Map<Integer, Double> distances = clusters.get(k).distances;
 					distances.remove(edge.from());
@@ -48,6 +50,10 @@ public abstract class BifurcatedTree extends Algorithm {
 				}
 			});
 		}
+		Iterator<Integer> iterator = clusters.keySet().iterator();
+		int i = iterator.next();
+		int j = iterator.next();
+		tree.add(new Edge(i, j, distance(i, j)));
 		return tree;
 	}
 
@@ -56,16 +62,12 @@ public abstract class BifurcatedTree extends Algorithm {
 		this.cluster = size;
 		this.clusters = new HashMap<>(size);
 		for (int i = 0; i < size; i++) {
-			Cluster cluster = new Cluster(1, 0);
+			Cluster cluster = new Cluster(1);
 			this.clusters.put(i, cluster);
 			for (int j = 0; j < size; j++)
 				if (i != j)
 					cluster.distances.put(j, matrix.distance(i, j));
 		}
-	}
-
-	protected final Stream<Integer> clusters() {
-		return clusters.keySet().stream();
 	}
 
 	protected final double distance(int i, int j) {
@@ -76,27 +78,33 @@ public abstract class BifurcatedTree extends Algorithm {
 		return clusters.get(i).elements;
 	}
 
-	protected abstract boolean isFinished(Tree tree);
+	protected final double dissimilarity(Edge edge) {
+		return (clusters.size() - 2) * edge.distance() - clusters.keySet().stream().mapToDouble(k -> distance(edge.from(), k) + distance(edge.to(), k)).sum();
+	}
 
-	protected abstract double dissimilarity(Edge edge);
+	protected final double branch(Edge edge) {
+		return edge.distance() / 2 + clusters.keySet().stream().mapToDouble(k -> weight(k) * (distance(edge.from(), k) - distance(edge.to(), k))).sum()
+									 / (2 * (clusters.size() - (weight(edge.from()) + weight(edge.to()))));
+	}
 
-	protected abstract int tiebreak(Edge edge);
+	protected abstract int weight(int i);
 
-	protected abstract double branch(Edge edge);
+	protected final double dissimilarity(Edge edge, double iu, double ju, Double ik, Double jk) {
+		double lambda = lambda(edge.from(), edge.to());
+		return lambda * (ik - length(iu)) + (1 - lambda) * (jk - length(ju));
+	}
 
-	protected abstract double offset(Edge edge);
+	protected abstract double lambda(int i, int j);
 
-	protected abstract double dissimilarity(Edge edge, int ci, int cj, int u, double iu, double ju, int k, Double ik, Double jk);
+	protected abstract double length(double distance);
 
 	private final class Cluster {
 
 		public final int elements;
-		public final double offset;
 		public final Map<Integer, Double> distances;
 
-		public Cluster(int elements, double offset) {
+		public Cluster(int elements) {
 			this.elements = elements;
-			this.offset = offset;
 			this.distances = new HashMap<>(clusters.size());
 		}
 
