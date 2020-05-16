@@ -42,15 +42,13 @@ public abstract class NeighbourJoining extends BifurcatedTree {
 	}
 
 	@Override
-	protected final double dissimilarity(Edge edge, int u, int k) {
-		int i = edge.from();
-		int j = edge.to();
-		double lambda = lambda(i, j);
-		return lambda * (distance(i, k) - length(i, u)) + (1 - lambda) * (distance(j, k) - length(j, u));
+	protected final double dissimilarity(Edge edge, int ci, int cj, int u, double iu, double ju, int k, Double ik, Double jk) {
+		double lambda = lambda(edge.from(), edge.to());
+		return lambda * (ik - length(iu)) + (1 - lambda) * (jk - length(ju));
 	}
 
 	protected abstract double lambda(int i, int j);
 
-	protected abstract double length(int i, int j);
+	protected abstract double length(double distance);
 
 }

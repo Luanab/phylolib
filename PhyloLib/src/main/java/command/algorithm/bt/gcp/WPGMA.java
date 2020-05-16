@@ -5,8 +5,8 @@ import data.tree.Edge;
 public final class WPGMA extends GloballyClosestPairs {
 
 	@Override
-	protected double dissimilarity(Edge edge, int u, int k) {
-		return (distance(edge.from(), k) + distance(edge.to(), k)) / 2;
+	protected double dissimilarity(Edge edge, int ci, int cj, int u, double iu, double ju, int k, Double ik, Double jk) {
+		return (ik + jk) / 2;
 	}
 
 }

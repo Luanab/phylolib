@@ -13,8 +13,8 @@ public final class StudierKeppler extends NeighbourJoining {
 	}
 
 	@Override
-	protected double length(int i, int j) {
-		return distance(i, j);
+	protected double length(double distance) {
+		return distance;
 	}
 
 }

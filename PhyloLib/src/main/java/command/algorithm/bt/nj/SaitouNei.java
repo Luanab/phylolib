@@ -13,7 +13,7 @@ public final class SaitouNei extends NeighbourJoining {
 	}
 
 	@Override
-	protected double length(int i, int j) {
+	protected double length(double distance) {
 		return 0;
 	}
 
