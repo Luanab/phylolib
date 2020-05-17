@@ -1,5 +1,7 @@
 package data.tree;
 
+import cli.Format;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -38,7 +40,7 @@ public class Newick implements ITreeProcessor {
 					String[] values = info.split(":", 2);
 					ids.add(values[0].isBlank() ? "_" : values[0]);
 					if (newick.length() > 0 && !newick.startsWith(";")) {
-						if (values.length != 2 || values[1].isBlank() || !values[1].matches("^((-)?\\d*(\\.\\d+)?)$"))
+						if (values.length != 2 || values[1].isBlank() || !Format.DISTANCE.matches(values[1]))
 							return null;
 						levels.peek().add(new Edge(-1, id, Double.parseDouble(values[1])));
 					}

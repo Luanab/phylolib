@@ -3,7 +3,8 @@ package cli;
 public enum Format {
 
 	FILE("^\\w+:.+$"),
-	NATURAL("^\\d+$");
+	NATURAL("^\\d+$"),
+	DISTANCE("^(\\d*(\\.\\d+(E-\\d+)?)?)$");
 
 	private final String regex;
 

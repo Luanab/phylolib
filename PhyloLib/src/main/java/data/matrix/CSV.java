@@ -1,5 +1,6 @@
 package data.matrix;
 
+import cli.Format;
 import logging.Log;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ public final class CSV implements IMatrixProcessor {
 		int counter = 1;
 		while (iterator.hasNext()) {
 			String[] next = iterator.next();
-			if (Arrays.stream(next).allMatch(n -> n.matches("^(\\d*(\\.\\d+)?)$")) &&
+			if (Arrays.stream(next).allMatch(Format.DISTANCE::matches) &&
 				(matrix.isEmpty() || (next.length == matrix.get(0).size() && matrix.size() < matrix.get(0).size())))
 				matrix.add(Arrays.stream(next).map(Double::parseDouble).collect(Collectors.toList()));
 			else
