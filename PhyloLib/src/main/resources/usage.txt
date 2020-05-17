@@ -5,7 +5,7 @@ Usage:
     phylolib distance (hamming|grapetree|kimura) [options]
     phylolib correction (jukescantor) [options]
     phylolib algorithm (goeburst|grapetree|sl|cl|upgma|upgmc|wpgma|wpgmc|saitounei|studierkepler|unj) [options]
-    phylolib optimization (lbr|spr|nni|tbr) [options]
+    phylolib optimization (lbr) [options]
 
 Options:
     -o=<file> --out=<file>      Output file as <format>:<location> with format being (fasta|ml|snp|csv|newick|nexus).
