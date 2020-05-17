@@ -32,66 +32,70 @@ public abstract class GloballyClosestPairs extends Algorithm {
 		int size = matrix.size();
 		this.cluster = size;
 		this.clusters = new HashMap<>(size);
-		this.edges = new PriorityQueue<>(size * (size - 1), Comparator.comparingDouble(Edge::distance).thenComparing(this::tiebreak));
+		this.edges = new PriorityQueue<>(size * (size - 1) / 2, Comparator.comparingDouble(Edge::distance).thenComparing(this::tiebreak));
 		for (int i = 0; i < size; i++)
 			this.clusters.put(i, new Cluster(1, 0));
 		for (int i = 0; i < size; i++)
-			for (int j = i + 1; j < size; j++)
-				this.edges.add(new Edge(j, i, Math.min(matrix.distance(i, j), matrix.distance(j, i))));
+			for (int j = i + 1; j < size; j++) {
+				double distance = Math.min(matrix.distance(i, j), matrix.distance(j, i));
+				this.clusters.get(j).distances.put(i, distance);
+				this.edges.add(new Edge(j, i, distance));
+			}
 	}
 
 	protected int tiebreak(Edge edge) {
-		return -(clusters.get(edge.from()).elements + clusters.get(edge.to()).elements);
+		return !clusters.containsKey(edge.from()) || !clusters.containsKey(edge.to())
+			   ? 0 :
+			   -(clusters.get(edge.from()).elements + clusters.get(edge.to()).elements);
 	}
 
 	private Edge select() {
-		return edges.remove();
+		Edge edge = edges.remove();
+		while (!clusters.containsKey(edge.from()) || !clusters.containsKey(edge.to()))
+			edge = edges.remove();
+		return edge;
 	}
 
 	private void join(Edge edge, Tree tree) {
-		Cluster i = clusters.get(edge.from());
-		Cluster j = clusters.get(edge.to());
+		Cluster ci = clusters.get(edge.from());
+		Cluster cj = clusters.get(edge.to());
 		double branch = edge.distance() / 2;
-		Cluster cluster = new Cluster(i.elements + j.elements, branch);
+		Cluster cluster = new Cluster(ci.elements + cj.elements, branch);
 		clusters.put(this.cluster, cluster);
-		tree.add(new Edge(this.cluster, edge.from(), branch - i.offset));
-		tree.add(new Edge(this.cluster, edge.to(), branch - j.offset));
+		tree.add(new Edge(this.cluster, edge.from(), branch - ci.offset));
+		tree.add(new Edge(this.cluster, edge.to(), branch - cj.offset));
 	}
 
 	private void reduce(Edge edge) {
-		Cluster i = clusters.get(edge.from());
-		Cluster j = clusters.get(edge.to());
-		int u = cluster++;
-		clusters.keySet().forEach(k -> {
-			if (k != u && k != edge.from() && k != edge.to()) {
-				Edge ik = edge(edge.from(), k);
-				Edge jk = edge(edge.to(), k);
-				edges.remove(ik);
-				edges.remove(jk);
-				edges.add(new Edge(u, k, dissimilarity(edge.distance(), ik.distance(), jk.distance(), i.elements, j.elements)));
-			}
-		});
+		int cluster = this.cluster++;
+		Cluster ci = clusters.get(edge.from());
+		Cluster cj = clusters.get(edge.to());
+		Map<Integer, Double> ud = clusters.get(cluster).distances;
+		clusters.keySet().stream()
+				.filter(k -> k != cluster && k != edge.from() && k != edge.to())
+				.forEach(k -> {
+					double ik = clusters.get(Math.max(edge.from(), k)).distances.get(Math.min(edge.from(), k));
+					double jk = clusters.get(Math.max(edge.to(), k)).distances.get(Math.min(edge.to(), k));
+					double dissimilarity = dissimilarity(edge.distance(), ik, jk, ci.elements, cj.elements);
+					ud.put(k, dissimilarity);
+					edges.add(new Edge(cluster, k, dissimilarity));
+				});
 		clusters.remove(edge.from());
 		clusters.remove(edge.to());
 	}
 
-	private Edge edge(int i, int j) {
-		return edges.stream()
-				.filter(e -> (e.from() == i && e.to() == j) || (e.from() == j && e.to() == i))
-				.findFirst()
-				.orElseThrow();
-	}
-
 	protected abstract double dissimilarity(double ij, double ik, double jk, int ci, int cj);
 
-	private static final class Cluster {
+	private final class Cluster {
 
 		public final int elements;
 		public final double offset;
+		public final Map<Integer, Double> distances;
 
 		public Cluster(int elements, double offset) {
 			this.elements = elements;
 			this.offset = offset;
+			this.distances = new HashMap<>(clusters.size());
 		}
 
 	}
