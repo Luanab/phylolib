@@ -9,8 +9,7 @@ import data.tree.Tree;
 import exception.MissingInputException;
 
 import java.util.Comparator;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.PriorityQueue;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -28,47 +27,44 @@ public final class LBR extends Optimization {
 
 	@Override
 	public final Tree process(Tree tree) {
-		Set<Edge> edges = tree.edges().collect(Collectors.toSet());
+		Tree result = new Tree(tree.ids());
+		PriorityQueue<Edge> edges = new PriorityQueue<>(Comparator.comparingDouble(Edge::distance));
+		tree.edges().peek(result::add).forEach(edges::add);
 		while (!edges.isEmpty()) {
-			Edge previous = edges.stream().min(Comparator.comparingDouble(Edge::distance)).orElseThrow();
-			tree.remove(previous);
-			int u = recraft(tree, previous.from(), previous.to());
-			int v = recraft(tree, previous.to(), previous.from());
+			Edge previous = edges.remove();
+			result.remove(previous);
+			int u = recraft(result, previous.from(), previous.to());
+			int v = recraft(result, previous.to(), previous.from());
 			Edge current = new Edge(u, v, matrix.distance(u, v));
-			edges.remove(previous);
-			tree.add(current);
-			if (previous.distance() > current.distance())
+			result.add(current);
+			if (current.distance() > previous.distance())
 				edges.add(current);
 		}
-		return tree;
+		return result;
 	}
 
 	private int recraft(Tree tree, int u, int v) {
-		for (Integer w : neighbours(tree, v)) {
-			double uw = matrix.distance(u, w);
-			double wu = matrix.distance(w, u);
-			double uv = matrix.distance(u, v);
-			double wv = matrix.distance(w, v);
-			double a = contemporary(uw, uv, wv);
-			double b = ancestor(wu, uv, wv);
-			if ((a >= b && mean(u) > mean(w)) || (a < b && uv > wv))
-				u = w;
-		}
-		return u;
-	}
-
-	private Set<Integer> neighbours(Tree tree, int u) {
 		return tree.edges()
 				.map(Edge::from)
 				.filter(i -> tree.edges().noneMatch(edge -> edge.to() == i))
-				.map(i -> children(tree, i).collect(Collectors.toSet()))
-				.filter(neighbours -> neighbours.remove(u))
-				.findFirst()
-				.orElseThrow();
+				.flatMap(i -> children(tree, i))
+				.distinct()
+				.filter(n -> !n.equals(v))
+				.reduce(u, (uu, w) -> select(uu, w, v));
 	}
 
 	private Stream<Integer> children(Tree tree, int i) {
 		return Stream.concat(Stream.of(i), tree.edges().filter(edge -> edge.from() == i).flatMap(edge -> children(tree, edge.to())));
+	}
+
+	private int select(int u, int w, int v) {
+		double uw = matrix.distance(u, w);
+		double wu = matrix.distance(w, u);
+		double uv = matrix.distance(u, v);
+		double wv = matrix.distance(w, v);
+		double a = contemporary(uw, uv, wv);
+		double b = ancestor(wu, uv, wv);
+		return (a >= b && mean(u) > mean(w)) || (a < b && uv > wv) ? w : u;
 	}
 
 	private double contemporary(double uw, double uv, double wv) {
