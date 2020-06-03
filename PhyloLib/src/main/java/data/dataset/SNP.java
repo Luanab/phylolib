@@ -2,7 +2,7 @@ package data.dataset;
 
 import java.util.Iterator;
 
-public final class SNP implements IDatasetProcessor {
+public final class SNP extends DatasetProcessor {
 
 	@Override
 	public Profile parse(Iterator<String> iterator) {

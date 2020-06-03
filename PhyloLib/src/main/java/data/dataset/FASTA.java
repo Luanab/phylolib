@@ -2,7 +2,7 @@ package data.dataset;
 
 import java.util.Iterator;
 
-public final class FASTA implements IDatasetProcessor {
+public final class FASTA extends DatasetProcessor {
 
 	private String id;
 

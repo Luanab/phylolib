@@ -2,7 +2,6 @@ package data.tree;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public final class Tree {
@@ -30,12 +29,6 @@ public final class Tree {
 
 	public void add(Edge edge) {
 		edges.add(edge);
-	}
-
-	public List<Edge> remove(int i) {
-		List<Edge> edges = this.edges.stream().filter(e -> e.from() == i || e.to() == i).collect(Collectors.toList());
-		this.edges.removeAll(edges);
-		return edges;
 	}
 
 	public void remove(Edge edge) {

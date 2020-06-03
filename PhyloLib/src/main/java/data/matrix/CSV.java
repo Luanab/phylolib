@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public final class CSV implements IMatrixProcessor {
+public final class CSV extends MatrixProcessor {
 
 	@Override
 	public Matrix parse(Stream<String> data) {

@@ -8,12 +8,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
-public interface IDatasetProcessor extends IReader<Dataset> {
+public abstract class DatasetProcessor implements IReader<Dataset> {
 
-	String INVALID = "Ignored invalid profile '%s'";
+	protected static final String INVALID = "Ignored invalid profile '%s'";
 
 	@Override
-	default Dataset parse(Stream<String> data) {
+	public Dataset parse(Stream<String> data) {
 		Iterator<String> iterator = data.iterator();
 		List<Profile> profiles = new ArrayList<>();
 		init(iterator);
@@ -27,8 +27,8 @@ public interface IDatasetProcessor extends IReader<Dataset> {
 		return profiles.size() < 2 ? null : new Dataset(profiles);
 	}
 
-	default void init(Iterator<String> iterator) { }
+	protected void init(Iterator<String> iterator) { }
 
-	Profile parse(Iterator<String> iterator);
+	protected abstract Profile parse(Iterator<String> iterator);
 
 }

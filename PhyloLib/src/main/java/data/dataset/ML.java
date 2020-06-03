@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.stream.Stream;
 
-public final class ML implements IDatasetProcessor {
+public final class ML extends DatasetProcessor {
 
 	@Override
 	public Profile parse(Iterator<String> iterator) {

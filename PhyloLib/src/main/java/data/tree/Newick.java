@@ -8,7 +8,7 @@ import java.util.Stack;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Newick implements ITreeProcessor {
+public class Newick extends TreeProcessor {
 
 	@Override
 	public Tree parse(Stream<String> data) {
@@ -22,17 +22,15 @@ public class Newick implements ITreeProcessor {
 				case ';':
 					if (!levels.isEmpty() || edges.isEmpty())
 						return null;
-					newick = newick.substring(1);
 					break;
-				case ',': newick = newick.substring(1);
+				case ',':
 					break;
 				case '(': levels.push(new ArrayList<>());
-					newick = newick.substring(1);
 					break;
 				case ')':
 					for (Edge edge : levels.pop())
 						edges.add(new Edge(counter, edge.to(), edge.distance()));
-					newick = newick.substring(1);
+					break;
 				default:
 					int id = counter++;
 					String info = newick.split("[),;]", 2)[0];
@@ -44,7 +42,9 @@ public class Newick implements ITreeProcessor {
 							return null;
 						levels.peek().add(new Edge(-1, id, Double.parseDouble(values[1])));
 					}
+					continue;
 			}
+			newick = newick.substring(1);
 		}
 		return !levels.isEmpty() || edges.isEmpty() ? null : new Tree(ids.toArray(new String[0]), edges);
 	}
@@ -57,29 +57,27 @@ public class Newick implements ITreeProcessor {
 				.filter(i -> tree.edges().noneMatch(edge -> edge.to() == i))
 				.distinct()
 				.toArray(Integer[]::new);
+		List<Edge> edges = tree.edges().collect(Collectors.toList());
 		for (Integer root : roots) {
-			format(tree, root, data);
-			data.append(id(tree, root)).append(';');
+			format(edges, tree.ids(), root, data);
+			data.append(root >= tree.ids().length ? "_" : tree.ids()[root]).append(';');
 		}
 		return data.toString();
 	}
 
-	private void format(Tree tree, int root, StringBuilder data) {
-		List<Edge> edges = tree.remove(root);
+	private void format(List<Edge> tree, String[] ids, int root, StringBuilder data) {
+		List<Edge> edges = tree.stream().filter(e -> e.from() == root || e.to() == root).collect(Collectors.toList());
+		tree.removeAll(edges);
 		if (!edges.isEmpty()) {
 			data.append('(');
 			for (Edge edge : edges) {
 				if (edge.to() == root)
 					edge = new Edge(edge.to(), edge.from(), edge.distance());
-				format(tree, edge.to(), data);
-				data.append(id(tree, edge.to())).append(':').append(edge.distance()).append(',');
+				format(tree, ids, edge.to(), data);
+				data.append(edge.to() >= ids.length ? "_" : ids[edge.to()]).append(':').append(edge.distance()).append(',');
 			}
 			data.replace(data.length() - 1, data.length(), ")");
 		}
-	}
-
-	private String id(Tree tree, int i) {
-		return i >= tree.ids().length ? "_" : tree.ids()[i];
 	}
 
 }
