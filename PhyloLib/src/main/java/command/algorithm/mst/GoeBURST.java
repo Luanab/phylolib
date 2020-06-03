@@ -51,7 +51,11 @@ public class GoeBURST extends Algorithm {
 				return diff;
 		}
 		diff = Integer.compare(Math.min(ifrom, ito), Math.min(jfrom, jto));
-		return diff != 0 ? diff : ids[ids[ifrom].compareTo(ids[ito]) > 0 ? ifrom : ito].compareTo(ids[ids[jfrom].compareTo(ids[jto]) > 0 ? jfrom : jto]);
+		return diff != 0 ? diff : compare(ids[compare(ids[ifrom], ids[ito]) > 0 ? ifrom : ito], ids[compare(ids[jfrom], ids[jto]) > 0 ? jfrom : jto]);
+	}
+
+	private int compare(String i, String j) {
+		return i.length() == j.length() ? i.compareTo(j) : (i.length() - j.length());
 	}
 
 	private void reduce(int[] clusters, Edge edge, Tree tree) {
