@@ -3,14 +3,13 @@ package command.algorithm.nj;
 public final class UNJ extends NeighbourJoining {
 
 	@Override
-	protected int weight(int i) {
-		return elements(i);
+	protected int weight(Cluster i) {
+		return i.elements;
 	}
 
 	@Override
-	protected double lambda(int i, int j) {
-		double count = elements(i);
-		return count / (count + elements(j));
+	protected double lambda(Cluster ci, Cluster cj) {
+		return ci.elements / (double) (ci.elements + cj.elements);
 	}
 
 	@Override

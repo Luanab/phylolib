@@ -3,12 +3,12 @@ package command.algorithm.nj;
 public final class StudierKeppler extends NeighbourJoining {
 
 	@Override
-	protected int weight(int i) {
+	protected int weight(Cluster i) {
 		return 1;
 	}
 
 	@Override
-	protected double lambda(int i, int j) {
+	protected double lambda(Cluster ci, Cluster cj) {
 		return 0.5;
 	}
 
