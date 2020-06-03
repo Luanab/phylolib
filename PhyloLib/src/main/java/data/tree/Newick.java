@@ -6,13 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Newick extends TreeProcessor {
 
 	@Override
 	public Tree parse(Stream<String> data) {
-		String newick = data.map(String::trim).collect(Collectors.joining());
+		String newick = data.map(d -> d.replaceAll("\\s", "")).collect(Collectors.joining());
 		Stack<List<Edge>> levels = new Stack<>();
 		List<String> ids = new ArrayList<>();
 		List<Edge> edges = new ArrayList<>();
@@ -52,20 +53,19 @@ public class Newick extends TreeProcessor {
 	@Override
 	public String format(Tree tree) {
 		StringBuilder data = new StringBuilder();
-		Integer[] roots = tree.edges()
-				.map(Edge::from)
-				.filter(i -> tree.edges().noneMatch(edge -> edge.to() == i))
-				.distinct()
-				.toArray(Integer[]::new);
 		List<Edge> edges = tree.edges().collect(Collectors.toList());
-		for (Integer root : roots) {
-			format(edges, tree.ids(), root, data);
-			data.append(root >= tree.ids().length ? "_" : tree.ids()[root]).append(';');
+		List<Integer> visited = new ArrayList<>();
+		while (!edges.isEmpty()) {
+			int root = edges.stream().map(Edge::from).filter(i -> tree.edges().noneMatch(edge -> edge.to() == i)).findFirst().orElseThrow();
+			format(edges, tree.ids(), root, data, visited);
+			data.append(root >= tree.ids().length ? "_" : tree.ids()[root]).append(";");
 		}
+		IntStream.range(0, tree.ids().length).filter(i -> !visited.contains(i)).forEach(i -> data.append(tree.ids()[i]).append(";"));
 		return data.toString();
 	}
 
-	private void format(List<Edge> tree, String[] ids, int root, StringBuilder data) {
+	private void format(List<Edge> tree, String[] ids, int root, StringBuilder data, List<Integer> visited) {
+		visited.add(root);
 		List<Edge> edges = tree.stream().filter(e -> e.from() == root || e.to() == root).collect(Collectors.toList());
 		tree.removeAll(edges);
 		if (!edges.isEmpty()) {
@@ -73,7 +73,7 @@ public class Newick extends TreeProcessor {
 			for (Edge edge : edges) {
 				if (edge.to() == root)
 					edge = new Edge(edge.to(), edge.from(), edge.distance());
-				format(tree, ids, edge.to(), data);
+				format(tree, ids, edge.to(), data, visited);
 				data.append(edge.to() >= ids.length ? "_" : ids[edge.to()]).append(':').append(edge.distance()).append(',');
 			}
 			data.replace(data.length() - 1, data.length(), ")");
