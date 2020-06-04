@@ -10,6 +10,6 @@ Usage:
 Options:
     -o=<file>	--out=<file>		Output file as <format>:<location> with format being (fasta|ml|snp|csv|newick|nexus)
     -d=<file>	--dataset=<file>	Input dataset file as <format>:<location> with format being (fasta|ml|snp)
-    -m=<file>	--matrix=<file>		Input distance matrix file as <format>:<location> with format being (csv)
+    -m=<file>	--matrix=<file>		Input distance matrix file as <format>:<location> with format being (asymmetric|symmetric)
     -t=<file>	--tree=<file>		Input phylogenetic tree file as <format>:<location> with format being (newick|nexus)
     -l=<number>	--lvs=<number>		Limit of locus variants to consider using goeBURST algorithm [default: 3]
