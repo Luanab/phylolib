@@ -24,7 +24,7 @@ public abstract class DatasetProcessor implements IReader<Dataset> {
 			else
 				Log.warning(INVALID, profile.id());
 		}
-		return profiles.size() < 2 ? null : new Dataset(profiles);
+		return profiles.size() > 1 ? new Dataset(profiles) : null;
 	}
 
 	protected void init(Iterator<String> iterator) { }

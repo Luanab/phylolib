@@ -47,7 +47,7 @@ public class Newick extends TreeProcessor {
 			}
 			newick = newick.substring(1);
 		}
-		return !levels.isEmpty() || edges.isEmpty() ? null : new Tree(ids.toArray(new String[0]), edges);
+		return levels.isEmpty() && !edges.isEmpty() ? new Tree(ids.toArray(new String[0]), edges) : null;
 	}
 
 	@Override

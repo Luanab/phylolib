@@ -17,10 +17,10 @@ public class ArgumentsTest {
 	public Object[][] data() {
 		return new Object[][] {
 				{ NoCommandException.class, new String[0] },
-				{ InvalidCommandException.class, new String[] { "distanc", "hamming", ":", "correct", "jukescantor", "--out=csv:output.csv" } },
-				{ RepeatedCommandException.class, new String[] { "distance", "hamming", ":", "distance", "kimura", "--out=csv:output.csv" } },
-				{ MissingTypeException.class, new String[] { "distance", "--out=csv:output.csv" } },
-				{ MissingTypeException.class, new String[] { "algorithm", ":", "correction", "jukescantor", "--out=csv:output.csv" } },
+				{ InvalidCommandException.class, new String[] { "distanc", "hamming", ":", "correct", "jukescantor", "--out=asymmetric:output.txt" } },
+				{ RepeatedCommandException.class, new String[] { "distance", "hamming", ":", "distance", "kimura", "--out=asymmetric:output.txt" } },
+				{ MissingTypeException.class, new String[] { "distance", "--out=asymmetric:output.txt" } },
+				{ MissingTypeException.class, new String[] { "algorithm", ":", "correction", "jukescantor", "--out=asymmetric:output.txt" } },
 				{ MissingTypeException.class, new String[] { "correction", "jukescantor", ":", "optimization" } },
 				{ InvalidTypeException.class, new String[] { "correction", "hamming" } }
 		};

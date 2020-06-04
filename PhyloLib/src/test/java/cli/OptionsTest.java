@@ -16,7 +16,7 @@ public class OptionsTest {
 				{ "out=newick:output.txt" },
 				{ "-c=3" },
 				{ "-l=-4" },
-				{ "--matrix=csv-matrix.csv" }
+				{ "--matrix=asymmetric-matrix.txt" }
 		};
 	}
 
@@ -47,11 +47,11 @@ public class OptionsTest {
 		Options options = new Options();
 
 		options.put("-l=7");
-		options.put("--matrix=csv:matrix.csv");
+		options.put("--matrix=asymmetric:matrix.txt");
 
 		assertEquals(options.keys().size(), 2);
 		assertEquals(options.remove(Option.LVS), "7");
-		assertEquals(options.remove(Option.MATRIX), "csv:matrix.csv");
+		assertEquals(options.remove(Option.MATRIX), "asymmetric:matrix.txt");
 	}
 
 	@Test
@@ -114,7 +114,7 @@ public class OptionsTest {
 	@Test
 	public void remove_Alias_PreviousValue() {
 		Options options = new Options();
-		options.put("--matrix=csv:matrix.txt");
+		options.put("--matrix=asymmetric:matrix.txt");
 		options.put("--dataset=mlva:dataset.txt");
 		options.put("--tree=newick:tree.txt");
 
