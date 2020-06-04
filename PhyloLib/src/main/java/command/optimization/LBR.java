@@ -8,28 +8,35 @@ import data.tree.Edge;
 import data.tree.Tree;
 import exception.MissingInputException;
 
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public final class LBR extends Optimization {
 
 	private int loci;
+	private String[] ids;
 	private Matrix matrix;
 
 	@Override
 	public void init(Context context, Options options) throws MissingInputException {
 		Dataset dataset = context.getDataset(options);
 		this.loci = dataset.profile(0).size();
+		this.ids = dataset.ids();
 		this.matrix = context.getMatrix(options);
 	}
 
 	@Override
 	public final Tree process(Tree tree) {
-		Tree result = new Tree(tree.ids());
+		Tree result = new Tree(ids);
 		PriorityQueue<Edge> edges = new PriorityQueue<>(Comparator.comparingDouble(Edge::distance));
-		tree.edges().peek(result::add).forEach(edges::add);
+		Map<Integer, Integer> map = new HashMap<>(ids.length);
+		for (int i = 0; i < tree.ids().length; i++) {
+			String id = tree.ids()[i];
+			map.put(i, IntStream.range(0, ids.length).filter(j -> ids[j].equals(id)).findFirst().orElseThrow());
+		}
+		tree.edges().map(e -> new Edge(map.get(e.from()), map.get(e.to()), e.distance())).peek(result::add).forEach(edges::add);
 		while (!edges.isEmpty()) {
 			Edge previous = edges.remove();
 			result.remove(previous);
@@ -47,9 +54,11 @@ public final class LBR extends Optimization {
 		return tree.edges()
 				.map(Edge::from)
 				.filter(i -> tree.edges().noneMatch(edge -> edge.to() == i))
-				.flatMap(i -> children(tree, i))
+				.map(i -> children(tree, i).collect(Collectors.toSet()))
+				.filter(n -> n.contains(u))
+				.flatMap(Collection::stream)
 				.distinct()
-				.filter(n -> !n.equals(v))
+				.filter(n -> !n.equals(u))
 				.reduce(u, (uu, w) -> select(uu, w, v));
 	}
 
