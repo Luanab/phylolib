@@ -1,4 +1,4 @@
-package command.algorithm.mst.edmonds;
+package command.algorithm.edmonds;
 
 import command.algorithm.Algorithm;
 import data.matrix.Matrix;

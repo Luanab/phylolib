@@ -1,4 +1,4 @@
-package command.algorithm.mst.edmonds;
+package command.algorithm.edmonds;
 
 import java.util.Comparator;
 import java.util.HashMap;

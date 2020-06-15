@@ -1,4 +1,4 @@
-package command.algorithm.mst.edmonds;
+package command.algorithm.edmonds;
 
 public class DisjointSet {
 

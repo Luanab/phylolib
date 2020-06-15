@@ -1,4 +1,4 @@
-package command.algorithm.mst;
+package command.algorithm.goeburst;
 
 import cli.Option;
 import cli.Options;
@@ -17,7 +17,7 @@ public class GoeBURST extends Algorithm {
 
 	@Override
 	public void init(Context context, Options options) {
-		this.lvs = Integer.parseInt(options.remove(Option.LVS, "3"));
+		this.lvs = Integer.parseInt(options.remove(Option.LVS));
 	}
 
 	@Override

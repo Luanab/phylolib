@@ -8,14 +8,20 @@ public enum Option {
 	DATASET('d', Format.FILE),
 	MATRIX('m', Format.FILE),
 	TREE('t', Format.FILE),
-	LVS('l', Format.NATURAL);
+	LVS('l', Format.NATURAL, "3");
 
 	private final String alias;
 	private final Format format;
+	private final String _default;
 
 	Option(char alias, Format format) {
+		this(alias, format, null);
+	}
+
+	Option(char alias, Format format, String _default) {
 		this.alias = "-" + alias;
 		this.format = format;
+		this._default = _default;
 	}
 
 	public static Option get(String key) {
@@ -33,4 +39,9 @@ public enum Option {
 	public Format format() {
 		return format;
 	}
+
+	public String _default() {
+		return _default;
+	}
+
 }

@@ -28,17 +28,14 @@ public final class Options {
 		return options.keySet();
 	}
 
-	public String remove(Option option, String _default) {
-		String value = remove(option);
-		if (value == null) {
+	public String remove(Option option) {
+		String value = options.remove(option);
+		String _default = option._default();
+		if (value == null && _default != null) {
 			Log.info(DEFAULT, _default, option);
 			return _default;
 		}
 		return value;
-	}
-
-	public String remove(Option option) {
-		return options.remove(option);
 	}
 
 }
