@@ -20,7 +20,11 @@ public class NewickTest {
 				{ Stream.of(" ") },
 				{ Stream.of(";") },
 				{ Stream.of("1;") },
-				{ Stream.of("((A:2.3,B:1.0:3.1,C:0.2)_;") }
+				{ Stream.of("((A:2.3,B:1.0:3.1,C:0.2)_;") },
+				{ Stream.of("(A:2:2)B;") },
+				{ Stream.of("(A:2)B:1;") },
+				{ Stream.of("(A:2)B:;") },
+				{ Stream.of("(A:2)B") }
 		};
 	}
 

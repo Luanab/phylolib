@@ -36,13 +36,14 @@ public class Newick extends TreeProcessor {
 					int id = counter++;
 					String info = newick.split("[),;]", 2)[0];
 					newick = newick.substring(info.length());
-					String[] values = info.split(":", 2);
+					String[] values = info.split(":", -1);
 					ids.add(values[0].isBlank() ? "_" : values[0]);
-					if (newick.length() > 0 && !newick.startsWith(";")) {
-						if (values.length != 2 || values[1].isBlank() || !Format.DISTANCE.matches(values[1]))
+					if (values.length > 1) {
+						if (newick.startsWith(";") || values.length > 2 || !Format.DISTANCE.matches(values[1]))
 							return null;
 						levels.peek().add(new Edge(-1, id, Double.parseDouble(values[1])));
-					}
+					} else if (!newick.startsWith(";"))
+						return null;
 					continue;
 			}
 			newick = newick.substring(1);

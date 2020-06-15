@@ -18,9 +18,13 @@ public class NexusTest {
 				{ Stream.empty() },
 				{ Stream.of("") },
 				{ Stream.of(" ") },
-				{ Stream.of("BEGIN TREES;\n\tTree result = ;\nEND;") },
-				{ Stream.of("BEGIN TREES;\n\tTree result = 1;\nEND;") },
-				{ Stream.of("BEGIN TREES;\n\tTree result = ((A:2.3,B:1:3.1,C:0.2)_;\nEND;") }
+				{ Stream.of("BEGIN TREES;", "\tTree result = ;", "END;") },
+				{ Stream.of("BEGIN TREES;", "\tTree result = 1;", "END;") },
+				{ Stream.of("BEGIN TREES;", "\tTree result = ((A:2.3,B:1:3.1,C:0.2)_;", "END;") },
+				{ Stream.of("BEGIN TREES;", "\tTree result = (A:2:2)B;", "END;") },
+				{ Stream.of("BEGIN TREES;", "\tTree result = (A:2)B:1;", "END;") },
+				{ Stream.of("BEGIN TREES;", "\tTree result = (A:2)B:;", "END;") },
+				{ Stream.of("BEGIN TREES;", "\tTree result = (A:2)B", "END;") }
 		};
 	}
 
