@@ -59,7 +59,7 @@ public class OptionsTest {
 		Options options = new Options();
 		options.put("-t=newick:output.txt");
 
-		String lvs = options.remove(Option.LVS, "3");
+		String lvs = options.remove(Option.LVS);
 
 		assertEquals(lvs, "3");
 		assertEquals(options.keys().size(), 1);
@@ -71,7 +71,7 @@ public class OptionsTest {
 		Options options = new Options();
 		options.put("--lvs=5");
 
-		String lvs = options.remove(Option.LVS, "3");
+		String lvs = options.remove(Option.LVS);
 
 		assertEquals(lvs, "5");
 		assertTrue(options.keys().isEmpty());
@@ -82,7 +82,7 @@ public class OptionsTest {
 		Options options = new Options();
 		options.put("-l=7");
 
-		String lvs = options.remove(Option.LVS, "3");
+		String lvs = options.remove(Option.LVS);
 
 		assertEquals(lvs, "7");
 		assertTrue(options.keys().isEmpty());
