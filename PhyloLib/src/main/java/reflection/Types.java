@@ -7,9 +7,9 @@ import java.lang.reflect.Modifier;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Reflection {
+public class Types {
 
-	public static <T> Map<String, Constructor<?>> types(String prefix, Class<T> type) {
+	public static <T> Map<String, Constructor<?>> get(String prefix, Class<T> type) {
 		return new Reflections(prefix)
 				.getSubTypesOf(type).stream()
 				.filter(c -> !Modifier.isAbstract(c.getModifiers()))

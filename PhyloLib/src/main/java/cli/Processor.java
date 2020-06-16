@@ -3,7 +3,7 @@ package cli;
 import data.dataset.DatasetProcessor;
 import data.matrix.MatrixProcessor;
 import data.tree.TreeProcessor;
-import reflection.Reflection;
+import reflection.Types;
 
 import java.lang.reflect.Constructor;
 import java.util.Map;
@@ -33,7 +33,7 @@ public enum Processor {
 	}
 
 	public Constructor<?> type(String type) {
-		return (types == null ? types = Reflection.types("data." + toString(), processor) : types).get(type);
+		return (types == null ? types = Types.get("data." + toString(), processor) : types).get(type);
 	}
 
 }

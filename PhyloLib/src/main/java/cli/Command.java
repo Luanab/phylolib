@@ -4,7 +4,7 @@ import command.algorithm.Algorithm;
 import command.correction.Correction;
 import command.distance.Distance;
 import command.optimization.Optimization;
-import reflection.Reflection;
+import reflection.Types;
 
 import java.lang.reflect.Constructor;
 import java.util.Arrays;
@@ -40,7 +40,7 @@ public enum Command {
 	}
 
 	public Constructor<?> type(String type) {
-		return (types == null ? types = Reflection.types("command." + name().toLowerCase(), command) : types).get(type);
+		return (types == null ? types = Types.get("command." + name().toLowerCase(), command) : types).get(type);
 	}
 
 }

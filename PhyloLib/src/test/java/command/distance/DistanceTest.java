@@ -12,7 +12,7 @@ import static org.testng.Assert.assertEquals;
 public class DistanceTest {
 
 	@Test
-	public void correct_Valid_Full() {
+	public void process_Valid_Full() {
 		Dataset dataset = new Dataset(new ArrayList<>() {{
 			add(new Profile("", "000000"));
 			add(new Profile("", "10 001"));
