@@ -19,8 +19,9 @@ public class SymmetricTest {
 				{ Stream.of("1") },
 				{ Stream.of("1", "0.0") },
 				{ Stream.of("2", "1", "2\tb") },
-				{ Stream.of("3", "1", "2\t4.5", "3\t4.5") },
-				{ Stream.of("2", "1\t0", "2\t4.5\t0\t0") }
+				{ Stream.of("2", "1\t0", "2\t4.5\t0\t0") },
+				{ Stream.of("2", "1", "2\t2.7", "3\t1\t1.5") },
+				{ Stream.of("3", "1", "2\t4.5", "3\t4.5") }
 		};
 	}
 

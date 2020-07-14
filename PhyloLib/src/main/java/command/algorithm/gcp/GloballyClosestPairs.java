@@ -11,6 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+/**
+ * Responsible for calculating a {@link Tree phylogenetic tree} from a {@link Matrix distance matrix} using the Globally Closest Pairs algorithm.
+ */
 public abstract class GloballyClosestPairs extends Algorithm {
 
 	private int cluster;
@@ -83,6 +86,17 @@ public abstract class GloballyClosestPairs extends Algorithm {
 		clusters.put(u, new Cluster(ci.elements + cj.elements, edge.distance() / 2));
 	}
 
+	/**
+	 * Calculates the dissimilarity between a given previously existing node and a given node created by joining two existing nodes.
+	 *
+	 * @param ij the distance between the two existing nodes that were joined
+	 * @param ik the distance between one of the nodes that was joined and the previously existing node
+	 * @param jk the distance between another of the nodes that was joined and the previously existing node
+	 * @param ci the number of elements in the cluster of one of the nodes that were joined
+	 * @param cj the number of elements in the cluster of another of the nodes that were joined
+	 *
+	 * @return the dissimilarity between the previously existing node and the created node
+	 */
 	protected abstract double dissimilarity(double ij, double ik, double jk, int ci, int cj);
 
 	private final class Cluster {

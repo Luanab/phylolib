@@ -3,10 +3,18 @@ package data.dataset;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Represents a phylogenetic dataset as {@link Profile profiles}.
+ */
 public final class Dataset {
 
 	private final Profile[] profiles;
 
+	/**
+	 * Creates a phylogenetic dataset corresponding to the given profiles.
+	 *
+	 * @param profiles the profiles to composing this dataset
+	 */
 	public Dataset(List<Profile> profiles) {
 		this.profiles = profiles.toArray(Profile[]::new);
 	}

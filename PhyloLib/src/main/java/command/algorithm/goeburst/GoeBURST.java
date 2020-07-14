@@ -11,6 +11,9 @@ import data.tree.Tree;
 import java.util.Comparator;
 import java.util.stream.IntStream;
 
+/**
+ * Responsible for calculating a {@link Tree phylogenetic tree} from a {@link Matrix distance matrix} using the goeBURST algorithm.
+ */
 public class GoeBURST extends Algorithm {
 
 	private int lvs;

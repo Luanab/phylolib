@@ -1,6 +1,6 @@
 package data;
 
-import cli.Processor;
+import cli.Data;
 import data.tree.Nexus;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -12,25 +12,25 @@ public class FileTest {
 	@DataProvider
 	public Object[][] data() {
 		return new Object[][] {
-				{ "", Processor.DATASET },
-				{ "mlst", Processor.TREE },
-				{ "fasta:", Processor.DATASET },
-				{ "csv: ", Processor.MATRIX },
-				{ "csc:matrix.csv", Processor.MATRIX },
-				{ "newick:C:/xpto?", Processor.TREE }
+				{ "", Data.DATASET },
+				{ "mlst", Data.TREE },
+				{ "fasta:", Data.DATASET },
+				{ "csv: ", Data.MATRIX },
+				{ "csc:matrix.csv", Data.MATRIX },
+				{ "newick:C:/xpto?", Data.TREE }
 		};
 	}
 
 	@Test(dataProvider = "data")
-	public void get_Invalid_Empty(String file, Processor processor) {
-		assertNull(File.get(file, processor));
+	public void get_Invalid_Empty(String file, Data data) {
+		assertNull(File.get(file, data));
 	}
 
 	@Test
 	public void get_Valid_Success() {
 		String arg = "nexus:output.txt";
 
-		File file = File.get(arg, Processor.TREE);
+		File file = File.get(arg, Data.TREE);
 
 		assertNotNull(file);
 		assertTrue(file.processor() instanceof Nexus);

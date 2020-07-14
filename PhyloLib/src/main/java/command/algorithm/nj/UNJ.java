@@ -1,5 +1,11 @@
 package command.algorithm.nj;
 
+import data.matrix.Matrix;
+import data.tree.Tree;
+
+/**
+ * Responsible for calculating a {@link Tree phylogenetic tree} from a {@link Matrix distance matrix} using the Unweighted Neighbour Joining algorithm.
+ */
 public final class UNJ extends NeighbourJoining {
 
 	@Override

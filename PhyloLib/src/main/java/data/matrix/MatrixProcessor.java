@@ -8,10 +8,18 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.stream.Stream;
 
+/**
+ * Responsible for parsing and formatting {@link Matrix distance matrices} from and to Strings.
+ */
 public abstract class MatrixProcessor implements IReader<Matrix>, IWriter<Matrix> {
 
 	private final boolean symmetric;
 
+	/**
+	 * Creates a distance matrix processor according to the given symmetry.
+	 *
+	 * @param symmetric a flag indicating whether this matrix processor is symmetric or asymmetric
+	 */
 	protected MatrixProcessor(boolean symmetric) {
 		this.symmetric = symmetric;
 	}
@@ -28,11 +36,11 @@ public abstract class MatrixProcessor implements IReader<Matrix>, IWriter<Matrix
 		int i = 0;
 		while (iterator.hasNext()) {
 			String[] next = iterator.next().split("\\t");
-			ids[i] = next[0];
-			next = Arrays.copyOfRange(next, 1, next.length);
-			if (i >= size || next.length != (symmetric ? i : size) || !Arrays.stream(next).allMatch(Format.DISTANCE::matches))
+			String[] distances = Arrays.copyOfRange(next, 1, next.length);
+			if (i >= size || distances.length != (symmetric ? i : size) || !Arrays.stream(distances).allMatch(Format.DISTANCE::matches))
 				return null;
-			matrix[i++] = Arrays.stream(next).map(Double::parseDouble).toArray(Double[]::new);
+			ids[i] = next[0];
+			matrix[i++] = Arrays.stream(distances).map(Double::parseDouble).toArray(Double[]::new);
 		}
 		return i == size && size > 1 ? new Matrix(symmetric, ids, matrix) : null;
 	}

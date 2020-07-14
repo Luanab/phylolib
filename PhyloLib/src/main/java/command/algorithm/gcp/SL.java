@@ -1,5 +1,11 @@
 package command.algorithm.gcp;
 
+import data.matrix.Matrix;
+import data.tree.Tree;
+
+/**
+ * Responsible for calculating a {@link Tree phylogenetic tree} from a {@link Matrix distance matrix} using the Single-Linkage algorithm.
+ */
 public final class SL extends GloballyClosestPairs {
 
 	@Override

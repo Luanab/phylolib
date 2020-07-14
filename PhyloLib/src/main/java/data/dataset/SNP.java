@@ -2,6 +2,9 @@ package data.dataset;
 
 import java.util.Iterator;
 
+/**
+ * Responsible for parsing {@link Dataset phylogenetic datasets} from Strings in SNP format.
+ */
 public final class SNP extends DatasetProcessor {
 
 	@Override

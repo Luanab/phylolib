@@ -1,5 +1,11 @@
 package command.algorithm.gcp;
 
+import data.matrix.Matrix;
+import data.tree.Tree;
+
+/**
+ * Responsible for calculating a {@link Tree phylogenetic tree} from a {@link Matrix distance matrix} using the Weighted Pair Group Method with Centroid algorithm.
+ */
 public final class WPGMC extends GloballyClosestPairs {
 
 	@Override

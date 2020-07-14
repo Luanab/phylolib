@@ -3,6 +3,9 @@ package command.correction;
 import command.ICommand;
 import data.matrix.Matrix;
 
+/**
+ * Responsible for correcting a {@link Matrix distance matrix} into another.
+ */
 public abstract class Correction implements ICommand<Matrix, Matrix> {
 
 	@Override
@@ -10,6 +13,13 @@ public abstract class Correction implements ICommand<Matrix, Matrix> {
 		return matrix.correct(this::correct);
 	}
 
+	/**
+	 * Corrects the given phylogenetic distance.
+	 *
+	 * @param distance the distance to correct
+	 *
+	 * @return the value resultant from correcting the phylogenetic distance
+	 */
 	protected abstract double correct(double distance);
 
 }

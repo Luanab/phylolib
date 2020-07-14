@@ -7,11 +7,29 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Represents the parsed arguments of the program as commands and respective parameters.
+ */
 public final class Arguments extends HashMap<Command, List<Parameters>> {
 
 	private static final String HELP = "help";
 	private static final String SEPARATOR = ":";
 
+	/**
+	 * Parses the given command line arguments into an Arguments object.
+	 * <p>
+	 * Immediately returns null if the first command is help.
+	 *
+	 * @param args command line arguments to be parsed
+	 *
+	 * @return the parsed arguments
+	 *
+	 * @throws NoCommandException       if no command is found
+	 * @throws InvalidCommandException  if an invalid command is found
+	 * @throws RepeatedCommandException if a non repeatable command is found twice
+	 * @throws MissingTypeException     if no type is found for a command
+	 * @throws InvalidTypeException     if a command type is invalid
+	 */
 	public static Arguments parse(String[] args) throws NoCommandException, InvalidCommandException, RepeatedCommandException, MissingTypeException, InvalidTypeException {
 		if (args.length == 0)
 			throw new NoCommandException();

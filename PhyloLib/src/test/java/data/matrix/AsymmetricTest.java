@@ -19,8 +19,9 @@ public class AsymmetricTest {
 				{ Stream.of("1") },
 				{ Stream.of("1", "0.0") },
 				{ Stream.of("2", "1\t0\t4.5", "2\t4.5\tb") },
-				{ Stream.of("3", "1\t0\t4.5", "2\t4.5\t0", "3\t4.5\t0") },
-				{ Stream.of("2", "1\t0\t4.5\t3", "2\t4.5\t0\t0") }
+				{ Stream.of("2", "1\t0\t4.5\t3", "2\t4.5\t0\t0") },
+				{ Stream.of("2", "1\t0\t1\t", "2\t1\t0", "3\t2\t2") },
+				{ Stream.of("3", "1\t0\t1", "2\t1\t0", "3\t4.5\t0") }
 		};
 	}
 

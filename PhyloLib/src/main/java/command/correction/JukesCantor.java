@@ -1,5 +1,10 @@
 package command.correction;
 
+import data.matrix.Matrix;
+
+/**
+ * Responsible for correcting a {@link Matrix distance matrix} into another using the Jukes-Cantor correction formula.
+ */
 public final class JukesCantor extends Correction {
 
 	@Override

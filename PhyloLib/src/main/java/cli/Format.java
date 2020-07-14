@@ -1,5 +1,8 @@
 package cli;
 
+/**
+ * Enumerates the available formats with their respective regex.
+ */
 public enum Format {
 
 	FILE("^\\w+:.+$"),
@@ -8,12 +11,24 @@ public enum Format {
 
 	private final String regex;
 
+	/**
+	 * Creates a format representing a specific type of data for a given regex.
+	 *
+	 * @param regex the regex corresponding to this format
+	 */
 	Format(String regex) {
 		this.regex = regex;
 	}
 
-	public boolean matches(String string) {
-		return string.matches(regex);
+	/**
+	 * Checks whether or not a String matches this format.
+	 *
+	 * @param data the string to be checked
+	 *
+	 * @return true if the string matches this format, false otherwise
+	 */
+	public boolean matches(String data) {
+		return data.matches(regex);
 	}
 
 }

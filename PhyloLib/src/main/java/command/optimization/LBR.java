@@ -13,6 +13,9 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+/**
+ * Responsible for optimizing a {@link Tree phylogenetic tree} into another using the Local Branch Recrafting algorithm.
+ */
 public final class LBR extends Optimization {
 
 	private int loci;

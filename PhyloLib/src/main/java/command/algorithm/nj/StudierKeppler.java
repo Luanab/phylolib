@@ -1,5 +1,11 @@
 package command.algorithm.nj;
 
+import data.matrix.Matrix;
+import data.tree.Tree;
+
+/**
+ * Responsible for calculating a {@link Tree phylogenetic tree} from a {@link Matrix distance matrix} using the Neighbour Joining algorithm by Studier and Keppler.
+ */
 public final class StudierKeppler extends NeighbourJoining {
 
 	@Override

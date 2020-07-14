@@ -7,6 +7,9 @@ import data.tree.Tree;
 
 import java.util.*;
 
+/**
+ * Responsible for calculating a {@link Tree phylogenetic tree} from a {@link Matrix distance matrix} using the Edmonds algorithm.
+ */
 public final class Edmonds extends Algorithm {
 
 	private Comparator<EdgeNode> comparator;

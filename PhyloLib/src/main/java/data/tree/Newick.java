@@ -9,6 +9,9 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+/**
+ * Responsible for parsing and formatting {@link Tree phylogenetic trees} from and to Strings in Newick format.
+ */
 public class Newick extends TreeProcessor {
 
 	@Override

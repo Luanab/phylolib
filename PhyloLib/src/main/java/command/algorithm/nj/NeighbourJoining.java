@@ -11,6 +11,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * Responsible for calculating a {@link Tree phylogenetic tree} from a {@link Matrix distance matrix} using the Neighbour Joining algorithm.
+ */
 public abstract class NeighbourJoining extends Algorithm {
 
 	private int cluster;
@@ -77,6 +80,13 @@ public abstract class NeighbourJoining extends Algorithm {
 		return edge.distance() / 2 + (ci.sum - cj.sum) / (2 * (clusters.size() + 2 - (weight(ci) + weight(cj))));
 	}
 
+	/**
+	 * Gets the weight of a given cluster.
+	 *
+	 * @param i the cluster to get the weight from
+	 *
+	 * @return the weight of the cluster
+	 */
 	protected abstract int weight(Cluster i);
 
 	private void reduce(Edge edge, Cluster ci, Cluster cj, double iu, double ju) {
@@ -101,8 +111,23 @@ public abstract class NeighbourJoining extends Algorithm {
 		return lambda * (ik - length(iu)) + (1 - lambda) * (jk - length(ju));
 	}
 
+	/**
+	 * Gets the proportion of a given cluster according to another.
+	 *
+	 * @param ci the cluster to get the proportion of
+	 * @param cj the cluster to take into account in the proportion
+	 *
+	 * @return the proportion of the cluster according to the other
+	 */
 	protected abstract double lambda(Cluster ci, Cluster cj);
 
+	/**
+	 * Gets the length corresponding to the given distance.
+	 *
+	 * @param distance the distance to get the length of
+	 *
+	 * @return the length corresponding to the distance
+	 */
 	protected abstract double length(double distance);
 
 	private void finish(Tree tree) {

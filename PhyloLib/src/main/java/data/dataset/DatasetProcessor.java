@@ -8,6 +8,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * Responsible for parsing {@link Dataset phylogenetic datasets} from Strings.
+ */
 public abstract class DatasetProcessor implements IReader<Dataset> {
 
 	protected static final String INVALID = "Ignored invalid profile '%s'";
@@ -27,8 +30,22 @@ public abstract class DatasetProcessor implements IReader<Dataset> {
 		return profiles.size() > 1 ? new Dataset(profiles) : null;
 	}
 
+	/**
+	 * Initializes the state of the processor by parsing the first lines of the dataset.
+	 * <p>
+	 * By default does not parse anything.
+	 *
+	 * @param iterator the iterator containing the lines of the dataset
+	 */
 	protected void init(Iterator<String> iterator) { }
 
+	/**
+	 * Parses one profile from the given Strings.
+	 *
+	 * @param iterator the iterator containing the lines of the dataset
+	 *
+	 * @return a new profile resultant from parsing lines of the dataset
+	 */
 	protected abstract Profile parse(Iterator<String> iterator);
 
 }

@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.stream.Stream;
 
+/**
+ * Responsible for parsing {@link Dataset phylogenetic datasets} from Strings in MLST or MLVA format.
+ */
 public final class ML extends DatasetProcessor {
 
 	@Override
