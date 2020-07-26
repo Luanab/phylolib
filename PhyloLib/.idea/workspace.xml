@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="54786b23-0e91-4c21-9105-672316949a5c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1esWNbp1G2rn2EjKbHEby8Hbgu5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Copy" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="benchmark" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\java" />
+      <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
+      <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\main\java" />
+      <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.DistanceBenchmark">
+    <configuration name="Algorithm" type="Application" factoryName="Application" folderName="Demonstration">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="algorithm edmonds -m=asymmetric:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\matrix.txt&quot; -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\tree.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AlgorithmBenchmark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="benchmark.AlgorithmBenchmark" />
+      <module name="PhyloLib.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="benchmark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All" type="Application" factoryName="Application" folderName="Demonstration">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance grapetree -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\dataset.txt&quot; : algorithm edmonds : optimization lbr -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\optimized.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CL Csepticum" type="Application" factoryName="Application" folderName="Csepticum">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\dataset.txt&quot; : algorithm cl -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\phylolib\cl.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CL Kseptempunctata" type="Application" factoryName="Application" folderName="Kseptempunctata">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\dataset.txt&quot; : algorithm cl -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\phylolib\cl.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CL Mflocculare" type="Application" factoryName="Application" folderName="Mflocculare">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\dataset.txt&quot; : algorithm cl -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\phylolib\cl.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CL" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="algorithm cl -m=asymmetric:&quot;C:\Users\luana\Desktop\Thesis\Test\matrix.txt&quot; -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\cl.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Correction" type="Application" factoryName="Application" folderName="Demonstration">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="correction jukescantor -m=asymmetric:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\matrix.txt&quot; -o=symmetric:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\corrected.txt&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Distance" type="Application" factoryName="Application" folderName="Demonstration">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance grapetree -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\dataset.txt&quot; -o=asymmetric:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\matrix.txt&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DistanceBenchmark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="benchmark.DistanceBenchmark" />
+      <module name="PhyloLib.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="benchmark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Edmonds Csepticum" type="Application" factoryName="Application" folderName="Csepticum">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\dataset.txt&quot; : algorithm edmonds -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\phylolib\edmonds.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Edmonds Kseptempunctata" type="Application" factoryName="Application" folderName="Kseptempunctata">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\dataset.txt&quot; : algorithm edmonds -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\phylolib\edmonds.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Edmonds Mflocculare" type="Application" factoryName="Application" folderName="Mflocculare">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\dataset.txt&quot; : algorithm edmonds -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\phylolib\edmonds.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GoeBURST Csepticum" type="Application" factoryName="Application" folderName="Csepticum">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\dataset.txt&quot; : algorithm goeburst -l=3 -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\phylolib\goeburst.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GoeBURST Kseptempunctata" type="Application" factoryName="Application" folderName="Kseptempunctata">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\dataset.txt&quot; : algorithm goeburst -l=3 -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\phylolib\goeburst.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GoeBURST Mflocculare" type="Application" factoryName="Application" folderName="Mflocculare">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\dataset.txt&quot; : algorithm goeburst -l=3 -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\phylolib\goeburst.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Hamming + CL" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\bbacilliformis.txt&quot; : algorithm cl -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\cl.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Hamming + Edmonds" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance grapetree -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\bbacilliformis.txt&quot; : algorithm edmonds -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\edmonds.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Hamming + GoeBURST" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\bbacilliformis.txt&quot; : algorithm goeburst -l=3 -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\goeburst.nwk&quot;" />
+      <option name="VM_PARAMETERS" value="-Xmx6g" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Hamming + SL" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\bbacilliformis.txt&quot; : algorithm sl -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\sl.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Hamming + SaitouNei Wikipedia" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\wikipedia\dataset.txt&quot; : algorithm saitounei -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\wikipedia\phylolib\saitou-nei.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Hamming + SaitouNei" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\bbacilliformis.txt&quot; : algorithm saitounei -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\saitou-nei.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Hamming + StudierKeppler Wikipedia" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\wikipedia\dataset.txt&quot; : algorithm studierkeppler -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\wikipedia\phylolib\studier-keppler.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Hamming + StudierKeppler" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\bbacilliformis.txt&quot; : algorithm studierkeppler -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\studier-keppler.nwk&quot;" />
+      <option name="VM_PARAMETERS" value="-Xmx6g" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Hamming + UPGMA" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\bbacilliformis.txt&quot; : algorithm upgma -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\upgma.nwk&quot;" />
+      <option name="VM_PARAMETERS" value="-Xmx4g" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Hamming + WPGMA" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\bbacilliformis.txt&quot; : algorithm wpgma -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\wpgma.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Hamming" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\dataset.txt&quot; -o=csv:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\matrix.txt&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Help" type="Application" factoryName="Application" folderName="Demonstration">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="help" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Optimization" type="Application" factoryName="Application" folderName="Demonstration">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="optimization lbr -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\dataset.txt&quot; -m=asymmetric:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\matrix.txt&quot; -t=newick:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\tree.nwk&quot; -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\optimized.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SL Csepticum" type="Application" factoryName="Application" folderName="Csepticum">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\dataset.txt&quot; : algorithm sl -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\phylolib\sl.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SL Kseptempunctata" type="Application" factoryName="Application" folderName="Kseptempunctata">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\dataset.txt&quot; : algorithm sl -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\phylolib\sl.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SL Mflocculare" type="Application" factoryName="Application" folderName="Mflocculare">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\dataset.txt&quot; : algorithm sl -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\phylolib\sl.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SL" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="algorithm sl -m=asymmetric:&quot;C:\Users\luana\Desktop\Thesis\Test\matrix.txt&quot; -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\sl.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SaitouNei Csepticum" type="Application" factoryName="Application" folderName="Csepticum">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\dataset.txt&quot; : algorithm saitounei -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\phylolib\saitounei.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SaitouNei Kseptempunctata" type="Application" factoryName="Application" folderName="Kseptempunctata">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\dataset.txt&quot; : algorithm saitounei -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\phylolib\saitounei.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SaitouNei Mflocculare" type="Application" factoryName="Application" folderName="Mflocculare">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\dataset.txt&quot; : algorithm saitounei -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\phylolib\saitounei.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudierKeppler Csepticum" type="Application" factoryName="Application" folderName="Csepticum">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\dataset.txt&quot; : algorithm studierkeppler -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\phylolib\studierkeppler.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudierKeppler Kseptempunctata" type="Application" factoryName="Application" folderName="Kseptempunctata">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\dataset.txt&quot; : algorithm studierkeppler -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\phylolib\studierkeppler.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudierKeppler Mflocculare" type="Application" factoryName="Application" folderName="Mflocculare">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\dataset.txt&quot; : algorithm studierkeppler -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\phylolib\studierkeppler.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudierKeppler" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="algorithm studierkeppler -m=csv:&quot;C:\Users\luana\Desktop\Thesis\Test\matrix.txt&quot; -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\studier-keppler.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UPGMA Csepticum" type="Application" factoryName="Application" folderName="Csepticum">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\dataset.txt&quot; : algorithm upgma -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\phylolib\upgma.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UPGMA Kseptempunctata" type="Application" factoryName="Application" folderName="Kseptempunctata">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\dataset.txt&quot; : algorithm upgma -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\phylolib\upgma.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UPGMA Mflocculare" type="Application" factoryName="Application" folderName="Mflocculare">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\dataset.txt&quot; : algorithm upgma -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\phylolib\upgma.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UPGMA" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="algorithm upgma -m=asymmetric:&quot;C:\Users\luana\Desktop\Thesis\Test\matrix.txt&quot; -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\upgma.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WPGMA Csepticum" type="Application" factoryName="Application" folderName="Csepticum">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\dataset.txt&quot; : algorithm wpgma -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\csepticum\phylolib\wpgma.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WPGMA Kseptempunctata" type="Application" factoryName="Application" folderName="Kseptempunctata">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\dataset.txt&quot; : algorithm wpgma -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\kseptempunctata\phylolib\wpgma.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WPGMA Mflocculare" type="Application" factoryName="Application" folderName="Mflocculare">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="PhyloLib.main" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\dataset.txt&quot; : algorithm wpgma -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\mflocculare\phylolib\wpgma.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WPGMA" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="algorithm wpgma -m=asymmetric:&quot;C:\Users\luana\Desktop\Thesis\Test\matrix.txt&quot; -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\wpgma.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WPGMC" type="Application" factoryName="Application" folderName="Tests">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="phylolib.main" />
+      <option name="PROGRAM_PARAMETERS" value="algorithm wpgmc -m=asymmetric:&quot;C:\Users\luana\Desktop\Thesis\Test\matrix.txt&quot; -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Test\wpgmc.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PhyloLib [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SymmetricTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;data.matrix.SymmetricTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'phylolib.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests *" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.StudierKeppler Csepticum" />
+      <item itemvalue="Application.SaitouNei Csepticum" />
+      <item itemvalue="Application.GoeBURST Csepticum" />
+      <item itemvalue="Application.Edmonds Csepticum" />
+      <item itemvalue="Application.UPGMA Csepticum" />
+      <item itemvalue="Application.WPGMA Csepticum" />
+      <item itemvalue="Application.SL Csepticum" />
+      <item itemvalue="Application.CL Csepticum" />
+      <item itemvalue="Application.Help" />
+      <item itemvalue="Application.Distance" />
+      <item itemvalue="Application.Correction" />
+      <item itemvalue="Application.Algorithm" />
+      <item itemvalue="Application.Optimization" />
+      <item itemvalue="Application.All" />
+      <item itemvalue="Application.StudierKeppler Kseptempunctata" />
+      <item itemvalue="Application.SaitouNei Kseptempunctata" />
+      <item itemvalue="Application.GoeBURST Kseptempunctata" />
+      <item itemvalue="Application.Edmonds Kseptempunctata" />
+      <item itemvalue="Application.UPGMA Kseptempunctata" />
+      <item itemvalue="Application.WPGMA Kseptempunctata" />
+      <item itemvalue="Application.SL Kseptempunctata" />
+      <item itemvalue="Application.CL Kseptempunctata" />
+      <item itemvalue="Application.StudierKeppler Mflocculare" />
+      <item itemvalue="Application.SaitouNei Mflocculare" />
+      <item itemvalue="Application.GoeBURST Mflocculare" />
+      <item itemvalue="Application.Edmonds Mflocculare" />
+      <item itemvalue="Application.UPGMA Mflocculare" />
+      <item itemvalue="Application.WPGMA Mflocculare" />
+      <item itemvalue="Application.SL Mflocculare" />
+      <item itemvalue="Application.CL Mflocculare" />
+      <item itemvalue="Application.Hamming" />
+      <item itemvalue="Application.Hamming + GoeBURST" />
+      <item itemvalue="Application.Hamming + Edmonds" />
+      <item itemvalue="Application.Hamming + UPGMA" />
+      <item itemvalue="Application.Hamming + WPGMA" />
+      <item itemvalue="Application.Hamming + SL" />
+      <item itemvalue="Application.Hamming + CL" />
+      <item itemvalue="Application.Hamming + SaitouNei" />
+      <item itemvalue="Application.Hamming + StudierKeppler" />
+      <item itemvalue="Application.Hamming + StudierKeppler Wikipedia" />
+      <item itemvalue="Application.Hamming + SaitouNei Wikipedia" />
+      <item itemvalue="Application.StudierKeppler" />
+      <item itemvalue="Application.UPGMA" />
+      <item itemvalue="Application.WPGMA" />
+      <item itemvalue="Application.WPGMC" />
+      <item itemvalue="Application.SL" />
+      <item itemvalue="Application.CL" />
+      <item itemvalue="Application.AlgorithmBenchmark" />
+      <item itemvalue="Application.DistanceBenchmark" />
+      <item itemvalue="Gradle.Tests in 'phylolib.test'" />
+      <item itemvalue="Gradle.SymmetricTest" />
+      <item itemvalue="Gradle.PhyloLib [clean]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.Tests in 'phylolib.test'" />
+        <item itemvalue="Application.DistanceBenchmark" />
+        <item itemvalue="Application.AlgorithmBenchmark" />
+        <item itemvalue="Gradle.PhyloLib [clean]" />
+        <item itemvalue="Gradle.SymmetricTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="54786b23-0e91-4c21-9105-672316949a5c" name="Default Changelist" comment="" />
+      <created>1595110741041</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595110741041</updated>
+      <workItem from="1595110747712" duration="3499000" />
+      <workItem from="1595682461317" duration="300000" />
+      <workItem from="1595682848756" duration="12494000" />
+      <workItem from="1595781180794" duration="1187000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595691149443">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595691149443" />
+    <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1595113976846">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595113976846" />
+    <state x="536" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595112763995">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="536" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595112763995" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595112601083">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595112601083" />
+    <state x="695" y="219" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1595113322297">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="695" y="219" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595113322297" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1595113576824">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595113576824" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1595698767437">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1595698767437">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1595698767436">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767436" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070843" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1595698767437">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595698767437">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1595698767437">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1595698767437">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1595698767437">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1595692974485">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595692974485" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1595690024127">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595690024127" />
+  </component>
+  <component name="simpleUML.UMLToolWindowPlugin">
+    <General>
+      <option name="birdViewUpdateDelay" value="2000" />
+      <option name="defaultFileLocation" value="file://$PROJECT_DIR$/.." />
+    </General>
+    <Classdiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="defaultFieldsExpanded" value="false" />
+      <option name="defaultContructorsExpanded" value="false" />
+      <option name="defaultMethodsExpanded" value="false" />
+      <option name="showParameters" value="true" />
+      <option name="showTooltip" value="true" />
+      <option name="showReturnValues" value="true" />
+      <option name="longModifier" value="true" />
+      <option name="implementsBehaviour" value="1" />
+      <option name="extendsBehaviour" value="1" />
+      <option name="compartmentBehaviour" value="1" />
+      <option name="interfaceBackgroundColor" value="-6494306" />
+      <option name="abstractClassBackgroundColor" value="-1580132" />
+      <option name="classBackgroundColor" value="-6508057" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="quickSourceLinkColor" value="-16776961" />
+      <option name="quickDiagramLinkColor" value="-8454144" />
+      <option name="drawDecorations" value="false" />
+      <option name="hideFieldList" value="" />
+      <option name="showFieldList" value="" />
+      <option name="hideConstructorList" value="" />
+      <option name="showConstructorList" value="" />
+      <option name="hideMethodList" value="" />
+      <option name="showMethodList" value="" />
+      <option name="minimumFigureSize" value="0,0" />
+    </Classdiagram>
+    <Dependencydiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="0" />
+    </Dependencydiagram>
+    <Packagediagram>
+      <option name="diagramTitleFont" value="SansSerif,0,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="packageBackgroundColor" value="-4144960" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="2" />
+    </Packagediagram>
+  </component>
+</project>
