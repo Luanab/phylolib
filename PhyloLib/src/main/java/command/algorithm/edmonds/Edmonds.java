@@ -41,7 +41,7 @@ public final class Edmonds extends Algorithm {
 		return forest.expansion(matrix);
 	}
 
-	public void init(Matrix matrix) {
+	private void init(Matrix matrix) {
 		int size = matrix.size();
 		this.comparator = Comparator.comparing(EdgeNode::getEdge, Comparator.comparingDouble(this::getAdjustedWeight)
 				.thenComparingInt(i -> Integer.min(i.from(), i.to()))

@@ -4,34 +4,34 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class BinomialHeap {
+final class BinomialHeap {
 
 	private final Map<EdgeNode, Node> nodes;
 	private Node head;
-	private Comparator<EdgeNode> cmp;
+	private Comparator<EdgeNode> comparator;
 
-	public BinomialHeap(Comparator<EdgeNode> cmp) {
+	BinomialHeap(Comparator<EdgeNode> comparator) {
 		this.head = null;
-		this.cmp = cmp;
+		this.comparator = comparator;
 		this.nodes = new HashMap<>();
 	}
 
-	public BinomialHeap(Node head) {
+	private BinomialHeap(Node head) {
 		this.head = head;
 		this.nodes = new HashMap<>();
 		if (head != null)
 			this.nodes.put(head.key, head);
 	}
 
-	public void push(EdgeNode idx) {
+	void push(EdgeNode idx) {
 		head = unionUtil(new BinomialHeap(new Node(idx)));
 	}
 
-	public void union(BinomialHeap heap) {
+	void union(BinomialHeap heap) {
 		head = unionUtil(heap);
 	}
 
-	public EdgeNode pop() {
+	EdgeNode pop() {
 		Node min = head;
 		Node minPrev = null;
 		Node next = min.sibling;
@@ -49,7 +49,7 @@ public final class BinomialHeap {
 		return min.key;
 	}
 
-	public boolean isEmpty() {
+	boolean isEmpty() {
 		return head == null;
 	}
 
@@ -63,7 +63,6 @@ public final class BinomialHeap {
 		while (child != null) {
 			Node next = child.sibling;
 			child.sibling = newHead;
-			child.parent = null;
 			newHead = child;
 			child = next;
 		}
@@ -71,7 +70,6 @@ public final class BinomialHeap {
 	}
 
 	private void linkTree(Node minNodeTree, Node other) {
-		other.parent = minNodeTree;
 		other.sibling = minNodeTree.child;
 		minNodeTree.child = other;
 		minNodeTree.degree++;
@@ -140,20 +138,20 @@ public final class BinomialHeap {
 		return head;
 	}
 
-	private class Node {
+	private final class Node {
 
-		public EdgeNode key;
-		public int degree;
-		public Node parent;
-		public Node child;
-		public Node sibling;
+		private final EdgeNode key;
 
-		public Node(EdgeNode key) {
+		private int degree;
+		private Node child;
+		private Node sibling;
+
+		private Node(EdgeNode key) {
 			this.key = key;
 		}
 
-		public int compareTo(Node other) {
-			return cmp.compare(key, other.key);
+		private int compareTo(Node other) {
+			return comparator.compare(key, other.key);
 		}
 
 	}

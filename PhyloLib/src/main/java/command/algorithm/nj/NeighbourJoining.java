@@ -4,7 +4,6 @@ import command.algorithm.Algorithm;
 import data.matrix.Matrix;
 import data.tree.Edge;
 import data.tree.Tree;
-import javafx.util.Pair;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -25,9 +24,9 @@ public abstract class NeighbourJoining extends Algorithm {
 		while (clusters.size() > 2) {
 			Edge edge = select();
 			Pair<Pair<Cluster, Cluster>, Pair<Double, Double>> values = join(edge, tree);
-			Pair<Cluster, Cluster> clusters = values.getKey();
-			Pair<Double, Double> distances = values.getValue();
-			reduce(edge, clusters.getKey(), clusters.getValue(), distances.getKey(), distances.getValue());
+			Pair<Cluster, Cluster> clusters = values.first;
+			Pair<Double, Double> distances = values.second;
+			reduce(edge, clusters.first, clusters.second, distances.first, distances.second);
 		}
 		finish(tree);
 		return tree;
@@ -44,8 +43,8 @@ public abstract class NeighbourJoining extends Algorithm {
 			for (int j = i + 1; j < size; j++) {
 				double distance = Math.min(matrix.distance(i, j), matrix.distance(j, i));
 				cluster.distances.put(j, distance);
-				cluster.sum += distance;
-				this.clusters.get(j).sum += distance;
+				cluster.length += distance;
+				this.clusters.get(j).length += distance;
 			}
 		}
 		return new Tree(matrix.ids());
@@ -56,14 +55,14 @@ public abstract class NeighbourJoining extends Algorithm {
 				.flatMap(i -> clusters.entrySet().stream()
 						.filter(j -> j.getKey() > i.getKey())
 						.map(j -> dissimilarity(i.getKey(), j.getKey(), i.getValue(), j.getValue())))
-				.min(Comparator.comparingDouble(Pair::getValue))
-				.map(Pair::getKey)
+				.min(Comparator.comparingDouble(p -> p.second))
+				.map(p -> p.first)
 				.orElseThrow();
 	}
 
 	private Pair<Edge, Double> dissimilarity(int i, int j, Cluster ci, Cluster cj) {
 		double ij = ci.distances.get(j);
-		return new Pair<>(new Edge(i, j, ij), (clusters.size() - 2) * ij - ci.sum - cj.sum);
+		return new Pair<>(new Edge(i, j, ij), (clusters.size() - 2) * ij - ci.length - cj.length);
 	}
 
 	private Pair<Pair<Cluster, Cluster>, Pair<Double, Double>> join(Edge edge, Tree tree) {
@@ -71,13 +70,13 @@ public abstract class NeighbourJoining extends Algorithm {
 		Cluster cj = clusters.remove(edge.to());
 		double iu = branch(edge, ci, cj);
 		double ju = edge.distance() - iu;
-		tree.add(new Edge(this.cluster, edge.from(), iu));
-		tree.add(new Edge(this.cluster, edge.to(), ju));
+		tree.add(new Edge(cluster, edge.from(), iu));
+		tree.add(new Edge(cluster, edge.to(), ju));
 		return new Pair<>(new Pair<>(ci, cj), new Pair<>(iu, ju));
 	}
 
 	private double branch(Edge edge, Cluster ci, Cluster cj) {
-		return edge.distance() / 2 + (ci.sum - cj.sum) / (2 * (clusters.size() + 2 - (weight(ci) + weight(cj))));
+		return edge.distance() / 2 + (ci.length - cj.length) / (2 * (clusters.size() + 2 - (weight(ci) + weight(cj))));
 	}
 
 	/**
@@ -92,7 +91,7 @@ public abstract class NeighbourJoining extends Algorithm {
 	private void reduce(Edge edge, Cluster ci, Cluster cj, double iu, double ju) {
 		int i = edge.from();
 		int j = edge.to();
-		int u = this.cluster++;
+		int u = cluster++;
 		Cluster cu = new Cluster(ci.elements + cj.elements);
 		clusters.forEach((k, ck) -> {
 			Map<Integer, Double> dk = ck.distances;
@@ -100,8 +99,8 @@ public abstract class NeighbourJoining extends Algorithm {
 			Double jk = k < j ? dk.remove(j) : cj.distances.remove(k);
 			double dissimilarity = dissimilarity(ci, cj, iu, ju, ik, jk);
 			dk.put(u, dissimilarity);
-			ck.sum += weight(cu) * dissimilarity - ik - jk;
-			cu.sum += weight(ck) * dissimilarity;
+			ck.length += weight(cu) * dissimilarity - ik - jk;
+			cu.length += weight(ck) * dissimilarity;
 		});
 		clusters.put(u, cu);
 	}
@@ -141,17 +140,33 @@ public abstract class NeighbourJoining extends Algorithm {
 		tree.add(new Edge(i, j, i < j ? ci.distances.get(j) : cj.distances.get(i)));
 	}
 
+	private static final class Pair<T, R> {
+
+		private final T first;
+		private final R second;
+
+		private Pair(T first, R second) {
+			this.first = first;
+			this.second = second;
+		}
+
+	}
+
+	/**
+	 * Represents a cluster as the amount of elements in it, the distances to other clusters and the total length of the cluster.
+	 */
 	protected final class Cluster {
 
-		public final int elements;
-		public final Map<Integer, Double> distances;
+		protected final int elements;
 
-		public double sum;
+		private final Map<Integer, Double> distances;
 
-		public Cluster(int elements) {
+		private double length;
+
+		private Cluster(int elements) {
 			this.elements = elements;
 			this.distances = new HashMap<>(clusters.size());
-			this.sum = 0;
+			this.length = 0;
 		}
 
 	}

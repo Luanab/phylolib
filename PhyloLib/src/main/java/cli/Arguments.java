@@ -20,9 +20,9 @@ public final class Arguments extends HashMap<Command, List<Parameters>> {
 	 * <p>
 	 * Immediately returns null if the first command is help.
 	 *
-	 * @param args command line arguments to be parsed
+	 * @param args the command line arguments to be parsed
 	 *
-	 * @return the parsed arguments
+	 * @return an Arguments object with the parsed command line arguments
 	 *
 	 * @throws NoCommandException       if no command is found
 	 * @throws InvalidCommandException  if an invalid command is found

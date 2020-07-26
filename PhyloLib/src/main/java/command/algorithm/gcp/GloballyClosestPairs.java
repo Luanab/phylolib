@@ -4,7 +4,6 @@ import command.algorithm.Algorithm;
 import data.matrix.Matrix;
 import data.tree.Edge;
 import data.tree.Tree;
-import javafx.util.Pair;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -25,8 +24,8 @@ public abstract class GloballyClosestPairs extends Algorithm {
 		Tree tree = init(matrix);
 		while (clusters.size() > 1) {
 			Edge edge = select();
-			Pair<Cluster, Cluster> clusters = join(edge, tree);
-			reduce(edge, clusters.getKey(), clusters.getValue());
+			Clusters clusters = join(edge, tree);
+			reduce(edge, clusters.i, clusters.j);
 		}
 		return tree;
 	}
@@ -62,19 +61,19 @@ public abstract class GloballyClosestPairs extends Algorithm {
 		return edge;
 	}
 
-	private Pair<Cluster, Cluster> join(Edge edge, Tree tree) {
+	private Clusters join(Edge edge, Tree tree) {
 		Cluster ci = clusters.remove(edge.from());
 		Cluster cj = clusters.remove(edge.to());
 		double branch = edge.distance() / 2;
-		tree.add(new Edge(this.cluster, edge.from(), branch - ci.offset));
-		tree.add(new Edge(this.cluster, edge.to(), branch - cj.offset));
-		return new Pair<>(ci, cj);
+		tree.add(new Edge(cluster, edge.from(), branch - ci.offset));
+		tree.add(new Edge(cluster, edge.to(), branch - cj.offset));
+		return new Clusters(ci, cj);
 	}
 
 	private void reduce(Edge edge, Cluster ci, Cluster cj) {
 		int i = edge.from();
 		int j = edge.to();
-		int u = this.cluster++;
+		int u = cluster++;
 		clusters.forEach((k, cluster) -> {
 			Map<Integer, Double> kd = cluster.distances;
 			double ik = k < i ? kd.remove(i) : ci.distances.remove(k);
@@ -99,13 +98,25 @@ public abstract class GloballyClosestPairs extends Algorithm {
 	 */
 	protected abstract double dissimilarity(double ij, double ik, double jk, int ci, int cj);
 
+	private static final class Clusters {
+
+		private final Cluster i;
+		private final Cluster j;
+
+		private Clusters(Cluster i, Cluster j) {
+			this.i = i;
+			this.j = j;
+		}
+
+	}
+
 	private final class Cluster {
 
-		public final int elements;
-		public final double offset;
-		public final Map<Integer, Double> distances;
+		private final int elements;
+		private final double offset;
+		private final Map<Integer, Double> distances;
 
-		public Cluster(int elements, double offset) {
+		private Cluster(int elements, double offset) {
 			this.elements = elements;
 			this.offset = offset;
 			this.distances = new HashMap<>(clusters.size());

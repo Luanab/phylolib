@@ -1,24 +1,24 @@
 package command.algorithm.edmonds;
 
-public final class WeightedDisjointSet extends DisjointSet {
+final class WeightedDisjointSet extends DisjointSet {
 
 	private final double[] weight;
 
-	public WeightedDisjointSet(int n) {
+	WeightedDisjointSet(int n) {
 		super(n);
 		this.weight = new double[this.size];
 	}
 
-	public double findWeight(int i) {
+	double findWeight(int i) {
 		return i != pi[i] ? weight[i] + weight[pi[i]] : weight[i];
 	}
 
-	public void addWeight(int i, double w) {
+	void addWeight(int i, double w) {
 		weight[findSet(i)] += w;
 	}
 
 	@Override
-	public int findSet(int i) {
+	int findSet(int i) {
 		for (; pi[i] != pi[pi[i]]; i = pi[i]) {
 			weight[i] = weight[i] + weight[pi[i]];
 			pi[i] = pi[pi[i]];
@@ -27,7 +27,7 @@ public final class WeightedDisjointSet extends DisjointSet {
 	}
 
 	@Override
-	public void unionSet(int i, int j) {
+	void unionSet(int i, int j) {
 		i = findSet(i);
 		j = findSet(j);
 		if (i != j) {

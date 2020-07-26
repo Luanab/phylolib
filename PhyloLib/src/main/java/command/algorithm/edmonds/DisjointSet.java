@@ -1,12 +1,12 @@
 package command.algorithm.edmonds;
 
-public class DisjointSet {
+class DisjointSet {
 
 	protected final int size;
 	protected final int[] pi;
 	protected final int[] rank;
 
-	public DisjointSet(int n) {
+	DisjointSet(int n) {
 		this.size = n + 1;
 		this.pi = new int[size];
 		this.rank = new int[size];
@@ -14,17 +14,17 @@ public class DisjointSet {
 			this.pi[i] = i;
 	}
 
-	public int findSet(int i) {
+	int findSet(int i) {
 		for (; i != pi[i]; i = pi[i])
 			pi[i] = pi[pi[i]];
 		return i;
 	}
 
-	public boolean sameSet(int i, int j) {
+	boolean sameSet(int i, int j) {
 		return findSet(i) == findSet(j);
 	}
 
-	public void unionSet(int i, int j) {
+	void unionSet(int i, int j) {
 		i = findSet(i);
 		j = findSet(j);
 		if (i != j) {
