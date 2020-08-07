@@ -8,7 +8,7 @@ Usage:
     phylolib optimization (lbr) [options]
 
 Options:
-    -o=<file>	--out=<file>		Output file as <format>:<location> with format being (fasta|ml|snp|asymmetric|symmetric|newick|nexus)
+    -o=<file>	--out=<file>		Output file as <format>:<location> with format being (asymmetric|symmetric|newick|nexus)
     -d=<file>	--dataset=<file>	Input dataset file as <format>:<location> with format being (fasta|ml|snp)
     -m=<file>	--matrix=<file>		Input distance matrix file as <format>:<location> with format being (asymmetric|symmetric)
     -t=<file>	--tree=<file>		Input phylogenetic tree file as <format>:<location> with format being (newick|nexus)

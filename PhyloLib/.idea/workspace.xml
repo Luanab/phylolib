@@ -3,22 +3,13 @@
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_TEST_SOURCES" value="false" />
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="54786b23-0e91-4c21-9105-672316949a5c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/usage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/usage.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +76,7 @@
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DistanceBenchmark">
+  <component name="RunManager" selected="Application.All">
     <configuration name="Algorithm" type="Application" factoryName="Application" folderName="Demonstration">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="PhyloLib.main" />
@@ -612,6 +603,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -625,17 +617,21 @@
       <workItem from="1595110747712" duration="3499000" />
       <workItem from="1595682461317" duration="300000" />
       <workItem from="1595682848756" duration="12494000" />
-      <workItem from="1595781180794" duration="1187000" />
+      <workItem from="1595781180794" duration="1859000" />
+      <workItem from="1595795953526" duration="607000" />
+      <workItem from="1596025482535" duration="422000" />
+      <workItem from="1596026039456" duration="1495000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595691149443">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="331" y="111" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596026493998">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="331" y="111" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1596026493998" />
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595691149443" />
     <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1595113976846">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -657,24 +653,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595113576824" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1595698767437">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="209" key="GridCell.Tab.0.bottom" timestamp="1596028220450">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596028220450" />
     <state width="1877" height="348" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1595698767437">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="209" key="GridCell.Tab.0.center" timestamp="1596028220450">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596028220450" />
     <state width="1877" height="348" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
     <state width="1493" height="210" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1595698767436">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="209" key="GridCell.Tab.0.left" timestamp="1596028220450">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596028220450" />
     <state width="1877" height="348" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767436" />
     <state width="1493" height="210" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070843" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1595698767437">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="209" key="GridCell.Tab.0.right" timestamp="1596028220450">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596028220450" />
     <state width="1877" height="348" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
     <state width="1493" height="210" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595698767437">
