@@ -1,10 +1,2 @@
 # phylolib
-Library of efficient algorithms for phylogenetic analysis
-
-Project:
-- Report: https://www.overleaf.com/read/dxpfjfwtfdcs
-- Presentation: https://docs.google.com/presentation/d/1x_T11wbP_nEoqif2Tt05Od9tPjfYgre55OPe69C3I7k/
-
-Dissertation:
-- Report: https://www.overleaf.com/read/fyzzymzqmprz
-- Presentation: https://docs.google.com/presentation/d/1qPudTnvzP8hGGGDKaR8n9iOIMUOoeEIu2nGxD7D9tUE/
+PhyloLib is a library of efficient algorithms for phylogenetic analysis. It was developed in the scope of a master thesis that was divided into two phases. The first phase was the project composed by a [report](https://www.overleaf.com/read/dxpfjfwtfdcs) and a [presentation](https://docs.google.com/presentation/d/1x_T11wbP_nEoqif2Tt05Od9tPjfYgre55OPe69C3I7k/). And the second phase was the dissertation composed by a [report](https://www.overleaf.com/read/fyzzymzqmprz), an [extended abstract]() and a [presentation](https://docs.google.com/presentation/d/1qPudTnvzP8hGGGDKaR8n9iOIMUOoeEIu2nGxD7D9tUE/).
