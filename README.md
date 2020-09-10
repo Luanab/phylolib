@@ -47,4 +47,4 @@ To build a Docker image for this project and execute it, you should:
 1. Install Docker and compile the JAR of this project.
 2. Open the terminal in the project's folder.
 3. Run the command ```docker build -t phylolib .``` to build the Docker image.
-4. Run the command ```docker run --rm -v $HOME/Desktop/files-directory:/files -v $HOME/Desktop/logs-directory:/logs phylolib:latest help``` to execute the Docker image.
+4. Run the command ```docker run --rm -v $HOME/<DIRECTORY>/files-directory:/files -v $HOME/<DIRECTORY>/logs-directory:/logs phylolib:latest help``` to execute the Docker image.
