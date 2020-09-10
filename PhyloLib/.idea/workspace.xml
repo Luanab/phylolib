@@ -9,7 +9,8 @@
   <component name="ChangeListManager">
     <list default="true" id="54786b23-0e91-4c21-9105-672316949a5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/usage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/usage.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +31,28 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PhyloLib" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PhyloLib" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PhyloLib" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -55,12 +77,12 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Copy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -76,24 +98,11 @@
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.All">
+  <component name="RunManager" selected="Gradle.PhyloLib [clean]">
     <configuration name="Algorithm" type="Application" factoryName="Application" folderName="Demonstration">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="PhyloLib.main" />
       <option name="PROGRAM_PARAMETERS" value="algorithm edmonds -m=asymmetric:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\matrix.txt&quot; -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\tree.nwk&quot;" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AlgorithmBenchmark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="benchmark.AlgorithmBenchmark" />
-      <module name="PhyloLib.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="benchmark.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -482,6 +491,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PhyloLib [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="PhyloLib [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -501,23 +542,23 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SymmetricTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PhyloLib [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;data.matrix.SymmetricTest&quot;" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
+            <option value="jar" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <configuration name="Tests in 'phylolib.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -587,19 +628,19 @@
       <item itemvalue="Application.WPGMC" />
       <item itemvalue="Application.SL" />
       <item itemvalue="Application.CL" />
-      <item itemvalue="Application.AlgorithmBenchmark" />
       <item itemvalue="Application.DistanceBenchmark" />
       <item itemvalue="Gradle.Tests in 'phylolib.test'" />
-      <item itemvalue="Gradle.SymmetricTest" />
+      <item itemvalue="Gradle.PhyloLib [build]" />
+      <item itemvalue="Gradle.PhyloLib [jar]" />
       <item itemvalue="Gradle.PhyloLib [clean]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PhyloLib [clean]" />
+        <item itemvalue="Gradle.PhyloLib [jar]" />
+        <item itemvalue="Gradle.PhyloLib [build]" />
         <item itemvalue="Gradle.Tests in 'phylolib.test'" />
         <item itemvalue="Application.DistanceBenchmark" />
-        <item itemvalue="Application.AlgorithmBenchmark" />
-        <item itemvalue="Gradle.PhyloLib [clean]" />
-        <item itemvalue="Gradle.SymmetricTest" />
       </list>
     </recent_temporary>
   </component>
@@ -621,6 +662,8 @@
       <workItem from="1595795953526" duration="607000" />
       <workItem from="1596025482535" duration="422000" />
       <workItem from="1596026039456" duration="1495000" />
+      <workItem from="1599568563902" duration="3564000" />
+      <workItem from="1599747121745" duration="140000" />
     </task>
     <servers />
   </component>
@@ -628,10 +671,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="331" y="111" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596026493998">
+    <state x="331" y="111" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599569068224">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="331" y="111" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1596026493998" />
+    <state x="331" y="111" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599569068224" />
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595691149443" />
     <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1595113976846">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -653,28 +696,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595113576824" />
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom" timestamp="1596028220450">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1599578426589">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596028220450" />
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
     <state width="1877" height="348" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
-    <state width="1493" height="209" key="GridCell.Tab.0.center" timestamp="1596028220450">
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1599578426589">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596028220450" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
     <state width="1877" height="348" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
     <state width="1493" height="210" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
-    <state width="1493" height="209" key="GridCell.Tab.0.left" timestamp="1596028220450">
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1599578426589">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596028220450" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
     <state width="1877" height="348" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767436" />
     <state width="1493" height="210" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070843" />
-    <state width="1493" height="209" key="GridCell.Tab.0.right" timestamp="1596028220450">
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1599578426589">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596028220450" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
     <state width="1877" height="348" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
     <state width="1493" height="210" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595698767437">
@@ -693,9 +736,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1595692974485">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="369" y="114" key="SettingsEditor" timestamp="1599747159657">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="369" y="114" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599747159657" />
     <state x="461" y="165" key="SettingsEditor/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595692974485" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1595690024127">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -705,6 +749,7 @@
   <component name="simpleUML.UMLToolWindowPlugin">
     <General>
       <option name="birdViewUpdateDelay" value="2000" />
+      <option name="knownFile0" value="file://$PROJECT_DIR$/../xpto.suml" />
       <option name="defaultFileLocation" value="file://$PROJECT_DIR$/.." />
     </General>
     <Classdiagram>

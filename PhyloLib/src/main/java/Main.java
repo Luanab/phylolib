@@ -5,10 +5,7 @@ import data.Context;
 import exception.ArgumentException;
 import logging.Log;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.io.InputStream;
 
 public class Main {
 
@@ -22,8 +19,9 @@ public class Main {
 				ICommand.run(arguments, context, Command.ALGORITHM, context::getMatrix, context::setTree);
 				ICommand.run(arguments, context, Command.OPTIMIZATION, context::getTree, context::setTree);
 			} else
-				try (Stream<String> usage = Files.lines(Paths.get(Main.class.getClassLoader().getResource("usage.txt").toURI()))) {
-					System.out.println(usage.collect(Collectors.joining("\n")));
+				try (InputStream usage = Main.class.getClassLoader().getResourceAsStream("usage.txt")) {
+					System.out.write(usage.readAllBytes());
+					System.out.flush();
 				}
 		} catch (ArgumentException exception) {
 			Log.error(exception.getMessage());
