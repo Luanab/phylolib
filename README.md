@@ -34,9 +34,17 @@ For example, in the execution above, the order in which the commands would be ex
 ### JAR
 
 To compile this project into a JAR and execute it, you should:
-1. Have Gradle and Java JDK13 or higher installed.
+1. Install Gradle and Java JDK13 or higher.
 2. Open the terminal in the project's folder.
-3. Clean the project by running the command ```gradle clean```.
-4. Build the JAR by running the command ```gradle jar```.
+3. Run the command ```gradle clean``` to clean the project.
+4. Run the command ```gradle jar``` to build the JAR.
 5. Open the terminal in the folder *build/libs* of the project.
-6. Execute the JAR by running the command ```java -jar PhyloLib-1.0-SNAPSHOT.jar help```.
+6. Run the command ```java -jar PhyloLib-1.0-SNAPSHOT.jar help``` to execute the JAR.
+
+### Docker
+
+To build a Docker image for this project and execute it, you should:
+1. Install Docker and compile the JAR of this project.
+2. Open the terminal in the project's folder.
+3. Run the command ```docker build -t phylolib .``` to build the Docker image.
+4. Run the command ```docker run --rm -v $HOME/Desktop/files-directory:/files -v $HOME/Desktop/logs-directory:/logs phylolib:latest help``` to execute the Docker image.
