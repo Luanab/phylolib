@@ -1,6 +1,6 @@
 # phylolib
 
-PhyloLib is a library of efficient algorithms for phylogenetic analysis in the form of a command line application. It was developed in the scope of a master thesis that was divided into two phases. The first phase was the project composed by a [report](https://www.overleaf.com/read/dxpfjfwtfdcs) and a [presentation](https://docs.google.com/presentation/d/1x_T11wbP_nEoqif2Tt05Od9tPjfYgre55OPe69C3I7k/). And the second phase was the dissertation composed by a [report](https://www.overleaf.com/read/fyzzymzqmprz), an [extended abstract](https://www.overleaf.com/read/ggbcntdhmfjw) and a [presentation](https://docs.google.com/presentation/d/1qPudTnvzP8hGGGDKaR8n9iOIMUOoeEIu2nGxD7D9tUE/).
+PhyloLib is a library of efficient algorithms for phylogenetic analysis in the form of a command line application. It was developed in the scope of a master thesis that was divided into two phases. The first phase was the project composed by a [report](https://www.overleaf.com/read/dxpfjfwtfdcs) and a [presentation](https://docs.google.com/presentation/d/1x_T11wbP_nEoqif2Tt05Od9tPjfYgre55OPe69C3I7k/). And the second phase was the dissertation composed by a [report](https://www.overleaf.com/read/fyzzymzqmprz), an [extended abstract](https://www.overleaf.com/read/ggbcntdhmfjw), a [presentation](https://docs.google.com/presentation/d/1qPudTnvzP8hGGGDKaR8n9iOIMUOoeEIu2nGxD7D9tUE/), and a [video](https://youtu.be/hr0iBjTeV1U) explaining how to deploy the application in a Docker image and run it.
 
 ### Usage
 
