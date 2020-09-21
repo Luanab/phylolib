@@ -22,10 +22,10 @@ Options:
 	-l=<number>	--lvs=<number>		Limit of locus variants to consider using goeBURST algorithm [default: 3]
 ```
 
-You can also run multiple commands by concatenating them with a "|" character like this:
+You can also run multiple commands by concatenating them with a ":" character like this:
 
 ```
-phylolib algorithm upgma --out=newick:tree.txt | distance hamming --dataset=ml:dataset.txt
+phylolib algorithm upgma --out=newick:tree.txt : distance hamming --dataset=ml:dataset.txt
 ```
 
 The order in which the commands are executed is dictated by the phylogenetic analysis workflow, making the order in which the commands are provided indifferent.
