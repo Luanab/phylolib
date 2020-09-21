@@ -16,8 +16,7 @@ public class FileTest {
 				{ "mlst", Data.TREE },
 				{ "fasta:", Data.DATASET },
 				{ "csv: ", Data.MATRIX },
-				{ "csc:matrix.csv", Data.MATRIX },
-				{ "newick:C:/xpto?", Data.TREE }
+				{ "csc:matrix.csv", Data.MATRIX }
 		};
 	}
 
