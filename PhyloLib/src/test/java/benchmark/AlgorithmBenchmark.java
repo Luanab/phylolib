@@ -11,8 +11,6 @@ import command.distance.Hamming;
 import data.matrix.Matrix;
 import org.openjdk.jmh.annotations.*;
 
-import java.lang.reflect.Field;
-
 public class AlgorithmBenchmark {
 
 	public static void main(String[] args) throws Exception {
@@ -24,12 +22,8 @@ public class AlgorithmBenchmark {
 	}
 
 	@Benchmark
-	public void goeburst(AlgorithmState state) throws NoSuchFieldException, IllegalAccessException {
-		Field lvs = GoeBURST.class.getDeclaredField("lvs");
-		lvs.setAccessible(true);
-		GoeBURST goeBURST = new GoeBURST();
-		lvs.set(goeBURST, 3);
-		benchmark(state, goeBURST);
+	public void goeburst(AlgorithmState state) {
+		benchmark(state, new GoeBURST() {{ lvs = 3; }});
 	}
 
 	@Benchmark
@@ -88,7 +82,7 @@ public class AlgorithmBenchmark {
 		public Matrix matrix;
 
 		@Override
-		@Setup(Level.Invocation)
+		@Setup(Level.Trial)
 		public void setup() {
 			super.setup();
 			this.matrix = new Hamming().process(this.dataset);

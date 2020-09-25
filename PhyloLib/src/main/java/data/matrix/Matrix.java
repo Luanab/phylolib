@@ -83,8 +83,8 @@ public final class Matrix {
 	 */
 	public Matrix correct(ICorrection correction) {
 		return distances[1][0] == null
-			   ? new Matrix(symmetric, ids, (i, j) -> correction.get(distance.get(i, j)))
-			   : new Matrix(symmetric, ids, Arrays.stream(distances).map(line -> Arrays.stream(line).map(correction::get).toArray(Double[]::new)).toArray(Double[][]::new));
+		       ? new Matrix(symmetric, ids, (i, j) -> correction.get(distance.get(i, j)))
+		       : new Matrix(symmetric, ids, Arrays.stream(distances).map(line -> Arrays.stream(line).map(correction::get).toArray(Double[]::new)).toArray(Double[][]::new));
 	}
 
 	/**

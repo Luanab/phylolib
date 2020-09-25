@@ -16,7 +16,7 @@ import java.util.stream.IntStream;
  */
 public class GoeBURST extends Algorithm {
 
-	private int lvs;
+	public int lvs;
 
 	@Override
 	public void init(Context context, Options options) {

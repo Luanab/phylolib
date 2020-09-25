@@ -20,13 +20,13 @@ public class EdmondsTest {
 				{ new Double[][] {
 						{ },
 						{ 1.0 } },
-						new Edge(1, 0, 1) },
+				  new Edge(1, 0, 1) },
 				{ new Double[][] {
 						{ },
 						{ 2.0 },
 						{ 2.0, 1.0 } },
-						new Edge(1, 0, 2),
-						new Edge(2, 1, 1) },
+				  new Edge(1, 0, 2),
+				  new Edge(2, 1, 1) },
 				{ new Double[][] {
 						{ },
 						{ 3.0 },
@@ -36,13 +36,13 @@ public class EdmondsTest {
 						{ 3.0, 3.0, 3.0, 3.0, 3.0 },
 						{ 3.0, 2.0, 3.0, 3.0, 3.0, 3.0 },
 						{ 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0 } },
-						new Edge(7, 0, 3),
-						new Edge(0, 1, 3),
-						new Edge(0, 2, 3),
-						new Edge(0, 4, 3),
-						new Edge(0, 5, 3),
-						new Edge(1, 6, 2),
-						new Edge(2, 3, 2) }
+				  new Edge(7, 0, 3),
+				  new Edge(0, 1, 3),
+				  new Edge(0, 2, 3),
+				  new Edge(0, 4, 3),
+				  new Edge(0, 5, 3),
+				  new Edge(1, 6, 2),
+				  new Edge(2, 3, 2) }
 		};
 	}
 

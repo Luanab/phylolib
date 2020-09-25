@@ -29,7 +29,8 @@ public class Newick extends TreeProcessor {
 					break;
 				case ',':
 					break;
-				case '(': levels.push(new ArrayList<>());
+				case '(':
+					levels.push(new ArrayList<>());
 					break;
 				case ')':
 					for (Edge edge : levels.pop())

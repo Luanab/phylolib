@@ -23,8 +23,8 @@ public final class FASTA extends DatasetProcessor {
 			sequence.append(next);
 		this.id = next;
 		return id.startsWith(">")
-			   ? new Profile(id.substring(1), sequence.toString().matches("^[ACTG -]+$") ? sequence.toString() : "")
-			   : new Profile(id, "");
+		       ? new Profile(id.substring(1), sequence.toString().matches("^[ACTG -]+$") ? sequence.toString() : "")
+		       : new Profile(id, "");
 	}
 
 }

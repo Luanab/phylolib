@@ -6,11 +6,46 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="54786b23-0e91-4c21-9105-672316949a5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/gcp/GloballyClosestPairs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/algorithm/gcp/GloballyClosestPairs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/goeburst/GoeBURST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/algorithm/goeburst/GoeBURST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/command/optimization/LBR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/optimization/LBR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/dataset/FASTA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/dataset/FASTA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/matrix/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/matrix/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/tree/Newick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/tree/Newick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/AlgorithmBenchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/benchmark/AlgorithmBenchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/BaseBenchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/benchmark/BaseBenchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/CorrectionBenchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/benchmark/CorrectionBenchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/OptimizationBenchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/benchmark/OptimizationBenchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/edmonds/EdmondsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/command/algorithm/edmonds/EdmondsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/gcp/CLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/command/algorithm/gcp/CLTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/gcp/SLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/command/algorithm/gcp/SLTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/gcp/UPGMATest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/command/algorithm/gcp/UPGMATest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/gcp/WPGMATest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/command/algorithm/gcp/WPGMATest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/goeburst/GoeBURSTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/command/algorithm/goeburst/GoeBURSTTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/nj/SaitouNeiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/command/algorithm/nj/SaitouNeiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/nj/StudierKeplerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/command/algorithm/nj/StudierKeplerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/data/dataset/MLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/data/dataset/MLTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +112,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -85,24 +120,51 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="benchmark" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\java" />
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\main\java" />
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\main\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="benchmark" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.PhyloLib [clean]">
+  <component name="RunManager" selected="Application.AlgorithmBenchmark">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Algorithm" type="Application" factoryName="Application" folderName="Demonstration">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="PhyloLib.main" />
       <option name="PROGRAM_PARAMETERS" value="algorithm edmonds -m=asymmetric:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\matrix.txt&quot; -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\tree.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AlgorithmBenchmark" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="benchmark.AlgorithmBenchmark" />
+      <module name="PhyloLib.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="benchmark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,6 +213,19 @@
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="PhyloLib.main" />
       <option name="PROGRAM_PARAMETERS" value="correction jukescantor -m=asymmetric:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\matrix.txt&quot; -o=symmetric:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\corrected.txt&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CorrectionBenchmark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="benchmark.CorrectionBenchmark" />
+      <module name="PhyloLib.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="benchmark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -491,36 +566,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PhyloLib [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ArgumentsTest.parse_ValidCommands_NotNull" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--tests &quot;cli.ArgumentsTest.parse_ValidCommands_NotNull&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value=":test" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <configuration name="PhyloLib [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -535,25 +597,6 @@
         <option name="taskNames">
           <list>
             <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="PhyloLib [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jar" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -628,19 +671,20 @@
       <item itemvalue="Application.WPGMC" />
       <item itemvalue="Application.SL" />
       <item itemvalue="Application.CL" />
+      <item itemvalue="Application.AlgorithmBenchmark" />
+      <item itemvalue="Application.CorrectionBenchmark" />
       <item itemvalue="Application.DistanceBenchmark" />
       <item itemvalue="Gradle.Tests in 'phylolib.test'" />
-      <item itemvalue="Gradle.PhyloLib [build]" />
-      <item itemvalue="Gradle.PhyloLib [jar]" />
       <item itemvalue="Gradle.PhyloLib [clean]" />
+      <item itemvalue="Gradle.ArgumentsTest.parse_ValidCommands_NotNull" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PhyloLib [clean]" />
-        <item itemvalue="Gradle.PhyloLib [jar]" />
-        <item itemvalue="Gradle.PhyloLib [build]" />
-        <item itemvalue="Gradle.Tests in 'phylolib.test'" />
         <item itemvalue="Application.DistanceBenchmark" />
+        <item itemvalue="Application.CorrectionBenchmark" />
+        <item itemvalue="Gradle.Tests in 'phylolib.test'" />
+        <item itemvalue="Gradle.ArgumentsTest.parse_ValidCommands_NotNull" />
+        <item itemvalue="Gradle.PhyloLib [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -664,21 +708,46 @@
       <workItem from="1596026039456" duration="1495000" />
       <workItem from="1599568563902" duration="3564000" />
       <workItem from="1599747121745" duration="140000" />
+      <workItem from="1600718033576" duration="9401000" />
+      <workItem from="1600789039536" duration="937000" />
+      <workItem from="1600815043392" duration="2130000" />
+      <workItem from="1600885606367" duration="844000" />
+      <workItem from="1600955793577" duration="2671000" />
+      <workItem from="1600981110676" duration="2000" />
+      <workItem from="1601055885100" duration="2860000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="331" y="111" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599569068224">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="453" y="105" key="#Java" timestamp="1601058253123">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="453" y="105" key="#Java/0.0.1792.1120@0.0.1792.1120" timestamp="1601058253123" />
+    <state x="386" y="150" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600959378123">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="331" y="111" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599569068224" />
+    <state x="386" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1600959378123" />
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595691149443" />
-    <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1595113976846">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="643" y="334" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1600732106273">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
+    <state x="643" y="334" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1600732106273" />
     <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595113976846" />
     <state x="536" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595112763995">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -696,28 +765,36 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595113576824" />
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1599578426589">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1750" height="318" key="GridCell.Tab.0.bottom" timestamp="1600966629827">
+      <screen x="0" y="23" width="1792" height="1043" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
+    <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1600960249045" />
+    <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629827" />
     <state width="1877" height="348" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1599578426589">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1750" height="318" key="GridCell.Tab.0.center" timestamp="1600966629826">
+      <screen x="0" y="23" width="1792" height="1043" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
+    <state width="1750" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1600960249045" />
+    <state width="1750" height="318" key="GridCell.Tab.0.center/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629826" />
     <state width="1877" height="348" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
     <state width="1493" height="210" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1599578426589">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1750" height="318" key="GridCell.Tab.0.left" timestamp="1600966629826">
+      <screen x="0" y="23" width="1792" height="1043" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
+    <state width="1750" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1600960249044" />
+    <state width="1750" height="318" key="GridCell.Tab.0.left/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629826" />
     <state width="1877" height="348" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767436" />
     <state width="1493" height="210" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070843" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1599578426589">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1750" height="318" key="GridCell.Tab.0.right" timestamp="1600966629827">
+      <screen x="0" y="23" width="1792" height="1043" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
+    <state width="1750" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1600960249045" />
+    <state width="1750" height="318" key="GridCell.Tab.0.right/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629827" />
     <state width="1877" height="348" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
     <state width="1493" height="210" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595698767437">
@@ -741,6 +818,10 @@
     </state>
     <state x="369" y="114" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599747159657" />
     <state x="461" y="165" key="SettingsEditor/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595692974485" />
+    <state x="523" y="203" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600718538251">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="523" y="203" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1600718538251" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1595690024127">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

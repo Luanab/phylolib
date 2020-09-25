@@ -22,28 +22,38 @@ public class BaseBenchmark {
 
 	public static void main(Class<?> benchmark) throws RunnerException {
 		new Runner(new OptionsBuilder()
-				.include("\\." + benchmark.getSimpleName() + "\\.")
-				.timeout(TimeValue.NONE)
-				.warmupIterations(5)
-				.measurementIterations(10)
-				.shouldDoGC(true)
-				.shouldFailOnError(true)
-				.mode(Mode.AverageTime)
-				.timeUnit(TimeUnit.MILLISECONDS)
-				.addProfiler(GCProfiler.class)
-				.build())
+				           .include("\\." + benchmark.getSimpleName() + "\\.")
+				           .timeout(TimeValue.NONE)
+				           .forks(1)
+				           .threads(1)
+				           .jvmArgs("-Xms8G")
+				           .shouldDoGC(true)
+				           .shouldFailOnError(true)
+				           .mode(Mode.AverageTime)
+				           .timeUnit(TimeUnit.MILLISECONDS)
+				           .addProfiler(GCProfiler.class)
+				           .build())
 				.run();
 	}
 
 	@State(Scope.Benchmark)
 	public static class BaseState {
 
-		@Param({ "" })
+		@Param({
+				"ml:14-bbacilliformis.txt",
+				"ml:100-brucella.txt",
+				"ml:484-achromobacter.txt",
+				"ml:1110-ctropicalis.txt",
+				"ml:3585-calbicans.txt",
+				"ml:6261-saureus.txt",
+				"ml:11884-campylobacter.txt",
+				"ml:16301-spneumoniae.txt"
+		})
 		public String file;
 
 		public Dataset dataset;
 
-		@Setup(Level.Invocation)
+		@Setup(Level.Trial)
 		public void setup() {
 			String[] values = file.split(":", 2);
 			try (Stream<String> lines = Files.lines(Paths.get(BaseBenchmark.class.getClassLoader().getResource(values[1]).toURI()))) {
@@ -51,6 +61,11 @@ public class BaseBenchmark {
 			} catch (IOException | URISyntaxException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
 				e.printStackTrace();
 			}
+		}
+
+		@TearDown(Level.Invocation)
+		public void tearDown() {
+			System.gc();
 		}
 
 	}

@@ -50,8 +50,8 @@ public abstract class GloballyClosestPairs extends Algorithm {
 
 	private int tiebreak(Edge edge) {
 		return !clusters.containsKey(edge.from()) || !clusters.containsKey(edge.to())
-			   ? 0 :
-			   -(clusters.get(edge.from()).elements + clusters.get(edge.to()).elements);
+		       ? 0 :
+		       -(clusters.get(edge.from()).elements + clusters.get(edge.to()).elements);
 	}
 
 	private Edge select() {

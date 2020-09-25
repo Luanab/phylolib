@@ -28,7 +28,7 @@ public class OptimizationBenchmark {
 		public Tree tree;
 
 		@Override
-		@Setup(Level.Invocation)
+		@Setup(Level.Trial)
 		public void setup() {
 			super.setup();
 			this.tree = new Edmonds().process(new GrapeTree().process(this.dataset));

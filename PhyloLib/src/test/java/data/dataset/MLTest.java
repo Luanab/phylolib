@@ -35,7 +35,7 @@ public class MLTest {
 				{ "ST\taroe\taroi\tarou", "1\t1\t2\t1\t1", "2\t \t2\t1\t1", "3\t1\t2\t3\t4\t5" },
 				{ "ST\taroe\taroi\tarou", "1\t1\t2\t1\t1", "2\t \t2\t1\t1", "3\tx\t2\t3\t4" },
 				{ "ST\taroe\taroi\tarou", "1\t1\t2\t1\t1", "2\t \t2\t1\t1" },
-		};
+				};
 	}
 
 	@Test(dataProvider = "valid")

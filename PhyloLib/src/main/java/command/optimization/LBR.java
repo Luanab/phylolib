@@ -92,8 +92,8 @@ public final class LBR extends Optimization {
 
 	private double likelihood(double d, double uv, double wv, double l, double k, double y) {
 		return loci * d * Math.log(1 - y * l) + loci * (1 - d) * Math.log(y * l)
-			   + loci * uv * Math.log(1 - l * k) + loci * (1 - uv) * Math.log(l * k)
-			   + loci * wv * Math.log(1 - y * k) + loci * (1 - wv) * Math.log(y * k);
+		       + loci * uv * Math.log(1 - l * k) + loci * (1 - uv) * Math.log(l * k)
+		       + loci * wv * Math.log(1 - y * k) + loci * (1 - wv) * Math.log(y * k);
 	}
 
 	private double mean(int i) {

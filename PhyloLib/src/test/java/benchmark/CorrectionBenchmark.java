@@ -30,7 +30,7 @@ public class CorrectionBenchmark {
 		public Matrix matrix;
 
 		@Override
-		@Setup(Level.Invocation)
+		@Setup(Level.Trial)
 		public void setup() {
 			super.setup();
 			this.matrix = new Hamming().process(this.dataset);
