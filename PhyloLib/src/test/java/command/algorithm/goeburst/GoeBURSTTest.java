@@ -1,5 +1,7 @@
 package command.algorithm.goeburst;
 
+import cli.Options;
+import data.Context;
 import data.matrix.Matrix;
 import data.tree.Edge;
 import data.tree.Tree;
@@ -51,7 +53,7 @@ public class GoeBURSTTest {
 	public void process_Valid_Success(int lvs, Double[][] values, Edge... edges) {
 		Matrix matrix = new Matrix(true, IntStream.range(0, values.length).mapToObj(String::valueOf).toArray(String[]::new), values);
 		GoeBURST goeburst = new GoeBURST();
-		goeburst.lvs = 3;
+		goeburst.init(new Context(), new Options());
 		List<Edge> expected = Arrays.asList(edges);
 
 		Tree tree = goeburst.process(matrix);
