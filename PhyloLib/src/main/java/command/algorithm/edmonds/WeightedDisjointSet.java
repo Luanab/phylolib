@@ -20,7 +20,7 @@ final class WeightedDisjointSet extends DisjointSet {
 	@Override
 	int findSet(int i) {
 		for (; pi[i] != pi[pi[i]]; i = pi[i]) {
-			weight[i] = weight[i] + weight[pi[i]];
+			weight[i] += weight[pi[i]];
 			pi[i] = pi[pi[i]];
 		}
 		return pi[i];

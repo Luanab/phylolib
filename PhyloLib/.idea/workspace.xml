@@ -27,6 +27,21 @@
   <component name="ChangeListManager">
     <list default="true" id="54786b23-0e91-4c21-9105-672316949a5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/edmonds/WeightedDisjointSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/algorithm/edmonds/WeightedDisjointSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/nj/NeighbourJoining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/algorithm/nj/NeighbourJoining.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/matrix/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/matrix/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/Benchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/benchmark/Benchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/datasets/10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/100.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/datasets/100.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/1000.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/datasets/1000.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/200.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/datasets/200.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/300.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/datasets/300.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/400.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/datasets/400.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/500.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/datasets/500.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/600.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/datasets/600.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/700.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/datasets/700.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/800.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/datasets/800.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/900.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/datasets/900.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +108,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/benchmark" />
+    <property name="last.edited.regexp" value="Sample Text" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources/matrices" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -101,22 +117,23 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources/matrices" />
+      <recent name="$PROJECT_DIR$/src/test/java/benchmark" />
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+      <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\java" />
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="command.algorithm.goeburst" />
       <recent name="benchmark" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test/java/benchmark" />
-      <recent name="$PROJECT_DIR$/src/test/resources" />
-      <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\java" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources/datasets" />
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
-      <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'phylolib.test'">
+  <component name="RunManager" selected="Application.Benchmark">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -160,6 +177,7 @@
       </method>
     </configuration>
     <configuration name="Benchmark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <output_file path="$PROJECT_DIR$/../../results.txt" />
       <option name="MAIN_CLASS_NAME" value="benchmark.Benchmark" />
       <module name="PhyloLib.test" />
       <extension name="coverage">
@@ -212,36 +230,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CorrectionBenchmark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="benchmark.CorrectionBenchmark" />
-      <module name="PhyloLib.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="benchmark.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Distance" type="Application" factoryName="Application" folderName="Demonstration">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="PhyloLib.main" />
       <option name="PROGRAM_PARAMETERS" value="distance grapetree -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\dataset.txt&quot; -o=asymmetric:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\matrix.txt&quot;" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DistanceBenchmark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="benchmark.DistanceBenchmark" />
-      <module name="PhyloLib.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="benchmark.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -561,12 +553,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArgumentsTest.parse_ValidCommands_NotNull" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AsymmetricTest.format_Valid_Success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;cli.ArgumentsTest.parse_ValidCommands_NotNull&quot;" />
+        <option name="scriptParameters" value="--tests &quot;data.matrix.AsymmetricTest.format_Valid_Success&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -578,6 +570,44 @@
         <option name="vmOptions" />
       </ExternalSystemSettings>
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PhyloLib [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PhyloLib [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <configuration name="Tests in 'phylolib.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -648,19 +678,19 @@
       <item itemvalue="Application.SL" />
       <item itemvalue="Application.CL" />
       <item itemvalue="Application.AlgorithmBenchmark" />
-      <item itemvalue="Application.CorrectionBenchmark" />
-      <item itemvalue="Application.DistanceBenchmark" />
       <item itemvalue="Application.Benchmark" />
       <item itemvalue="Gradle.Tests in 'phylolib.test'" />
-      <item itemvalue="Gradle.ArgumentsTest.parse_ValidCommands_NotNull" />
+      <item itemvalue="Gradle.AsymmetricTest.format_Valid_Success" />
+      <item itemvalue="Gradle.PhyloLib [clean]" />
+      <item itemvalue="Gradle.PhyloLib [build]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PhyloLib [build]" />
+        <item itemvalue="Gradle.PhyloLib [clean]" />
         <item itemvalue="Gradle.Tests in 'phylolib.test'" />
+        <item itemvalue="Gradle.AsymmetricTest.format_Valid_Success" />
         <item itemvalue="Application.Benchmark" />
-        <item itemvalue="Application.DistanceBenchmark" />
-        <item itemvalue="Application.CorrectionBenchmark" />
-        <item itemvalue="Gradle.ArgumentsTest.parse_ValidCommands_NotNull" />
       </list>
     </recent_temporary>
   </component>
@@ -692,6 +722,8 @@
       <workItem from="1600981110676" duration="2000" />
       <workItem from="1601055885100" duration="2860000" />
       <workItem from="1601158346071" duration="668000" />
+      <workItem from="1601853363638" duration="1459000" />
+      <workItem from="1601905990588" duration="13700000" />
     </task>
     <servers />
   </component>
@@ -715,11 +747,11 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="453" y="105" key="#Java/0.0.1792.1120@0.0.1792.1120" timestamp="1601058253123" />
-    <state x="386" y="150" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601158719588">
+    <state x="386" y="150" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601914007320">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="331" y="111" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599569068224" />
-    <state x="386" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1601158719588" />
+    <state x="386" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1601914007320" />
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595691149443" />
     <state x="643" y="334" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1600732106273">
       <screen x="0" y="0" width="1792" height="1120" />
@@ -743,53 +775,57 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595113576824" />
-    <state width="1750" height="318" key="GridCell.Tab.0.bottom" timestamp="1601159227916">
+    <state width="1750" height="318" key="GridCell.Tab.0.bottom" timestamp="1601922922359">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1601159227916" />
+    <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1601922922359" />
     <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629827" />
     <state width="1877" height="348" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
-    <state width="1750" height="318" key="GridCell.Tab.0.center" timestamp="1601159227913">
+    <state width="1750" height="318" key="GridCell.Tab.0.center" timestamp="1601922922358">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1601159227913" />
+    <state width="1750" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1601922922358" />
     <state width="1750" height="318" key="GridCell.Tab.0.center/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629826" />
     <state width="1877" height="348" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
     <state width="1493" height="210" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
-    <state width="1750" height="318" key="GridCell.Tab.0.left" timestamp="1601159227913">
+    <state width="1750" height="318" key="GridCell.Tab.0.left" timestamp="1601922922357">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1601159227913" />
+    <state width="1750" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1601922922357" />
     <state width="1750" height="318" key="GridCell.Tab.0.left/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629826" />
     <state width="1877" height="348" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767436" />
     <state width="1493" height="210" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070843" />
-    <state width="1750" height="318" key="GridCell.Tab.0.right" timestamp="1601159227916">
+    <state width="1750" height="318" key="GridCell.Tab.0.right" timestamp="1601922922359">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1601159227916" />
+    <state width="1750" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1601922922359" />
     <state width="1750" height="318" key="GridCell.Tab.0.right/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629827" />
     <state width="1877" height="348" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
     <state width="1493" height="210" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1595111070844" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595698767437">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1750" height="392" key="GridCell.Tab.1.bottom" timestamp="1601856556783">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
+    <state width="1750" height="392" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1601856556783" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1595698767437">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1750" height="392" key="GridCell.Tab.1.center" timestamp="1601856556782">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
+    <state width="1750" height="392" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1601856556782" />
     <state width="1877" height="348" key="GridCell.Tab.1.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1595698767437">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1750" height="392" key="GridCell.Tab.1.left" timestamp="1601856556782">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
+    <state width="1750" height="392" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1601856556782" />
     <state width="1877" height="348" key="GridCell.Tab.1.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1595698767437">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1750" height="392" key="GridCell.Tab.1.right" timestamp="1601856556782">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
+    <state width="1750" height="392" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1601856556782" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595698767437" />
     <state x="369" y="114" key="SettingsEditor" timestamp="1599747159657">
       <screen x="0" y="0" width="1536" height="824" />
@@ -804,6 +840,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1595690024127" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/data/matrix/AsymmetricTest.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="simpleUML.UMLToolWindowPlugin">
     <General>

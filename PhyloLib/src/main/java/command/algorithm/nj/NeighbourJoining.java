@@ -153,20 +153,18 @@ public abstract class NeighbourJoining extends Algorithm {
 	}
 
 	/**
-	 * Represents a cluster as the amount of elements in it, the distances to other clusters and the total length of the cluster.
+	 * Represents a cluster as the amount of elements in it, the total length of the cluster and the distances to other clusters.
 	 */
 	protected final class Cluster {
 
 		protected final int elements;
-
-		private final Map<Integer, Double> distances;
-
 		private double length;
+		private final Map<Integer, Double> distances;
 
 		private Cluster(int elements) {
 			this.elements = elements;
-			this.distances = new HashMap<>(clusters.size());
 			this.length = 0;
+			this.distances = new HashMap<>(clusters.size());
 		}
 
 	}

@@ -22,12 +22,7 @@ public final class Matrix {
 	public Matrix(boolean symmetric, String[] ids, IDistance distance) {
 		this.symmetric = symmetric;
 		this.ids = ids;
-		if (symmetric) {
-			this.distances = new Double[ids.length][];
-			for (int i = 0; i < ids.length; i++)
-				this.distances[i] = new Double[i];
-		} else
-			this.distances = new Double[ids.length][ids.length];
+		this.distances = new Double[ids.length][];
 		this.distance = distance;
 	}
 
@@ -42,7 +37,7 @@ public final class Matrix {
 		this.symmetric = symmetric;
 		this.ids = ids;
 		this.distances = distances;
-		this.distance = (i, j) -> 0;
+		this.distance = null;
 	}
 
 	public String[] ids() {
@@ -71,6 +66,8 @@ public final class Matrix {
 			i = Math.max(i, j);
 			j = Math.min(k, j);
 		}
+		if (distances[i] == null)
+			distances[i] = new Double[symmetric ? i : distances.length];
 		return distances[i][j] != null ? distances[i][j] : (distances[i][j] = distance.get(i, j));
 	}
 
@@ -82,7 +79,7 @@ public final class Matrix {
 	 * @return a new distance matrix with the phylogenetic distances of this matrix corrected
 	 */
 	public Matrix correct(ICorrection correction) {
-		return distances[1][0] == null
+		return distances[1] == null
 		       ? new Matrix(symmetric, ids, (i, j) -> correction.get(distance.get(i, j)))
 		       : new Matrix(symmetric, ids, Arrays.stream(distances).map(line -> Arrays.stream(line).map(correction::get).toArray(Double[]::new)).toArray(Double[][]::new));
 	}
