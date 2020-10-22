@@ -28,7 +28,7 @@ You can also run multiple commands by concatenating them with a ":" character li
 phylolib algorithm upgma --out=newick:tree.txt : distance hamming --dataset=ml:dataset.txt
 ```
 
-The order in which the commands are executed is dictated by the phylogenetic analysis workflow, making the order in which the commands are provided indifferent.
+The order in which the commands are executed is dictated by the phylogenetic analysis workflow, making the order in which the commands are provided indifferent. Except for commands of the same type, that is, that can be executed multiple times, as is the case of the optimization command, in which case the order of execution between them will be dictated by the order in which they are provided.
 For example, in the execution above, the order in which the commands would be executed would be distance and then algorithm and not algorithm and then distance.
 
 ### JAR
