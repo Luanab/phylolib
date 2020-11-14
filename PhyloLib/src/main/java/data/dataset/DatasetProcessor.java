@@ -13,7 +13,7 @@ import java.util.stream.Stream;
  */
 public abstract class DatasetProcessor implements IReader<Dataset> {
 
-	protected static final String INVALID = "Ignored invalid profile '%s'";
+	private static final String INVALID = "Ignored invalid profile '%s'";
 
 	@Override
 	public Dataset parse(Stream<String> data) {
