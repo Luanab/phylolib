@@ -27,7 +27,10 @@
   <component name="ChangeListManager">
     <list default="true" id="54786b23-0e91-4c21-9105-672316949a5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/dataset/DatasetProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/dataset/DatasetProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cli/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cli/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cli/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cli/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/reflection/Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/reflection/Types.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/Benchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/benchmark/Benchmark.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +95,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last.edited.regexp" value="Sample Text" />
@@ -100,7 +104,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -119,7 +123,7 @@
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PhyloLib [build]">
+  <component name="RunManager" selected="Gradle.PhyloLib [clean]">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -525,12 +529,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AsymmetricTest.format_Valid_Success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FileTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;data.matrix.AsymmetricTest.format_Valid_Success&quot;" />
+        <option name="scriptParameters" value="--tests &quot;data.FileTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -621,67 +625,67 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.StudierKeppler Csepticum" />
-      <item itemvalue="Application.SaitouNei Csepticum" />
-      <item itemvalue="Application.GoeBURST Csepticum" />
-      <item itemvalue="Application.Edmonds Csepticum" />
-      <item itemvalue="Application.UPGMA Csepticum" />
-      <item itemvalue="Application.WPGMA Csepticum" />
-      <item itemvalue="Application.SL Csepticum" />
-      <item itemvalue="Application.CL Csepticum" />
-      <item itemvalue="Application.Help" />
-      <item itemvalue="Application.Distance" />
-      <item itemvalue="Application.Correction" />
+      <item itemvalue="Application.AlgorithmBenchmark" />
       <item itemvalue="Application.Algorithm" />
-      <item itemvalue="Application.Optimization" />
       <item itemvalue="Application.All" />
-      <item itemvalue="Application.StudierKeppler Kseptempunctata" />
-      <item itemvalue="Application.SaitouNei Kseptempunctata" />
-      <item itemvalue="Application.GoeBURST Kseptempunctata" />
-      <item itemvalue="Application.Edmonds Kseptempunctata" />
-      <item itemvalue="Application.UPGMA Kseptempunctata" />
-      <item itemvalue="Application.WPGMA Kseptempunctata" />
-      <item itemvalue="Application.SL Kseptempunctata" />
+      <item itemvalue="Application.CL Csepticum" />
       <item itemvalue="Application.CL Kseptempunctata" />
-      <item itemvalue="Application.StudierKeppler Mflocculare" />
-      <item itemvalue="Application.SaitouNei Mflocculare" />
-      <item itemvalue="Application.GoeBURST Mflocculare" />
-      <item itemvalue="Application.Edmonds Mflocculare" />
-      <item itemvalue="Application.UPGMA Mflocculare" />
-      <item itemvalue="Application.WPGMA Mflocculare" />
-      <item itemvalue="Application.SL Mflocculare" />
       <item itemvalue="Application.CL Mflocculare" />
-      <item itemvalue="Application.Hamming" />
-      <item itemvalue="Application.Hamming + GoeBURST" />
+      <item itemvalue="Application.CL" />
+      <item itemvalue="Application.Correction" />
+      <item itemvalue="Application.Distance" />
+      <item itemvalue="Application.Edmonds Csepticum" />
+      <item itemvalue="Application.Edmonds Kseptempunctata" />
+      <item itemvalue="Application.Edmonds Mflocculare" />
+      <item itemvalue="Application.GoeBURST Csepticum" />
+      <item itemvalue="Application.GoeBURST Kseptempunctata" />
+      <item itemvalue="Application.GoeBURST Mflocculare" />
+      <item itemvalue="Application.Hamming + CL" />
       <item itemvalue="Application.Hamming + Edmonds" />
+      <item itemvalue="Application.Hamming + GoeBURST" />
+      <item itemvalue="Application.Hamming + SL" />
+      <item itemvalue="Application.Hamming + SaitouNei Wikipedia" />
+      <item itemvalue="Application.Hamming + SaitouNei" />
+      <item itemvalue="Application.Hamming + StudierKeppler Wikipedia" />
+      <item itemvalue="Application.Hamming + StudierKeppler" />
       <item itemvalue="Application.Hamming + UPGMA" />
       <item itemvalue="Application.Hamming + WPGMA" />
-      <item itemvalue="Application.Hamming + SL" />
-      <item itemvalue="Application.Hamming + CL" />
-      <item itemvalue="Application.Hamming + SaitouNei" />
-      <item itemvalue="Application.Hamming + StudierKeppler" />
-      <item itemvalue="Application.Hamming + StudierKeppler Wikipedia" />
-      <item itemvalue="Application.Hamming + SaitouNei Wikipedia" />
+      <item itemvalue="Application.Hamming" />
+      <item itemvalue="Application.Help" />
+      <item itemvalue="Application.Optimization" />
+      <item itemvalue="Application.SL Csepticum" />
+      <item itemvalue="Application.SL Kseptempunctata" />
+      <item itemvalue="Application.SL Mflocculare" />
+      <item itemvalue="Application.SL" />
+      <item itemvalue="Application.SaitouNei Csepticum" />
+      <item itemvalue="Application.SaitouNei Kseptempunctata" />
+      <item itemvalue="Application.SaitouNei Mflocculare" />
+      <item itemvalue="Application.StudierKeppler Csepticum" />
+      <item itemvalue="Application.StudierKeppler Kseptempunctata" />
+      <item itemvalue="Application.StudierKeppler Mflocculare" />
       <item itemvalue="Application.StudierKeppler" />
+      <item itemvalue="Application.UPGMA Csepticum" />
+      <item itemvalue="Application.UPGMA Kseptempunctata" />
+      <item itemvalue="Application.UPGMA Mflocculare" />
       <item itemvalue="Application.UPGMA" />
+      <item itemvalue="Application.WPGMA Csepticum" />
+      <item itemvalue="Application.WPGMA Kseptempunctata" />
+      <item itemvalue="Application.WPGMA Mflocculare" />
       <item itemvalue="Application.WPGMA" />
       <item itemvalue="Application.WPGMC" />
-      <item itemvalue="Application.SL" />
-      <item itemvalue="Application.CL" />
-      <item itemvalue="Application.AlgorithmBenchmark" />
-      <item itemvalue="Gradle.Tests in 'phylolib.test'" />
-      <item itemvalue="Gradle.AsymmetricTest.format_Valid_Success" />
-      <item itemvalue="Gradle.PhyloLib [clean]" />
       <item itemvalue="Gradle.PhyloLib [build]" />
+      <item itemvalue="Gradle.PhyloLib [clean]" />
       <item itemvalue="Gradle.PhyloLib [jar]" />
+      <item itemvalue="Gradle.Tests in 'phylolib.test'" />
+      <item itemvalue="Gradle.FileTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PhyloLib [jar]" />
-        <item itemvalue="Gradle.PhyloLib [build]" />
-        <item itemvalue="Gradle.PhyloLib [clean]" />
         <item itemvalue="Gradle.Tests in 'phylolib.test'" />
-        <item itemvalue="Gradle.AsymmetricTest.format_Valid_Success" />
+        <item itemvalue="Gradle.FileTest" />
+        <item itemvalue="Gradle.PhyloLib [jar]" />
+        <item itemvalue="Gradle.PhyloLib [clean]" />
+        <item itemvalue="Gradle.PhyloLib [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -720,7 +724,11 @@
       <workItem from="1602620508195" duration="45000" />
       <workItem from="1603225064721" duration="1848000" />
       <workItem from="1603285121955" duration="326000" />
-      <workItem from="1605376048802" duration="5269000" />
+      <workItem from="1605376048802" duration="11133000" />
+      <workItem from="1605480055496" duration="1049000" />
+      <workItem from="1605533354490" duration="18000" />
+      <workItem from="1605651247770" duration="1254000" />
+      <workItem from="1605977886653" duration="1020000" />
     </task>
     <servers />
   </component>
@@ -757,55 +765,59 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="644" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1601069863281" />
-    <state x="631" y="150" key="Diagram.Print.Preview.Dialog" timestamp="1605388801031">
+    <state x="640" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605978995955">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="631" y="150" key="Diagram.Print.Preview.Dialog/0.0.1792.1120@0.0.1792.1120" timestamp="1605388801031" />
-    <state width="1750" height="424" key="GridCell.Tab.0.bottom" timestamp="1605388099524">
+    <state x="640" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1792.1120@0.0.1792.1120" timestamp="1605978995955" />
+    <state x="631" y="150" key="Diagram.Print.Preview.Dialog" timestamp="1605396005497">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="631" y="150" key="Diagram.Print.Preview.Dialog/0.0.1792.1120@0.0.1792.1120" timestamp="1605396005497" />
+    <state width="1750" height="424" key="GridCell.Tab.0.bottom" timestamp="1605978996023">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1605388099524" />
+    <state width="1750" height="424" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1605978996023" />
     <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629827" />
-    <state width="1750" height="424" key="GridCell.Tab.0.center" timestamp="1605388099523">
+    <state width="1750" height="424" key="GridCell.Tab.0.center" timestamp="1605978996022">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1605388099523" />
+    <state width="1750" height="424" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1605978996022" />
     <state width="1750" height="318" key="GridCell.Tab.0.center/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629826" />
-    <state width="1750" height="424" key="GridCell.Tab.0.left" timestamp="1605388099522">
+    <state width="1750" height="424" key="GridCell.Tab.0.left" timestamp="1605978996022">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1605388099522" />
+    <state width="1750" height="424" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1605978996021" />
     <state width="1750" height="318" key="GridCell.Tab.0.left/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629826" />
-    <state width="1750" height="424" key="GridCell.Tab.0.right" timestamp="1605388099523">
+    <state width="1750" height="424" key="GridCell.Tab.0.right" timestamp="1605978996023">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1605388099523" />
+    <state width="1750" height="424" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1605978996023" />
     <state width="1750" height="318" key="GridCell.Tab.0.right/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629827" />
-    <state width="1750" height="392" key="GridCell.Tab.1.bottom" timestamp="1601856556783">
+    <state width="1750" height="392" key="GridCell.Tab.1.bottom" timestamp="1605978816254">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1601856556783" />
-    <state width="1750" height="392" key="GridCell.Tab.1.center" timestamp="1601856556782">
+    <state width="1750" height="392" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1605978816254" />
+    <state width="1750" height="392" key="GridCell.Tab.1.center" timestamp="1605978816253">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1601856556782" />
-    <state width="1750" height="392" key="GridCell.Tab.1.left" timestamp="1601856556782">
+    <state width="1750" height="392" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1605978816253" />
+    <state width="1750" height="392" key="GridCell.Tab.1.left" timestamp="1605978816253">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1601856556782" />
-    <state width="1750" height="392" key="GridCell.Tab.1.right" timestamp="1601856556782">
+    <state width="1750" height="392" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1605978816253" />
+    <state width="1750" height="392" key="GridCell.Tab.1.right" timestamp="1605978816253">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1601856556782" />
-    <state x="431" y="155" key="SettingsEditor" timestamp="1605381032291">
+    <state width="1750" height="392" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1605978816253" />
+    <state x="431" y="155" key="SettingsEditor" timestamp="1605391822699">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="369" y="114" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599747159657" />
-    <state x="431" y="155" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1605381032291" />
+    <state x="431" y="155" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1605391822699" />
     <state x="523" y="203" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600718538251">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -818,6 +830,11 @@
           <url>file://$PROJECT_DIR$/src/test/java/data/matrix/AsymmetricTest.java</url>
           <line>54</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/data/FileTest.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

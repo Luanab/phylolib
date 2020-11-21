@@ -30,7 +30,7 @@ public class Benchmark {
 	private static final File[] MATRICES = resources("matrices");
 
 	public static void main(String[] args) throws Exception {
-		for (Map.Entry<String, Constructor<?>> command : Types.get("command.algorithm", Algorithm.class).entrySet()) {
+		for (Map.Entry<String, Constructor<?>> command : Types.get(Algorithm.class).entrySet()) {
 			System.out.println(command.getKey() + ':');
 			System.out.println("\tlazy:");
 			for (File file : DATASETS) {

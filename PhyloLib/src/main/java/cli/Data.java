@@ -49,7 +49,7 @@ public enum Data {
 	 * @return the constructor of the specified processor type for this data type
 	 */
 	public Constructor<?> type(String name) {
-		return (types == null ? types = Types.get("data." + toString(), processor) : types).get(name);
+		return (types == null ? types = Types.get(processor) : types).get(name);
 	}
 
 }

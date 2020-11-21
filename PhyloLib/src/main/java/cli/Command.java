@@ -68,7 +68,7 @@ public enum Command {
 	 * @return the constructor of the specified type for this command
 	 */
 	public Constructor<?> type(String name) {
-		return (types == null ? types = Types.get("command." + name().toLowerCase(), command) : types).get(name);
+		return (types == null ? types = Types.get(command) : types).get(name);
 	}
 
 }
