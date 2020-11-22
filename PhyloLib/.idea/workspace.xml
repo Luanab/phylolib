@@ -27,10 +27,9 @@
   <component name="ChangeListManager">
     <list default="true" id="54786b23-0e91-4c21-9105-672316949a5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cli/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cli/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cli/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cli/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/reflection/Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/reflection/Types.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/Benchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/benchmark/Benchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/matrix/Asymmetric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/matrix/Asymmetric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/matrix/MatrixProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/matrix/MatrixProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/matrix/Symmetric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/matrix/Symmetric.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,9 +103,18 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources/datasets" />
+      <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="data.matrix" />
+      <recent name="command.algorithm.goeburst" />
+      <recent name="benchmark" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources/matrices" />
       <recent name="$PROJECT_DIR$/src/test/java/benchmark" />
@@ -114,16 +122,8 @@
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\java" />
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="command.algorithm.goeburst" />
-      <recent name="benchmark" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test/resources/datasets" />
-      <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
-    </key>
   </component>
-  <component name="RunManager" selected="Gradle.PhyloLib [clean]">
+  <component name="RunManager" selected="Gradle.Tests in 'phylolib.test'">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -625,21 +625,37 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.AlgorithmBenchmark" />
+      <item itemvalue="Application.CL Csepticum" />
+      <item itemvalue="Application.Edmonds Csepticum" />
+      <item itemvalue="Application.GoeBURST Csepticum" />
+      <item itemvalue="Application.SL Csepticum" />
+      <item itemvalue="Application.SaitouNei Csepticum" />
+      <item itemvalue="Application.StudierKeppler Csepticum" />
+      <item itemvalue="Application.UPGMA Csepticum" />
+      <item itemvalue="Application.WPGMA Csepticum" />
       <item itemvalue="Application.Algorithm" />
       <item itemvalue="Application.All" />
-      <item itemvalue="Application.CL Csepticum" />
-      <item itemvalue="Application.CL Kseptempunctata" />
-      <item itemvalue="Application.CL Mflocculare" />
-      <item itemvalue="Application.CL" />
       <item itemvalue="Application.Correction" />
       <item itemvalue="Application.Distance" />
-      <item itemvalue="Application.Edmonds Csepticum" />
+      <item itemvalue="Application.Help" />
+      <item itemvalue="Application.Optimization" />
+      <item itemvalue="Application.CL Kseptempunctata" />
       <item itemvalue="Application.Edmonds Kseptempunctata" />
-      <item itemvalue="Application.Edmonds Mflocculare" />
-      <item itemvalue="Application.GoeBURST Csepticum" />
       <item itemvalue="Application.GoeBURST Kseptempunctata" />
+      <item itemvalue="Application.SL Kseptempunctata" />
+      <item itemvalue="Application.SaitouNei Kseptempunctata" />
+      <item itemvalue="Application.StudierKeppler Kseptempunctata" />
+      <item itemvalue="Application.UPGMA Kseptempunctata" />
+      <item itemvalue="Application.WPGMA Kseptempunctata" />
+      <item itemvalue="Application.CL Mflocculare" />
+      <item itemvalue="Application.Edmonds Mflocculare" />
       <item itemvalue="Application.GoeBURST Mflocculare" />
+      <item itemvalue="Application.SL Mflocculare" />
+      <item itemvalue="Application.SaitouNei Mflocculare" />
+      <item itemvalue="Application.StudierKeppler Mflocculare" />
+      <item itemvalue="Application.UPGMA Mflocculare" />
+      <item itemvalue="Application.WPGMA Mflocculare" />
+      <item itemvalue="Application.CL" />
       <item itemvalue="Application.Hamming + CL" />
       <item itemvalue="Application.Hamming + Edmonds" />
       <item itemvalue="Application.Hamming + GoeBURST" />
@@ -651,28 +667,12 @@
       <item itemvalue="Application.Hamming + UPGMA" />
       <item itemvalue="Application.Hamming + WPGMA" />
       <item itemvalue="Application.Hamming" />
-      <item itemvalue="Application.Help" />
-      <item itemvalue="Application.Optimization" />
-      <item itemvalue="Application.SL Csepticum" />
-      <item itemvalue="Application.SL Kseptempunctata" />
-      <item itemvalue="Application.SL Mflocculare" />
       <item itemvalue="Application.SL" />
-      <item itemvalue="Application.SaitouNei Csepticum" />
-      <item itemvalue="Application.SaitouNei Kseptempunctata" />
-      <item itemvalue="Application.SaitouNei Mflocculare" />
-      <item itemvalue="Application.StudierKeppler Csepticum" />
-      <item itemvalue="Application.StudierKeppler Kseptempunctata" />
-      <item itemvalue="Application.StudierKeppler Mflocculare" />
       <item itemvalue="Application.StudierKeppler" />
-      <item itemvalue="Application.UPGMA Csepticum" />
-      <item itemvalue="Application.UPGMA Kseptempunctata" />
-      <item itemvalue="Application.UPGMA Mflocculare" />
       <item itemvalue="Application.UPGMA" />
-      <item itemvalue="Application.WPGMA Csepticum" />
-      <item itemvalue="Application.WPGMA Kseptempunctata" />
-      <item itemvalue="Application.WPGMA Mflocculare" />
       <item itemvalue="Application.WPGMA" />
       <item itemvalue="Application.WPGMC" />
+      <item itemvalue="Application.AlgorithmBenchmark" />
       <item itemvalue="Gradle.PhyloLib [build]" />
       <item itemvalue="Gradle.PhyloLib [clean]" />
       <item itemvalue="Gradle.PhyloLib [jar]" />
@@ -728,7 +728,8 @@
       <workItem from="1605480055496" duration="1049000" />
       <workItem from="1605533354490" duration="18000" />
       <workItem from="1605651247770" duration="1254000" />
-      <workItem from="1605977886653" duration="1020000" />
+      <workItem from="1605977886653" duration="2834000" />
+      <workItem from="1606069097657" duration="1503000" />
     </task>
     <servers />
   </component>
@@ -765,59 +766,59 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="644" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1601069863281" />
-    <state x="640" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605978995955">
+    <state x="640" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605979195205">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="640" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1792.1120@0.0.1792.1120" timestamp="1605978995955" />
-    <state x="631" y="150" key="Diagram.Print.Preview.Dialog" timestamp="1605396005497">
+    <state x="640" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1792.1120@0.0.1792.1120" timestamp="1605979195205" />
+    <state x="631" y="150" key="Diagram.Print.Preview.Dialog" timestamp="1605979577516">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="631" y="150" key="Diagram.Print.Preview.Dialog/0.0.1792.1120@0.0.1792.1120" timestamp="1605396005497" />
-    <state width="1750" height="424" key="GridCell.Tab.0.bottom" timestamp="1605978996023">
+    <state x="631" y="150" key="Diagram.Print.Preview.Dialog/0.0.1792.1120@0.0.1792.1120" timestamp="1605979577516" />
+    <state width="1750" height="392" key="GridCell.Tab.0.bottom" timestamp="1605982670688">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1605978996023" />
+    <state width="1750" height="392" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1605982670688" />
     <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629827" />
-    <state width="1750" height="424" key="GridCell.Tab.0.center" timestamp="1605978996022">
+    <state width="1750" height="392" key="GridCell.Tab.0.center" timestamp="1605982670687">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1605978996022" />
+    <state width="1750" height="392" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1605982670687" />
     <state width="1750" height="318" key="GridCell.Tab.0.center/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629826" />
-    <state width="1750" height="424" key="GridCell.Tab.0.left" timestamp="1605978996022">
+    <state width="1750" height="392" key="GridCell.Tab.0.left" timestamp="1605982670687">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1605978996021" />
+    <state width="1750" height="392" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1605982670687" />
     <state width="1750" height="318" key="GridCell.Tab.0.left/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629826" />
-    <state width="1750" height="424" key="GridCell.Tab.0.right" timestamp="1605978996023">
+    <state width="1750" height="392" key="GridCell.Tab.0.right" timestamp="1605982670688">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1605978996023" />
+    <state width="1750" height="392" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1605982670688" />
     <state width="1750" height="318" key="GridCell.Tab.0.right/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629827" />
-    <state width="1750" height="392" key="GridCell.Tab.1.bottom" timestamp="1605978816254">
+    <state width="1750" height="392" key="GridCell.Tab.1.bottom" timestamp="1605982670690">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1605978816254" />
-    <state width="1750" height="392" key="GridCell.Tab.1.center" timestamp="1605978816253">
+    <state width="1750" height="392" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1605982670690" />
+    <state width="1750" height="392" key="GridCell.Tab.1.center" timestamp="1605982670689">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1605978816253" />
-    <state width="1750" height="392" key="GridCell.Tab.1.left" timestamp="1605978816253">
+    <state width="1750" height="392" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1605982670689" />
+    <state width="1750" height="392" key="GridCell.Tab.1.left" timestamp="1605982670688">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1605978816253" />
-    <state width="1750" height="392" key="GridCell.Tab.1.right" timestamp="1605978816253">
+    <state width="1750" height="392" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1605982670688" />
+    <state width="1750" height="392" key="GridCell.Tab.1.right" timestamp="1605982670689">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1605978816253" />
-    <state x="431" y="155" key="SettingsEditor" timestamp="1605391822699">
+    <state width="1750" height="392" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1605982670689" />
+    <state x="431" y="155" key="SettingsEditor" timestamp="1605980218745">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="369" y="114" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599747159657" />
-    <state x="431" y="155" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1605391822699" />
+    <state x="431" y="155" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1605980218745" />
     <state x="523" y="203" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600718538251">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
