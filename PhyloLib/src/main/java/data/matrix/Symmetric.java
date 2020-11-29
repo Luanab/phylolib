@@ -1,9 +1,9 @@
 package data.matrix;
 
 /**
- * Responsible for parsing and formatting {@link Matrix distance matrices} from and to Strings in a symmetric format.
+ * Responsible for parsing {@link Matrix distance matrices} from and to Strings in a symmetric format.
  */
-public final class Symmetric extends SymmetryProcessor {
+public final class Symmetric extends SymmetryParser {
 
 	@Override
 	protected boolean symmetric() {

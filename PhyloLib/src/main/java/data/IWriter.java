@@ -50,11 +50,11 @@ public interface IWriter<T> {
 	}
 
 	/**
-	 * Formats the output data into a String.
+	 * Parses the output data into a String.
 	 *
-	 * @param data the output data to format
+	 * @param data the output data to parse
 	 *
-	 * @return the output data formatted into a String
+	 * @return the output data parsed into a String
 	 */
 	String parse(T data);
 

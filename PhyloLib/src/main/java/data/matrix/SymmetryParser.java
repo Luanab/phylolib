@@ -7,9 +7,9 @@ import java.util.Iterator;
 import java.util.stream.Stream;
 
 /**
- * Responsible for parsing and formatting {@link Matrix distance matrices} from and to Strings.
+ * Responsible for parsing {@link Matrix distance matrices} from and to Strings.
  */
-public abstract class SymmetryProcessor extends MatrixProcessor {
+public abstract class SymmetryParser extends MatrixParser {
 
 	/**
 	 * Checks the symmetry of this distance matrix processor.

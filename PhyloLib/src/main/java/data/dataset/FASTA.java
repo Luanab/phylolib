@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * Responsible for parsing {@link Dataset phylogenetic datasets} from Strings in FASTA format.
  */
-public final class FASTA extends DatasetProcessor {
+public final class FASTA extends DatasetParser {
 
 	private String id;
 

@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * Responsible for parsing {@link Dataset phylogenetic datasets} from Strings in SNP format.
  */
-public final class SNP extends DatasetProcessor {
+public final class SNP extends DatasetParser {
 
 	@Override
 	public Profile parse(Iterator<String> iterator) {

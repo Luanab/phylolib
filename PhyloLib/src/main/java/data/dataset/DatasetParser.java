@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 /**
  * Responsible for parsing {@link Dataset phylogenetic datasets} from Strings.
  */
-public abstract class DatasetProcessor implements IReader<Dataset> {
+public abstract class DatasetParser implements IReader<Dataset> {
 
 	private static final String INVALID = "Ignored invalid profile '%s'";
 

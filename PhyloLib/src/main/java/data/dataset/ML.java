@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 /**
  * Responsible for parsing {@link Dataset phylogenetic datasets} from Strings in MLST or MLVA format.
  */
-public final class ML extends DatasetProcessor {
+public final class ML extends DatasetParser {
 
 	@Override
 	public Profile parse(Iterator<String> iterator) {

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 /**
- * Responsible for parsing and formatting {@link Tree phylogenetic trees} from and to Strings in Nexus format.
+ * Responsible for parsing {@link Tree phylogenetic trees} from and to Strings in Nexus format.
  */
 public final class Nexus extends Newick {
 

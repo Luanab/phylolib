@@ -27,6 +27,225 @@
   <component name="ChangeListManager">
     <list default="true" id="54786b23-0e91-4c21-9105-672316949a5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cli/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cli/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/IWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/IWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/dataset/DatasetProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/dataset/DatasetParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/dataset/FASTA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/dataset/FASTA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/dataset/ML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/dataset/ML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/dataset/SNP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/dataset/SNP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/matrix/Asymmetric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/matrix/Asymmetric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/matrix/MatrixProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/matrix/MatrixParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/matrix/Symmetric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/matrix/Symmetric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/matrix/SymmetryProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/matrix/SymmetryParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/tree/Newick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/tree/Newick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/tree/Nexus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/tree/Nexus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/tree/TreeProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/tree/TreeParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/class-use/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/class-use/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/Arguments.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/Arguments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/Command.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/Command.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/Data.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/Data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/Format.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/Format.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/Option.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/Option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/Options.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/Options.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/Parameters.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/Parameters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/class-use/Arguments.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/class-use/Arguments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/class-use/Command.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/class-use/Command.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/class-use/Data.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/class-use/Data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/class-use/Format.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/class-use/Format.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/class-use/Option.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/class-use/Option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/class-use/Options.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/class-use/Options.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/class-use/Parameters.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/class-use/Parameters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/cli/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/cli/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/ICommand.IGetter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/ICommand.IGetter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/ICommand.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/ICommand.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/Algorithm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/Algorithm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/class-use/Algorithm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/class-use/Algorithm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/Edmonds.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/Edmonds.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/class-use/Edmonds.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/class-use/Edmonds.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/CL.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/CL.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/GloballyClosestPairs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/GloballyClosestPairs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/SL.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/SL.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/UPGMA.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/UPGMA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/UPGMC.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/UPGMC.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/WPGMA.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/WPGMA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/WPGMC.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/WPGMC.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/CL.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/CL.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/GloballyClosestPairs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/GloballyClosestPairs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/SL.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/SL.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/UPGMA.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/UPGMA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/UPGMC.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/UPGMC.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/WPGMA.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/WPGMA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/WPGMC.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/WPGMC.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/gcp/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/GoeBURST.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/GoeBURST.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/class-use/GoeBURST.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/class-use/GoeBURST.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/NeighbourJoining.Cluster.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/nj/NeighbourJoining.Cluster.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/NeighbourJoining.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/nj/NeighbourJoining.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/SaitouNei.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/nj/SaitouNei.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/StudierKeppler.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/nj/StudierKeppler.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/UNJ.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/nj/UNJ.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/NeighbourJoining.Cluster.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/NeighbourJoining.Cluster.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/NeighbourJoining.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/NeighbourJoining.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/SaitouNei.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/SaitouNei.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/StudierKeppler.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/StudierKeppler.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/UNJ.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/UNJ.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/nj/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/nj/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/nj/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/algorithm/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/class-use/ICommand.IGetter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/class-use/ICommand.IGetter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/class-use/ICommand.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/class-use/ICommand.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/correction/Correction.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/correction/Correction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/correction/JukesCantor.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/correction/JukesCantor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/correction/class-use/Correction.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/correction/class-use/Correction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/correction/class-use/JukesCantor.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/correction/class-use/JukesCantor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/correction/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/correction/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/correction/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/correction/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/correction/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/correction/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/distance/Distance.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/distance/Distance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/distance/GrapeTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/distance/GrapeTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/distance/Hamming.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/distance/Hamming.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/distance/Kimura.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/distance/Kimura.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/distance/class-use/Distance.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/distance/class-use/Distance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/distance/class-use/GrapeTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/distance/class-use/GrapeTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/distance/class-use/Hamming.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/distance/class-use/Hamming.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/distance/class-use/Kimura.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/distance/class-use/Kimura.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/distance/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/distance/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/distance/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/distance/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/distance/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/distance/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/optimization/LBR.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/optimization/LBR.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/optimization/Optimization.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/optimization/Optimization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/optimization/class-use/LBR.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/optimization/class-use/LBR.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/optimization/class-use/Optimization.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/optimization/class-use/Optimization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/optimization/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/optimization/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/optimization/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/optimization/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/optimization/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/optimization/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/command/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/command/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/Context.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/Context.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/File.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/File.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/IReader.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/IReader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/IWriter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/IWriter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/class-use/Context.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/class-use/Context.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/class-use/File.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/class-use/File.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/class-use/IReader.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/class-use/IReader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/class-use/IWriter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/class-use/IWriter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/Dataset.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/dataset/Dataset.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/FASTA.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/dataset/FASTA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/ML.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/dataset/ML.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/dataset/Profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/SNP.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/dataset/SNP.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/class-use/Dataset.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/dataset/class-use/Dataset.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/class-use/FASTA.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/dataset/class-use/FASTA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/class-use/ML.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/dataset/class-use/ML.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/class-use/Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/dataset/class-use/Profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/class-use/SNP.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/dataset/class-use/SNP.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/dataset/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/dataset/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/dataset/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/Asymmetric.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/matrix/Asymmetric.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/Matrix.ICorrection.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/matrix/Matrix.ICorrection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/Matrix.IDistance.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/matrix/Matrix.IDistance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/Matrix.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/matrix/Matrix.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/Symmetric.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/matrix/Symmetric.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/class-use/Asymmetric.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/matrix/class-use/Asymmetric.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/class-use/Matrix.ICorrection.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/matrix/class-use/Matrix.ICorrection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/class-use/Matrix.IDistance.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/matrix/class-use/Matrix.IDistance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/class-use/Matrix.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/matrix/class-use/Matrix.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/class-use/Symmetric.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/matrix/class-use/Symmetric.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/matrix/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/matrix/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/matrix/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/tree/Edge.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/tree/Edge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/tree/Newick.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/tree/Newick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/tree/Nexus.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/tree/Nexus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/tree/Tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/tree/Tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/tree/class-use/Edge.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/tree/class-use/Edge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/tree/class-use/Newick.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/tree/class-use/Newick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/tree/class-use/Nexus.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/tree/class-use/Nexus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/tree/class-use/Tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/tree/class-use/Tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/tree/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/tree/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/tree/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/tree/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/data/tree/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/data/tree/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/deprecated-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/ArgumentException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/ArgumentException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/InvalidCommandException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/InvalidCommandException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/InvalidTypeException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/InvalidTypeException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/MissingInputException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/MissingInputException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/MissingTypeException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/MissingTypeException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/NoCommandException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/NoCommandException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/RepeatedCommandException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/RepeatedCommandException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/class-use/ArgumentException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/class-use/ArgumentException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/class-use/InvalidCommandException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/class-use/InvalidCommandException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/class-use/InvalidTypeException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/class-use/InvalidTypeException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/class-use/MissingInputException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/class-use/MissingInputException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/class-use/MissingTypeException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/class-use/MissingTypeException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/class-use/NoCommandException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/class-use/NoCommandException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/class-use/RepeatedCommandException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/class-use/RepeatedCommandException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/exception/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/exception/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-13.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-14.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-15.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-16.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-17.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-18.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-19.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-19.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-20.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-20.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-21.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-21.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-22.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-22.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/logging/Log.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/logging/Log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/logging/class-use/Log.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/logging/class-use/Log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/logging/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/logging/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/logging/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/logging/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/logging/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/logging/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/overview-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/reflection/Types.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/reflection/Types.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/reflection/class-use/Types.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/reflection/class-use/Types.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/reflection/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/reflection/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/reflection/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/reflection/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/reflection/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/reflection/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/serialized-form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,8 +322,11 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test/resources/datasets" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources/matrices" />
+      <recent name="$PROJECT_DIR$/src/test/java/benchmark" />
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+      <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\java" />
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -112,11 +334,8 @@
       <recent name="command.algorithm.goeburst" />
       <recent name="benchmark" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test/resources/matrices" />
-      <recent name="$PROJECT_DIR$/src/test/java/benchmark" />
-      <recent name="$PROJECT_DIR$/src/test/resources" />
-      <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\java" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources/datasets" />
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
     </key>
   </component>
@@ -729,6 +948,7 @@
       <workItem from="1606069097657" duration="1923000" />
       <workItem from="1606075418797" duration="2733000" />
       <workItem from="1606512281842" duration="59000" />
+      <workItem from="1606670185647" duration="1110000" />
     </task>
     <servers />
   </component>
@@ -765,41 +985,49 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="643" y="334" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1600732106273" />
+    <state x="656" y="436" width="479" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1606670611032">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="656" y="436" width="479" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1792.1120@0.0.1792.1120" timestamp="1606670611032" />
+    <state x="313" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606670968831">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="313" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606670968831" />
     <state x="644" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601069863281">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="644" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1601069863281" />
-    <state x="640" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1606091351070">
+    <state x="640" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1606671262965">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="640" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1792.1120@0.0.1792.1120" timestamp="1606091351070" />
-    <state x="631" y="150" key="Diagram.Print.Preview.Dialog" timestamp="1606075578177">
+    <state x="640" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1792.1120@0.0.1792.1120" timestamp="1606671262965" />
+    <state x="631" y="150" key="Diagram.Print.Preview.Dialog" timestamp="1606670848868">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="631" y="150" key="Diagram.Print.Preview.Dialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606075578177" />
-    <state width="1750" height="424" key="GridCell.Tab.0.bottom" timestamp="1606092089656">
+    <state x="631" y="150" key="Diagram.Print.Preview.Dialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606670848868" />
+    <state width="1750" height="424" key="GridCell.Tab.0.bottom" timestamp="1606671263008">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1606092089656" />
+    <state width="1750" height="424" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1606671263008" />
     <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629827" />
-    <state width="1750" height="424" key="GridCell.Tab.0.center" timestamp="1606092089655">
+    <state width="1750" height="424" key="GridCell.Tab.0.center" timestamp="1606671263007">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1606092089655" />
+    <state width="1750" height="424" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1606671263007" />
     <state width="1750" height="318" key="GridCell.Tab.0.center/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629826" />
-    <state width="1750" height="424" key="GridCell.Tab.0.left" timestamp="1606092089655">
+    <state width="1750" height="424" key="GridCell.Tab.0.left" timestamp="1606671263006">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1606092089655" />
+    <state width="1750" height="424" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1606671263006" />
     <state width="1750" height="318" key="GridCell.Tab.0.left/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629826" />
-    <state width="1750" height="424" key="GridCell.Tab.0.right" timestamp="1606092089656">
+    <state width="1750" height="424" key="GridCell.Tab.0.right" timestamp="1606671263007">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1606092089656" />
+    <state width="1750" height="424" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1606671263007" />
     <state width="1750" height="318" key="GridCell.Tab.0.right/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629827" />
     <state width="1750" height="392" key="GridCell.Tab.1.bottom" timestamp="1605982670690">
       <screen x="0" y="0" width="1792" height="1120" />
@@ -826,6 +1054,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="523" y="203" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1600718538251" />
+    <state x="594" y="192" width="604" height="735" key="find.popup" timestamp="1606671256900">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="594" y="192" width="604" height="735" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1606671256900" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

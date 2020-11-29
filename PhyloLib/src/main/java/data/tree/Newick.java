@@ -10,9 +10,9 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * Responsible for parsing and formatting {@link Tree phylogenetic trees} from and to Strings in Newick format.
+ * Responsible for parsing {@link Tree phylogenetic trees} from and to Strings in Newick format.
  */
-public class Newick extends TreeProcessor {
+public class Newick extends TreeParser {
 
 	@Override
 	public Tree parse(Stream<String> data) {
@@ -62,14 +62,14 @@ public class Newick extends TreeProcessor {
 		List<Integer> visited = new ArrayList<>();
 		while (!edges.isEmpty()) {
 			int root = edges.stream().map(Edge::from).filter(i -> tree.edges().noneMatch(edge -> edge.to() == i)).findFirst().orElseThrow();
-			format(edges, tree.ids(), root, data, visited);
+			parse(edges, tree.ids(), root, data, visited);
 			data.append(root >= tree.ids().length ? "_" : tree.ids()[root]).append(";");
 		}
 		IntStream.range(0, tree.ids().length).filter(i -> !visited.contains(i)).forEach(i -> data.append(tree.ids()[i]).append(";"));
 		return data.toString();
 	}
 
-	private void format(List<Edge> tree, String[] ids, int root, StringBuilder data, List<Integer> visited) {
+	private void parse(List<Edge> tree, String[] ids, int root, StringBuilder data, List<Integer> visited) {
 		visited.add(root);
 		List<Edge> edges = tree.stream().filter(e -> e.from() == root || e.to() == root).collect(Collectors.toList());
 		tree.removeAll(edges);
@@ -78,7 +78,7 @@ public class Newick extends TreeProcessor {
 			for (Edge edge : edges) {
 				if (edge.to() == root)
 					edge = new Edge(edge.to(), edge.from(), edge.distance());
-				format(tree, ids, edge.to(), data, visited);
+				parse(tree, ids, edge.to(), data, visited);
 				data.append(edge.to() >= ids.length ? "_" : ids[edge.to()]).append(':').append(edge.distance()).append(',');
 			}
 			data.replace(data.length() - 1, data.length(), ")");

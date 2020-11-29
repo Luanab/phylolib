@@ -1,8 +1,8 @@
 package cli;
 
-import data.dataset.DatasetProcessor;
-import data.matrix.MatrixProcessor;
-import data.tree.TreeProcessor;
+import data.dataset.DatasetParser;
+import data.matrix.MatrixParser;
+import data.tree.TreeParser;
 import reflection.Types;
 
 import java.lang.reflect.Constructor;
@@ -13,9 +13,9 @@ import java.util.Map;
  */
 public enum Data {
 
-	DATASET(Option.DATASET, DatasetProcessor.class),
-	MATRIX(Option.MATRIX, MatrixProcessor.class),
-	TREE(Option.TREE, TreeProcessor.class);
+	DATASET(Option.DATASET, DatasetParser.class),
+	MATRIX(Option.MATRIX, MatrixParser.class),
+	TREE(Option.TREE, TreeParser.class);
 
 	private final Option option;
 	private final Class<?> processor;
