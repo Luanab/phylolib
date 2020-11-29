@@ -40,7 +40,7 @@ public abstract class SymmetryProcessor extends MatrixProcessor {
 	}
 
 	@Override
-	public final String format(Matrix matrix) {
+	public final String parse(Matrix matrix) {
 		StringBuilder data = new StringBuilder();
 		int size = matrix.size();
 		data.append(size);

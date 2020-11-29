@@ -40,7 +40,7 @@ public interface IWriter<T> {
 				Path path = file.path();
 				Log.info(WRITE, STARTED, path);
 				try {
-					Files.write(path, (value == null ? "" : ((IWriter<T>) file.processor()).format(value)).getBytes());
+					Files.write(path, (value == null ? "" : ((IWriter<T>) file.processor()).parse(value)).getBytes());
 					Log.info(WRITE, FINISHED, path);
 				} catch (Exception exception) {
 					Log.warning(WRITE, FAILED, path);
@@ -56,6 +56,6 @@ public interface IWriter<T> {
 	 *
 	 * @return the output data formatted into a String
 	 */
-	String format(T data);
+	String parse(T data);
 
 }

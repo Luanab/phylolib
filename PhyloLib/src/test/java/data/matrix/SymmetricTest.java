@@ -45,14 +45,14 @@ public class SymmetricTest {
 
 	@Test
 	public void format_Empty_Empty() {
-		assertEquals(new Symmetric().format(new Matrix(false, new String[0], (i, j) -> 0)), "0");
+		assertEquals(new Symmetric().parse(new Matrix(false, new String[0], (i, j) -> 0)), "0");
 	}
 
 	@Test
 	public void format_Valid_Success() {
 		Matrix matrix = new Matrix(false, new String[] { "1", "2" }, (i, j) -> 50.36);
 
-		String data = new Symmetric().format(matrix);
+		String data = new Symmetric().parse(matrix);
 
 		assertEquals(data, "2\n1\n2\t50.36");
 	}

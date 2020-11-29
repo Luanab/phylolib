@@ -61,7 +61,7 @@ public class NewickTest {
 
 	@Test
 	public void format_Empty_Empty() {
-		assertEquals(new Newick().format(new Tree(new String[0])), "");
+		assertEquals(new Newick().parse(new Tree(new String[0])), "");
 	}
 
 	@Test
@@ -72,7 +72,7 @@ public class NewickTest {
 		tree.add(new Edge(4, 3, 3.1));
 		tree.add(new Edge(4, 2, 0.2));
 
-		String data = new Newick().format(tree);
+		String data = new Newick().parse(tree);
 
 		assertEquals(data, "((A:2.3,B:1.0)_:3.1,C:0.2)_;");
 	}

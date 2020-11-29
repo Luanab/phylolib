@@ -30,8 +30,8 @@ public final class Nexus extends Newick {
 	}
 
 	@Override
-	public String format(Tree tree) {
-		return String.format("BEGIN TREES;\n\tTree result = %s\nEND;", super.format(tree));
+	public String parse(Tree tree) {
+		return String.format("BEGIN TREES;\n\tTree result = %s\nEND;", super.parse(tree));
 	}
 
 }

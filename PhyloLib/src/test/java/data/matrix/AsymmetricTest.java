@@ -45,14 +45,14 @@ public class AsymmetricTest {
 
 	@Test
 	public void format_Empty_Empty() {
-		assertEquals(new Asymmetric().format(new Matrix(false, new String[0], (i, j) -> 0)), "0");
+		assertEquals(new Asymmetric().parse(new Matrix(false, new String[0], (i, j) -> 0)), "0");
 	}
 
 	@Test
 	public void format_Valid_Success() {
 		Matrix matrix = new Matrix(false, new String[] { "1", "2" }, (i, j) -> 50.36);
 
-		String data = new Asymmetric().format(matrix);
+		String data = new Asymmetric().parse(matrix);
 
 		assertEquals(data, "2\n1\t0.0\t50.36\n2\t50.36\t0.0");
 	}

@@ -56,7 +56,7 @@ public class Newick extends TreeProcessor {
 	}
 
 	@Override
-	public String format(Tree tree) {
+	public String parse(Tree tree) {
 		StringBuilder data = new StringBuilder();
 		List<Edge> edges = tree.edges().collect(Collectors.toList());
 		List<Integer> visited = new ArrayList<>();

@@ -61,7 +61,7 @@ public class NexusTest {
 
 	@Test
 	public void format_Empty_Empty() {
-		assertEquals(new Nexus().format(new Tree(new String[0])), "BEGIN TREES;\n\tTree result = \nEND;");
+		assertEquals(new Nexus().parse(new Tree(new String[0])), "BEGIN TREES;\n\tTree result = \nEND;");
 	}
 
 	@Test
@@ -72,7 +72,7 @@ public class NexusTest {
 		tree.add(new Edge(4, 3, 3.1));
 		tree.add(new Edge(4, 2, 0.2));
 
-		String data = new Nexus().format(tree);
+		String data = new Nexus().parse(tree);
 
 		assertEquals(data, "BEGIN TREES;\n\tTree result = ((A:2.3,B:1.0)_:3.1,C:0.2)_;\nEND;");
 	}
