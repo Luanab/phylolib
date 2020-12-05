@@ -27,322 +27,8 @@
   <component name="ChangeListManager">
     <list default="true" id="54786b23-0e91-4c21-9105-672316949a5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cli/Arguments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/cli/Arguments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cli/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/cli/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cli/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/cli/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cli/Format.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/cli/Format.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cli/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/cli/Option.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cli/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/cli/Options.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cli/Parameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/cli/Parameters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/ICommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/ICommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/edmonds/BinomialHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/edmonds/BinomialHeap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/edmonds/DisjointSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/edmonds/DisjointSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/edmonds/EdgeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/edmonds/EdgeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/edmonds/Edmonds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/edmonds/Edmonds.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/edmonds/Forest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/edmonds/Forest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/edmonds/WeightedDisjointSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/edmonds/WeightedDisjointSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/gcp/CL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/gcp/CL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/gcp/GloballyClosestPairs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/gcp/GloballyClosestPairs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/gcp/SL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/gcp/SL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/gcp/UPGMA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/gcp/UPGMA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/gcp/UPGMC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/gcp/UPGMC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/gcp/WPGMA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/gcp/WPGMA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/gcp/WPGMC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/gcp/WPGMC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/goeburst/GoeBURST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/goeburst/GoeBURST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/nj/NeighbourJoining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/nj/NeighbourJoining.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/nj/SaitouNei.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/nj/SaitouNei.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/nj/StudierKeppler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/nj/StudierKeppler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/algorithm/nj/UNJ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/nj/UNJ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/correction/Correction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/correction/Correction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/correction/JukesCantor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/correction/JukesCantor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/distance/Distance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/distance/Distance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/distance/GrapeTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/distance/GrapeTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/distance/Hamming.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/distance/Hamming.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/distance/Kimura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/distance/Kimura.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/optimization/LBR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/optimization/LBR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/optimization/Optimization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/optimization/Optimization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/Context.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/IReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/IReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/IWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/IWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/dataset/Dataset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/dataset/Dataset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/dataset/DatasetParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/dataset/DatasetParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/dataset/FASTA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/dataset/FASTA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/dataset/ML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/dataset/ML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/dataset/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/dataset/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/dataset/SNP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/dataset/SNP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/matrix/Asymmetric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/matrix/Asymmetric.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/matrix/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/matrix/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/matrix/MatrixParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/matrix/MatrixParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/matrix/Symmetric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/matrix/Symmetric.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/matrix/SymmetryParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/matrix/SymmetryParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/tree/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/tree/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/tree/Newick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/tree/Newick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/tree/Nexus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/tree/Nexus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/tree/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/tree/Tree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/tree/TreeParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/data/tree/TreeParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exception/ArgumentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/exception/ArgumentException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exception/InvalidCommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/exception/InvalidCommandException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exception/InvalidTypeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/exception/InvalidTypeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exception/MissingInputException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/exception/MissingInputException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exception/MissingTypeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/exception/MissingTypeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exception/NoCommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/exception/NoCommandException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exception/RepeatedCommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/exception/RepeatedCommandException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logging/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/logging/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/reflection/Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/reflection/Types.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/Benchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/benchmark/Benchmark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cli/ArgumentsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/cli/ArgumentsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cli/OptionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/cli/OptionsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/edmonds/EdmondsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/algorithm/edmonds/EdmondsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/gcp/CLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/algorithm/gcp/CLTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/gcp/SLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/algorithm/gcp/SLTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/gcp/UPGMATest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/algorithm/gcp/UPGMATest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/gcp/WPGMATest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/algorithm/gcp/WPGMATest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/goeburst/GoeBURSTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/algorithm/goeburst/GoeBURSTTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/nj/SaitouNeiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/algorithm/nj/SaitouNeiTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/algorithm/nj/StudierKeplerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/algorithm/nj/StudierKeplerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/correction/CorrectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/correction/CorrectionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/correction/JukesCantorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/correction/JukesCantorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/distance/DistanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/distance/DistanceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/distance/GrapeTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/distance/GrapeTreeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/distance/HammingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/distance/HammingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/distance/KimuraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/distance/KimuraTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/command/optimization/LBRTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/optimization/LBRTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/data/FileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/data/FileTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/data/dataset/FASTATest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/data/dataset/FASTATest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/data/dataset/MLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/data/dataset/MLTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/data/dataset/SNPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/data/dataset/SNPTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/data/matrix/AsymmetricTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/data/matrix/AsymmetricTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/data/matrix/SymmetricTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/data/matrix/SymmetricTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/data/tree/NewickTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/data/tree/NewickTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/data/tree/NexusTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/data/tree/NexusTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/Main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/class-use/Main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/Arguments.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/Command.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/Data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/Format.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/Option.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/Options.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/Parameters.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/class-use/Arguments.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/class-use/Command.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/class-use/Data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/class-use/Format.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/class-use/Option.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/class-use/Options.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/class-use/Parameters.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/cli/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/ICommand.IGetter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/ICommand.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/Algorithm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/class-use/Algorithm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/Edmonds.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/class-use/Edmonds.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/edmonds/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/CL.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/GloballyClosestPairs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/SL.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/UPGMA.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/UPGMC.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/WPGMA.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/WPGMC.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/CL.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/GloballyClosestPairs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/SL.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/UPGMA.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/UPGMC.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/WPGMA.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/class-use/WPGMC.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/gcp/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/GoeBURST.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/class-use/GoeBURST.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/goeburst/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/NeighbourJoining.Cluster.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/NeighbourJoining.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/SaitouNei.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/StudierKeppler.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/UNJ.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/NeighbourJoining.Cluster.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/NeighbourJoining.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/SaitouNei.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/StudierKeppler.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/class-use/UNJ.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/nj/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/algorithm/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/class-use/ICommand.IGetter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/class-use/ICommand.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/correction/Correction.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/correction/JukesCantor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/correction/class-use/Correction.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/correction/class-use/JukesCantor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/correction/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/correction/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/correction/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/distance/Distance.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/distance/GrapeTree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/distance/Hamming.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/distance/Kimura.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/distance/class-use/Distance.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/distance/class-use/GrapeTree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/distance/class-use/Hamming.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/distance/class-use/Kimura.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/distance/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/distance/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/distance/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/optimization/LBR.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/optimization/Optimization.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/optimization/class-use/LBR.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/optimization/class-use/Optimization.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/optimization/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/optimization/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/optimization/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/command/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/Context.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/File.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/IReader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/IWriter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/class-use/Context.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/class-use/File.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/class-use/IReader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/class-use/IWriter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/Dataset.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/DatasetParser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/DatasetProcessor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/FASTA.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/ML.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/Profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/SNP.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/class-use/Dataset.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/class-use/DatasetParser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/class-use/DatasetProcessor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/class-use/FASTA.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/class-use/ML.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/class-use/Profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/class-use/SNP.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/dataset/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/Asymmetric.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/Matrix.ICorrection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/Matrix.IDistance.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/Matrix.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/MatrixParser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/MatrixProcessor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/Symmetric.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/SymmetryParser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/SymmetryProcessor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/class-use/Asymmetric.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/class-use/Matrix.ICorrection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/class-use/Matrix.IDistance.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/class-use/Matrix.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/class-use/MatrixParser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/class-use/MatrixProcessor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/class-use/Symmetric.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/class-use/SymmetryParser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/class-use/SymmetryProcessor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/matrix/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/Edge.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/Newick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/Nexus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/Tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/TreeParser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/TreeProcessor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/class-use/Edge.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/class-use/Newick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/class-use/Nexus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/class-use/Tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/class-use/TreeParser.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/class-use/TreeProcessor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/data/tree/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/element-list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/ArgumentException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/InvalidCommandException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/InvalidTypeException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/MissingInputException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/MissingTypeException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/NoCommandException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/RepeatedCommandException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/class-use/ArgumentException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/class-use/InvalidCommandException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/class-use/InvalidTypeException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/class-use/MissingInputException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/class-use/MissingTypeException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/class-use/NoCommandException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/class-use/RepeatedCommandException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/exception/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-17.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-18.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-19.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-19.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-20.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-20.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-21.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-21.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-22.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-22.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/logging/Log.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/logging/class-use/Log.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/logging/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/logging/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/logging/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/overview-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/package-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/reflection/Types.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/reflection/class-use/Types.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/reflection/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/reflection/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/reflection/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/serialized-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/type-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/optimization/LBR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/optimization/LBR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/optimization/Optimization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/optimization/Optimization.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -436,7 +122,7 @@
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PhyloLib [build]">
+  <component name="RunManager" selected="Gradle.Tests in 'phylolib.test'">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -1046,6 +732,12 @@
       <workItem from="1606075418797" duration="2733000" />
       <workItem from="1606512281842" duration="59000" />
       <workItem from="1606670185647" duration="1110000" />
+      <workItem from="1606768713184" duration="1600000" />
+      <workItem from="1606850044166" duration="725000" />
+      <workItem from="1606857418766" duration="509000" />
+      <workItem from="1606899136276" duration="53000" />
+      <workItem from="1607130204352" duration="290000" />
+      <workItem from="1607184158684" duration="3141000" />
     </task>
     <servers />
   </component>
@@ -1074,10 +766,10 @@
     </state>
     <state x="331" y="111" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599569068224" />
     <state x="386" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606697573336" />
-    <state x="709" y="273" key="#com.intellij.ide.util.MemberChooser" timestamp="1606072925422">
+    <state x="709" y="273" key="#com.intellij.ide.util.MemberChooser" timestamp="1607192506080">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="709" y="273" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1606072925422" />
+    <state x="709" y="273" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1607192506080" />
     <state x="643" y="334" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1600732106273">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -1102,50 +794,50 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="640" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1792.1120@0.0.1792.1120" timestamp="1606697858480" />
-    <state x="631" y="150" key="Diagram.Print.Preview.Dialog" timestamp="1606670848868">
+    <state x="631" y="150" key="Diagram.Print.Preview.Dialog" timestamp="1606768852180">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="631" y="150" key="Diagram.Print.Preview.Dialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606670848868" />
-    <state width="1750" height="424" key="GridCell.Tab.0.bottom" timestamp="1606697858514">
+    <state x="631" y="150" key="Diagram.Print.Preview.Dialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606768852180" />
+    <state width="1750" height="424" key="GridCell.Tab.0.bottom" timestamp="1607192714304">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1606697858514" />
+    <state width="1750" height="424" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1607192714304" />
     <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629827" />
-    <state width="1750" height="424" key="GridCell.Tab.0.center" timestamp="1606697858513">
+    <state width="1750" height="424" key="GridCell.Tab.0.center" timestamp="1607192714303">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1606697858513" />
+    <state width="1750" height="424" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1607192714303" />
     <state width="1750" height="318" key="GridCell.Tab.0.center/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629826" />
-    <state width="1750" height="424" key="GridCell.Tab.0.left" timestamp="1606697858512">
+    <state width="1750" height="424" key="GridCell.Tab.0.left" timestamp="1607192714303">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1606697858512" />
+    <state width="1750" height="424" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1607192714303" />
     <state width="1750" height="318" key="GridCell.Tab.0.left/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629826" />
-    <state width="1750" height="424" key="GridCell.Tab.0.right" timestamp="1606697858514">
+    <state width="1750" height="424" key="GridCell.Tab.0.right" timestamp="1607192714304">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1606697858514" />
+    <state width="1750" height="424" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1607192714304" />
     <state width="1750" height="318" key="GridCell.Tab.0.right/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629827" />
-    <state width="1750" height="392" key="GridCell.Tab.1.bottom" timestamp="1605982670690">
+    <state width="1750" height="392" key="GridCell.Tab.1.bottom" timestamp="1606697997543">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1605982670690" />
-    <state width="1750" height="392" key="GridCell.Tab.1.center" timestamp="1605982670689">
+    <state width="1750" height="392" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1606697997543" />
+    <state width="1750" height="392" key="GridCell.Tab.1.center" timestamp="1606697997542">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1605982670689" />
-    <state width="1750" height="392" key="GridCell.Tab.1.left" timestamp="1605982670688">
+    <state width="1750" height="392" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1606697997542" />
+    <state width="1750" height="392" key="GridCell.Tab.1.left" timestamp="1606697997542">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1605982670688" />
-    <state width="1750" height="392" key="GridCell.Tab.1.right" timestamp="1605982670689">
+    <state width="1750" height="392" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1606697997542" />
+    <state width="1750" height="392" key="GridCell.Tab.1.right" timestamp="1606697997543">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1605982670689" />
+    <state width="1750" height="392" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1606697997543" />
     <state x="431" y="155" key="SettingsEditor" timestamp="1606075441873">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -1155,10 +847,14 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="523" y="203" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1600718538251" />
-    <state x="594" y="192" width="604" height="735" key="find.popup" timestamp="1606695810940">
+    <state x="594" y="192" width="604" height="735" key="find.popup" timestamp="1607185387423">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="594" y="192" width="604" height="735" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1606695810940" />
+    <state x="594" y="192" width="604" height="735" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1607185387423" />
+    <state x="595" y="333" key="refactoring.ChangeSignatureDialog" timestamp="1607192694685">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="595" y="333" key="refactoring.ChangeSignatureDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1607192694685" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
