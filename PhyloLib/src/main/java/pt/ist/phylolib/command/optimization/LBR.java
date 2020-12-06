@@ -5,6 +5,8 @@ import pt.ist.phylolib.data.tree.Edge;
 import pt.ist.phylolib.data.tree.Tree;
 
 import java.util.Collection;
+import java.util.Comparator;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -15,10 +17,22 @@ import java.util.stream.Stream;
 public final class LBR extends Optimization {
 
 	@Override
+	protected Edge select(Set<Edge> edges) {
+		return edges.stream().min(Comparator.comparingDouble(Edge::distance)).get();
+	}
+
+	@Override
 	protected Edge join(int loci, Matrix matrix, Tree tree, Edge edge) {
 		int w = recraft(loci, matrix, tree, edge.from(), edge.to());
 		int v = recraft(loci, matrix, tree, edge.to(), edge.from());
 		return new Edge(w, v, matrix.distance(w, v));
+	}
+
+	@Override
+	protected void reduce(Set<Edge> edges, Tree tree, Edge previous, Edge current) {
+		super.reduce(edges, tree, previous, current);
+		if (current.distance() > previous.distance())
+			edges.add(current);
 	}
 
 	private int recraft(int loci, Matrix matrix, Tree tree, int u, int v) {
