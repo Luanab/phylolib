@@ -12,7 +12,7 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class StudierKeplerTest {
+public class StudierKepplerTest {
 
 	@DataProvider
 	public Object[][] data() {

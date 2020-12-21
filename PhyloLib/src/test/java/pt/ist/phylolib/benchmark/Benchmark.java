@@ -32,15 +32,15 @@ public class Benchmark {
 	public static void main(String[] args) throws Exception {
 		for (Map.Entry<String, Constructor<?>> command : Types.get(Algorithm.class).entrySet()) {
 			System.out.println(command.getKey() + ':');
+			System.out.println("\teager:");
+			for (File file : MATRICES) {
+				Matrix matrix = (Matrix) read(file, "symmetric", Data.MATRIX);
+				run(file.getName(), () -> matrix, command.getValue());
+			}
 			System.out.println("\tlazy:");
 			for (File file : DATASETS) {
 				Dataset dataset = (Dataset) read(file, "ml", Data.DATASET);
 				run(file.getName(), () -> new Hamming().process(dataset), command.getValue());
-			}
-			System.out.println("\teager:");
-			for (File file : MATRICES) {
-				Matrix matrix = (Matrix) read(file, "asymmetric", Data.MATRIX);
-				run(file.getName(), () -> matrix, command.getValue());
 			}
 		}
 	}
@@ -74,7 +74,7 @@ public class Benchmark {
 			double start = System.nanoTime();
 			algorithm.process(matrix);
 			totalTime += (System.nanoTime() - start) / 1000000;
-			totalMemory += MEMORY.stream().mapToDouble(pool -> pool.getPeakUsage().getUsed() / 1024.0 / 1024.0).sum();
+			totalMemory += MEMORY.stream().mapToDouble(pool -> pool.getPeakUsage().getUsed() / 1000000.0).sum();
 		}
 		System.out.printf("\t\t%s: %f ms, %f MB\n", file.substring(0, file.lastIndexOf('.')), totalTime / ITERATIONS, totalMemory / ITERATIONS);
 	}

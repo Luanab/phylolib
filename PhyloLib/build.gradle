@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'pt.ist.meic'
+group 'pt.ist.phylolib'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -26,10 +26,6 @@ dependencies {
     testImplementation group: 'org.testng', name: 'testng', version: '7.1.0'
     // https://mvnrepository.com/artifact/org.reflections/reflections
     implementation group: 'org.reflections', name: 'reflections', version: '0.9.10'
-    // https://mvnrepository.com/artifact/org.openjdk.jmh/jmh-core
-    implementation group: 'org.openjdk.jmh', name: 'jmh-core', version: '1.23'
-    // https://mvnrepository.com/artifact/org.openjdk.jmh/jmh-generator-annprocess
-    testAnnotationProcessor group: 'org.openjdk.jmh', name: 'jmh-generator-annprocess', version: '1.23'
 }
 
 test {

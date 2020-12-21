@@ -26,9 +26,247 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54786b23-0e91-4c21-9105-672316949a5c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/optimization/LBR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/optimization/LBR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/optimization/Optimization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/optimization/Optimization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/nj/NeighbourJoining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ist/phylolib/command/algorithm/nj/NeighbourJoining.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/benchmark/Benchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/benchmark/Benchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/algorithm/nj/StudierKeplerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pt/ist/phylolib/command/algorithm/nj/StudierKepplerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/datasets/10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/datasets/100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/datasets/1000.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/datasets/200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/datasets/300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/datasets/400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/datasets/500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/datasets/600.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/datasets/700.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/datasets/800.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/datasets/900.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/matrices/10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/matrices/100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/matrices/1000.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/matrices/200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/matrices/300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/matrices/400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/matrices/500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/matrices/600.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/matrices/700.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/matrices/800.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/matrices/900.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/deprecated-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-13.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-14.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-15.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-16.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-17.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-18.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-19.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-19.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-20.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-20.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-21.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-21.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-22.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-22.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/overview-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/class-use/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/class-use/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/Arguments.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/Arguments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/Command.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/Command.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/Data.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/Data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/Format.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/Format.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/Option.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/Option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/Options.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/Options.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/Parameters.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/Parameters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/class-use/Arguments.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/class-use/Arguments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/class-use/Command.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/class-use/Command.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/class-use/Data.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/class-use/Data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/class-use/Format.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/class-use/Format.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/class-use/Option.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/class-use/Option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/class-use/Options.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/class-use/Options.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/class-use/Parameters.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/class-use/Parameters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/cli/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/ICommand.IGetter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/ICommand.IGetter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/ICommand.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/ICommand.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/Algorithm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/Algorithm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/class-use/Algorithm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/class-use/Algorithm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/edmonds/Edmonds.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/edmonds/Edmonds.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/edmonds/class-use/Edmonds.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/edmonds/class-use/Edmonds.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/edmonds/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/edmonds/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/edmonds/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/edmonds/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/edmonds/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/edmonds/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/CL.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/CL.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/GloballyClosestPairs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/GloballyClosestPairs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/SL.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/SL.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/UPGMA.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/UPGMA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/UPGMC.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/UPGMC.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/WPGMA.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/WPGMA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/WPGMC.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/WPGMC.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/class-use/CL.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/class-use/CL.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/class-use/GloballyClosestPairs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/class-use/GloballyClosestPairs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/class-use/SL.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/class-use/SL.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/class-use/UPGMA.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/class-use/UPGMA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/class-use/UPGMC.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/class-use/UPGMC.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/class-use/WPGMA.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/class-use/WPGMA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/class-use/WPGMC.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/class-use/WPGMC.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/gcp/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/goeburst/GoeBURST.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/goeburst/GoeBURST.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/goeburst/class-use/GoeBURST.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/goeburst/class-use/GoeBURST.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/goeburst/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/goeburst/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/goeburst/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/goeburst/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/goeburst/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/goeburst/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/NeighbourJoining.Cluster.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/NeighbourJoining.Cluster.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/NeighbourJoining.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/NeighbourJoining.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/SaitouNei.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/SaitouNei.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/StudierKeppler.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/StudierKeppler.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/UNJ.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/UNJ.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/class-use/NeighbourJoining.Cluster.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/class-use/NeighbourJoining.Cluster.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/class-use/NeighbourJoining.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/class-use/NeighbourJoining.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/class-use/SaitouNei.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/class-use/SaitouNei.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/class-use/StudierKeppler.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/class-use/StudierKeppler.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/class-use/UNJ.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/class-use/UNJ.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/nj/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/algorithm/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/class-use/ICommand.IGetter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/class-use/ICommand.IGetter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/class-use/ICommand.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/class-use/ICommand.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/correction/Correction.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/correction/Correction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/correction/JukesCantor.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/correction/JukesCantor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/correction/class-use/Correction.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/correction/class-use/Correction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/correction/class-use/JukesCantor.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/correction/class-use/JukesCantor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/correction/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/correction/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/correction/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/correction/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/correction/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/correction/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/Distance.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/Distance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/GrapeTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/GrapeTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/Hamming.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/Hamming.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/Kimura.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/Kimura.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/class-use/Distance.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/class-use/Distance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/class-use/GrapeTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/class-use/GrapeTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/class-use/Hamming.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/class-use/Hamming.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/class-use/Kimura.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/class-use/Kimura.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/distance/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/optimization/LBR.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/optimization/LBR.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/optimization/Optimization.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/optimization/Optimization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/optimization/class-use/LBR.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/optimization/class-use/LBR.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/optimization/class-use/Optimization.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/optimization/class-use/Optimization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/optimization/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/optimization/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/optimization/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/optimization/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/optimization/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/optimization/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/command/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/Context.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/Context.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/File.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/File.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/IReader.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/IReader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/IWriter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/IWriter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/class-use/Context.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/class-use/Context.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/class-use/File.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/class-use/File.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/class-use/IReader.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/class-use/IReader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/class-use/IWriter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/class-use/IWriter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/Dataset.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/Dataset.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/DatasetParser.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/DatasetParser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/FASTA.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/FASTA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/ML.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/ML.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/Profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/SNP.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/SNP.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/class-use/Dataset.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/class-use/Dataset.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/class-use/DatasetParser.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/class-use/DatasetParser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/class-use/FASTA.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/class-use/FASTA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/class-use/ML.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/class-use/ML.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/class-use/Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/class-use/Profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/class-use/SNP.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/class-use/SNP.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/dataset/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/Asymmetric.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/Asymmetric.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/Matrix.ICorrection.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/Matrix.ICorrection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/Matrix.IDistance.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/Matrix.IDistance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/Matrix.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/Matrix.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/MatrixParser.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/MatrixParser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/Symmetric.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/Symmetric.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/SymmetryParser.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/SymmetryParser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/class-use/Asymmetric.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/class-use/Asymmetric.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/class-use/Matrix.ICorrection.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/class-use/Matrix.ICorrection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/class-use/Matrix.IDistance.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/class-use/Matrix.IDistance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/class-use/Matrix.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/class-use/Matrix.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/class-use/MatrixParser.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/class-use/MatrixParser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/class-use/Symmetric.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/class-use/Symmetric.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/class-use/SymmetryParser.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/class-use/SymmetryParser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/matrix/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/Edge.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/Edge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/Newick.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/Newick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/Nexus.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/Nexus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/Tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/Tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/TreeParser.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/TreeParser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/class-use/Edge.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/class-use/Edge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/class-use/Newick.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/class-use/Newick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/class-use/Nexus.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/class-use/Nexus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/class-use/Tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/class-use/Tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/class-use/TreeParser.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/class-use/TreeParser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/data/tree/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/ArgumentException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/ArgumentException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/InvalidCommandException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/InvalidCommandException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/InvalidTypeException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/InvalidTypeException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/MissingInputException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/MissingInputException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/MissingTypeException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/MissingTypeException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/NoCommandException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/NoCommandException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/RepeatedCommandException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/RepeatedCommandException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/class-use/ArgumentException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/class-use/ArgumentException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/class-use/InvalidCommandException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/class-use/InvalidCommandException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/class-use/InvalidTypeException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/class-use/InvalidTypeException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/class-use/MissingInputException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/class-use/MissingInputException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/class-use/MissingTypeException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/class-use/MissingTypeException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/class-use/NoCommandException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/class-use/NoCommandException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/class-use/RepeatedCommandException.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/class-use/RepeatedCommandException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/exception/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/logging/Log.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/logging/Log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/logging/class-use/Log.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/logging/class-use/Log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/logging/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/logging/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/logging/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/logging/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/logging/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/logging/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/reflection/Types.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/reflection/Types.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/reflection/class-use/Types.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/reflection/class-use/Types.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/reflection/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/reflection/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/reflection/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/reflection/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/pt/ist/phylolib/reflection/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/pt/ist/phylolib/reflection/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/serialized-form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,17 +350,18 @@
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\java" />
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="data.matrix" />
-      <recent name="command.algorithm.goeburst" />
-      <recent name="benchmark" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources/datasets" />
       <recent name="C:\Users\luana\Desktop\Thesis\Code\phylolib\PhyloLib\src\test\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pt.ist.phylolib.command.algorithm.goeburst" />
+      <recent name="data.matrix" />
+      <recent name="command.algorithm.goeburst" />
+      <recent name="benchmark" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'phylolib.test'">
+  <component name="RunManager" selected="Application.Benchmark">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -157,10 +396,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AlgorithmBenchmark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pt.ist.phylolib.benchmark.AlgorithmBenchmark" />
+      <module name="PhyloLib.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pt.ist.phylolib.benchmark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All" type="Application" factoryName="Application" folderName="Demonstration">
       <option name="MAIN_CLASS_NAME" value="pt.ist.phylolib.Main" />
       <module name="PhyloLib.main" />
       <option name="PROGRAM_PARAMETERS" value="distance grapetree -d=ml:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\dataset.txt&quot; : algorithm edmonds : optimization lbr -o=newick:&quot;C:\Users\luana\Desktop\Thesis\Demonstration\optimized.nwk&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Benchmark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pt.ist.phylolib.benchmark.Benchmark" />
+      <module name="PhyloLib.test" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -208,7 +467,7 @@
     <configuration name="Distance" type="Application" factoryName="Application" folderName="Demonstration">
       <option name="MAIN_CLASS_NAME" value="pt.ist.phylolib.Main" />
       <module name="PhyloLib.main" />
-      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;$PROJECT_DIR$/../../../dataset.txt&quot; -o=asymmetric:&quot;$PROJECT_DIR$/../../../matrix.txt&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="distance hamming -d=ml:&quot;$PROJECT_DIR$/../../../dataset.txt&quot; -o=symmetric:&quot;$PROJECT_DIR$/../../../matrix.txt&quot;" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -528,25 +787,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;data.FileTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="PhyloLib [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -563,7 +803,9 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <configuration name="PhyloLib [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -582,26 +824,9 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="PhyloLib [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <configuration name="Tests in 'phylolib.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -620,7 +845,9 @@
         </option>
         <option name="vmOptions" value="" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <list>
@@ -672,19 +899,17 @@
       <item itemvalue="Application.WPGMA" />
       <item itemvalue="Application.WPGMC" />
       <item itemvalue="Application.AlgorithmBenchmark" />
-      <item itemvalue="Gradle.PhyloLib [build]" />
-      <item itemvalue="Gradle.PhyloLib [clean]" />
-      <item itemvalue="Gradle.PhyloLib [jar]" />
+      <item itemvalue="Application.Benchmark" />
       <item itemvalue="Gradle.Tests in 'phylolib.test'" />
-      <item itemvalue="Gradle.FileTest" />
+      <item itemvalue="Gradle.PhyloLib [clean]" />
+      <item itemvalue="Gradle.PhyloLib [build]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Tests in 'phylolib.test'" />
-        <item itemvalue="Gradle.FileTest" />
-        <item itemvalue="Gradle.PhyloLib [jar]" />
         <item itemvalue="Gradle.PhyloLib [clean]" />
+        <item itemvalue="Application.Benchmark" />
         <item itemvalue="Gradle.PhyloLib [build]" />
+        <item itemvalue="Gradle.Tests in 'phylolib.test'" />
       </list>
     </recent_temporary>
   </component>
@@ -739,6 +964,18 @@
       <workItem from="1607130204352" duration="290000" />
       <workItem from="1607184158684" duration="3676000" />
       <workItem from="1607212460752" duration="2385000" />
+      <workItem from="1607435683429" duration="8533000" />
+      <workItem from="1607451871757" duration="14969000" />
+      <workItem from="1607566078943" duration="4300000" />
+      <workItem from="1607606934793" duration="1208000" />
+      <workItem from="1607643971670" duration="1024000" />
+      <workItem from="1607738758012" duration="663000" />
+      <workItem from="1607798289908" duration="14958000" />
+      <workItem from="1607862977077" duration="17215000" />
+      <workItem from="1607987877218" duration="1582000" />
+      <workItem from="1608151547191" duration="5390000" />
+      <workItem from="1608330189220" duration="288000" />
+      <workItem from="1608555143988" duration="336000" />
     </task>
     <servers />
   </component>
@@ -756,110 +993,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="453" y="105" key="#Java" timestamp="1601058253123">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="453" y="105" key="#Java/0.0.1792.1120@0.0.1792.1120" timestamp="1601058253123" />
-    <state x="386" y="150" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606697573336">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="331" y="111" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599569068224" />
-    <state x="386" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606697573336" />
-    <state x="709" y="273" key="#com.intellij.ide.util.MemberChooser" timestamp="1607214337150">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="709" y="273" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1607214337150" />
-    <state x="643" y="334" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1600732106273">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="643" y="334" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1600732106273" />
-    <state x="696" y="491" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1606696113657">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="696" y="491" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606696113657" />
-    <state x="656" y="436" width="479" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1606670611032">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="656" y="436" width="479" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1792.1120@0.0.1792.1120" timestamp="1606670611032" />
-    <state x="656" y="437" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog" timestamp="1607212915210">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="656" y="437" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1607212915210" />
-    <state x="313" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606670968831">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="313" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1606670968831" />
-    <state x="644" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601069863281">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="644" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1601069863281" />
-    <state x="640" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1607193238449">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="640" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1792.1120@0.0.1792.1120" timestamp="1607193238449" />
-    <state x="631" y="150" key="Diagram.Print.Preview.Dialog" timestamp="1607193320473">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="631" y="150" key="Diagram.Print.Preview.Dialog/0.0.1792.1120@0.0.1792.1120" timestamp="1607193320473" />
-    <state width="1750" height="424" key="GridCell.Tab.0.bottom" timestamp="1607213202615">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1607213202615" />
-    <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629827" />
-    <state width="1750" height="424" key="GridCell.Tab.0.center" timestamp="1607213202614">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1607213202614" />
-    <state width="1750" height="318" key="GridCell.Tab.0.center/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629826" />
-    <state width="1750" height="424" key="GridCell.Tab.0.left" timestamp="1607213202613">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1607213202613" />
-    <state width="1750" height="318" key="GridCell.Tab.0.left/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629826" />
-    <state width="1750" height="424" key="GridCell.Tab.0.right" timestamp="1607213202614">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599578426589" />
-    <state width="1750" height="424" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1607213202614" />
-    <state width="1750" height="318" key="GridCell.Tab.0.right/0.23.1792.1043@0.23.1792.1043" timestamp="1600966629827" />
-    <state width="1750" height="392" key="GridCell.Tab.1.bottom" timestamp="1606697997543">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1606697997543" />
-    <state width="1750" height="392" key="GridCell.Tab.1.center" timestamp="1606697997542">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1606697997542" />
-    <state width="1750" height="392" key="GridCell.Tab.1.left" timestamp="1606697997542">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1606697997542" />
-    <state width="1750" height="392" key="GridCell.Tab.1.right" timestamp="1606697997543">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="392" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1606697997543" />
-    <state x="431" y="155" key="SettingsEditor" timestamp="1606075441873">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="369" y="114" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599747159657" />
-    <state x="431" y="155" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1606075441873" />
-    <state x="523" y="203" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600718538251">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="523" y="203" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1600718538251" />
-    <state x="594" y="192" width="604" height="735" key="find.popup" timestamp="1607185387423">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="594" y="192" width="604" height="735" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1607185387423" />
-    <state x="595" y="333" key="refactoring.ChangeSignatureDialog" timestamp="1607215017479">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="595" y="333" key="refactoring.ChangeSignatureDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1607215017478" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
