@@ -9,7 +9,7 @@ repositories {
     mavenCentral()
 }
 
-def mainClassName = "Main"
+def mainClassName = "pt.ist.phylolib.Main"
 
 jar {
     manifest {
